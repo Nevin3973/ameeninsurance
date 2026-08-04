@@ -57,6 +57,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Universal Image Safeguards to Prevent Overflow & Bleeding */
+img, svg, video {
+  max-width: 100%;
+  height: auto;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   letter-spacing: -0.02em;

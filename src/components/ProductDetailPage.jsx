@@ -64,13 +64,39 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
             </span>
           </div>
 
-          <h1 style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', marginBottom: '0.6rem', color: 'var(--text-dark)' }}>
-            {product.name}
-          </h1>
+          <div style={{ display: 'grid', gridTemplateColumns: product.image ? '1fr 340px' : '1fr', gap: '2rem', alignItems: 'center' }} className="responsive-grid-equal">
+            <div>
+              <h1 style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', marginBottom: '0.6rem', color: 'var(--text-dark)' }}>
+                {product.name}
+              </h1>
 
-          <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', maxWidth: '780px', lineHeight: 1.6 }}>
-            {product.desc}
-          </p>
+              <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', maxWidth: '780px', lineHeight: 1.6 }}>
+                {product.desc}
+              </p>
+            </div>
+
+            {product.image && (
+              <div style={{
+                height: '180px',
+                borderRadius: '16px',
+                overflow: 'hidden',
+                boxShadow: '0 8px 25px rgba(0,0,0,0.08)',
+                border: '1px solid var(--border-light)'
+              }}>
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center top',
+                    display: 'block'
+                  }}
+                />
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
