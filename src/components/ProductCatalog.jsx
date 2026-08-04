@@ -459,8 +459,8 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
         <div className="grid-3" style={{ gap: "1.8rem" }}>
           {filteredProducts.map((product) => (
             <div key={product.id} className="clean-card" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 0, overflow: "hidden" }}>
-              {/* Product Full Cover Image Header */}
-              <div style={{ aspectRatio: "16 / 9", minHeight: "190px", overflow: "hidden", position: "relative", background: "var(--bg-card-alt)" }}>
+              {/* Product Full Opaque Cover Image Header */}
+              <div style={{ aspectRatio: "16 / 9", minHeight: "190px", overflow: "hidden", position: "relative", background: "#ffffff" }}>
                 <img
                   src={product.image}
                   alt={product.name}
@@ -470,16 +470,11 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                     objectFit: "cover",
                     objectPosition: "center top",
                     display: "block",
+                    background: "#ffffff",
                     transition: "transform 0.4s ease"
                   }}
                   className="product-card-img"
                 />
-                <div style={{
-                  position: "absolute",
-                  inset: 0,
-                  background: "linear-gradient(to top, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.1) 60%, transparent 100%)",
-                  pointerEvents: "none"
-                }} />
                 <span style={{
                   position: "absolute",
                   bottom: "12px",
@@ -527,14 +522,14 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                     <button
                       onClick={() => onSelectProduct ? onSelectProduct(product) : setActiveModalProduct(product)}
                       className="btn-secondary"
-                      style={{ padding: "0.6rem", fontSize: "0.85rem", color: "var(--text-dark)" }}
+                      style={{ padding: "0.6rem", fontSize: "0.85rem", color: "var(--text-dark)", background: "#ffffff", border: "1px solid var(--border-light)", fontWeight: 700 }}
                     >
                       View Details
                     </button>
                     <button
                       onClick={() => handleEnquire(product.name)}
                       className="btn-primary"
-                      style={{ padding: "0.6rem", fontSize: "0.85rem" }}
+                      style={{ padding: "0.6rem", fontSize: "0.85rem", background: "var(--primary-blue)", color: "#ffffff", border: "none", fontWeight: 700, boxShadow: "0 3px 10px rgba(1, 58, 222, 0.28)" }}
                     >
                       Enquire Now
                     </button>
