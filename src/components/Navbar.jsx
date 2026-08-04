@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import { Menu, X, Calendar } from 'lucide-react';
+import { Menu, X, Calendar, Globe } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Navbar({ activeTab, setActiveTab }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { lang, toggleLanguage, t } = useLanguage();
 
   const navItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'About Us' },
-    { id: 'products', label: 'Insurance Plans' },
-    { id: 'partners', label: 'Insurance Partners' },
-    { id: 'claims', label: 'Claims Assistance' },
-    { id: 'faq', label: 'FAQ' }
+    { id: 'hero', label: t('navHome', 'Home') },
+    { id: 'about', label: t('navAbout', 'About Us') },
+    { id: 'products', label: t('navProducts', 'Insurance Plans') },
+    { id: 'partners', label: t('navPartners', 'Insurance Partners') },
+    { id: 'claims', label: t('navClaims', 'Claims Assistance') },
+    { id: 'faq', label: t('navFaq', 'FAQ') }
   ];
 
   const handleNavClick = (id) => {
@@ -18,7 +20,6 @@ export default function Navbar({ activeTab, setActiveTab }) {
     setMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
 
   return (
     <header style={{
@@ -50,7 +51,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
             letterSpacing: '-0.02em',
             cursor: 'pointer',
             whiteSpace: 'nowrap',
-            marginRight: '1.5rem',
+            marginRight: '1.2rem',
             color: '#0f172a'
           }}
         >
@@ -62,7 +63,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: '1.8rem',
+          gap: '1.4rem',
           flex: 1
         }} className="desktop-only">
           {navItems.map((item) => {
@@ -90,14 +91,38 @@ export default function Navbar({ activeTab, setActiveTab }) {
           })}
         </nav>
 
-        {/* Rounded "Book a Consultation" Button on the Far Right */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+        {/* Language Toggle + Consultation CTA */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
+          {/* Malayalam / English Toggle Button */}
+          <button
+            onClick={toggleLanguage}
+            title={lang === 'en' ? 'Switch content to Malayalam' : 'ഇംഗ്ലീഷിലേക്ക് മാറുക'}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.45rem',
+              padding: '0.5rem 0.95rem',
+              borderRadius: '9999px',
+              border: '1.5 solid var(--primary-blue)',
+              background: lang === 'ml' ? '#eff6ff' : '#ffffff',
+              color: '#1d4ed8',
+              fontSize: '0.85rem',
+              fontWeight: 700,
+              cursor: 'pointer',
+              transition: 'all 0.2s ease-in-out',
+              boxShadow: '0 2px 8px rgba(29, 78, 216, 0.12)'
+            }}
+          >
+            <Globe size={16} color="#1d4ed8" />
+            <span>{lang === 'en' ? 'മലയാളം' : 'English'}</span>
+          </button>
+
           <button
             onClick={() => handleNavClick('booking')}
             className="btn-primary nav-book-btn"
             style={{
-              padding: '0.75rem 1.8rem',
-              fontSize: '0.92rem',
+              padding: '0.75rem 1.6rem',
+              fontSize: '0.9rem',
               fontWeight: 700,
               borderRadius: '9999px',
               whiteSpace: 'nowrap',
@@ -108,7 +133,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
               boxShadow: '0 4px 14px rgba(30, 64, 175, 0.25)'
             }}
           >
-            <Calendar size={17} color="#ffffff" /> Book a Consultation
+            <Calendar size={17} color="#ffffff" /> {t('navBookConsultation', 'Book a Consultation')}
           </button>
 
           {/* Mobile Hamburger Button */}
@@ -151,6 +176,38 @@ export default function Navbar({ activeTab, setActiveTab }) {
           gap: '0.6rem',
           boxShadow: '0 12px 30px rgba(0, 0, 0, 0.15)'
         }}>
+          {/* Mobile Language Switcher Row */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            paddingBottom: '0.8rem',
+            borderBottom: '1px solid var(--border-light)'
+          }}>
+            <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-muted)' }}>
+              Language / ഭാഷ:
+            </span>
+            <button
+              onClick={toggleLanguage}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                padding: '0.4rem 0.9rem',
+                borderRadius: '9999px',
+                border: '1px solid var(--primary-blue)',
+                background: lang === 'ml' ? '#eff6ff' : '#ffffff',
+                color: '#1d4ed8',
+                fontSize: '0.88rem',
+                fontWeight: 700,
+                cursor: 'pointer'
+              }}
+            >
+              <Globe size={15} color="#1d4ed8" />
+              {lang === 'en' ? 'മലയാളത്തിലേക്ക് മാറ്റുക' : 'Switch to English'}
+            </button>
+          </div>
+
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -175,7 +232,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
             className="btn-primary"
             style={{ width: '100%', padding: '0.85rem', marginTop: '0.6rem' }}
           >
-            <Calendar size={18} /> Book a Consultation
+            <Calendar size={18} /> {t('navBookConsultation', 'Book a Consultation')}
           </button>
         </div>
       )}
