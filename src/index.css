@@ -3,26 +3,26 @@
    ========================================================================== */
 
 :root {
-  /* Clean White & Blue Palette (Healthcare Inspired) */
-  --primary-blue: #1e40af;       /* Royal Blue */
-  --primary-blue-hover: #1d4ed8;
-  --accent-sky: #0284c7;          /* Sky Blue */
-  --accent-sky-light: #e0f2fe;
-  --bg-hero: #f0f7ff;             /* Soft Blue Tint */
+  /* Star Health Official Color Palette */
+  --primary-blue: #013ade;       /* Star Health Signature Royal Blue */
+  --primary-blue-hover: #0028a8;
+  --accent-sky: #377de2;          /* Star Health Sky Blue */
+  --accent-sky-light: #e6f0ff;
+  --bg-hero: #f4f7fe;             /* Star Health Soft Tint */
   --bg-surface: #ffffff;
   --bg-card: #ffffff;
   --bg-card-alt: #f8fafc;
 
-  --text-dark: #0f172a;           /* Deep Charcoal */
-  --text-muted: #475569;          /* Slate Gray */
-  --text-subtle: #64748b;
+  --text-dark: #1b2559;           /* Star Health Navy Charcoal */
+  --text-muted: #4a5568;          /* Slate Gray */
+  --text-subtle: #718096;
 
   --border-light: #e2e8f0;
-  --border-focus: #3b82f6;
+  --border-focus: #013ade;
 
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 12px rgba(30, 64, 175, 0.06);
-  --shadow-hover: 0 10px 25px rgba(30, 64, 175, 0.12);
+  --shadow-md: 0 4px 14px rgba(1, 58, 222, 0.08);
+  --shadow-hover: 0 12px 28px rgba(1, 58, 222, 0.16);
 
   --radius-sm: 10px;
   --radius-md: 16px;

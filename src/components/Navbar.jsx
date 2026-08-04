@@ -60,11 +60,11 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
             cursor: 'pointer',
             whiteSpace: 'nowrap',
             marginRight: '0.8rem',
-            color: '#0f172a',
+            color: 'var(--text-dark)',
             flexShrink: 0
           }}
         >
-          Ameen <span style={{ color: '#1d4ed8' }}>Insurance</span>
+          Ameen <span style={{ color: 'var(--primary-blue)' }}>Insurance</span>
         </div>
 
         {/* Navigation Links + Language Button Group */}
@@ -112,17 +112,17 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
               padding: '0 0.85rem',
               borderRadius: '9999px',
               border: '1.5px solid var(--primary-blue)',
-              background: lang === 'ml' ? '#eff6ff' : '#ffffff',
-              color: '#1d4ed8',
+              background: lang === 'ml' ? 'var(--accent-sky-light)' : '#ffffff',
+              color: 'var(--primary-blue)',
               fontSize: '0.88rem',
               fontWeight: 800,
               cursor: 'pointer',
               transition: 'all 0.2s ease-in-out',
-              boxShadow: '0 2px 8px rgba(29, 78, 216, 0.1)',
+              boxShadow: '0 2px 8px rgba(1, 58, 222, 0.1)',
               flexShrink: 0
             }}
           >
-            <Globe size={15} color="#1d4ed8" />
+            <Globe size={15} color="var(--primary-blue)" />
             <span>{lang === 'en' ? 'മ' : 'Eng'}</span>
           </button>
         </div>
