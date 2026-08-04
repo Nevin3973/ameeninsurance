@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
 import { Check, X, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function PlanComparison({ onSelectPlan }) {
+  const { lang, t } = useLanguage();
   const [billingCycle, setBillingCycle] = useState('monthly');
   const [selectedPlanToast, setSelectedPlanToast] = useState(null);
 
   const plans = [
     {
       id: 'silver',
-      name: 'Silver Essential',
+      name: lang === 'ml' ? 'സിൽവർ എസ്സൻഷ്യൽ' : 'Silver Essential',
       monthlyPrice: 49,
       annualPrice: 42,
-      desc: 'Ideal for individuals seeking reliable core hospital protection.',
+      desc: lang === 'ml' ? 'വ്യക്തികൾക്കുള്ള സുരക്ഷിതമായ അടിസ്ഥാന ആശുപത്രി സംരക്ഷണം.' : 'Ideal for individuals seeking reliable core hospital protection.',
       popular: false,
       features: {
-        maxCoverage: '$150,000 / Year',
-        networkHospitals: '2,000+ Hospitals',
-        deductible: '$1,000',
+        maxCoverage: lang === 'ml' ? '₹15 ലക്ഷം / വർഷം' : '$150,000 / Year',
+        networkHospitals: lang === 'ml' ? '2,000+ ആശുപത്രികൾ' : '2,000+ Hospitals',
+        deductible: '₹10,000',
         inpatient: true,
         outpatient: false,
         cashless: true,
@@ -25,16 +27,16 @@ export default function PlanComparison({ onSelectPlan }) {
     },
     {
       id: 'gold',
-      name: 'Gold Preferred',
+      name: lang === 'ml' ? 'ഗോൾഡ് പ്രിഫേർഡ്' : 'Gold Preferred',
       monthlyPrice: 89,
       annualPrice: 75,
-      desc: 'Comprehensive coverage for families with outpatient & clinic consults included.',
+      desc: lang === 'ml' ? 'കുടുംബങ്ങൾക്കുള്ള സമഗ്രമായ കവറേജും ഔട്ട്‌പേഷ്യന്റ് ക്ലിനിക്ക് സഹായവും.' : 'Comprehensive coverage for families with outpatient & clinic consults included.',
       popular: true,
-      badge: 'MOST POPULAR',
+      badge: lang === 'ml' ? 'ഏറ്റവും ജനപ്രിയം' : 'MOST POPULAR',
       features: {
-        maxCoverage: '$500,000 / Year',
-        networkHospitals: '4,500+ Hospitals',
-        deductible: '$500',
+        maxCoverage: lang === 'ml' ? '₹50 ലക്ഷം / വർഷം' : '$500,000 / Year',
+        networkHospitals: lang === 'ml' ? '4,500+ ആശുപത്രികൾ' : '4,500+ Hospitals',
+        deductible: '₹5,000',
         inpatient: true,
         outpatient: true,
         cashless: true,
@@ -43,16 +45,16 @@ export default function PlanComparison({ onSelectPlan }) {
     },
     {
       id: 'platinum',
-      name: 'Platinum Executive',
+      name: lang === 'ml' ? 'പ്ലാറ്റിനം എക്സിക്യൂട്ടീവ്' : 'Platinum Executive',
       monthlyPrice: 149,
       annualPrice: 126,
-      desc: 'VIP global protection with zero deductibles and private hospital room access.',
+      desc: lang === 'ml' ? 'സീറോ ഡിഡക്റ്റബിളോട് കൂടിയ വിഐപി ആഗോള ആശുപത്രി ചികിത്സാ കവറേജ്.' : 'VIP global protection with zero deductibles and private hospital room access.',
       popular: false,
-      badge: 'VIP EXECUTIVE',
+      badge: lang === 'ml' ? 'വിഐപി എക്സിക്യൂട്ടീവ്' : 'VIP EXECUTIVE',
       features: {
-        maxCoverage: '$2,000,000 / Year',
-        networkHospitals: 'Global VIP Network',
-        deductible: '$0 (Zero Deductible)',
+        maxCoverage: lang === 'ml' ? '₹2 കോടി / വർഷം' : '$2,000,000 / Year',
+        networkHospitals: lang === 'ml' ? 'ഗ്ലോബൽ വിഐപി നെറ്റ്‌വർക്ക്' : 'Global VIP Network',
+        deductible: lang === 'ml' ? '₹0 (സീറോ ഡിഡക്റ്റബിൾ)' : '$0 (Zero Deductible)',
         inpatient: true,
         outpatient: true,
         cashless: true,
@@ -73,10 +75,10 @@ export default function PlanComparison({ onSelectPlan }) {
         {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 2.5rem' }}>
           <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginBottom: '0.6rem' }}>
-            Compare Ameen Protection Plans
+            {t('planCompareTitle', 'Compare Ameen Protection Plans')}
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem' }}>
-            Choose the plan that fits your family's needs. All plans feature instant digital e-Cards.
+            {t('planCompareSubtitle', 'Choose the plan that fits your family\'s needs. All plans feature instant digital e-Cards.')}
           </p>
 
           {/* Billing Switcher */}
@@ -102,7 +104,7 @@ export default function PlanComparison({ onSelectPlan }) {
                 cursor: 'pointer'
               }}
             >
-              Monthly Billing
+              {t('monthlyBilling', 'Monthly Billing')}
             </button>
             <button
               onClick={() => setBillingCycle('annual')}
@@ -117,7 +119,7 @@ export default function PlanComparison({ onSelectPlan }) {
                 cursor: 'pointer'
               }}
             >
-              Annual (Save 15%)
+              {t('annualBilling', 'Annual (Save 15%)')}
             </button>
           </div>
         </div>

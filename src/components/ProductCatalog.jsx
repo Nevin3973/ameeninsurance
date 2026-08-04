@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Search, Eye, ArrowRight, X, Check } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function ProductCatalog({ onBookConsultation, onSelectProduct }) {
+  const { lang, t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [activeModalProduct, setActiveModalProduct] = useState(null);
@@ -145,11 +147,11 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
   ];
 
   const categories = [
-    { id: "all", label: "All Plans" },
-    { id: "individual", label: "Individual" },
-    { id: "family", label: "Family Floater" },
-    { id: "women", label: "Womens Plans" },
-    { id: "young", label: "Young Adults" }
+    { id: "all", label: lang === 'ml' ? "എല്ലാ പ്ലാനുകളും" : "All Plans" },
+    { id: "individual", label: lang === 'ml' ? "വ്യക്തിഗത പ്ലാനുകൾ" : "Individual" },
+    { id: "family", label: lang === 'ml' ? "ഫാമിലി ഫ്ലോട്ടർ" : "Family Floater" },
+    { id: "women", label: lang === 'ml' ? "വനിതാ പ്ലാനുകൾ" : "Womens Plans" },
+    { id: "young", label: lang === 'ml' ? "യുവാക്കൾക്കുള്ള പ്ലാൻ" : "Young Adults" }
   ];
 
   const filteredProducts = products.filter(p => {
@@ -170,10 +172,10 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
         {/* Section Title */}
         <div style={{ textAlign: "center", maxWidth: "680px", margin: "0 auto 2.5rem" }}>
           <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", marginBottom: "0.6rem" }}>
-            Insurance Products
+            {t('catalogTitle', 'Insurance Products')}
           </h2>
           <p style={{ color: "var(--text-muted)", fontSize: "1.05rem" }}>
-            Health and life plans from trusted insurers, matched to your exact needs.
+            {t('catalogSubtitle', 'Health and life plans from trusted insurers, matched to your exact needs.')}
           </p>
         </div>
 
@@ -183,7 +185,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
           <div style={{ position: "relative", width: "100%", maxWidth: "460px" }}>
             <input
               type="text"
-              placeholder="Search by product or insurance company..."
+              placeholder={lang === 'ml' ? "കമ്പനി അല്ലെങ്കിൽ പ്ലാൻ തിരയുക..." : "Search by product or insurance company..."}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               style={{
@@ -270,7 +272,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
                     fontSize: "0.82rem",
                     marginBottom: "1.2rem"
                   }}>
-                    <span style={{ color: "var(--text-subtle)" }}>SUM INSURED: </span>
+                    <span style={{ color: "var(--text-subtle)" }}>{lang === 'ml' ? 'ഇൻഷുറൻസ് തുക: ' : 'SUM INSURED: '}</span>
                     <strong style={{ color: "var(--primary-blue)" }}>{product.sumInsured}</strong>
                   </div>
 
@@ -280,14 +282,14 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
                       className="btn-secondary"
                       style={{ padding: "0.6rem", fontSize: "0.85rem" }}
                     >
-                      View Details
+                      {t('viewDetails', 'View Details')}
                     </button>
                     <button
                       onClick={() => handleEnquire(product.name)}
                       className="btn-primary"
                       style={{ padding: "0.6rem", fontSize: "0.85rem" }}
                     >
-                      Enquire Now
+                      {lang === 'ml' ? 'ക്വോട്ട് ചോദിക്കുക' : 'Enquire Now'}
                     </button>
                   </div>
                 </div>

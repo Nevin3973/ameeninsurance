@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, CheckCircle2, ShieldCheck, Award, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Hero({ onStartQuote }) {
+  const { lang, t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [leadForm, setLeadForm] = useState({
     fullName: '',
@@ -15,39 +17,39 @@ export default function Hero({ onStartQuote }) {
     {
       id: 'family-protection',
       image: '/family-hero-notext.png',
-      badge: 'Muhammed Ameen • Independent Insurance Consultant',
-      title: 'Protect Your Family with the Right Health & Life Cover',
-      subtitle: '15 years of independent guidance across India\'s top 5 insurance partners.',
-      primaryBtnText: 'Compare Plans',
+      badge: t('heroBadge1', 'Muhammed Ameen • Independent Insurance Consultant'),
+      title: t('heroTitle1', 'Protect Your Family with the Right Health & Life Cover'),
+      subtitle: t('heroSubtitle1', "15 years of independent guidance across India's top 5 insurance partners."),
+      primaryBtnText: t('heroBtnCompare', 'Compare Plans'),
       primaryBtnTarget: 'products',
-      secondaryBtnText: 'Book Consultation',
+      secondaryBtnText: t('heroBtnBook', 'Book Consultation'),
       secondaryBtnTarget: 'booking',
-      pills: ['15+ Years Experience', 'Free 1-on-1 Advice']
+      pills: lang === 'ml' ? ['15+ വർഷത്തെ പ്രവൃത്തിപരിചയം', 'സൗജന്യ നേർക്കുനേർ ഉപദേശം'] : ['15+ Years Experience', 'Free 1-on-1 Advice']
     },
     {
       id: 'claim-advocacy',
       image: '/hero-slide-3.png',
-      badge: '100% Dedicated Claim Settlement Support',
-      title: 'Hassle-Free Cashless Admission & 24/7 Claim Support',
-      subtitle: 'Direct hospital desk coordination across 14,000+ network hospitals.',
-      primaryBtnText: 'Claims Assistance',
+      badge: t('heroBadge2', '100% Dedicated Claim Settlement Support'),
+      title: t('heroTitle2', 'Hassle-Free Cashless Admission & 24/7 Claim Support'),
+      subtitle: t('heroSubtitle2', 'Direct hospital desk coordination across 14,000+ network hospitals.'),
+      primaryBtnText: t('heroBtnClaims', 'Claims Assistance'),
       primaryBtnTarget: 'claims',
-      secondaryBtnText: 'WhatsApp Ameen',
+      secondaryBtnText: t('heroBtnWhatsapp', 'WhatsApp Ameen'),
       secondaryBtnTarget: 'https://wa.me/919812345678',
       isExternalSecondary: true,
-      pills: ['14,000+ Hospitals', '24/7 Emergency Support']
+      pills: lang === 'ml' ? ['14,000+ ആശുപത്രികൾ', '24/7 അടിയന്തര സഹായം'] : ['14,000+ Hospitals', '24/7 Emergency Support']
     },
     {
       id: 'unbiased-partners',
       image: '/hero-banner.png',
-      badge: 'IRDAI Licensed Partner Advisory',
-      title: 'Compare Plans Across Star Health, Aditya Birla & PSU Insurers',
-      subtitle: 'Zero hidden capping & transparent room rent guidance.',
-      primaryBtnText: 'View Partners',
+      badge: t('heroBadge3', 'IRDAI Licensed Partner Advisory'),
+      title: t('heroTitle3', 'Compare Plans Across Star Health, Aditya Birla & PSU Insurers'),
+      subtitle: t('heroSubtitle3', 'Zero hidden capping & transparent room rent guidance.'),
+      primaryBtnText: t('heroBtnPartners', 'View Partners'),
       primaryBtnTarget: 'partners',
-      secondaryBtnText: 'Calculate Premium',
+      secondaryBtnText: t('heroBtnCalculate', 'Calculate Premium'),
       secondaryBtnTarget: 'products',
-      pills: ['Unbiased Comparison', 'Zero Extra Cost']
+      pills: lang === 'ml' ? ['സുതാര്യമായ താരതമ്യം', 'അധിക ചിലവുകളില്ല'] : ['Unbiased Comparison', 'Zero Extra Cost']
     }
   ];
 
@@ -325,27 +327,27 @@ export default function Hero({ onStartQuote }) {
           <div className="grid-2" style={{ gap: '3rem', alignItems: 'center' }}>
             <div>
               <span className="pill-badge" style={{ marginBottom: '1rem', background: 'var(--accent-sky-light)', border: 'none' }}>
-                <ShieldCheck size={16} color="var(--primary-blue)" /> Direct Consultancy
+                <ShieldCheck size={16} color="var(--primary-blue)" /> {lang === 'ml' ? 'നേരിട്ടുള്ള സഹായം' : 'Direct Consultancy'}
               </span>
               <h2 style={{ fontSize: '2rem', marginBottom: '1rem', lineHeight: 1.25 }}>
-                Get a Free Consultation
+                {t('leadFormTitle', 'Get a Free Consultation')}
               </h2>
               <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                Share a few details and Muhammed Ameen will get back to you with the right health or life insurance options — no obligation, no pressure.
+                {t('leadFormSubtitle', 'Share a few details and Muhammed Ameen will get back to you with the right health or life insurance options — no obligation, no pressure.')}
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
                   <CheckCircle2 size={18} color="var(--primary-blue)" />
-                  <span>Unbiased recommendations from 4 top insurers</span>
+                  <span>{lang === 'ml' ? 'മികച്ച കമ്പനികളിൽ നിന്നുള്ള സുതാര്യമായ വിവരങ്ങൾ' : 'Unbiased recommendations from 4 top insurers'}</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
                   <CheckCircle2 size={18} color="var(--primary-blue)" />
-                  <span>Zero service fees or commission markups</span>
+                  <span>{lang === 'ml' ? 'അധിക ചാർജുകളോ ഏജൻസി കമ്മീഷനുകളോ ഇല്ല' : 'Zero service fees or commission markups'}</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
                   <CheckCircle2 size={18} color="var(--primary-blue)" />
-                  <span>Hands-on claim settlement assistance</span>
+                  <span>{lang === 'ml' ? 'ആശുപത്രി ക്ലെയിമുകളിൽ സമ്പൂർണ്ണ സഹായം' : 'Hands-on claim settlement assistance'}</span>
                 </div>
               </div>
             </div>
@@ -361,12 +363,12 @@ export default function Hero({ onStartQuote }) {
                 <form onSubmit={handleLeadSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   <div>
                     <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, marginBottom: '0.3rem' }}>
-                      Full Name *
+                      {t('leadFormName', 'Full Name *')}
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="Enter your name"
+                      placeholder={lang === 'ml' ? 'നിങ്ങളുടെ പേര് നൽകുക' : 'Enter your name'}
                       value={leadForm.fullName}
                       onChange={(e) => setLeadForm({ ...leadForm, fullName: e.target.value })}
                       style={{
@@ -383,12 +385,12 @@ export default function Hero({ onStartQuote }) {
 
                   <div>
                     <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, marginBottom: '0.3rem' }}>
-                      Phone Number *
+                      {t('leadFormPhone', 'Phone Number *')}
                     </label>
                     <input
                       type="tel"
                       required
-                      placeholder="Enter mobile number"
+                      placeholder={lang === 'ml' ? 'ഫോൺ നമ്പർ നൽകുക' : 'Enter mobile number'}
                       value={leadForm.phone}
                       onChange={(e) => setLeadForm({ ...leadForm, phone: e.target.value })}
                       style={{
@@ -405,11 +407,11 @@ export default function Hero({ onStartQuote }) {
 
                   <div>
                     <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, marginBottom: '0.3rem' }}>
-                      Email Address
+                      {t('leadFormEmail', 'Email Address')}
                     </label>
                     <input
                       type="email"
-                      placeholder="Enter email address"
+                      placeholder={lang === 'ml' ? 'ഇമെയിൽ വിലാസം (ഓപ്ഷണൽ)' : 'Enter email address'}
                       value={leadForm.email}
                       onChange={(e) => setLeadForm({ ...leadForm, email: e.target.value })}
                       style={{
@@ -426,7 +428,7 @@ export default function Hero({ onStartQuote }) {
 
                   <div>
                     <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, marginBottom: '0.3rem' }}>
-                      Insurance Type of Interest
+                      {t('leadFormType', 'Insurance Type of Interest')}
                     </label>
                     <select
                       value={leadForm.insuranceType}
@@ -442,22 +444,22 @@ export default function Hero({ onStartQuote }) {
                         outline: 'none'
                       }}
                     >
-                      <option value="Health Insurance">Health Insurance</option>
-                      <option value="Life Insurance">Life Insurance</option>
-                      <option value="General Enquiry">General Enquiry</option>
+                      <option value="Health Insurance">{lang === 'ml' ? 'ആരോഗ്യ ഇൻഷുറൻസ് (Health)' : 'Health Insurance'}</option>
+                      <option value="Life Insurance">{lang === 'ml' ? 'ലൈഫ് ഇൻഷുറൻസ് (Life)' : 'Life Insurance'}</option>
+                      <option value="General Enquiry">{lang === 'ml' ? 'പൊതുവിവരങ്ങൾ (General Enquiry)' : 'General Enquiry'}</option>
                     </select>
                   </div>
 
                   <button type="submit" className="btn-primary" style={{ width: '100%', padding: '0.85rem', marginTop: '0.4rem' }}>
-                    Get My Free Quote <ArrowRight size={16} />
+                    {t('leadFormSubmit', 'Get My Free Quote')} <ArrowRight size={16} />
                   </button>
                 </form>
               ) : (
                 <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
                   <CheckCircle2 size={46} color="var(--primary-blue)" style={{ margin: '0 auto 1rem' }} />
-                  <h4 style={{ fontSize: '1.4rem', marginBottom: '0.4rem' }}>Thank You!</h4>
+                  <h4 style={{ fontSize: '1.4rem', marginBottom: '0.4rem' }}>{t('leadFormSuccessTitle', 'Thank You!')}</h4>
                   <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-                    Muhammed Ameen will contact you shortly regarding your {leadForm.insuranceType} inquiry.
+                    {t('leadFormSuccessDesc', 'Muhammed Ameen will contact you shortly regarding your inquiry.')}
                   </p>
                 </div>
               )}
@@ -481,19 +483,19 @@ export default function Hero({ onStartQuote }) {
         }} className="grid-4">
           <div>
             <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#60a5fa', marginBottom: '0.2rem' }}>₹150+ Cr</div>
-            <div style={{ fontSize: '0.82rem', color: '#94a3b8', fontWeight: 600 }}>Claims Settlement Advocacy</div>
+            <div style={{ fontSize: '0.82rem', color: '#94a3b8', fontWeight: 600 }}>{t('statClaims', 'Claims Settlement Advocacy')}</div>
           </div>
           <div>
             <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#60a5fa', marginBottom: '0.2rem' }}>5,000+</div>
-            <div style={{ fontSize: '0.82rem', color: '#94a3b8', fontWeight: 600 }}>Families Protected Across India</div>
+            <div style={{ fontSize: '0.82rem', color: '#94a3b8', fontWeight: 600 }}>{t('statFamilies', 'Families Protected Across India')}</div>
           </div>
           <div>
             <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#60a5fa', marginBottom: '0.2rem' }}>15+ Years</div>
-            <div style={{ fontSize: '0.82rem', color: '#94a3b8', fontWeight: 600 }}>IRDAI Advisory Experience</div>
+            <div style={{ fontSize: '0.82rem', color: '#94a3b8', fontWeight: 600 }}>{t('statExperience', 'IRDAI Advisory Experience')}</div>
           </div>
           <div>
             <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#f59e0b', marginBottom: '0.2rem' }}>4.9 ★ / 5</div>
-            <div style={{ fontSize: '0.82rem', color: '#94a3b8', fontWeight: 600 }}>450+ Verified Client Reviews</div>
+            <div style={{ fontSize: '0.82rem', color: '#94a3b8', fontWeight: 600 }}>{t('statRating', '450+ Verified Client Reviews')}</div>
           </div>
         </div>
       </div>
