@@ -9,6 +9,7 @@ import FloatingWidgets from './components/FloatingWidgets';
 import ProductDetailPage from './components/ProductDetailPage';
 import NriAdvisory from './components/NriAdvisory';
 import PlanWizardModal from './components/PlanWizardModal';
+import AboutAmeen from './components/AboutAmeen';
 
 // Dedicated Sub-Pages
 import AboutPage from './pages/AboutPage';
@@ -69,7 +70,10 @@ export default function App() {
             {/* 1. Hero Image Carousel, Direct Lead Capture & Trust Bar */}
             <Hero onOpenWizard={() => setIsWizardOpen(true)} />
 
-            {/* 2. Featured Insurance Plans Preview */}
+            {/* 2. Muhammed Ameen's Consultant Profile & Credentials (Brought Up!) */}
+            <AboutAmeen />
+
+            {/* 3. Featured Insurance Plans Preview */}
             <section style={{ background: '#ffffff', padding: '3.5rem 0' }}>
               <div className="container">
                 <ProductCatalog onSelectProduct={handleSelectProduct} />
