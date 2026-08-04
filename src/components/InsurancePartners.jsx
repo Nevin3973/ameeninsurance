@@ -1,7 +1,14 @@
 import React from 'react';
 import { Award, CheckCircle2, ArrowRight } from 'lucide-react';
 
-export default function InsurancePartners() {
+export default function InsurancePartners({ onSelectPartner }) {
+  const handlePartnerClick = (partnerId) => {
+    if (onSelectPartner) {
+      onSelectPartner(partnerId);
+    } else {
+      window.location.hash = '#products';
+    }
+  };
   const partners = [
     {
       id: 'star-health',
@@ -172,9 +179,9 @@ export default function InsurancePartners() {
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem' }}>
                   <button
-                    onClick={() => handleNavClick('products')}
+                    onClick={() => handlePartnerClick(partner.id)}
                     className="btn-secondary"
-                    style={{ padding: '0.7rem', fontSize: '0.88rem' }}
+                    style={{ padding: '0.7rem', fontSize: '0.88rem', color: 'var(--text-dark)' }}
                   >
                     View Plans
                   </button>

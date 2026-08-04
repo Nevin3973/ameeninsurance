@@ -5,7 +5,7 @@ import QuoteCalculator from '../components/QuoteCalculator';
 import ProductDetailPage from '../components/ProductDetailPage';
 import { ShieldCheck, Search, Scale, Calculator, Sparkles } from 'lucide-react';
 
-export default function PlansPage({ onNavigate, onOpenWizard }) {
+export default function PlansPage({ onNavigate, onOpenWizard, initialPartnerFilter }) {
   const [activePlanTab, setActivePlanTab] = useState('catalog');
   const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -130,7 +130,7 @@ export default function PlansPage({ onNavigate, onOpenWizard }) {
 
       {/* Dynamic Tab Body */}
       {activePlanTab === 'catalog' && (
-        <ProductCatalog onSelectProduct={(p) => setSelectedProduct(p)} />
+        <ProductCatalog onSelectProduct={(p) => setSelectedProduct(p)} initialPartnerFilter={initialPartnerFilter} />
       )}
 
       {activePlanTab === 'comparison' && (

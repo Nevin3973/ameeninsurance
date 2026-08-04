@@ -23,6 +23,7 @@ import { ArrowRight, ShieldCheck, Award } from 'lucide-react';
 export default function App() {
   const [activeTab, setActiveTab] = useState('hero');
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedPartnerFilter, setSelectedPartnerFilter] = useState('all');
   const [isWizardOpen, setIsWizardOpen] = useState(false);
 
   const handleSelectProduct = (product) => {
@@ -30,8 +31,18 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleSelectPartner = (partnerId) => {
+    setSelectedPartnerFilter(partnerId);
+    setSelectedProduct(null);
+    setActiveTab('products');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const handleNavigate = (tabId) => {
     setSelectedProduct(null);
+    if (tabId === 'products' && activeTab !== 'products') {
+      setSelectedPartnerFilter('all');
+    }
     setActiveTab(tabId);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -52,9 +63,9 @@ export default function App() {
       case 'about':
         return <AboutPage onNavigate={handleNavigate} />;
       case 'products':
-        return <PlansPage onNavigate={handleNavigate} onOpenWizard={() => setIsWizardOpen(true)} />;
+        return <PlansPage onNavigate={handleNavigate} onOpenWizard={() => setIsWizardOpen(true)} initialPartnerFilter={selectedPartnerFilter} />;
       case 'partners':
-        return <PartnersPage onNavigate={handleNavigate} />;
+        return <PartnersPage onNavigate={handleNavigate} onSelectPartner={handleSelectPartner} />;
       case 'nri':
         return <NriAdvisory onBookConsultation={() => handleNavigate('booking')} onOpenWizard={() => setIsWizardOpen(true)} />;
       case 'claims':

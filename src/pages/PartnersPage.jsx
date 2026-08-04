@@ -2,7 +2,7 @@ import React from 'react';
 import InsurancePartners from '../components/InsurancePartners';
 import { Award, ShieldCheck, CheckCircle2, Building2, Hospital } from 'lucide-react';
 
-export default function PartnersPage({ onNavigate }) {
+export default function PartnersPage({ onNavigate, onSelectPartner }) {
   return (
     <div style={{ background: 'var(--bg-surface)', minHeight: '100vh', paddingBottom: '4rem' }}>
       {/* Sub-Page Banner Header */}
@@ -29,7 +29,7 @@ export default function PartnersPage({ onNavigate }) {
       </div>
 
       {/* Main Partners Listing */}
-      <InsurancePartners />
+      <InsurancePartners onSelectPartner={onSelectPartner} />
 
       {/* In-depth Advisory Comparison Stats */}
       <div className="container" style={{ marginTop: '2.5rem' }}>

@@ -1,20 +1,64 @@
 import React, { useState } from "react";
-import { Search, Eye, ArrowRight, X, Check } from "lucide-react";
+import { Search, Eye, ArrowRight, X, Check, Building2, Hospital, ShieldCheck, PhoneCall } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
-export default function ProductCatalog({ onBookConsultation, onSelectProduct }) {
+export default function ProductCatalog({ onBookConsultation, onSelectProduct, initialPartnerFilter }) {
   const { lang, t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedPartner, setSelectedPartner] = useState(initialPartnerFilter || "all");
   const [searchQuery, setSearchQuery] = useState("");
   const [activeModalProduct, setActiveModalProduct] = useState(null);
   const [enquireSubmittedToast, setEnquireSubmittedToast] = useState(false);
 
+  const partnerProfiles = {
+    "star-health": {
+      name: "Star Health Insurance",
+      fullName: "Star Health and Allied Insurance Company Limited",
+      regNo: "IRDAI Reg. No. 129",
+      hospitals: "14,000+ Cashless Hospitals",
+      tagline: "India's #1 Standalone Health Insurance Specialist",
+      desc: "Specialized in fast in-house claim settlement without Third Party Administrators (TPA). Offers 100% restoration benefits and comprehensive maternity protection."
+    },
+    "aditya-birla": {
+      name: "Aditya Birla Health Insurance",
+      fullName: "Aditya Birla Health Insurance Company Limited",
+      regNo: "IRDAI Reg. No. 153",
+      hospitals: "11,000+ Cashless Hospitals",
+      tagline: "HealthReturns & Active Wellness Pioneer",
+      desc: "Earn up to 100% of your premium back as HealthReturns by staying active. Features zero room rent capping and global emergency hospitalisation cover."
+    },
+    "united-india": {
+      name: "United India Insurance",
+      fullName: "United India Insurance Company Limited",
+      regNo: "Public Sector Undertaking (PSU)",
+      hospitals: "7,500+ Network Hospitals",
+      tagline: "Sovereign PSU Security & Joint Family Protection",
+      desc: "Established Public Sector Undertaking providing government-backed health insurance security with high tax deduction limits under Section 80D."
+    },
+    "new-india": {
+      name: "New India Assurance",
+      fullName: "The New India Assurance Company Limited",
+      regNo: "Government of India Enterprise",
+      hospitals: "8,200+ Network Hospitals",
+      tagline: "India's Premier & Largest Public Sector General Insurer",
+      desc: "Over 100 years of trusted legacy offering high claim-settlement credibility, low co-payments, and flexible individual/family floater covers."
+    },
+    "national-insurance": {
+      name: "National Insurance",
+      fullName: "National Insurance Company Limited",
+      regNo: "Public Sector Undertaking (PSU)",
+      hospitals: "6,800+ Network Hospitals",
+      tagline: "Reliable Public Sector Health & Family Cover",
+      desc: "Pioneer PSU health insurer delivering reliable medical protection for families, senior citizens, and corporate employees across India."
+    }
+  };
 
   const products = [
     {
       id: "star-super-star",
       name: "Star Super Star",
-      company: "Star Health and Allied Insurance Company Limited",
+      partnerKey: "star-health",
+      company: "Star Health Insurance",
       category: "family",
       image: "/prod-family.png",
       desc: "Complete family healthcare protection featuring annual cumulative bonus and zero sub-limits on ICU rooms.",
@@ -32,8 +76,9 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
     },
     {
       id: "womens-care",
-      name: "Womens Care",
-      company: "Star Health and Allied Insurance Company Limited",
+      name: "Star Womens Care",
+      partnerKey: "star-health",
+      company: "Star Health Insurance",
       category: "women",
       image: "/prod-women.png",
       desc: "Dedicated women and maternity insurance covering delivery, newborn care, and congenital disease cover.",
@@ -50,9 +95,50 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
       idealFor: "Expectant mothers and young couples planning a family"
     },
     {
+      id: "star-senior-carpet",
+      name: "Star Senior Citizens Red Carpet",
+      partnerKey: "star-health",
+      company: "Star Health Insurance",
+      category: "individual",
+      image: "/prod-family.png",
+      desc: "No pre-insurance medical test required for senior citizens aged 60 to 75 years.",
+      eligibility: "60 Yrs - 75 Yrs",
+      sumInsured: "₹1 Lakh to ₹25 Lakhs",
+      coverage: "Inpatient Hospitalisation, Outpatient Consultations",
+      waitingPeriod: "12 Months Pre-existing Cover",
+      benefits: [
+        "No pre-policy medical screening test required",
+        "Day care procedures and medical consultations included",
+        "Co-payment option for flexible affordable premiums",
+        "Cover for pre-existing medical conditions after 1 year"
+      ],
+      idealFor: "Senior citizen parents seeking immediate cashless coverage"
+    },
+    {
+      id: "star-comprehensive",
+      name: "Star Comprehensive Health Policy",
+      partnerKey: "star-health",
+      company: "Star Health Insurance",
+      category: "family",
+      image: "/prod-family.png",
+      desc: "All-in-one comprehensive cover with zero capping, OPD consultations, and air ambulance assistance.",
+      eligibility: "18 Yrs - 65 Yrs",
+      sumInsured: "₹5 Lakhs to ₹1 Crore",
+      coverage: "Inpatient, Outpatient OPD, Dental & Ophthalmic",
+      waitingPeriod: "30 Days Initial",
+      benefits: [
+        "Outpatient dental and ophthalmic treatments covered",
+        "100% reload of sum insured once exhausted",
+        "Hospital daily cash allowance included",
+        "Air ambulance emergency transportation"
+      ],
+      idealFor: "Comprehensive zero-gap family medical security"
+    },
+    {
       id: "health-assure",
-      name: "Health Assure",
-      company: "Aditya Birla Health Insurance Company Limited",
+      name: "Aditya Birla Health Assure",
+      partnerKey: "aditya-birla",
+      company: "Aditya Birla Health Insurance",
       category: "family",
       image: "/prod-young.png",
       desc: "Comprehensive medical coverage with HealthReturns rewards for maintaining an active healthy lifestyle.",
@@ -70,8 +156,9 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
     },
     {
       id: "activ-one-max",
-      name: "Activ One Max",
-      company: "Aditya Birla Health Insurance Company Limited",
+      name: "Aditya Birla Activ One Max",
+      partnerKey: "aditya-birla",
+      company: "Aditya Birla Health Insurance",
       category: "individual",
       image: "/prod-family.png",
       desc: "VIP healthcare insurance offering single private room, global emergency cover, and 100% Reload benefit.",
@@ -89,8 +176,9 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
     },
     {
       id: "activ-yuva",
-      name: "Activ Yuva",
-      company: "Aditya Birla Health Insurance Company Limited",
+      name: "Aditya Birla Activ Yuva",
+      partnerKey: "aditya-birla",
+      company: "Aditya Birla Health Insurance",
       category: "young",
       image: "/prod-young.png",
       desc: "Tailored for young active professionals with wearable step-tracking discounts and low starter premiums.",
@@ -108,7 +196,8 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
     },
     {
       id: "family-medicare",
-      name: "Family Medicare",
+      name: "United India Family Medicare",
+      partnerKey: "united-india",
       company: "United India Insurance Company Limited",
       category: "family",
       image: "/prod-family.png",
@@ -126,8 +215,29 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
       idealFor: "Joint families seeking PSU reliability and tax benefits"
     },
     {
+      id: "individual-mediclassic-psu",
+      name: "United India Individual Health Policy",
+      partnerKey: "united-india",
+      company: "United India Insurance Company Limited",
+      category: "individual",
+      image: "/prod-young.png",
+      desc: "Classic public sector individual medical insurance with sovereign security and economical premiums.",
+      eligibility: "18 Yrs - 65 Yrs",
+      sumInsured: "₹2 Lakhs to ₹15 Lakhs",
+      coverage: "Hospitalisation, Surgery, ICU",
+      waitingPeriod: "30 Days Initial",
+      benefits: [
+        "Sovereign government PSU backing",
+        "Covers Ayurvedic & Unani hospitalisation",
+        "Cumulative bonus of 5% for every claim-free year",
+        "Seamless cashless admission in government and private hospitals"
+      ],
+      idealFor: "Individual policyholders preferring PSU reliability"
+    },
+    {
       id: "yuva-bharat",
-      name: "Yuva Bharat",
+      name: "New India Yuva Bharat",
+      partnerKey: "new-india",
       company: "The New India Assurance Company Limited",
       category: "young",
       image: "/prod-young.png",
@@ -140,80 +250,167 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
         "India largest public sector health insurer guarantee",
         "Cumulative bonus of 10% for every claim-free year",
         "Modern day-care treatments and cataract surgery cover",
-        "Cashless facility across 3,000+ government and private hospitals"
+        "Cashless facility across 8,200+ government and private hospitals"
       ],
       idealFor: "First-time insurance buyers and young earners"
+    },
+    {
+      id: "new-india-asha-kiran",
+      name: "New India Asha Kiran Policy",
+      partnerKey: "new-india",
+      company: "The New India Assurance Company Limited",
+      category: "family",
+      image: "/prod-women.png",
+      desc: "Specialized floater policy for families with girl child benefits and personal accident cover.",
+      eligibility: "18 Yrs - 65 Yrs",
+      sumInsured: "₹3 Lakhs to ₹15 Lakhs",
+      coverage: "Family Floater, Personal Accident, Girl Child Discount",
+      waitingPeriod: "30 Days Initial",
+      benefits: [
+        "5% discount on premium if policy includes a girl child",
+        "Built-in Personal Accident benefit for primary earner",
+        "No room rent cap on selected sum insured options",
+        "Lifetime policy renewability"
+      ],
+      idealFor: "Families seeking PSU safety with special girl child protection"
+    },
+    {
+      id: "national-parivar",
+      name: "National Parivar Mediclaim",
+      partnerKey: "national-insurance",
+      company: "National Insurance Company Limited",
+      category: "family",
+      image: "/prod-family.png",
+      desc: "Comprehensive family floater policy backed by National Insurance PSU heritage.",
+      eligibility: "18 Yrs - 65 Yrs",
+      sumInsured: "₹6 Lakhs to ₹50 Lakhs",
+      coverage: "Hospitalisation, Critical Illness Add-on, Organ Donor",
+      waitingPeriod: "30 Days Initial",
+      benefits: [
+        "Pioneer PSU insurer with deep presence across India",
+        "Recharge benefit up to 100% of sum insured",
+        "Coverage for modern robotic and cyberknife surgeries",
+        "Tax savings under Section 80D"
+      ],
+      idealFor: "Families looking for high sum insured PSU coverage"
     }
   ];
 
   const categories = [
-    { id: "all", label: lang === 'ml' ? "എല്ലാ പ്ലാനുകളും" : "All Plans" },
-    { id: "individual", label: lang === 'ml' ? "വ്യക്തിഗത പ്ലാനുകൾ" : "Individual" },
-    { id: "family", label: lang === 'ml' ? "ഫാമിലി ഫ്ലോട്ടർ" : "Family Floater" },
-    { id: "women", label: lang === 'ml' ? "വനിതാ പ്ലാനുകൾ" : "Womens Plans" },
-    { id: "young", label: lang === 'ml' ? "യുവാക്കൾക്കുള്ള പ്ലാൻ" : "Young Adults" }
+    { id: "all", label: "All Plans" },
+    { id: "individual", label: "Individual" },
+    { id: "family", label: "Family Floater" },
+    { id: "women", label: "Womens Plans" },
+    { id: "young", label: "Young Adults" }
+  ];
+
+  const partners = [
+    { id: "all", label: "All Insurers" },
+    { id: "star-health", label: "Star Health" },
+    { id: "aditya-birla", label: "Aditya Birla" },
+    { id: "united-india", label: "United India (PSU)" },
+    { id: "new-india", label: "New India Assurance (PSU)" },
+    { id: "national-insurance", label: "National Insurance (PSU)" }
   ];
 
   const filteredProducts = products.filter(p => {
     const matchesCat = selectedCategory === "all" || p.category === selectedCategory;
+    const matchesPartner = selectedPartner === "all" || p.partnerKey === selectedPartner;
     const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           p.company.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCat && matchesSearch;
+    return matchesCat && matchesPartner && matchesSearch;
   });
 
   const handleEnquire = (productName) => {
-    setEnquireSubmittedToast(productName);
-    setTimeout(() => setEnquireSubmittedToast(false), 3000);
+    setEnquireSubmittedToast(true);
+    setTimeout(() => setEnquireSubmittedToast(false), 4500);
   };
 
+  const currentPartnerInfo = partnerProfiles[selectedPartner];
+
   return (
-    <section id="products" className="section-padding" style={{ background: "#ffffff" }}>
+    <section className="section-padding" style={{ background: "var(--bg-surface)" }}>
       <div className="container">
-        {/* Section Title */}
-        <div style={{ textAlign: "center", maxWidth: "680px", margin: "0 auto 2.5rem" }}>
-          <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", marginBottom: "0.6rem" }}>
-            {t('catalogTitle', 'Insurance Products')}
+        {/* Section Header */}
+        <div style={{ textAlign: "center", maxWidth: "780px", margin: "0 auto 2.5rem" }}>
+          <span className="pill-badge" style={{ marginBottom: "0.8rem" }}>
+            <Building2 size={15} color="var(--primary-blue)" /> IRDAI AUTHORIZED PRODUCTS
+          </span>
+          <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", marginBottom: "0.8rem" }}>
+            Compare & Explore Insurance Plans
           </h2>
-          <p style={{ color: "var(--text-muted)", fontSize: "1.05rem" }}>
-            {t('catalogSubtitle', 'Health and life plans from trusted insurers, matched to your exact needs.')}
+          <p style={{ fontSize: "1.05rem", color: "var(--text-muted)", lineHeight: 1.6 }}>
+            Muhammed Ameen helps you select transparent policies from India's leading Standalone Health specialists and Public Sector Undertaking (PSU) insurers.
           </p>
         </div>
 
-        {/* Search & Category Filter Bar */}
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1.2rem", marginBottom: "2.8rem" }}>
+        {/* Insurer Partner Filter Pills Row */}
+        <div style={{ marginBottom: "1.2rem" }}>
+          <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--text-muted)", marginBottom: "0.5rem", textTransform: "uppercase", letterSpacing: "0.04em", textAlign: "center" }}>
+            Filter By Insurer:
+          </div>
+          <div className="scrollable-tabs-wrapper" style={{ justifyContent: "center" }}>
+            {partners.map((pt) => (
+              <button
+                key={pt.id}
+                onClick={() => setSelectedPartner(pt.id)}
+                style={{
+                  padding: "0.5rem 1.2rem",
+                  borderRadius: "9999px",
+                  border: selectedPartner === pt.id ? "none" : "1px solid var(--border-light)",
+                  background: selectedPartner === pt.id ? "var(--primary-blue)" : "#ffffff",
+                  color: selectedPartner === pt.id ? "#ffffff" : "var(--text-dark)",
+                  fontWeight: 700,
+                  fontSize: "0.85rem",
+                  cursor: "pointer",
+                  whiteSpace: "nowrap",
+                  flexShrink: 0,
+                  boxShadow: selectedPartner === pt.id ? "0 4px 12px rgba(1, 58, 222, 0.25)" : "none",
+                  transition: "all 0.2s ease"
+                }}
+              >
+                {pt.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Category Filter Pills & Search Input Row */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "1rem", marginBottom: "2rem" }}>
           {/* Search Box */}
-          <div style={{ position: "relative", width: "100%", maxWidth: "460px" }}>
+          <div style={{ position: "relative", maxWidth: "420px", width: "100%", margin: "0 auto" }}>
             <input
               type="text"
-              placeholder={lang === 'ml' ? "കമ്പനി അല്ലെങ്കിൽ പ്ലാൻ തിരയുക..." : "Search by product or insurance company..."}
+              placeholder="Search plan name (e.g. Star Womens Care, Health Assure)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               style={{
                 width: "100%",
                 padding: "0.75rem 1rem 0.75rem 2.6rem",
-                borderRadius: "var(--radius-sm)",
+                borderRadius: "var(--radius-full)",
                 border: "1px solid var(--border-light)",
-                fontSize: "0.92rem",
-                outline: "none"
+                fontSize: "0.9rem",
+                outline: "none",
+                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.04)"
               }}
             />
             <Search size={16} color="var(--text-subtle)" style={{ position: "absolute", top: "50%", left: "0.9rem", transform: "translateY(-50%)" }} />
           </div>
 
-          {/* Filter Pills */}
+          {/* Category Filter Pills */}
           <div className="scrollable-tabs-wrapper" style={{ justifyContent: "center" }}>
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
                 style={{
-                  padding: "0.45rem 1.15rem",
+                  padding: "0.4rem 1rem",
                   borderRadius: "var(--radius-full)",
                   border: selectedCategory === cat.id ? "none" : "1px solid var(--border-light)",
-                  background: selectedCategory === cat.id ? "var(--primary-blue)" : "#ffffff",
+                  background: selectedCategory === cat.id ? "#1e293b" : "rgba(241, 245, 249, 0.8)",
                   color: selectedCategory === cat.id ? "#ffffff" : "var(--text-dark)",
                   fontWeight: 600,
-                  fontSize: "0.85rem",
+                  fontSize: "0.82rem",
                   cursor: "pointer",
                   whiteSpace: "nowrap",
                   flexShrink: 0,
@@ -226,12 +423,44 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
           </div>
         </div>
 
+        {/* Dedicated Partner Header Banner (Shown when a specific partner is selected) */}
+        {currentPartnerInfo && (
+          <div style={{
+            background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
+            color: "#ffffff",
+            borderRadius: "var(--radius-md)",
+            padding: "1.8rem 2rem",
+            marginBottom: "2.2rem",
+            boxShadow: "0 8px 25px rgba(15, 23, 42, 0.15)",
+            borderLeft: "5px solid var(--primary-blue)"
+          }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "1rem" }}>
+              <div>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(96, 165, 250, 0.15)", color: "#60a5fa", padding: "0.25rem 0.75rem", borderRadius: "9999px", fontSize: "0.78rem", fontWeight: 700, marginBottom: "0.6rem" }}>
+                  <ShieldCheck size={14} /> DEDICATED PARTNER SHOWCASE
+                </div>
+                <h3 style={{ fontSize: "1.6rem", color: "#ffffff", marginBottom: "0.2rem" }}>{currentPartnerInfo.name}</h3>
+                <p style={{ fontSize: "0.88rem", color: "#94a3b8", marginBottom: "0.8rem", fontWeight: 600 }}>{currentPartnerInfo.fullName} • {currentPartnerInfo.regNo}</p>
+                <p style={{ fontSize: "0.95rem", color: "#cbd5e1", maxWidth: "750px", lineHeight: 1.55 }}>
+                  {currentPartnerInfo.desc}
+                </p>
+              </div>
+
+              <div style={{ background: "rgba(255, 255, 255, 0.08)", padding: "1rem 1.4rem", borderRadius: "12px", border: "1px solid rgba(255, 255, 255, 0.12)", textAlign: "center", flexShrink: 0 }}>
+                <Hospital size={24} color="#60a5fa" style={{ margin: "0 auto 0.3rem" }} />
+                <div style={{ fontSize: "1.1rem", fontWeight: 800, color: "#ffffff" }}>{currentPartnerInfo.hospitals}</div>
+                <div style={{ fontSize: "0.78rem", color: "#94a3b8", fontWeight: 600 }}>Cashless Claim Counter</div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Product Cards Grid */}
         <div className="grid-3" style={{ gap: "1.8rem" }}>
           {filteredProducts.map((product) => (
             <div key={product.id} className="clean-card" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 0, overflow: "hidden" }}>
               {/* Product Full Cover Image Header */}
-              <div style={{ aspectRatio: "16 / 9", minHeight: "200px", overflow: "hidden", position: "relative", background: "var(--bg-card-alt)" }}>
+              <div style={{ aspectRatio: "16 / 9", minHeight: "190px", overflow: "hidden", position: "relative", background: "var(--bg-card-alt)" }}>
                 <img
                   src={product.image}
                   alt={product.name}
@@ -248,7 +477,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
                 <div style={{
                   position: "absolute",
                   inset: 0,
-                  background: "linear-gradient(to top, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.1) 60%, transparent 100%)",
+                  background: "linear-gradient(to top, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.1) 60%, transparent 100%)",
                   pointerEvents: "none"
                 }} />
                 <span style={{
@@ -290,7 +519,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
                     fontSize: "0.82rem",
                     marginBottom: "1.2rem"
                   }}>
-                    <span style={{ color: "var(--text-subtle)" }}>{lang === 'ml' ? 'ഇൻഷുറൻസ് തുക: ' : 'SUM INSURED: '}</span>
+                    <span style={{ color: "var(--text-subtle)" }}>SUM INSURED: </span>
                     <strong style={{ color: "var(--primary-blue)" }}>{product.sumInsured}</strong>
                   </div>
 
@@ -298,16 +527,16 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
                     <button
                       onClick={() => onSelectProduct ? onSelectProduct(product) : setActiveModalProduct(product)}
                       className="btn-secondary"
-                      style={{ padding: "0.6rem", fontSize: "0.85rem" }}
+                      style={{ padding: "0.6rem", fontSize: "0.85rem", color: "var(--text-dark)" }}
                     >
-                      {t('viewDetails', 'View Details')}
+                      View Details
                     </button>
                     <button
                       onClick={() => handleEnquire(product.name)}
                       className="btn-primary"
                       style={{ padding: "0.6rem", fontSize: "0.85rem" }}
                     >
-                      {lang === 'ml' ? 'ക്വോട്ട് ചോദിക്കുക' : 'Enquire Now'}
+                      Enquire Now
                     </button>
                   </div>
                 </div>
@@ -315,25 +544,48 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
             </div>
           ))}
         </div>
+
+        {filteredProducts.length === 0 && (
+          <div style={{ textAlign: "center", padding: "4rem 0" }}>
+            <p style={{ fontSize: "1.1rem", color: "var(--text-muted)", marginBottom: "1rem" }}>
+              No insurance policies found matching your filter criteria.
+            </p>
+            <button
+              onClick={() => { setSelectedCategory("all"); setSelectedPartner("all"); setSearchQuery(""); }}
+              className="btn-primary"
+            >
+              Reset Filters
+            </button>
+          </div>
+        )}
       </div>
 
-      {/* Modal */}
+      {/* Plan Details Modal */}
       {activeModalProduct && (
         <div className="modal-overlay" onClick={() => setActiveModalProduct(null)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setActiveModalProduct(null)}
-              style={{ position: "absolute", top: "1rem", right: "1rem", background: "transparent", border: "none", cursor: "pointer", fontSize: "1.2rem" }}
+              style={{
+                position: "absolute",
+                top: "1.2rem",
+                right: "1.2rem",
+                background: "var(--bg-card-alt)",
+                border: "none",
+                borderRadius: "50%",
+                padding: "0.4rem",
+                cursor: "pointer"
+              }}
             >
-              <X size={20} />
+              <X size={18} />
             </button>
 
-            <h3 style={{ fontSize: "1.4rem", marginBottom: "0.2rem" }}>{activeModalProduct.name}</h3>
-            <p style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--primary-blue)", marginBottom: "1rem" }}>
+            <span className="pill-badge" style={{ marginBottom: "0.8rem" }}>
               {activeModalProduct.company}
-            </p>
+            </span>
 
-            <p style={{ fontSize: "0.92rem", color: "var(--text-muted)", lineHeight: 1.6, marginBottom: "1.4rem" }}>
+            <h3 style={{ fontSize: "1.6rem", marginBottom: "0.4rem" }}>{activeModalProduct.name}</h3>
+            <p style={{ fontSize: "0.95rem", color: "var(--text-muted)", lineHeight: 1.6, marginBottom: "1.2rem" }}>
               {activeModalProduct.desc}
             </p>
 
@@ -374,6 +626,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
                   setActiveModalProduct(null);
                 }}
                 className="btn-secondary"
+                style={{ background: "#ffffff", color: "var(--text-dark)", border: "1px solid var(--border-light)" }}
               >
                 Request Callback
               </button>
@@ -386,14 +639,20 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
       {enquireSubmittedToast && (
         <div style={{
           position: "fixed",
-          bottom: "80px",
-          right: "24px",
-          background: "#ffffff",
-          border: "2px solid var(--primary-blue)",
-          borderRadius: "var(--radius-sm)",
-          padding: "1rem 1.4rem",
-          boxShadow: "var(--shadow-md)",
-          zIndex: 1000
+          bottom: "30px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          background: "#0f172a",
+          color: "#ffffff",
+          padding: "0.85rem 1.6rem",
+          borderRadius: "9999px",
+          boxShadow: "0 10px 25px rgba(0, 0, 0, 0.25)",
+          display: "flex",
+          alignItems: "center",
+          gap: "0.6rem",
+          zIndex: 1100,
+          fontWeight: 600,
+          fontSize: "0.9rem"
         }}>
           <p style={{ fontWeight: 700, fontSize: "0.9rem", color: "var(--primary-blue)" }}>Enquiry Sent!</p>
           <p style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>
