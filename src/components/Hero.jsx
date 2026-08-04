@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, CheckCircle2, ShieldCheck, Award, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-export default function Hero({ onStartQuote, onOpenWizard }) {
+export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
   const { lang, t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [leadForm, setLeadForm] = useState({
@@ -79,9 +79,13 @@ export default function Hero({ onStartQuote, onOpenWizard }) {
   };
 
   const handleNavClick = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (onNavigate) {
+      onNavigate(id);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 

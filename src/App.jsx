@@ -79,7 +79,7 @@ export default function App() {
         return (
           <main>
             {/* 1. Hero Image Carousel, Direct Lead Capture & Trust Bar */}
-            <Hero onOpenWizard={() => setIsWizardOpen(true)} />
+            <Hero onNavigate={handleNavigate} onOpenWizard={() => setIsWizardOpen(true)} />
 
             {/* 2. Muhammed Ameen's Consultant Profile & Credentials (Brought Up!) */}
             <AboutAmeen />
@@ -105,14 +105,14 @@ export default function App() {
             {/* 3. IRDAI Licensed Partner Insurers Preview */}
             <section style={{ background: '#f8fafc', padding: '3.5rem 0' }}>
               <div className="container">
-                <InsurancePartners />
+                <InsurancePartners onSelectPartner={handleSelectPartner} />
 
                 {/* Sub-page Navigation CTA */}
                 <div style={{ textAlign: 'center', marginTop: '2rem' }}>
                   <button
                     onClick={() => handleNavigate('partners')}
                     className="btn-secondary"
-                    style={{ padding: '0.85rem 2rem', fontSize: '0.95rem' }}
+                    style={{ padding: '0.85rem 2rem', fontSize: '0.95rem', color: 'var(--text-dark)' }}
                   >
                     Explore Cashless Network & Partner Ratios <ArrowRight size={16} />
                   </button>
@@ -138,7 +138,7 @@ export default function App() {
       </main>
 
       {/* Persistent Footer */}
-      <Footer />
+      <Footer onNavigate={handleNavigate} />
 
       {/* Global Floating WhatsApp, Quick Enquiry & AI Assistant Widgets */}
       <FloatingWidgets />

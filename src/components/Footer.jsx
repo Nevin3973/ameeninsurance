@@ -1,6 +1,12 @@
 import React from 'react';
 
-export default function Footer() {
+export default function Footer({ onNavigate }) {
+  const handleLinkClick = (tabId) => {
+    if (onNavigate) {
+      onNavigate(tabId);
+    }
+  };
+
   return (
     <footer style={{
       background: '#0f172a',
@@ -28,11 +34,14 @@ export default function Footer() {
           <div>
             <h4 style={{ color: '#ffffff', fontSize: '1rem', marginBottom: '1rem' }}>Quick Links</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', color: '#94a3b8' }}>
-              <a href="#hero" style={{ color: 'inherit' }}>Home</a>
-              <a href="#products" style={{ color: 'inherit' }}>Insurance Plans</a>
-              <a href="#partners" style={{ color: 'inherit' }}>Insurance Partners</a>
-              <a href="#claims" style={{ color: 'inherit' }}>Claims Assistance</a>
-              <a href="#faq" style={{ color: 'inherit' }}>FAQ</a>
+              <button onClick={() => handleLinkClick('hero')} style={{ background: 'none', border: 'none', color: 'inherit', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Home</button>
+              <button onClick={() => handleLinkClick('about')} style={{ background: 'none', border: 'none', color: 'inherit', textAlign: 'left', cursor: 'pointer', padding: 0 }}>About Ameen</button>
+              <button onClick={() => handleLinkClick('products')} style={{ background: 'none', border: 'none', color: 'inherit', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Insurance Plans</button>
+              <button onClick={() => handleLinkClick('partners')} style={{ background: 'none', border: 'none', color: 'inherit', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Insurance Partners</button>
+              <button onClick={() => handleLinkClick('nri')} style={{ background: 'none', border: 'none', color: 'inherit', textAlign: 'left', cursor: 'pointer', padding: 0 }}>NRI Expat Advisory</button>
+              <button onClick={() => handleLinkClick('claims')} style={{ background: 'none', border: 'none', color: 'inherit', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Claims Assistance</button>
+              <button onClick={() => handleLinkClick('faq')} style={{ background: 'none', border: 'none', color: 'inherit', textAlign: 'left', cursor: 'pointer', padding: 0 }}>FAQ</button>
+              <button onClick={() => handleLinkClick('booking')} style={{ background: 'none', border: 'none', color: 'inherit', textAlign: 'left', cursor: 'pointer', padding: 0 }}>Book Consultation</button>
             </div>
           </div>
 
