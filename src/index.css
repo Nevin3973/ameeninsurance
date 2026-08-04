@@ -191,6 +191,15 @@ a:hover {
   }
 }
 
+@media (min-width: 769px) {
+  .partner-centered-tile {
+    grid-column: 1 / -1;
+    max-width: 580px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
 @media (max-width: 640px) {
   .responsive-grid-equal {
     grid-template-columns: 1fr !important;

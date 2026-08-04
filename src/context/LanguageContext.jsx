@@ -108,20 +108,20 @@ export const translations = {
     heroBadge1: 'മുഹമ്മദ് അമീൻ • അംഗീകൃത ഇൻഷുറൻസ് ഉപദേശകൻ',
     heroTitle1: 'നിങ്ങളുടെ കുടുംബത്തിന് ഏറ്റവും മികച്ച ആരോഗ്യ, ജീവൻ രക്ഷാ ഇൻഷുറൻസ്',
     heroSubtitle1: 'ഇന്ത്യയിലെ മുൻനിര ഇൻഷുറൻസ് കമ്പനികളിലൂടെ 15 വർഷത്തിലേറെയുള്ള സുതാര്യമായ സേവനം.',
-    heroBtnCompare: 'പ്ലാനുകൾ താരതമ്യം ചെയ്യുക',
-    heroBtnBook: 'സമയം ബുക്ക് ചെയ്യുക',
+    heroBtnCompare: 'Compare Plans',
+    heroBtnBook: 'Book Consultation',
 
     heroBadge2: '100% വിശ്വസനീയമായ ക്ലെയിം സെറ്റിൽമെന്റ് സഹായം',
     heroTitle2: 'ക്യാഷ്‌ലെസ് അഡ്മിഷനും 24/7 ക്ലെയിം പിന്തുണയും',
     heroSubtitle2: '14,000+ നെറ്റ്‌വർക്ക് ആശുപത്രികളിൽ നേരിട്ടുള്ള സഹായം ലഭിക്കുന്നു.',
-    heroBtnClaims: 'ക്ലെയിം സഹായം നേടുക',
-    heroBtnWhatsapp: 'വാട്ട്‌സ്ആപ്പിൽ ബന്ധപ്പെടുക',
+    heroBtnClaims: 'Claims Assistance',
+    heroBtnWhatsapp: 'WhatsApp Ameen',
 
     heroBadge3: 'IRDAI ലൈസൻസുള്ള വിശ്വസ്ത ഉപദേശകൻ',
     heroTitle3: 'സ്റ്റാർ ഹെൽത്ത്, ആദിത്യ ബിർള തുടങ്ങിയ മികച്ച പ്ലാനുകൾ താരതമ്യം ചെയ്യുക',
     heroSubtitle3: 'ഒളിഞ്ഞിരിക്കുന്ന നിബന്ധനകളില്ലാതെ മുറി വാടക പരിധികൾ വ്യക്തമായി മനസ്സിലാക്കൂ.',
-    heroBtnPartners: 'പങ്കാളികളെ കാണുക',
-    heroBtnCalculate: 'പ്രീമിയം കണക്കാക്കുക',
+    heroBtnPartners: 'View Partners',
+    heroBtnCalculate: 'Calculate Premium',
 
     // Hero Form (Malayalam)
     leadFormTitle: 'സൗജന്യ കൺസൾട്ടേഷൻ നേടുക',
@@ -130,7 +130,7 @@ export const translations = {
     leadFormPhone: 'ഫോൺ നമ്പർ *',
     leadFormEmail: 'ഇമെയിൽ വിലാസം',
     leadFormType: 'ആവശ്യമുള്ള ഇൻഷുറൻസ്',
-    leadFormSubmit: 'സൗജന്യ ക്വോട്ട് നേടുക',
+    leadFormSubmit: 'Get Free Quote',
     leadFormSuccessTitle: 'നന്ദി!',
     leadFormSuccessDesc: 'മുഹമ്മദ് അമീൻ ഉടൻ തന്നെ നിങ്ങളെ ഫോണിൽ ബന്ധപ്പെടുന്നതാണ്.',
 

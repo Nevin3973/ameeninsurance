@@ -29,8 +29,13 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
       zIndex: 100,
       maxWidth: '1280px',
       margin: '0 auto',
-      padding: '0 1rem'
+      padding: '0 1rem',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      gap: '1rem'
     }}>
+      {/* Primary Navigation Rounded Pill Container */}
       <div style={{
         background: '#ffffff',
         borderRadius: '50px',
@@ -41,7 +46,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
         alignItems: 'center',
         justifyContent: 'space-between',
         padding: '0 1.8rem',
-        gap: '1rem'
+        flex: 1
       }}>
         {/* Brand Logo Text on Far Left */}
         <div
@@ -93,7 +98,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
             })}
           </nav>
 
-          {/* Compact Eng / മ Language Switcher Button */}
+          {/* Opposite Language Switcher Button (Shows 'മ' in English, 'Eng' in Malayalam) */}
           <button
             onClick={toggleLanguage}
             title={lang === 'en' ? 'Switch to Malayalam (മ)' : 'Switch to English (Eng)'}
@@ -117,56 +122,55 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
             }}
           >
             <Globe size={15} color="#1d4ed8" />
-            <span>{lang === 'en' ? 'Eng' : 'മ'}</span>
+            <span>{lang === 'en' ? 'മ' : 'Eng'}</span>
           </button>
         </div>
 
-        {/* Far Right Action Button: Book Consultation */}
-        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.6rem', flexShrink: 0 }}>
-          <button
-            onClick={() => handleNavClick('booking')}
-            className="btn-primary nav-book-btn"
-            style={{
-              height: '42px',
-              padding: '0 1.5rem',
-              fontSize: '0.88rem',
-              fontWeight: 700,
-              borderRadius: '9999px',
-              whiteSpace: 'nowrap',
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '0.45rem',
-              background: 'var(--primary-blue)',
-              boxShadow: '0 4px 14px rgba(30, 64, 175, 0.25)'
-            }}
-          >
-            <Calendar size={16} color="#ffffff" /> Book Consultation
-          </button>
-
-          {/* Mobile Hamburger Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Mobile Navigation"
-            style={{
-              display: 'none',
-              background: 'var(--bg-card-alt)',
-              border: '1px solid var(--border-light)',
-              borderRadius: '12px',
-              color: 'var(--text-dark)',
-              cursor: 'pointer',
-              padding: 0,
-              width: '42px',
-              height: '42px',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}
-            className="mobile-hamburger"
-          >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
+        {/* Mobile Hamburger Button */}
+        <button
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle Mobile Navigation"
+          style={{
+            display: 'none',
+            background: 'var(--bg-card-alt)',
+            border: '1px solid var(--border-light)',
+            borderRadius: '12px',
+            color: 'var(--text-dark)',
+            cursor: 'pointer',
+            padding: 0,
+            width: '42px',
+            height: '42px',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+          className="mobile-hamburger"
+        >
+          {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </div>
+
+      {/* Book Consultation Button OUTSIDE the navigation div on far right */}
+      <button
+        onClick={() => handleNavClick('booking')}
+        className="btn-primary nav-book-btn"
+        style={{
+          height: '54px',
+          padding: '0 1.6rem',
+          fontSize: '0.9rem',
+          fontWeight: 700,
+          borderRadius: '9999px',
+          whiteSpace: 'nowrap',
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '0.5rem',
+          background: 'var(--primary-blue)',
+          boxShadow: '0 8px 22px rgba(30, 64, 175, 0.28)',
+          flexShrink: 0
+        }}
+      >
+        <Calendar size={18} color="#ffffff" /> Book Consultation
+      </button>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (

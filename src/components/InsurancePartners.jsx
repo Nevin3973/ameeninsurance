@@ -80,10 +80,10 @@ export default function InsurancePartners() {
 
         {/* 5 Partner Cards Grid */}
         <div className="grid-2" style={{ gap: '2rem' }}>
-          {partners.map((partner) => (
+          {partners.map((partner, idx) => (
             <div
               key={partner.id}
-              className="clean-card"
+              className={idx === 4 ? "clean-card partner-centered-tile" : "clean-card"}
               style={{
                 background: '#ffffff',
                 borderRadius: 'var(--radius-lg)',
