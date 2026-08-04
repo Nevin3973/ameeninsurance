@@ -39,12 +39,10 @@ export default function AmeenExperience() {
     <section id="experience" className="section-padding" style={{ background: '#f8fafc', position: 'relative' }}>
       <div className="container">
         {/* Ditto-Style Sticky Pinning Layout Container */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: '3rem', alignItems: 'start' }}>
+        <div className="responsive-grid-1-14">
 
           {/* LEFT COLUMN: STICKY PINNED SIDEBAR (STAYS PINNED WHILE SCROLLING) */}
-          <div style={{
-            position: 'sticky',
-            top: '110px',
+          <div className="sticky-column" style={{
             background: 'linear-gradient(135deg, #e0f2fe 0%, #f0f7ff 100%)',
             borderRadius: 'var(--radius-lg)',
             padding: '2.5rem',

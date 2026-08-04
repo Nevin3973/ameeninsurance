@@ -76,7 +76,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
 
       {/* Main Sub-Page Body Grid */}
       <div className="container" style={{ marginTop: '2.5rem' }}>
-        <div className="grid-3" style={{ gridTemplateColumns: '2fr 1fr', gap: '2.5rem' }}>
+        <div className="responsive-grid-2-1">
 
           {/* Left Main Column: Detailed Policy Specifications */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
@@ -197,7 +197,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
           </div>
 
           {/* Right Column: Dedicated Plan Enquiry Form Card */}
-          <div style={{ position: 'sticky', top: '140px', height: 'fit-content' }}>
+          <div className="sticky-column">
             <div className="clean-card" style={{ boxShadow: 'var(--shadow-md)', border: '1px solid var(--primary-blue)' }}>
               <div style={{ marginBottom: '1.2rem' }}>
                 <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--primary-blue)', letterSpacing: '0.05em' }}>

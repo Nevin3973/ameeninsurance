@@ -301,29 +301,8 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
 
       {/* Modal */}
       {activeModalProduct && (
-        <div style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: "rgba(15, 23, 42, 0.6)",
-          zIndex: 1000,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "1.5rem"
-        }}>
-          <div style={{
-            maxWidth: "580px",
-            width: "100%",
-            maxHeight: "90vh",
-            overflowY: "auto",
-            padding: "2rem",
-            background: "#ffffff",
-            borderRadius: "var(--radius-md)",
-            position: "relative"
-          }}>
+        <div className="modal-overlay" onClick={() => setActiveModalProduct(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setActiveModalProduct(null)}
               style={{ position: "absolute", top: "1rem", right: "1rem", background: "transparent", border: "none", cursor: "pointer", fontSize: "1.2rem" }}

@@ -92,48 +92,52 @@ export default function Navbar({ activeTab, setActiveTab }) {
         </nav>
 
         {/* Language Toggle + Consultation CTA */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
-          {/* Malayalam / English Toggle Button */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexShrink: 0 }}>
+          {/* Compact Eng / Ma Language Switcher Button */}
           <button
             onClick={toggleLanguage}
-            title={lang === 'en' ? 'Switch content to Malayalam' : 'ഇംഗ്ലീഷിലേക്ക് മാറുക'}
+            title={lang === 'en' ? 'Switch to Malayalam (Ma)' : 'Switch to English (Eng)'}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '0.45rem',
-              padding: '0.5rem 0.95rem',
+              justifyContent: 'center',
+              gap: '0.4rem',
+              height: '42px',
+              padding: '0 1rem',
               borderRadius: '9999px',
-              border: '1.5 solid var(--primary-blue)',
+              border: '1.5px solid var(--primary-blue)',
               background: lang === 'ml' ? '#eff6ff' : '#ffffff',
               color: '#1d4ed8',
-              fontSize: '0.85rem',
+              fontSize: '0.88rem',
               fontWeight: 700,
               cursor: 'pointer',
               transition: 'all 0.2s ease-in-out',
-              boxShadow: '0 2px 8px rgba(29, 78, 216, 0.12)'
+              boxShadow: '0 2px 8px rgba(29, 78, 216, 0.1)'
             }}
           >
             <Globe size={16} color="#1d4ed8" />
-            <span>{lang === 'en' ? 'മലയാളം' : 'English'}</span>
+            <span>{lang === 'en' ? 'Eng' : 'Ma'}</span>
           </button>
 
           <button
             onClick={() => handleNavClick('booking')}
             className="btn-primary nav-book-btn"
             style={{
-              padding: '0.75rem 1.6rem',
-              fontSize: '0.9rem',
+              height: '42px',
+              padding: '0 1.4rem',
+              fontSize: '0.88rem',
               fontWeight: 700,
               borderRadius: '9999px',
               whiteSpace: 'nowrap',
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '0.5rem',
+              justifyContent: 'center',
+              gap: '0.45rem',
               background: 'var(--primary-blue)',
               boxShadow: '0 4px 14px rgba(30, 64, 175, 0.25)'
             }}
           >
-            <Calendar size={17} color="#ffffff" /> {t('navBookConsultation', 'Book a Consultation')}
+            <Calendar size={16} color="#ffffff" /> {t('navBookConsultation', 'Book Consultation')}
           </button>
 
           {/* Mobile Hamburger Button */}
@@ -147,7 +151,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
               borderRadius: '12px',
               color: 'var(--text-dark)',
               cursor: 'pointer',
-              padding: '0.5rem',
+              padding: 0,
               width: '42px',
               height: '42px',
               alignItems: 'center',
@@ -185,7 +189,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
             borderBottom: '1px solid var(--border-light)'
           }}>
             <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-muted)' }}>
-              Language / ഭാഷ:
+              Language:
             </span>
             <button
               onClick={toggleLanguage}
@@ -193,9 +197,10 @@ export default function Navbar({ activeTab, setActiveTab }) {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.4rem',
-                padding: '0.4rem 0.9rem',
+                height: '38px',
+                padding: '0 1rem',
                 borderRadius: '9999px',
-                border: '1px solid var(--primary-blue)',
+                border: '1.5px solid var(--primary-blue)',
                 background: lang === 'ml' ? '#eff6ff' : '#ffffff',
                 color: '#1d4ed8',
                 fontSize: '0.88rem',
@@ -204,7 +209,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
               }}
             >
               <Globe size={15} color="#1d4ed8" />
-              {lang === 'en' ? 'മലയാളത്തിലേക്ക് മാറ്റുക' : 'Switch to English'}
+              <span>{lang === 'en' ? 'Eng' : 'Ma'}</span>
             </button>
           </div>
 

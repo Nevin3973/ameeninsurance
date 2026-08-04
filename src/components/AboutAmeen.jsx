@@ -137,9 +137,18 @@ export default function AboutAmeen() {
         </div>
 
         {/* 4 Achievements & Stats Bar */}
-        <div className="grid-4" style={{ gap: '1.5rem' }}>
+        <div className="grid-4" style={{ gap: '1.5rem', width: '100%', alignItems: 'stretch' }}>
           {achievements.map((item, idx) => (
-            <div key={idx} className="clean-card" style={{ textAlign: 'center', padding: '1.8rem 1.2rem' }}>
+            <div key={idx} className="clean-card" style={{
+              textAlign: 'center',
+              padding: '1.8rem 1.2rem',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: '100%',
+              width: '100%'
+            }}>
               <div style={{ fontSize: '2.4rem', fontWeight: 800, color: 'var(--primary-blue)', marginBottom: '0.3rem' }}>
                 {item.value}
               </div>

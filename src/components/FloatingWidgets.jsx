@@ -122,28 +122,8 @@ export default function FloatingWidgets({ onBookConsultation }) {
 
       {/* Popup Enquiry Modal */}
       {enquiryOpen && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'rgba(15, 23, 42, 0.7)',
-          backdropFilter: 'blur(8px)',
-          zIndex: 1000,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '1rem'
-        }}>
-          <div className="glass-panel" style={{
-            maxWidth: '460px',
-            width: '100%',
-            padding: '2rem',
-            background: 'var(--bg-surface)',
-            borderRadius: 'var(--radius-lg)',
-            position: 'relative'
-          }}>
+        <div className="modal-overlay" onClick={() => setEnquiryOpen(false)}>
+          <div className="glass-panel modal-content" style={{ maxWidth: '460px' }} onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setEnquiryOpen(false)}
               style={{

@@ -108,12 +108,14 @@ export default function App() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--bg-surface)' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--bg-surface)', overflowX: 'hidden' }}>
       {/* Sticky Rounded Navigation Bar */}
       <Navbar activeTab={activeTab} setActiveTab={handleNavigate} />
 
       {/* Dynamic Main / Sub-Page Content Assembly */}
-      {renderSubPage()}
+      <main style={{ minHeight: 'calc(100vh - 200px)', overflowX: 'hidden' }}>
+        {renderSubPage()}
+      </main>
 
       {/* Persistent Footer */}
       <Footer />
