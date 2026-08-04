@@ -31,25 +31,6 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
       idealFor: "Families looking for high-cover cashless medical protection"
     },
     {
-      id: "health-assure",
-      name: "Health Assure",
-      company: "Aditya Birla Health Insurance Company Limited",
-      category: "family",
-      image: "/prod-young.png",
-      desc: "Comprehensive medical coverage with HealthReturns rewards for maintaining an active healthy lifestyle.",
-      eligibility: "91 Days to Lifetime Renewability",
-      sumInsured: "₹3 Lakhs to ₹2 Crore",
-      coverage: "Hospitalisation, Ayush Treatment, Domiciliary Care",
-      waitingPeriod: "30 Days Initial (36 Months Pre-existing)",
-      benefits: [
-        "Earn up to 100% premium back as HealthReturns",
-        "Unlimited refill of sum insured for unrelated illnesses",
-        "In-patient AYUSH (Ayurveda/Homeopathy) treatment cover",
-        "Mental health hospitalisation cover included"
-      ],
-      idealFor: "Health-conscious families seeking lifestyle rewards"
-    },
-    {
       id: "womens-care",
       name: "Womens Care",
       company: "Star Health and Allied Insurance Company Limited",
@@ -67,6 +48,25 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
         "Assisted reproduction treatment benefits"
       ],
       idealFor: "Expectant mothers and young couples planning a family"
+    },
+    {
+      id: "health-assure",
+      name: "Health Assure",
+      company: "Aditya Birla Health Insurance Company Limited",
+      category: "family",
+      image: "/prod-young.png",
+      desc: "Comprehensive medical coverage with HealthReturns rewards for maintaining an active healthy lifestyle.",
+      eligibility: "91 Days to Lifetime Renewability",
+      sumInsured: "₹3 Lakhs to ₹2 Crore",
+      coverage: "Hospitalisation, Ayush Treatment, Domiciliary Care",
+      waitingPeriod: "30 Days Initial (36 Months Pre-existing)",
+      benefits: [
+        "Earn up to 100% premium back as HealthReturns",
+        "Unlimited refill of sum insured for unrelated illnesses",
+        "In-patient AYUSH (Ayurveda/Homeopathy) treatment cover",
+        "Mental health hospitalisation cover included"
+      ],
+      idealFor: "Health-conscious families seeking lifestyle rewards"
     },
     {
       id: "activ-one-max",

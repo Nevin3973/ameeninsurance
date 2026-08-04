@@ -7,13 +7,13 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
   const { lang, toggleLanguage, t } = useLanguage();
 
   const navItems = [
-    { id: 'hero', label: t('navHome', 'Home') },
-    { id: 'about', label: t('navAbout', 'About Us') },
-    { id: 'products', label: t('navProducts', 'Insurance Plans') },
-    { id: 'partners', label: t('navPartners', 'Insurance Partners') },
-    { id: 'nri', label: t('navNri', 'NRI Advisory') },
-    { id: 'claims', label: t('navClaims', 'Claims Assistance') },
-    { id: 'faq', label: t('navFaq', 'FAQ') }
+    { id: 'hero', label: 'Home' },
+    { id: 'about', label: 'About Us' },
+    { id: 'products', label: 'Insurance Plans' },
+    { id: 'partners', label: 'Insurance Partners' },
+    { id: 'nri', label: 'NRI Advisory' },
+    { id: 'claims', label: 'Claims Assistance' },
+    { id: 'faq', label: 'FAQ' }
   ];
 
   const handleNavClick = (id) => {
@@ -40,7 +40,8 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: '0 1.8rem'
+        padding: '0 1.8rem',
+        gap: '1rem'
       }}>
         {/* Brand Logo Text on Far Left */}
         <div
@@ -48,84 +49,86 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
           style={{
             fontFamily: 'var(--font-heading)',
             fontWeight: 800,
-            fontSize: '1.48rem',
+            fontSize: '1.45rem',
             letterSpacing: '-0.02em',
             cursor: 'pointer',
             whiteSpace: 'nowrap',
-            marginRight: '1.2rem',
-            color: '#0f172a'
+            marginRight: '0.8rem',
+            color: '#0f172a',
+            flexShrink: 0
           }}
         >
           Ameen <span style={{ color: '#1d4ed8' }}>Insurance</span>
         </div>
 
-        {/* Equally Spaced Navigation Links */}
-        <nav style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '1.4rem',
-          flex: 1
-        }} className="desktop-only">
-          {navItems.map((item) => {
-            const isActive = activeTab === item.id;
-            return (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item.id)}
-                style={{
-                  background: 'transparent',
-                  border: 'none',
-                  fontSize: '0.92rem',
-                  fontWeight: 600,
-                  color: isActive ? 'var(--primary-blue)' : 'var(--text-dark)',
-                  borderBottom: isActive ? '2px solid var(--primary-blue)' : '2px solid transparent',
-                  padding: '0.4rem 0.2rem',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  whiteSpace: 'nowrap'
-                }}
-              >
-                {item.label}
-              </button>
-            );
-          })}
-        </nav>
+        {/* Navigation Links + Language Button Group */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', flex: 1, justifyContent: 'center' }} className="desktop-only">
+          <nav style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '1.2rem'
+          }}>
+            {navItems.map((item) => {
+              const isActive = activeTab === item.id;
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item.id)}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    fontSize: '0.9rem',
+                    fontWeight: 600,
+                    color: isActive ? 'var(--primary-blue)' : 'var(--text-dark)',
+                    borderBottom: isActive ? '2px solid var(--primary-blue)' : '2px solid transparent',
+                    padding: '0.4rem 0.2rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    whiteSpace: 'nowrap'
+                  }}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
+          </nav>
 
-        {/* Language Toggle + Consultation CTA */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexShrink: 0 }}>
-          {/* Compact Eng / Ma Language Switcher Button */}
+          {/* Compact Eng / മ Language Switcher Button */}
           <button
             onClick={toggleLanguage}
-            title={lang === 'en' ? 'Switch to Malayalam (Ma)' : 'Switch to English (Eng)'}
+            title={lang === 'en' ? 'Switch to Malayalam (മ)' : 'Switch to English (Eng)'}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '0.4rem',
-              height: '42px',
-              padding: '0 1rem',
+              gap: '0.35rem',
+              height: '38px',
+              padding: '0 0.85rem',
               borderRadius: '9999px',
               border: '1.5px solid var(--primary-blue)',
               background: lang === 'ml' ? '#eff6ff' : '#ffffff',
               color: '#1d4ed8',
               fontSize: '0.88rem',
-              fontWeight: 700,
+              fontWeight: 800,
               cursor: 'pointer',
               transition: 'all 0.2s ease-in-out',
-              boxShadow: '0 2px 8px rgba(29, 78, 216, 0.1)'
+              boxShadow: '0 2px 8px rgba(29, 78, 216, 0.1)',
+              flexShrink: 0
             }}
           >
-            <Globe size={16} color="#1d4ed8" />
-            <span>{lang === 'en' ? 'Eng' : 'Ma'}</span>
+            <Globe size={15} color="#1d4ed8" />
+            <span>{lang === 'en' ? 'Eng' : 'മ'}</span>
           </button>
+        </div>
 
+        {/* Far Right Action Button: Book Consultation */}
+        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.6rem', flexShrink: 0 }}>
           <button
             onClick={() => handleNavClick('booking')}
             className="btn-primary nav-book-btn"
             style={{
               height: '42px',
-              padding: '0 1.4rem',
+              padding: '0 1.5rem',
               fontSize: '0.88rem',
               fontWeight: 700,
               borderRadius: '9999px',
@@ -138,7 +141,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
               boxShadow: '0 4px 14px rgba(30, 64, 175, 0.25)'
             }}
           >
-            <Calendar size={16} color="#ffffff" /> {t('navBookConsultation', 'Book Consultation')}
+            <Calendar size={16} color="#ffffff" /> Book Consultation
           </button>
 
           {/* Mobile Hamburger Button */}
@@ -210,7 +213,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
               }}
             >
               <Globe size={15} color="#1d4ed8" />
-              <span>{lang === 'en' ? 'Eng' : 'Ma'}</span>
+              <span>{lang === 'en' ? 'Eng' : 'മ'}</span>
             </button>
           </div>
 
