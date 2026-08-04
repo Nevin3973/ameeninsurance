@@ -71,7 +71,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
             </a>
           </div>
 
-          {/* Right Side: Language Toggle + Prominent Book Consultation Action Button */}
+          {/* Right Side: Language Toggle */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
             <button
               onClick={toggleLanguage}
@@ -93,27 +93,6 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
             >
               <Globe size={13} color="#93c5fd" />
               <span>{lang === 'en' ? 'മ' : 'Eng'}</span>
-            </button>
-
-            <button
-              onClick={() => handleNavClick('booking')}
-              style={{
-                background: 'var(--primary-blue)',
-                color: '#ffffff',
-                border: 'none',
-                padding: '0.35rem 1.1rem',
-                borderRadius: '9999px',
-                fontWeight: 700,
-                fontSize: '0.82rem',
-                cursor: 'pointer',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-                boxShadow: '0 2px 10px rgba(1, 58, 222, 0.35)',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              <Calendar size={14} color="#ffffff" /> Book Consultation
             </button>
           </div>
         </div>
@@ -156,37 +135,60 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
             Ameen <span style={{ color: 'var(--primary-blue)' }}>Insurance</span>
           </div>
 
-          {/* Navigation Links Group */}
-          <nav style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1.6rem',
-            marginLeft: 'auto'
-          }} className="desktop-only">
-            {navItems.map((item) => {
-              const isActive = activeTab === item.id;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => handleNavClick(item.id)}
-                  style={{
-                    background: 'transparent',
-                    border: 'none',
-                    fontSize: '0.92rem',
-                    fontWeight: 600,
-                    color: isActive ? 'var(--primary-blue)' : 'var(--text-dark)',
-                    borderBottom: isActive ? '2px solid var(--primary-blue)' : '2px solid transparent',
-                    padding: '0.4rem 0.2rem',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    whiteSpace: 'nowrap'
-                  }}
-                >
-                  {item.label}
-                </button>
-              );
-            })}
-          </nav>
+          {/* Navigation Links + Book Consultation CTA Group */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.6rem', marginLeft: 'auto' }} className="desktop-only">
+            <nav style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1.4rem'
+            }}>
+              {navItems.map((item) => {
+                const isActive = activeTab === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => handleNavClick(item.id)}
+                    style={{
+                      background: 'transparent',
+                      border: 'none',
+                      fontSize: '0.92rem',
+                      fontWeight: 600,
+                      color: isActive ? 'var(--primary-blue)' : 'var(--text-dark)',
+                      borderBottom: isActive ? '2px solid var(--primary-blue)' : '2px solid transparent',
+                      padding: '0.4rem 0.2rem',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease',
+                      whiteSpace: 'nowrap'
+                    }}
+                  >
+                    {item.label}
+                  </button>
+                );
+              })}
+            </nav>
+
+            <button
+              onClick={() => handleNavClick('booking')}
+              className="btn-primary nav-book-btn"
+              style={{
+                height: '42px',
+                padding: '0 1.4rem',
+                fontSize: '0.88rem',
+                fontWeight: 700,
+                borderRadius: '9999px',
+                whiteSpace: 'nowrap',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.45rem',
+                background: 'var(--primary-blue)',
+                boxShadow: '0 4px 14px rgba(1, 58, 222, 0.28)',
+                flexShrink: 0
+              }}
+            >
+              <Calendar size={16} color="#ffffff" /> Book Consultation
+            </button>
+          </div>
 
           {/* Mobile Hamburger Button */}
           <button
