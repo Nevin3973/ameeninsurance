@@ -191,11 +191,21 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  .container {
+    padding: 0 1rem;
+  }
   .section-padding {
-    padding: 3rem 0;
+    padding: 2.5rem 0;
   }
   .grid-2, .grid-3, .grid-4 {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+  }
+  button, .btn-primary, .btn-secondary {
+    min-height: 44px;
+    touch-action: manipulation;
   }
 }
 
@@ -212,10 +222,38 @@ a:hover {
   .responsive-grid-equal {
     grid-template-columns: 1fr !important;
   }
-  .modal-content {
-    padding: 1.25rem;
-    max-height: 90vh;
+  .modal-overlay {
+    padding: 0.75rem;
   }
+  .modal-content {
+    padding: 1.25rem 1rem;
+    max-height: 92vh;
+    border-radius: 16px;
+  }
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Touch Horizontal Scroll Container for Mobile Category Tabs */
+.scrollable-tabs-wrapper {
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.scrollable-tabs-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 /* Minimal Card Utility */

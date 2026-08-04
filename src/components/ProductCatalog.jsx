@@ -201,7 +201,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
           </div>
 
           {/* Filter Pills */}
-          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", justifyContent: "center" }}>
+          <div className="scrollable-tabs-wrapper" style={{ justifyContent: "center" }}>
             {categories.map((cat) => (
               <button
                 key={cat.id}
@@ -215,6 +215,8 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
                   fontWeight: 600,
                   fontSize: "0.85rem",
                   cursor: "pointer",
+                  whiteSpace: "nowrap",
+                  flexShrink: 0,
                   transition: "all 0.2s ease"
                 }}
               >
