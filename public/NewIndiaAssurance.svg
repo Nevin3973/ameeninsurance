@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 90" width="320" height="90">
+  <!-- Clean Background Badge -->
+  <rect width="320" height="90" rx="14" fill="#ffffff"/>
+  
+  <!-- Emblem Circle Group -->
+  <g transform="translate(15, 10)">
+    <!-- Outer Navy Ring -->
+    <circle cx="35" cy="35" r="32" fill="#0f2b5c"/>
+    <!-- Inner Gold Accent Ring -->
+    <circle cx="35" cy="35" r="28" fill="none" stroke="#d97706" stroke-width="2"/>
+    <circle cx="35" cy="35" r="24" fill="#1e40af"/>
+    
+    <!-- Central Star / Rays Vector -->
+    <path d="M35 17 L38 29 L50 29 L40 36 L44 48 L35 41 L26 48 L30 36 L20 29 L32 29 Z" fill="#fbbf24"/>
+    <circle cx="35" cy="35" r="5" fill="#ffffff"/>
+    
+    <!-- Decorative Stars on Ring -->
+    <circle cx="35" cy="8" r="1.5" fill="#ffffff"/>
+    <circle cx="62" cy="35" r="1.5" fill="#ffffff"/>
+    <circle cx="35" cy="62" r="1.5" fill="#ffffff"/>
+    <circle cx="8" cy="35" r="1.5" fill="#ffffff"/>
+  </g>
+
+  <!-- Official Brand Typography Group -->
+  <g transform="translate(92, 24)">
+    <text x="0" y="16" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="16" fill="#0f2b5c" letter-spacing="0.5">THE NEW INDIA</text>
+    <text x="0" y="36" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="15" fill="#1e40af" letter-spacing="0.3">ASSURANCE CO. LTD.</text>
+    <text x="0" y="52" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="9.5" fill="#d97706" letter-spacing="0.8">India's Premier Multinational PSU</text>
+  </g>
+</svg>
