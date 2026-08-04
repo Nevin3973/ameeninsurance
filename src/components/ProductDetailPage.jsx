@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { ArrowLeft, CheckCircle2, ShieldCheck, Calendar, PhoneCall, Send, Award, Clock, FileText, Check, AlertCircle } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function ProductDetailPage({ product, onBack, onBookConsultation }) {
+  const { lang, t } = useLanguage();
   const [enquiryForm, setEnquiryForm] = useState({
     fullName: '',
     phone: '',
@@ -107,27 +109,49 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
           {/* Left Main Column: Detailed Policy Specifications */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
 
-            {/* Malayalam Important Guidance Banner */}
-            <div className="ml-box" style={{
-              background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
-              color: '#ffffff',
-              padding: '1.2rem 1.6rem',
-              borderRadius: 'var(--radius-md)',
-              fontFamily: 'var(--font-malayalam)',
-              boxShadow: '0 8px 20px rgba(15, 23, 42, 0.15)',
-              borderLeft: '5px solid var(--primary-blue)'
-            }}>
-              <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#60a5fa', letterSpacing: '0.05em', marginBottom: '0.3rem' }}>
-                📌 മലയാളം പോളിസി നിർദ്ദേശങ്ങൾ (IMPORTANT ADVISORY)
+            {/* Important Guidance Banner */}
+            {lang === 'ml' ? (
+              <div className="ml-box" style={{
+                background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+                color: '#ffffff',
+                padding: '1.2rem 1.6rem',
+                borderRadius: 'var(--radius-md)',
+                fontFamily: 'var(--font-malayalam)',
+                boxShadow: '0 8px 20px rgba(15, 23, 42, 0.15)',
+                borderLeft: '5px solid var(--primary-blue)'
+              }}>
+                <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#60a5fa', letterSpacing: '0.05em', marginBottom: '0.3rem' }}>
+                  📌 മലയാളം പോളിസി നിർദ്ദേശങ്ങൾ (IMPORTANT ADVISORY)
+                </div>
+                <p style={{ fontSize: '0.98rem', lineHeight: 1.65, color: '#e2e8f0' }}>
+                  {product.descMl || "ഈ പോളിസിയിൽ ക്യാഷ്‌ലെസ് അഡ്മിഷൻ, റൂം റെന്റ് ക്യാപ്പിംഗ് परिധിയില്ലായ്മ, 24/7 അടിയന്തര സഹായം എന്നിവ ലഭ്യമാണ്."}
+                </p>
+                <div style={{ marginTop: '0.6rem', fontSize: '0.85rem', color: '#94a3b8', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                  <span>✓ 100% ക്യാഷ്‌ലെസ് ക്ലെയിം സൗകര്യം</span>
+                  <span>✓ അമീന്റെ സൗജന്യ വ്യക്തിഗത സേവനം</span>
+                </div>
               </div>
-              <p style={{ fontSize: '0.98rem', lineHeight: 1.65, color: '#e2e8f0' }}>
-                {product.descMl || "ഈ പോളിസിയിൽ ക്യാഷ്‌ലെസ് അഡ്മിഷൻ, റൂം റെന്റ് ക്യാപ്പിംഗ് പരിധിയില്ലായ്മ, 24/7 അടിയന്തര സഹായം എന്നിവ ലഭ്യമാണ്."}
-              </p>
-              <div style={{ marginTop: '0.6rem', fontSize: '0.85rem', color: '#94a3b8', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                <span>✓ 100% ക്യാഷ്‌ലെസ് ക്ലെയിം സൗകര്യം</span>
-                <span>✓ അമീന്റെ സൗജന്യ വ്യക്തിഗത സേവനം</span>
+            ) : (
+              <div style={{
+                background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+                color: '#ffffff',
+                padding: '1.2rem 1.6rem',
+                borderRadius: 'var(--radius-md)',
+                boxShadow: '0 8px 20px rgba(15, 23, 42, 0.15)',
+                borderLeft: '5px solid var(--primary-blue)'
+              }}>
+                <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#60a5fa', letterSpacing: '0.05em', marginBottom: '0.3rem' }}>
+                  📌 OFFICIAL IRDAI ADVISORY HIGHLIGHTS
+                </div>
+                <p style={{ fontSize: '0.95rem', lineHeight: 1.65, color: '#e2e8f0' }}>
+                  Direct cashless hospital admission, zero capping on ICU room rent, and 100% reload benefit on sum insured across 14,000+ network hospitals.
+                </p>
+                <div style={{ marginTop: '0.6rem', fontSize: '0.85rem', color: '#94a3b8', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                  <span>✓ 100% Cashless Claim Assistance</span>
+                  <span>✓ Free 1-on-1 Consultation by Muhammed Ameen</span>
+                </div>
               </div>
-            </div>
+            )}
 
             {/* Quick Specs 4-Box Summary */}
             <div className="grid-2" style={{ gap: '1rem' }}>

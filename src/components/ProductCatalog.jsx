@@ -516,7 +516,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                     {product.desc}
                   </p>
 
-                  {product.descMl && (
+                  {lang === 'ml' && product.descMl && (
                     <div className="ml-box" style={{
                       background: "linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%)",
                       borderLeft: "3px solid var(--primary-blue)",
