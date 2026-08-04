@@ -470,32 +470,35 @@ export default function Hero({ onStartQuote, onOpenWizard }) {
         </div>
       </div>
 
-      {/* Premium Trust Metrics Bar */}
-      <div className="container" style={{ marginTop: '2.5rem' }}>
-        <div style={{
-          background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
-          borderRadius: 'var(--radius-md)',
-          padding: '1.8rem 2rem',
-          color: '#ffffff',
-          boxShadow: '0 12px 30px rgba(15, 23, 42, 0.15)',
-          width: '100%',
-          alignItems: 'stretch'
-        }} className="grid-4">
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0.5rem', width: '100%' }}>
-            <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#60a5fa', marginBottom: '0.2rem' }}>₹150+ Cr</div>
-            <div style={{ fontSize: '0.82rem', color: '#94a3b8', fontWeight: 600, textAlign: 'center' }}>{t('statClaims', 'Claims Settlement Advocacy')}</div>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0.5rem', width: '100%' }}>
-            <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#60a5fa', marginBottom: '0.2rem' }}>5,000+</div>
-            <div style={{ fontSize: '0.82rem', color: '#94a3b8', fontWeight: 600, textAlign: 'center' }}>{t('statFamilies', 'Families Protected Across India')}</div>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0.5rem', width: '100%' }}>
-            <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#60a5fa', marginBottom: '0.2rem' }}>15+ Years</div>
-            <div style={{ fontSize: '0.82rem', color: '#94a3b8', fontWeight: 600, textAlign: 'center' }}>{t('statExperience', 'IRDAI Advisory Experience')}</div>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0.5rem', width: '100%' }}>
-            <div style={{ fontSize: '1.8rem', fontWeight: 800, color: '#f59e0b', marginBottom: '0.2rem' }}>4.9 ★ / 5</div>
-            <div style={{ fontSize: '0.82rem', color: '#94a3b8', fontWeight: 600, textAlign: 'center' }}>{t('statRating', '450+ Verified Client Reviews')}</div>
+      {/* Premium Full-Width Edge-to-Edge Trust Metrics Bar */}
+      <div style={{
+        background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+        width: '100%',
+        padding: '2.5rem 0',
+        color: '#ffffff',
+        boxShadow: '0 12px 30px rgba(15, 23, 42, 0.15)',
+        marginTop: '3.5rem',
+        borderTop: '1px solid rgba(255,255,255,0.08)',
+        borderBottom: '1px solid rgba(255,255,255,0.08)'
+      }}>
+        <div className="container">
+          <div className="grid-4" style={{ width: '100%', alignItems: 'stretch', gap: '1.8rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0.5rem', width: '100%' }}>
+              <div style={{ fontSize: '2rem', fontWeight: 800, color: '#60a5fa', marginBottom: '0.2rem' }}>₹150+ Cr</div>
+              <div style={{ fontSize: '0.88rem', color: '#94a3b8', fontWeight: 600, textAlign: 'center' }}>{t('statClaims', 'Claims Settlement Advocacy')}</div>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0.5rem', width: '100%' }}>
+              <div style={{ fontSize: '2rem', fontWeight: 800, color: '#60a5fa', marginBottom: '0.2rem' }}>5,000+</div>
+              <div style={{ fontSize: '0.88rem', color: '#94a3b8', fontWeight: 600, textAlign: 'center' }}>{t('statFamilies', 'Families Protected Across India')}</div>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0.5rem', width: '100%' }}>
+              <div style={{ fontSize: '2rem', fontWeight: 800, color: '#60a5fa', marginBottom: '0.2rem' }}>15+ Years</div>
+              <div style={{ fontSize: '0.88rem', color: '#94a3b8', fontWeight: 600, textAlign: 'center' }}>{t('statExperience', 'IRDAI Advisory Experience')}</div>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0.5rem', width: '100%' }}>
+              <div style={{ fontSize: '2rem', fontWeight: 800, color: '#f59e0b', marginBottom: '0.2rem' }}>4.9 ★ / 5</div>
+              <div style={{ fontSize: '0.88rem', color: '#94a3b8', fontWeight: 600, textAlign: 'center' }}>{t('statRating', '450+ Verified Client Reviews')}</div>
+            </div>
           </div>
         </div>
       </div>

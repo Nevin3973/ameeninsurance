@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, Calendar, Globe, PhoneCall, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { lang, toggleLanguage, t } = useLanguage();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { id: 'hero', label: 'Home' },
@@ -110,23 +119,24 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
         </div>
       </div>
 
-      {/* 2. Main Navigation Bar */}
+      {/* 2. Full-Width Edge-to-Edge Navigation Bar with Scroll Animation */}
       <header style={{
-        maxWidth: '1600px',
         width: '100%',
-        margin: '8px auto 0',
-        padding: '0 1rem'
+        background: isScrolled ? 'rgba(255, 255, 255, 0.96)' : '#ffffff',
+        backdropFilter: isScrolled ? 'blur(10px)' : 'none',
+        borderBottom: '1px solid var(--border-light)',
+        boxShadow: isScrolled ? '0 8px 30px rgba(0, 0, 0, 0.08)' : '0 2px 10px rgba(0, 0, 0, 0.03)',
+        transition: 'all 0.3s ease-in-out'
       }}>
         <div style={{
-          background: '#ffffff',
-          borderRadius: '50px',
-          border: '1px solid var(--border-light)',
-          boxShadow: '0 8px 25px rgba(0, 0, 0, 0.06)',
-          height: '66px',
+          maxWidth: '1600px',
+          margin: '0 auto',
+          height: isScrolled ? '62px' : '70px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '0 1.8rem'
+          padding: '0 2rem',
+          transition: 'all 0.3s ease-in-out'
         }}>
           {/* Brand Logo Text on Far Left */}
           <div
