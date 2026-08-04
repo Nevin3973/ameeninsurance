@@ -341,17 +341,23 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.8rem" }}>
+              <a
+                href={`https://wa.me/919812345678?text=${encodeURIComponent(`Hi Muhammed Ameen, I would like to get a quote and details for ${activeModalProduct.name} (${activeModalProduct.company}).`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                style={{ background: "#25D366", color: "#ffffff", textAlign: "center" }}
+              >
+                WhatsApp Ameen
+              </a>
               <button
                 onClick={() => {
                   handleEnquire(activeModalProduct.name);
                   setActiveModalProduct(null);
                 }}
-                className="btn-primary"
+                className="btn-secondary"
               >
-                Enquire Now
-              </button>
-              <button onClick={() => setActiveModalProduct(null)} className="btn-secondary">
-                Close
+                Request Callback
               </button>
             </div>
           </div>

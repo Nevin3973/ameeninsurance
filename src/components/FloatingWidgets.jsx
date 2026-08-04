@@ -24,7 +24,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
     }
   };
 
-  const whatsappMessage = encodeURIComponent("Hi, I would like to know more about your health insurance plans.");
+  const whatsappMessage = encodeURIComponent("Hi Muhammed Ameen, I would like to get a free health & life insurance consultation.");
   const whatsappUrl = `https://wa.me/919812345678?text=${whatsappMessage}`;
 
   return (

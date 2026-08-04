@@ -7,6 +7,8 @@ import AgentBooking from './components/AgentBooking';
 import Footer from './components/Footer';
 import FloatingWidgets from './components/FloatingWidgets';
 import ProductDetailPage from './components/ProductDetailPage';
+import NriAdvisory from './components/NriAdvisory';
+import PlanWizardModal from './components/PlanWizardModal';
 
 // Dedicated Sub-Pages
 import AboutPage from './pages/AboutPage';
@@ -20,6 +22,7 @@ import { ArrowRight, ShieldCheck, Award } from 'lucide-react';
 export default function App() {
   const [activeTab, setActiveTab] = useState('hero');
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isWizardOpen, setIsWizardOpen] = useState(false);
 
   const handleSelectProduct = (product) => {
     setSelectedProduct(product);
@@ -48,9 +51,11 @@ export default function App() {
       case 'about':
         return <AboutPage onNavigate={handleNavigate} />;
       case 'products':
-        return <PlansPage onNavigate={handleNavigate} />;
+        return <PlansPage onNavigate={handleNavigate} onOpenWizard={() => setIsWizardOpen(true)} />;
       case 'partners':
         return <PartnersPage onNavigate={handleNavigate} />;
+      case 'nri':
+        return <NriAdvisory onBookConsultation={() => handleNavigate('booking')} onOpenWizard={() => setIsWizardOpen(true)} />;
       case 'claims':
         return <ClaimsPage onNavigate={handleNavigate} />;
       case 'faq':
@@ -62,7 +67,7 @@ export default function App() {
         return (
           <main>
             {/* 1. Hero Image Carousel, Direct Lead Capture & Trust Bar */}
-            <Hero />
+            <Hero onOpenWizard={() => setIsWizardOpen(true)} />
 
             {/* 2. Featured Insurance Plans Preview */}
             <section style={{ background: '#ffffff', padding: '3.5rem 0' }}>
@@ -110,7 +115,7 @@ export default function App() {
   return (
     <div style={{ minHeight: '100vh', background: 'var(--bg-surface)', overflowX: 'hidden' }}>
       {/* Sticky Rounded Navigation Bar */}
-      <Navbar activeTab={activeTab} setActiveTab={handleNavigate} />
+      <Navbar activeTab={activeTab} setActiveTab={handleNavigate} onOpenWizard={() => setIsWizardOpen(true)} />
 
       {/* Dynamic Main / Sub-Page Content Assembly */}
       <main style={{ minHeight: 'calc(100vh - 200px)', overflowX: 'hidden' }}>
@@ -122,6 +127,14 @@ export default function App() {
 
       {/* Global Floating WhatsApp, Quick Enquiry & AI Assistant Widgets */}
       <FloatingWidgets />
+
+      {/* Interactive 3-Step Plan Finder Wizard Modal */}
+      <PlanWizardModal
+        isOpen={isWizardOpen}
+        onClose={() => setIsWizardOpen(false)}
+        onSelectProduct={handleSelectProduct}
+        onBookConsultation={() => handleNavigate('booking')}
+      />
     </div>
   );
 }

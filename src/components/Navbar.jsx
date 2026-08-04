@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Menu, X, Calendar, Globe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-export default function Navbar({ activeTab, setActiveTab }) {
+export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { lang, toggleLanguage, t } = useLanguage();
 
@@ -11,6 +11,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
     { id: 'about', label: t('navAbout', 'About Us') },
     { id: 'products', label: t('navProducts', 'Insurance Plans') },
     { id: 'partners', label: t('navPartners', 'Insurance Partners') },
+    { id: 'nri', label: t('navNri', 'NRI Advisory') },
     { id: 'claims', label: t('navClaims', 'Claims Assistance') },
     { id: 'faq', label: t('navFaq', 'FAQ') }
   ];

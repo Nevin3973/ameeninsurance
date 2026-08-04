@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, CheckCircle2, ShieldCheck, Award, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-export default function Hero({ onStartQuote }) {
+export default function Hero({ onStartQuote, onOpenWizard }) {
   const { lang, t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [leadForm, setLeadForm] = useState({
@@ -12,6 +12,8 @@ export default function Hero({ onStartQuote }) {
     insuranceType: 'Health Insurance'
   });
   const [leadSubmitted, setLeadSubmitted] = useState(false);
+
+  const claimsWaUrl = `https://wa.me/919812345678?text=${encodeURIComponent("Hi Muhammed Ameen, I need emergency assistance with a hospital claim.")}`;
 
   const heroSlides = [
     {
@@ -35,7 +37,7 @@ export default function Hero({ onStartQuote }) {
       primaryBtnText: t('heroBtnClaims', 'Claims Assistance'),
       primaryBtnTarget: 'claims',
       secondaryBtnText: t('heroBtnWhatsapp', 'WhatsApp Ameen'),
-      secondaryBtnTarget: 'https://wa.me/919812345678',
+      secondaryBtnTarget: claimsWaUrl,
       isExternalSecondary: true,
       pills: lang === 'ml' ? ['14,000+ ആശുപത്രികൾ', '24/7 അടിയന്തര സഹായം'] : ['14,000+ Hospitals', '24/7 Emergency Support']
     },

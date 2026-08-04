@@ -3,9 +3,9 @@ import ProductCatalog from '../components/ProductCatalog';
 import PlanComparison from '../components/PlanComparison';
 import QuoteCalculator from '../components/QuoteCalculator';
 import ProductDetailPage from '../components/ProductDetailPage';
-import { ShieldCheck, Search, Scale, Calculator } from 'lucide-react';
+import { ShieldCheck, Search, Scale, Calculator, Sparkles } from 'lucide-react';
 
-export default function PlansPage({ onNavigate }) {
+export default function PlansPage({ onNavigate, onOpenWizard }) {
   const [activePlanTab, setActivePlanTab] = useState('catalog');
   const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -44,6 +44,27 @@ export default function PlansPage({ onNavigate }) {
 
           {/* Sub-Navigation Tabs */}
           <div style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap' }}>
+            <button
+              onClick={onOpenWizard}
+              style={{
+                padding: '0.75rem 1.4rem',
+                borderRadius: 'var(--radius-full)',
+                border: 'none',
+                background: 'linear-gradient(135deg, var(--primary-blue), #2563eb)',
+                color: '#ffffff',
+                fontWeight: 700,
+                fontSize: '0.92rem',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                boxShadow: '0 4px 12px rgba(30, 64, 175, 0.25)',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              <Sparkles size={16} color="#fde047" /> Find My Ideal Plan (Wizard)
+            </button>
+
             <button
               onClick={() => setActivePlanTab('catalog')}
               style={{

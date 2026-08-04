@@ -290,11 +290,23 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                 marginTop: '1.5rem',
                 paddingTop: '1.2rem',
                 borderTop: '1px solid var(--border-light)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '0.6rem',
                 textAlign: 'center'
               }}>
-                <div style={{ fontSize: '0.82rem', color: 'var(--text-subtle)', marginBottom: '0.4rem' }}>
+                <div style={{ fontSize: '0.82rem', color: 'var(--text-subtle)', marginBottom: '0.2rem' }}>
                   Need Immediate Guidance?
                 </div>
+                <a
+                  href={`https://wa.me/919812345678?text=${encodeURIComponent(`Hi Muhammed Ameen, I am reviewing ${product.name} (${product.company}) and want to get a custom quote.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary"
+                  style={{ background: '#25D366', color: '#ffffff', width: '100%', padding: '0.75rem' }}
+                >
+                  WhatsApp Ameen Directly
+                </a>
                 <a
                   href="tel:+919812345678"
                   style={{
@@ -302,8 +314,10 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                     color: 'var(--primary-blue)',
                     display: 'inline-flex',
                     alignItems: 'center',
+                    justifyContent: 'center',
                     gap: '0.4rem',
-                    fontSize: '0.95rem'
+                    fontSize: '0.92rem',
+                    marginTop: '0.4rem'
                   }}
                 >
                   <PhoneCall size={16} /> Call Ameen: +91 98123 45678
