@@ -43,9 +43,9 @@ export default function FloatingWidgets({ onBookConsultation }) {
         {/* Floating Enquiry Button */}
         <button
           onClick={() => setEnquiryOpen(true)}
-          className="glass-panel"
+          className="btn-primary"
           style={{
-            background: 'linear-gradient(135deg, var(--primary-600), var(--teal-600))',
+            background: 'linear-gradient(135deg, var(--primary-blue), #058340)',
             color: '#ffffff',
             fontWeight: 700,
             fontSize: '0.92rem',
@@ -53,7 +53,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
             borderRadius: 'var(--radius-full)',
             border: 'none',
             cursor: 'pointer',
-            boxShadow: '0 8px 20px rgba(5, 150, 105, 0.4)',
+            boxShadow: '0 8px 20px rgba(1, 58, 222, 0.35)',
             display: 'flex',
             alignItems: 'center',
             gap: '0.5rem',
@@ -97,7 +97,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
         left: 0,
         right: 0,
         zIndex: 890,
-        background: 'var(--bg-dark-accent)',
+        background: '#0f172a',
         padding: '0.8rem 1rem',
         borderTop: '1px solid var(--border-light)',
         textAlign: 'center'
@@ -115,7 +115,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
             fontSize: '1rem'
           }}
         >
-          <PhoneCall size={20} color="var(--primary-500)" />
+          <PhoneCall size={20} color="#60a5fa" />
           Call Now: +91 98123 45678
         </a>
       </div>
@@ -123,7 +123,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
       {/* Popup Enquiry Modal */}
       {enquiryOpen && (
         <div className="modal-overlay" onClick={() => setEnquiryOpen(false)}>
-          <div className="glass-panel modal-content" style={{ maxWidth: '460px' }} onClick={(e) => e.stopPropagation()}>
+          <div className="modal-content" style={{ maxWidth: '460px' }} onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setEnquiryOpen(false)}
               style={{
@@ -142,7 +142,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
             {!enquirySubmitted ? (
               <form onSubmit={handleEnquirySubmit}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.2rem' }}>
-                  <ShieldCheck size={26} color="var(--primary-600)" />
+                  <ShieldCheck size={26} color="var(--primary-blue)" />
                   <div>
                     <h3 style={{ fontSize: '1.3rem' }}>Request Free Callback</h3>
                     <p style={{ fontSize: '0.8rem', color: 'var(--text-subtle)' }}>Muhammed Ameen • Independent Insurance Consultant</p>
@@ -164,8 +164,8 @@ export default function FloatingWidgets({ onBookConsultation }) {
                       padding: '0.7rem',
                       borderRadius: 'var(--radius-sm)',
                       border: '1px solid var(--border-light)',
-                      background: 'var(--bg-gradient)',
-                      color: 'var(--text-main)',
+                      background: '#ffffff',
+                      color: 'var(--text-dark)',
                       outline: 'none'
                     }}
                   />
@@ -186,8 +186,8 @@ export default function FloatingWidgets({ onBookConsultation }) {
                       padding: '0.7rem',
                       borderRadius: 'var(--radius-sm)',
                       border: '1px solid var(--border-light)',
-                      background: 'var(--bg-gradient)',
-                      color: 'var(--text-main)',
+                      background: '#ffffff',
+                      color: 'var(--text-dark)',
                       outline: 'none'
                     }}
                   />
@@ -208,8 +208,8 @@ export default function FloatingWidgets({ onBookConsultation }) {
                       padding: '0.7rem',
                       borderRadius: 'var(--radius-sm)',
                       border: '1px solid var(--border-light)',
-                      background: 'var(--bg-gradient)',
-                      color: 'var(--text-main)',
+                      background: '#ffffff',
+                      color: 'var(--text-dark)',
                       outline: 'none'
                     }}
                   />
@@ -227,8 +227,8 @@ export default function FloatingWidgets({ onBookConsultation }) {
                       padding: '0.7rem',
                       borderRadius: 'var(--radius-sm)',
                       border: '1px solid var(--border-light)',
-                      background: 'var(--bg-gradient)',
-                      color: 'var(--text-main)',
+                      background: '#ffffff',
+                      color: 'var(--text-dark)',
                       fontWeight: 600
                     }}
                   >
@@ -252,8 +252,8 @@ export default function FloatingWidgets({ onBookConsultation }) {
                       padding: '0.7rem',
                       borderRadius: 'var(--radius-sm)',
                       border: '1px solid var(--border-light)',
-                      background: 'var(--bg-gradient)',
-                      color: 'var(--text-main)',
+                      background: '#ffffff',
+                      color: 'var(--text-dark)',
                       outline: 'none',
                       resize: 'none'
                     }}
@@ -266,7 +266,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
               </form>
             ) : (
               <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
-                <CheckCircle2 size={46} color="var(--primary-600)" style={{ margin: '0 auto 1rem' }} />
+                <CheckCircle2 size={46} color="var(--primary-blue)" style={{ margin: '0 auto 1rem' }} />
                 <h3 style={{ fontSize: '1.4rem', marginBottom: '0.4rem' }}>Thank You!</h3>
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
                   Your enquiry has been received. Muhammed Ameen will reach out to you shortly.
