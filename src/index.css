@@ -32,6 +32,13 @@
 
   --font-heading: 'Manrope', 'Plus Jakarta Sans', -apple-system, sans-serif;
   --font-body: 'Source Sans 3', 'Inter', -apple-system, sans-serif;
+  --font-malayalam: 'Noto Sans Malayalam', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Malayalam Typography Utility Classes */
+.ml-text, .ml-badge, .ml-subtext, .ml-box, [lang="ml"] {
+  font-family: var(--font-malayalam) !important;
+  line-height: 1.6;
 }
 
 /* Reset & Setup */

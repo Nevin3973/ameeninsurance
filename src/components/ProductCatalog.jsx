@@ -62,6 +62,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       category: "family",
       image: "/prod-family.png",
       desc: "Complete family healthcare protection featuring annual cumulative bonus and zero sub-limits on ICU rooms.",
+      descMl: "കുടുംബത്തിന് മുഴുവൻ ക്ലെയിം ബോണസും ഹോസ്പിറ്റൽ മുറി വാടക പരിധിയില്ലാത്ത ക്യാഷ്‌ലെസ് കവറേജും.",
       eligibility: "18 Yrs - 65 Yrs (Children from 16 days)",
       sumInsured: "₹5 Lakhs to ₹1 Crore",
       coverage: "Inpatient, Day Care Procedures, Pre/Post Hospitalisation",
@@ -82,6 +83,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       category: "women",
       image: "/prod-women.png",
       desc: "Dedicated women and maternity insurance covering delivery, newborn care, and congenital disease cover.",
+      descMl: "ഗർഭകാലം, പ്രസവം, നവജാത ശിശുപരിപാലനം എന്നിവയ്ക്ക് എൻഡ്-ടു-എൻഡ് സാമ്പത്തിക സുരക്ഷ.",
       eligibility: "18 Yrs - 45 Yrs (Maternity specific)",
       sumInsured: "₹5 Lakhs to ₹25 Lakhs",
       coverage: "Maternity, Delivery, Newborn Baby, Assisted Reproduction",
@@ -102,6 +104,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       category: "individual",
       image: "/prod-family.png",
       desc: "No pre-insurance medical test required for senior citizens aged 60 to 75 years.",
+      descMl: "60 വയസ്സിന് മുകളിലുള്ളവർക്ക് മുൻകൂട്ടി മെഡിക്കൽ പരിശോധന ആവശ്യമില്ലാത്ത സ്പെഷ്യൽ ഹെൽത്ത് പ്ലാൻ.",
       eligibility: "60 Yrs - 75 Yrs",
       sumInsured: "₹1 Lakh to ₹25 Lakhs",
       coverage: "Inpatient Hospitalisation, Outpatient Consultations",
@@ -122,6 +125,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       category: "family",
       image: "/prod-family.png",
       desc: "All-in-one comprehensive cover with zero capping, OPD consultations, and air ambulance assistance.",
+      descMl: "എയർ ആംബുലൻസും ആയുഷ് ചികിത്സകളും അടങ്ങുന്ന സ്റ്റാർ ഹെൽത്തിന്റെ സമ്പൂർണ്ണ ഫാമിലി പ്ലാൻ.",
       eligibility: "18 Yrs - 65 Yrs",
       sumInsured: "₹5 Lakhs to ₹1 Crore",
       coverage: "Inpatient, Outpatient OPD, Dental & Ophthalmic",
@@ -142,6 +146,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       category: "family",
       image: "/prod-young.png",
       desc: "Comprehensive medical coverage with HealthReturns rewards for maintaining an active healthy lifestyle.",
+      descMl: "ദിനംപ്രതി ആരോഗ്യപരിപാലനത്തിനും ഫിറ്റ്‌നസിനും റിവാർഡ് ബോണസ് നൽകുന്ന ആധുനിക പ്ലാൻ.",
       eligibility: "91 Days to Lifetime Renewability",
       sumInsured: "₹3 Lakhs to ₹2 Crore",
       coverage: "Hospitalisation, Ayush Treatment, Domiciliary Care",
@@ -162,6 +167,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       category: "individual",
       image: "/prod-family.png",
       desc: "VIP healthcare insurance offering single private room, global emergency cover, and 100% Reload benefit.",
+      descMl: "ഏതൊരു അടിയന്തിര മെഡിക്കൽ ഘട്ടത്തിലും 100% റീചാർജ് ആനുകൂല്യം ലഭിക്കുന്ന പ്രീമിയം പ്ലാൻ.",
       eligibility: "18 Yrs - 70 Yrs",
       sumInsured: "₹10 Lakhs to ₹6 Crore",
       coverage: "Worldwide Emergency, Executive Suite, Organ Donor",
@@ -182,6 +188,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       category: "young",
       image: "/prod-young.png",
       desc: "Tailored for young active professionals with wearable step-tracking discounts and low starter premiums.",
+      descMl: "യുവാക്കൾക്കും പുതിയ ജോലിക്കാർക്കും കുറഞ്ഞ ചെലവിൽ ഉയർന്ന ആശുപത്രി കവറേജ്.",
       eligibility: "18 Yrs - 35 Yrs",
       sumInsured: "₹5 Lakhs to ₹50 Lakhs",
       coverage: "Inpatient, Accident Emergency, OPD Wellness",
@@ -202,6 +209,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       category: "family",
       image: "/prod-family.png",
       desc: "Government-backed PSU family floater plan with trusted wide network coverage and tax savings under Sec 80D.",
+      descMl: "കേന്ദ്ര സർക്കാർ പബ്ലിക് സെക്ടർ കമ്പനിയായ യുണൈറ്റഡ് ഇന്ത്യയുടെ ട്രസ്റ്റഡ് ഫാമിലി പ്ലാൻ.",
       eligibility: "18 Yrs - 65 Yrs (Parents and Grandparents eligible)",
       sumInsured: "₹3 Lakhs to ₹25 Lakhs",
       coverage: "All Medical Expenses, Pre/Post Hospitalisation",
@@ -222,6 +230,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       category: "individual",
       image: "/prod-young.png",
       desc: "Classic public sector individual medical insurance with sovereign security and economical premiums.",
+      descMl: "ഇന്ത്യയിലുടനീളമുള്ള സർക്കാർ, സ്വകാര്യ ആശുപത്രികളിൽ മികച്ച സേവനം ഉറപ്പാക്കുന്ന പ്ലാൻ.",
       eligibility: "18 Yrs - 65 Yrs",
       sumInsured: "₹2 Lakhs to ₹15 Lakhs",
       coverage: "Hospitalisation, Surgery, ICU",
@@ -242,6 +251,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       category: "young",
       image: "/prod-young.png",
       desc: "Affordable modern health policy for India workforce with high claim settlement ratios.",
+      descMl: "ന്യൂ ഇന്ത്യ അഷ്വറൻസിന്റെ ഏറ്റവും ജനപ്രിയമായ യുവജന പ്ലാൻ.",
       eligibility: "18 Yrs - 45 Yrs",
       sumInsured: "₹5 Lakhs to ₹50 Lakhs",
       coverage: "Hospitalisation, Road Accident, Roadside Ambulance",
@@ -262,6 +272,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       category: "family",
       image: "/prod-women.png",
       desc: "Specialized floater policy for families with girl child benefits and personal accident cover.",
+      descMl: "പെൺകുട്ടികളുള്ള കുടുംബങ്ങൾക്ക് പ്രീമിയത്തിൽ 5% പ്രത്യേക ഡിസ്‌കൗണ്ട് ആനുകൂല്യം.",
       eligibility: "18 Yrs - 65 Yrs",
       sumInsured: "₹3 Lakhs to ₹15 Lakhs",
       coverage: "Family Floater, Personal Accident, Girl Child Discount",
@@ -282,6 +293,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       category: "family",
       image: "/prod-family.png",
       desc: "Comprehensive family floater policy backed by National Insurance PSU heritage.",
+      descMl: "നാഷണൽ ഇൻഷുറൻസ് പി.എസ്.യു ബാക്കിംഗുള്ള മികച്ച കുടുംബ സുരക്ഷാ പോളിസി.",
       eligibility: "18 Yrs - 65 Yrs",
       sumInsured: "₹6 Lakhs to ₹50 Lakhs",
       coverage: "Hospitalisation, Critical Illness Add-on, Organ Donor",
@@ -500,9 +512,25 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                   <p style={{ fontSize: "0.8rem", fontWeight: 700, color: "var(--primary-blue)", marginBottom: "0.8rem" }}>
                     {product.company}
                   </p>
-                  <p style={{ fontSize: "0.9rem", color: "var(--text-muted)", lineHeight: 1.55, marginBottom: "1.2rem" }}>
+                  <p style={{ fontSize: "0.9rem", color: "var(--text-muted)", lineHeight: 1.55, marginBottom: "0.8rem" }}>
                     {product.desc}
                   </p>
+
+                  {product.descMl && (
+                    <div className="ml-box" style={{
+                      background: "linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%)",
+                      borderLeft: "3px solid var(--primary-blue)",
+                      padding: "0.55rem 0.85rem",
+                      borderRadius: "8px",
+                      fontSize: "0.84rem",
+                      color: "#0369a1",
+                      marginBottom: "1.2rem",
+                      fontWeight: 600,
+                      fontFamily: "var(--font-malayalam)"
+                    }}>
+                      💡 {product.descMl}
+                    </div>
+                  )}
                 </div>
 
                 <div>
