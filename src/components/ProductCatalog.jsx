@@ -468,7 +468,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    objectPosition: "center top",
+                    objectPosition: "center center",
                     display: "block",
                     background: "#ffffff",
                     transition: "transform 0.4s ease"
