@@ -50,7 +50,7 @@ export default function Footer({ onNavigate }) {
             <p style={{ color: '#94a3b8', lineHeight: 1.8 }}>
               Phone: +91 98123 45678<br />
               Email: contact@ameeninsurance.com<br />
-              Business Hours: Mon – Sat, 10:00 AM – 7:00 PM
+              Business Hours: Mon - Sat, 10:00 AM - 7:00 PM
             </p>
           </div>
         </div>

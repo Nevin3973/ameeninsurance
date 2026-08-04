@@ -10,7 +10,7 @@ export default function AboutAmeen() {
   ];
 
   const coreValues = [
-    { title: '100% Unbiased Advice', desc: 'We represent your interests across Star Health, Aditya Birla, United India & New India Assurance — not a single insurer.' },
+    { title: '100% Unbiased Advice', desc: 'We represent your interests across Star Health, Aditya Birla, United India, and New India Assurance, rather than a single insurer.' },
     { title: 'Zero Service Fees', desc: 'Our consultancy services, policy comparison, and ongoing support are provided at zero extra cost to you.' },
     { title: 'Dedicated Claim Advocacy', desc: 'From cashless hospital admission to reimbursement auditing, we stand with you when you need help most.' }
   ];
@@ -107,7 +107,7 @@ export default function AboutAmeen() {
             </p>
 
             <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '2rem' }}>
-              Unlike direct sales agents representing a single company, Ameen operates as an independent advisor. He carefully evaluates plans across India's top 4 insurers — <em>Star Health, Aditya Birla Health, United India, and New India Assurance</em> — to ensure zero hidden capping and 100% claim settlement support.
+              Unlike direct sales agents representing a single company, Ameen operates as an independent advisor across India's top 4 insurers (<em>Star Health, Aditya Birla Health, United India, and New India Assurance</em>) to ensure zero hidden capping and 100% claim settlement support.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

@@ -339,7 +339,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                 {t('leadFormTitle', 'Get a Free Consultation')}
               </h2>
               <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                {t('leadFormSubtitle', 'Share a few details and Muhammed Ameen will get back to you with the right health or life insurance options — no obligation, no pressure.')}
+                {t('leadFormSubtitle', 'Share a few details and Muhammed Ameen will get back to you with the right health or life insurance options with zero obligation or pressure.')}
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>

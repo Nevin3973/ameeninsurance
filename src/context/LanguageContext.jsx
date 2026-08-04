@@ -37,7 +37,7 @@ export const translations = {
 
     // Hero Form
     leadFormTitle: 'Get a Free Consultation',
-    leadFormSubtitle: 'Share a few details and Muhammed Ameen will get back to you with the right health or life insurance options — no obligation, no pressure.',
+    leadFormSubtitle: 'Share a few details and Muhammed Ameen will get back to you with the right health or life insurance options with zero obligation or pressure.',
     leadFormName: 'Full Name *',
     leadFormPhone: 'Phone Number *',
     leadFormEmail: 'Email Address',

@@ -86,7 +86,7 @@ export default function NriAdvisory({ onBookConsultation, onOpenWizard }) {
                 Peace of Mind for Your Parents in Kerala While You Are Overseas
               </h3>
               <p style={{ color: '#94a3b8', fontSize: '1.02rem', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                Whether you live in Dubai, Abu Dhabi, Doha, Riyadh, Muscat, or London — ensure your family has instant cashless admission at Kerala’s premier hospitals (Aster, KIMS, VPS Lakeshore, Baby Memorial) without out-of-pocket delays.
+                Whether you live in Dubai, Abu Dhabi, Doha, Riyadh, Muscat, or London, ensure your family has instant cashless admission at Kerala’s premier hospitals (Aster, KIMS, VPS Lakeshore, Baby Memorial) without out-of-pocket delays.
               </p>
 
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>

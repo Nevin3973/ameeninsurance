@@ -23,7 +23,7 @@ export default function PartnersPage({ onNavigate, onSelectPartner }) {
           </h1>
 
           <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', maxWidth: '820px', lineHeight: 1.6 }}>
-            Muhammed Ameen represents your best interests — offering unbiased comparison across India's leading Standalone Health specialists and Public Sector Undertaking (PSU) insurers.
+            Muhammed Ameen represents your best interests by offering unbiased comparison across India's leading Standalone Health specialists and Public Sector Undertaking (PSU) insurers.
           </p>
         </div>
       </div>
