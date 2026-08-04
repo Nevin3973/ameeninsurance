@@ -29,11 +29,11 @@ export default function AboutPage({ onNavigate }) {
         </div>
       </div>
 
+      {/* Profile Details & Credentials Section (Brought to Top) */}
+      <AboutAmeen />
+
       {/* Main Experience & Advisory Philosophy Section */}
       <AmeenExperience />
-
-      {/* Profile Details & Credentials Section */}
-      <AboutAmeen />
 
       {/* Call to Action Banner */}
       <div className="container" style={{ marginTop: '3rem' }}>
