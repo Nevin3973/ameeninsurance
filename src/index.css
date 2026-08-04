@@ -271,6 +271,10 @@ a:hover {
   border-color: var(--accent-sky);
 }
 
+.clean-card:hover .product-card-img {
+  transform: scale(1.06);
+}
+
 /* Badge Pills */
 .pill-badge {
   display: inline-flex;

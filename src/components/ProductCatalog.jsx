@@ -230,24 +230,40 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct }) 
         <div className="grid-3" style={{ gap: "1.8rem" }}>
           {filteredProducts.map((product) => (
             <div key={product.id} className="clean-card" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 0, overflow: "hidden" }}>
-              {/* Product Sample Image Header */}
-              <div style={{ height: "180px", overflow: "hidden", position: "relative", background: "var(--bg-card-alt)" }}>
+              {/* Product Full Cover Image Header */}
+              <div style={{ aspectRatio: "16 / 9", minHeight: "200px", overflow: "hidden", position: "relative", background: "var(--bg-card-alt)" }}>
                 <img
                   src={product.image}
                   alt={product.name}
-                  style={{ width: "100%", height: "100%", objectFit: "contain", padding: "0.5rem", background: "#f8fafc", objectPosition: "center" }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    objectPosition: "center top",
+                    display: "block",
+                    transition: "transform 0.4s ease"
+                  }}
+                  className="product-card-img"
                 />
+                <div style={{
+                  position: "absolute",
+                  inset: 0,
+                  background: "linear-gradient(to top, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.1) 60%, transparent 100%)",
+                  pointerEvents: "none"
+                }} />
                 <span style={{
                   position: "absolute",
-                  bottom: "10px",
-                  left: "12px",
-                  background: "rgba(15, 23, 42, 0.75)",
-                  backdropFilter: "blur(6px)",
+                  bottom: "12px",
+                  left: "14px",
+                  background: "var(--primary-blue)",
                   color: "#ffffff",
-                  fontSize: "0.72rem",
-                  fontWeight: 700,
-                  padding: "0.2rem 0.6rem",
-                  borderRadius: "9999px"
+                  fontSize: "0.75rem",
+                  fontWeight: 800,
+                  letterSpacing: "0.03em",
+                  padding: "0.25rem 0.75rem",
+                  borderRadius: "9999px",
+                  boxShadow: "0 2px 8px rgba(0, 0, 0, 0.25)",
+                  zIndex: 2
                 }}>
                   {product.category.toUpperCase()}
                 </span>
