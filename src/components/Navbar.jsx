@@ -75,24 +75,24 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
             <button
               onClick={toggleLanguage}
-              title={lang === 'en' ? 'Switch to Malayalam (മ)' : 'Switch to English (Eng)'}
+              title={lang === 'en' ? 'Switch to Malayalam' : 'Switch to English'}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '0.3rem',
-                padding: '0.25rem 0.75rem',
+                gap: '0.4rem',
+                padding: '0.3rem 0.95rem',
                 borderRadius: '9999px',
-                border: '1px solid rgba(255,255,255,0.25)',
-                background: 'rgba(255,255,255,0.1)',
+                border: '1px solid rgba(255,255,255,0.3)',
+                background: 'rgba(255,255,255,0.12)',
                 color: '#ffffff',
-                fontSize: '0.78rem',
-                fontWeight: 800,
+                fontSize: '0.82rem',
+                fontWeight: 700,
                 cursor: 'pointer',
                 transition: 'all 0.2s ease'
               }}
             >
-              <Globe size={13} color="#93c5fd" />
-              <span>{lang === 'en' ? 'മ' : 'Eng'}</span>
+              <Globe size={14} color="#93c5fd" />
+              <span>{lang === 'en' ? 'മലയാളം' : 'English'}</span>
             </button>
           </div>
         </div>
@@ -259,7 +259,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
                 }}
               >
                 <Globe size={15} color="var(--primary-blue)" />
-                <span>{lang === 'en' ? 'മ' : 'Eng'}</span>
+                <span>{lang === 'en' ? 'മലയാളം' : 'English'}</span>
               </button>
             </div>
 
