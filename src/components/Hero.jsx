@@ -194,58 +194,20 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
           zIndex: 2
         }} />
 
-        {/* Left Arrow Navigation Button */}
+        {/* Left Arrow Navigation Button (Hidden) */}
         <button
           onClick={handlePrevSlide}
           aria-label="Previous Slide"
-          style={{
-            position: 'absolute',
-            left: '20px',
-            top: '55%',
-            transform: 'translateY(-50%)',
-            zIndex: 4,
-            width: '46px',
-            height: '46px',
-            borderRadius: '50%',
-            background: 'rgba(255, 255, 255, 0.2)',
-            backdropFilter: 'blur(8px)',
-            border: '1px solid rgba(255, 255, 255, 0.35)',
-            color: '#ffffff',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
-          }}
+          style={{ display: 'none' }}
         >
           <ChevronLeft size={24} />
         </button>
 
-        {/* Right Arrow Navigation Button */}
+        {/* Right Arrow Navigation Button (Hidden) */}
         <button
           onClick={handleNextSlide}
           aria-label="Next Slide"
-          style={{
-            position: 'absolute',
-            right: '20px',
-            top: '55%',
-            transform: 'translateY(-50%)',
-            zIndex: 4,
-            width: '46px',
-            height: '46px',
-            borderRadius: '50%',
-            background: 'rgba(255, 255, 255, 0.2)',
-            backdropFilter: 'blur(8px)',
-            border: '1px solid rgba(255, 255, 255, 0.35)',
-            color: '#ffffff',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            transition: 'all 0.2s ease',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
-          }}
+          style={{ display: 'none' }}
         >
           <ChevronRight size={24} />
         </button>
@@ -353,23 +315,50 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
             ))}
           </div>
 
-          {/* Carousel Slide Indicators (Dots) */}
-          <div style={{ display: 'flex', gap: '0.6rem', justifyContent: 'center', alignItems: 'center' }}>
+          {/* Carousel Slide Indicators (Round Checkbox Style) */}
+          <div style={{ display: 'flex', gap: '0.8rem', justifyContent: 'center', alignItems: 'center' }}>
             {heroSlides.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentSlide(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
                 style={{
-                  width: idx === currentSlide ? '28px' : '10px',
-                  height: '10px',
-                  borderRadius: '9999px',
-                  background: idx === currentSlide ? '#60a5fa' : 'rgba(255, 255, 255, 0.4)',
+                  background: 'transparent',
                   border: 'none',
                   cursor: 'pointer',
-                  transition: 'all 0.3s ease'
+                  padding: '4px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'all 0.25s ease',
+                  transform: idx === currentSlide ? 'scale(1.15)' : 'scale(1)'
                 }}
-              />
+              >
+                {idx === currentSlide ? (
+                  <div style={{
+                    width: '22px',
+                    height: '22px',
+                    borderRadius: '50%',
+                    background: 'linear-gradient(135deg, #60a5fa, #2563eb)',
+                    color: '#ffffff',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 0 12px rgba(96, 165, 250, 0.7)'
+                  }}>
+                    <CheckCircle2 size={16} color="#ffffff" />
+                  </div>
+                ) : (
+                  <div style={{
+                    width: '20px',
+                    height: '20px',
+                    borderRadius: '50%',
+                    border: '2px solid rgba(255, 255, 255, 0.5)',
+                    background: 'rgba(255, 255, 255, 0.15)',
+                    transition: 'all 0.25s ease'
+                  }} />
+                )}
+              </button>
             ))}
           </div>
         </div>

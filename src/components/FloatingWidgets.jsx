@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MessageSquare, PhoneCall, X, Send, CheckCircle2, ShieldCheck } from 'lucide-react';
 
 export default function FloatingWidgets({ onBookConsultation }) {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
   const [enquiryForm, setEnquiryForm] = useState({
     name: '',
     pincode: '',
@@ -12,6 +13,23 @@ export default function FloatingWidgets({ onBookConsultation }) {
     insuranceType: 'Health Insurance'
   });
   const [enquirySubmitted, setEnquirySubmitted] = useState(false);
+
+  useEffect(() => {
+    let timer = null;
+    const handleScroll = () => {
+      setIsScrolling(true);
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(() => {
+        setIsScrolling(false);
+      }, 350);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (timer) clearTimeout(timer);
+    };
+  }, []);
 
   const handlePincodeChange = async (e) => {
     const val = e.target.value;
@@ -93,7 +111,11 @@ export default function FloatingWidgets({ onBookConsultation }) {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-end',
-        gap: '12px'
+        gap: '12px',
+        opacity: isScrolling ? 0 : 1,
+        transform: isScrolling ? 'translateY(18px) scale(0.92)' : 'translateY(0) scale(1)',
+        pointerEvents: isScrolling ? 'none' : 'auto',
+        transition: 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
       }}>
         {/* Floating Enquiry Button */}
         <button
