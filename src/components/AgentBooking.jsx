@@ -21,7 +21,7 @@ export default function AgentBooking() {
       <div className="container">
         <div style={{ textAlign: 'center', maxWidth: '680px', margin: '0 auto 2.5rem' }}>
           <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', marginBottom: '0.6rem' }}>
-            {lang === 'ml' ? 'മുഹമ്മദ് അമീനുമായി സമയം ബുക്ക് ചെയ്യുക' : 'Book Consultation with Muhammed Ameen'}
+            {lang === 'ml' ? 'അമീൻ നെല്ലിക്കുന്നനുമായി സമയം ബുക്ക് ചെയ്യുക' : 'Book Consultation with Ameen Nellikkunnan'}
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem' }}>
             {lang === 'ml' ? 'നിങ്ങളുടെ ഇൻഷുറൻസ് സംശയങ്ങളും അനുയോജ്യമായ പോളിസികളും അറിയാൻ നേരിട്ട് സംസാരിക്കാം.' : 'Schedule a 1-on-1 session to evaluate health coverage options or compare partner policies.'}
@@ -135,8 +135,8 @@ export default function AgentBooking() {
             <h3 style={{ fontSize: '1.4rem', marginBottom: '0.4rem' }}>{lang === 'ml' ? 'ബുക്കിംഗ് വിജയകരമാണ്!' : 'Consultation Confirmed!'}</h3>
             <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
               {lang === 'ml'
-                ? `മുഹമ്മദ് അമീൻ ${selectedDate}-ൽ ${selectedTimeSlot}-ന് നിങ്ങളെ ബന്ധപ്പെടുന്നതായിരിക്കും.`
-                : `Muhammed Ameen will connect with you on ${selectedDate} at ${selectedTimeSlot} via ${meetingType === 'video' ? 'Google Meet Video Call' : 'Office Meeting'}.`}
+                ? `അമീൻ നെല്ലിക്കുന്നൻ ${selectedDate}-ൽ ${selectedTimeSlot}-ന് നിങ്ങളെ ബന്ധപ്പെടുന്നതായിരിക്കും.`
+                : `Ameen Nellikkunnan will connect with you on ${selectedDate} at ${selectedTimeSlot} via ${meetingType === 'video' ? 'Google Meet Video Call' : 'Office Meeting'}.`}
             </p>
             <button onClick={() => setBookingConfirmed(false)} className="btn-secondary">
               {lang === 'ml' ? 'മറ്റൊരു സെഷൻ ബുക്ക് ചെയ്യുക' : 'Book Another Session'}

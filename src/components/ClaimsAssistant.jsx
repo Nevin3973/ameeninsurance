@@ -11,7 +11,7 @@ export default function ClaimsAssistant() {
             Claims Assistance
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem' }}>
-            Personalized, hands-on claim support from Muhammed Ameen to guide you through every step for cashless and reimbursement claims.
+            Personalized, hands-on claim support from Ameen Nellikkunnan to guide you through every step for cashless and reimbursement claims.
           </p>
         </div>
 

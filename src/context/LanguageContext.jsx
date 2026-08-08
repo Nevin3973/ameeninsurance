@@ -17,9 +17,9 @@ export const translations = {
     langToggleAlt: 'Switch to Malayalam',
 
     // Hero Section
-    heroBadge1: 'Muhammed Ameen • Independent Insurance Consultant',
+    heroBadge1: 'Ameen Nellikkunnan • Independent Insurance Consultant',
     heroTitle1: 'Protect Your Family with the Right Health & Life Cover',
-    heroSubtitle1: "15 years of independent guidance across India's top 5 insurance partners.",
+    heroSubtitle1: "15 years of independent guidance across India's top 4 insurance partners.",
     heroBtnCompare: 'Compare Plans',
     heroBtnBook: 'Book Consultation',
 
@@ -37,14 +37,14 @@ export const translations = {
 
     // Hero Form
     leadFormTitle: 'Get a Free Consultation',
-    leadFormSubtitle: 'Share a few details and Muhammed Ameen will get back to you with the right health or life insurance options with zero obligation or pressure.',
+    leadFormSubtitle: 'Share a few details and Ameen Nellikkunnan will get back to you with the right health insurance options with zero obligation or pressure.',
     leadFormName: 'Full Name *',
     leadFormPhone: 'Phone Number *',
     leadFormEmail: 'Email Address',
     leadFormType: 'Insurance Type of Interest',
     leadFormSubmit: 'Get My Free Quote',
     leadFormSuccessTitle: 'Thank You!',
-    leadFormSuccessDesc: 'Muhammed Ameen will contact you shortly regarding your inquiry.',
+    leadFormSuccessDesc: 'Ameen Nellikkunnan will contact you shortly regarding your inquiry.',
 
     // Stats
     statClaims: '₹150+ Cr Claims Settled',
@@ -86,7 +86,7 @@ export const translations = {
     selectPlan: 'Select Plan',
 
     // Footer
-    footerDesc: 'Muhammed Ameen is a certified independent insurance consultant dedicated to providing unbiased guidance across India\'s leading insurance providers.',
+    footerDesc: 'Ameen Nellikkunnan is a certified independent insurance consultant dedicated to providing unbiased guidance across India\'s leading insurance providers.',
     quickLinks: 'Quick Links',
     contactUs: 'Contact Us',
     address: 'Calicut & Cochin Offices, Kerala, India',
@@ -105,7 +105,7 @@ export const translations = {
     langToggleAlt: 'ഇംഗ്ലീഷിലേക്ക് മാറ്റുക',
 
     // Hero Section (Malayalam)
-    heroBadge1: 'മുഹമ്മദ് അമീൻ • അംഗീകൃത ഇൻഷുറൻസ് ഉപദേശകൻ',
+    heroBadge1: 'അമീൻ നെല്ലിക്കുന്നൻ • അംഗീകൃത ഇൻഷുറൻസ് ഉപദേശകൻ',
     heroTitle1: 'നിങ്ങളുടെ കുടുംബത്തിന് ഏറ്റവും മികച്ച ആരോഗ്യ, ജീവൻ രക്ഷാ ഇൻഷുറൻസ്',
     heroSubtitle1: 'ഇന്ത്യയിലെ മുൻനിര ഇൻഷുറൻസ് കമ്പനികളിലൂടെ 15 വർഷത്തിലേറെയുള്ള സുതാര്യമായ സേവനം.',
     heroBtnCompare: 'Compare Plans',
@@ -125,14 +125,14 @@ export const translations = {
 
     // Hero Form (Malayalam)
     leadFormTitle: 'സൗജന്യ കൺസൾട്ടേഷൻ നേടുക',
-    leadFormSubtitle: 'ചില വിവരങ്ങൾ പങ്കുവെക്കൂ, മുഹമ്മദ് അമീൻ നേരിട്ട് നിങ്ങളെ ബന്ധപ്പെട്ട് ഏറ്റവും അനുയോജ്യമായ പോളിസികൾ നിർദ്ദേശിക്കും.',
+    leadFormSubtitle: 'ചില വിവരങ്ങൾ പങ്കുവെക്കൂ, അമീൻ നെല്ലിക്കുന്നൻ നേരിട്ട് നിങ്ങളെ ബന്ധപ്പെട്ട് ഏറ്റവും അനുയോജ്യമായ പോളിസികൾ നിർദ്ദേശിക്കും.',
     leadFormName: 'മുഴുവൻ പേര് *',
     leadFormPhone: 'ഫോൺ നമ്പർ *',
     leadFormEmail: 'ഇമെയിൽ വിലാസം',
     leadFormType: 'ആവശ്യമുള്ള ഇൻഷുറൻസ്',
     leadFormSubmit: 'Get Free Quote',
     leadFormSuccessTitle: 'നന്ദി!',
-    leadFormSuccessDesc: 'മുഹമ്മദ് അമീൻ ഉടൻ തന്നെ നിങ്ങളെ ഫോണിൽ ബന്ധപ്പെടുന്നതാണ്.',
+    leadFormSuccessDesc: 'അമീൻ നെല്ലിക്കുന്നൻ ഉടൻ തന്നെ നിങ്ങളെ ഫോണിൽ ബന്ധപ്പെടുന്നതാണ്.',
 
     // Stats (Malayalam)
     statClaims: '₹150+ കോടി ക്ലെയിം സെറ്റിൽമെന്റ്',
@@ -174,7 +174,7 @@ export const translations = {
     selectPlan: 'പ്ലാൻ തിരഞ്ഞെടുക്കുക',
 
     // Footer (Malayalam)
-    footerDesc: 'മുഹമ്മദ് അമീൻ കേരളത്തിലെ പ്രമുഖ സ്വതന്ത്ര ഇൻഷുറൻസ് ഉപദേശകനാണ്.',
+    footerDesc: 'അമീൻ നെല്ലിക്കുന്നൻ കേരളത്തിലെ പ്രമുഖ സ്വതന്ത്ര ഇൻഷുറൻസ് ഉപദേശകനാണ്.',
     quickLinks: 'പ്രധാന ലിങ്കുകൾ',
     contactUs: 'ബന്ധപ്പെടാൻ',
     address: 'കോഴിക്കോട് & കൊച്ചി ഓഫീസുകൾ, കേരളം, ഇന്ത്യ',

@@ -11,7 +11,7 @@ export default function BlogSection() {
       category: 'Family Insurance',
       readTime: '5 Min Read',
       date: 'July 2026',
-      author: 'Muhammed Ameen',
+      author: 'Ameen Nellikkunnan',
       snippet: 'Selecting a family floater policy requires looking at room rent sub-limits, restoration benefits, and network hospital availability.',
       content: `Medical inflation is rising by 12-14% annually in India. A hospitalization that cost ₹2 Lakhs five years ago can easily exceed ₹5 Lakhs today.
 
@@ -26,7 +26,7 @@ Key factors when selecting family floater policies:
       category: 'Tax Benefits',
       readTime: '4 Min Read',
       date: 'July 2026',
-      author: 'Muhammed Ameen',
+      author: 'Ameen Nellikkunnan',
       snippet: 'Under Income Tax Section 80D, health insurance premiums paid for self, family, and senior citizen parents can save substantial tax.',
       content: `Section 80D of the Income Tax Act provides tax deduction benefits on medical insurance premiums:
 
@@ -41,7 +41,7 @@ Key factors when selecting family floater policies:
       category: 'Cashless Claims',
       readTime: '6 Min Read',
       date: 'July 2026',
-      author: 'Muhammed Ameen',
+      author: 'Ameen Nellikkunnan',
       snippet: 'Understanding the pre-authorization process for cashless hospital admission prevents last-minute out-of-pocket stress.',
       content: `Emergency vs Planned Hospitalization:
 
@@ -62,7 +62,7 @@ Key factors when selecting family floater policies:
             Insurance Advisory Articles & Guides
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem' }}>
-            Expert advice from Muhammed Ameen on health coverage, tax saving strategies, and cashless hospital procedures.
+            Expert advice from Ameen Nellikkunnan on health coverage, tax saving strategies, and cashless hospital procedures.
           </p>
         </div>
 

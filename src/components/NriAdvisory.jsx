@@ -28,7 +28,7 @@ export default function NriAdvisory({ onBookConsultation, onOpenWizard }) {
     }
   ];
 
-  const nriWhatsAppMsg = encodeURIComponent("Hi Muhammed Ameen, I am an NRI looking for health insurance for my parents in Kerala. Please guide me.");
+  const nriWhatsAppMsg = encodeURIComponent("Hi Ameen Nellikkunnan, I am an NRI looking for health insurance for my parents in Kerala. Please guide me on Aditya Birla NRI discounts and Star Health plans.");
   const nriWhatsAppUrl = `https://wa.me/919812345678?text=${nriWhatsAppMsg}`;
 
   return (
@@ -43,8 +43,26 @@ export default function NriAdvisory({ onBookConsultation, onOpenWizard }) {
             Dedicated Insurance Advisory for NRIs & Gulf Families
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.08rem', lineHeight: 1.6 }}>
-            Protect your parents back home in Kerala with top-tier cashless health coverage, seamless NRE/NRO payments, and 24/7 hospital claim advocacy from Muhammed Ameen.
+            Protect your parents back home in Kerala with top-tier cashless health coverage, seamless NRE/NRO payments, and 24/7 hospital claim advocacy from Ameen Nellikkunnan.
           </p>
+
+          {/* NRI Aditya Birla Special Discount Notice Banner */}
+          <div style={{
+            background: 'linear-gradient(135deg, #058340 0%, #15803d 100%)',
+            color: '#ffffff',
+            borderRadius: '12px',
+            padding: '1rem 1.5rem',
+            marginTop: '1.5rem',
+            boxShadow: '0 4px 15px rgba(5, 131, 64, 0.2)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '0.8rem',
+            fontWeight: 700,
+            fontSize: '0.95rem'
+          }}>
+            <span>✨ Special Expat Offer: NRIs receive exclusive discounts when opting for Aditya Birla Health Insurance!</span>
+          </div>
         </div>
 
         {/* Highlight Banner Card */}

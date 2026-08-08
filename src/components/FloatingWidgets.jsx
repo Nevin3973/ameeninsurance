@@ -5,12 +5,67 @@ export default function FloatingWidgets({ onBookConsultation }) {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
   const [enquiryForm, setEnquiryForm] = useState({
     name: '',
+    pincode: '',
     place: '',
     phone: '',
     description: '',
     insuranceType: 'Health Insurance'
   });
   const [enquirySubmitted, setEnquirySubmitted] = useState(false);
+
+  const handlePincodeChange = async (e) => {
+    const val = e.target.value;
+    setEnquiryForm((prev) => ({ ...prev, pincode: val }));
+
+    if (val.trim().length === 6) {
+      const pinNum = val.trim();
+      const knownPincodes = {
+        '673001': 'Kozhikode (Calicut), Kerala',
+        '673002': 'Calicut Beach, Kozhikode, Kerala',
+        '673004': 'Calicut Arts College, Kozhikode, Kerala',
+        '673016': 'Feroke, Kozhikode, Kerala',
+        '673601': 'Koduvally, Kozhikode, Kerala',
+        '682001': 'Kochi (Cochin), Kerala',
+        '682011': 'Kaloor, Ernakulam, Kerala',
+        '682016': 'MG Road, Ernakulam, Kerala',
+        '682030': 'Edappally, Kochi, Kerala',
+        '682031': 'Kalamassery, Kochi, Kerala',
+        '695001': 'Trivandrum (Thiruvananthapuram), Kerala',
+        '695011': 'Vellayambalam, Trivandrum, Kerala',
+        '670001': 'Kannur, Kerala',
+        '678001': 'Palakkad, Kerala',
+        '680001': 'Thrissur, Kerala',
+        '686001': 'Kottayam, Kerala',
+        '689101': 'Tiruvalla, Pathanamthitta, Kerala',
+        '691001': 'Kollam, Kerala',
+        '671121': 'Kasaragod, Kerala',
+        '676505': 'Malappuram, Kerala',
+        '685602': 'Munnar, Idukki, Kerala',
+        '673576': 'Kalpetta, Wayanad, Kerala',
+        '110001': 'New Delhi',
+        '400001': 'Mumbai, Maharashtra',
+        '560001': 'Bengaluru, Karnataka',
+        '600001': 'Chennai, Tamil Nadu'
+      };
+
+      if (knownPincodes[pinNum]) {
+        setEnquiryForm((prev) => ({ ...prev, place: knownPincodes[pinNum] }));
+        return;
+      }
+
+      try {
+        const res = await fetch(`https://api.postalpincode.in/pincode/${pinNum}`);
+        const data = await res.json();
+        if (data && data[0] && data[0].Status === 'Success' && data[0].PostOffice && data[0].PostOffice.length > 0) {
+          const po = data[0].PostOffice[0];
+          const locStr = `${po.District || po.Name}, ${po.State}`;
+          setEnquiryForm((prev) => ({ ...prev, place: locStr }));
+        }
+      } catch (err) {
+        console.error('Pincode lookup error:', err);
+      }
+    }
+  };
 
   const handleEnquirySubmit = (e) => {
     e.preventDefault();
@@ -19,12 +74,12 @@ export default function FloatingWidgets({ onBookConsultation }) {
       setTimeout(() => {
         setEnquirySubmitted(false);
         setEnquiryOpen(false);
-        setEnquiryForm({ name: '', place: '', phone: '', description: '', insuranceType: 'Health Insurance' });
+        setEnquiryForm({ name: '', pincode: '', place: '', phone: '', description: '', insuranceType: 'Health Insurance' });
       }, 3000);
     }
   };
 
-  const whatsappMessage = encodeURIComponent("Hi Muhammed Ameen, I would like to get a free health & life insurance consultation.");
+  const whatsappMessage = encodeURIComponent("Hi Ameen Nellikkunnan, I would like to get a free health insurance consultation.");
   const whatsappUrl = `https://wa.me/919812345678?text=${whatsappMessage}`;
 
   return (
@@ -145,7 +200,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
                   <ShieldCheck size={26} color="var(--primary-blue)" />
                   <div>
                     <h3 style={{ fontSize: '1.3rem' }}>Request Free Callback</h3>
-                    <p style={{ fontSize: '0.8rem', color: 'var(--text-subtle)' }}>Muhammed Ameen • Independent Insurance Consultant</p>
+                    <p style={{ fontSize: '0.8rem', color: 'var(--text-subtle)' }}>Ameen Nellikkunnan • Independent Insurance Consultant</p>
                   </div>
                 </div>
 
@@ -171,26 +226,51 @@ export default function FloatingWidgets({ onBookConsultation }) {
                   />
                 </div>
 
-                <div style={{ marginBottom: '1rem' }}>
-                  <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-subtle)', marginBottom: '0.3rem' }}>
-                    PLACE / CITY *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="e.g., Kochi, Trivandrum, Calicut"
-                    value={enquiryForm.place}
-                    onChange={(e) => setEnquiryForm({ ...enquiryForm, place: e.target.value })}
-                    style={{
-                      width: '100%',
-                      padding: '0.7rem',
-                      borderRadius: 'var(--radius-sm)',
-                      border: '1px solid var(--border-light)',
-                      background: '#ffffff',
-                      color: 'var(--text-dark)',
-                      outline: 'none'
-                    }}
-                  />
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem', marginBottom: '1rem' }}>
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-subtle)', marginBottom: '0.3rem' }}>
+                      PINCODE *
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      maxLength={6}
+                      placeholder="e.g. 673001"
+                      value={enquiryForm.pincode}
+                      onChange={handlePincodeChange}
+                      style={{
+                        width: '100%',
+                        padding: '0.7rem',
+                        borderRadius: 'var(--radius-sm)',
+                        border: '1px solid var(--border-light)',
+                        background: '#ffffff',
+                        color: 'var(--text-dark)',
+                        outline: 'none'
+                      }}
+                    />
+                  </div>
+
+                  <div>
+                    <label style={{ display: 'block', fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-subtle)', marginBottom: '0.3rem' }}>
+                      PLACE / CITY
+                    </label>
+                    <input
+                      type="text"
+                      readOnly
+                      placeholder="Auto updated"
+                      value={enquiryForm.place}
+                      style={{
+                        width: '100%',
+                        padding: '0.7rem',
+                        borderRadius: 'var(--radius-sm)',
+                        border: '1px solid var(--border-light)',
+                        background: '#f1f5f9',
+                        color: '#0f172a',
+                        fontWeight: 700,
+                        outline: 'none'
+                      }}
+                    />
+                  </div>
                 </div>
 
                 <div style={{ marginBottom: '1rem' }}>
@@ -233,8 +313,6 @@ export default function FloatingWidgets({ onBookConsultation }) {
                     }}
                   >
                     <option value="Health Insurance">Health Insurance (Family & Individual)</option>
-                    <option value="Life Insurance">Term Life & Pension Insurance</option>
-                    <option value="General Enquiry">General Insurance Enquiry</option>
                   </select>
                 </div>
 
@@ -269,7 +347,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
                 <CheckCircle2 size={46} color="var(--primary-blue)" style={{ margin: '0 auto 1rem' }} />
                 <h3 style={{ fontSize: '1.4rem', marginBottom: '0.4rem' }}>Thank You!</h3>
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-                  Your enquiry has been received. Muhammed Ameen will reach out to you shortly.
+                  Your enquiry has been received. Ameen Nellikkunnan will reach out to you shortly.
                 </p>
               </div>
             )}

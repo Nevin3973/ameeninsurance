@@ -9,19 +9,75 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
     fullName: '',
     phone: '',
     email: '',
+    pincode: '',
+    location: '',
     insuranceType: 'Health Insurance'
   });
   const [leadSubmitted, setLeadSubmitted] = useState(false);
 
-  const claimsWaUrl = `https://wa.me/919812345678?text=${encodeURIComponent("Hi Muhammed Ameen, I need emergency assistance with a hospital claim.")}`;
+  const handlePincodeChange = async (e) => {
+    const val = e.target.value;
+    setLeadForm((prev) => ({ ...prev, pincode: val }));
+
+    if (val.trim().length === 6) {
+      const pinNum = val.trim();
+      const knownPincodes = {
+        '673001': 'Kozhikode (Calicut), Kerala',
+        '673002': 'Calicut Beach, Kozhikode, Kerala',
+        '673004': 'Calicut Arts College, Kozhikode, Kerala',
+        '673016': 'Feroke, Kozhikode, Kerala',
+        '673601': 'Koduvally, Kozhikode, Kerala',
+        '682001': 'Kochi (Cochin), Kerala',
+        '682011': 'Kaloor, Ernakulam, Kerala',
+        '682016': 'MG Road, Ernakulam, Kerala',
+        '682030': 'Edappally, Kochi, Kerala',
+        '682031': 'Kalamassery, Kochi, Kerala',
+        '695001': 'Trivandrum (Thiruvananthapuram), Kerala',
+        '695011': 'Vellayambalam, Trivandrum, Kerala',
+        '670001': 'Kannur, Kerala',
+        '678001': 'Palakkad, Kerala',
+        '680001': 'Thrissur, Kerala',
+        '686001': 'Kottayam, Kerala',
+        '689101': 'Tiruvalla, Pathanamthitta, Kerala',
+        '691001': 'Kollam, Kerala',
+        '671121': 'Kasaragod, Kerala',
+        '676505': 'Malappuram, Kerala',
+        '685602': 'Munnar, Idukki, Kerala',
+        '673576': 'Kalpetta, Wayanad, Kerala',
+        '110001': 'New Delhi',
+        '400001': 'Mumbai, Maharashtra',
+        '560001': 'Bengaluru, Karnataka',
+        '600001': 'Chennai, Tamil Nadu'
+      };
+
+      if (knownPincodes[pinNum]) {
+        setLeadForm((prev) => ({ ...prev, location: knownPincodes[pinNum] }));
+        return;
+      }
+
+      try {
+        const res = await fetch(`https://api.postalpincode.in/pincode/${pinNum}`);
+        const data = await res.json();
+        if (data && data[0] && data[0].Status === 'Success' && data[0].PostOffice && data[0].PostOffice.length > 0) {
+          const po = data[0].PostOffice[0];
+          const locStr = `${po.District || po.Name}, ${po.State}`;
+          setLeadForm((prev) => ({ ...prev, location: locStr }));
+        }
+      } catch (err) {
+        console.error('Pincode lookup error:', err);
+      }
+    }
+  };
+
+  const claimsWaUrl = `https://wa.me/919812345678?text=${encodeURIComponent("Hi Ameen Nellikkunnan, I need emergency assistance with a hospital claim.")}`;
 
   const heroSlides = [
     {
       id: 'family-protection',
       image: '/family-hero-notext.png',
-      badge: t('heroBadge1', 'Muhammed Ameen • Independent Insurance Consultant'),
+      badge: t('heroBadge1', 'Ameen Nellikkunnan • Independent Insurance Consultant'),
       title: t('heroTitle1', 'Protect Your Family with the Right Health & Life Cover'),
-      subtitle: t('heroSubtitle1', "15 years of independent guidance across India's top 5 insurance partners."),
+      subtitle: t('heroSubtitle1', "15 years of independent guidance across India's top 4 insurance partners."),
       primaryBtnText: t('heroBtnCompare', 'Compare Plans'),
       primaryBtnTarget: 'products',
       secondaryBtnText: t('heroBtnBook', 'Book Consultation'),
@@ -330,40 +386,43 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
           border: '1px solid var(--border-light)',
           boxShadow: 'var(--shadow-md)'
         }}>
-          <div className="grid-2" style={{ gap: '3rem', alignItems: 'center' }}>
-            <div>
-              <span className="pill-badge" style={{ marginBottom: '1rem', background: 'var(--accent-sky-light)', border: 'none' }}>
-                <ShieldCheck size={16} color="var(--primary-blue)" /> {lang === 'ml' ? 'നേരിട്ടുള്ള സഹായം' : 'Direct Consultancy'}
-              </span>
-              <h2 style={{ fontSize: '2rem', marginBottom: '1rem', lineHeight: 1.25 }}>
-                {t('leadFormTitle', 'Get a Free Consultation')}
-              </h2>
-              <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                {t('leadFormSubtitle', 'Share a few details and Muhammed Ameen will get back to you with the right health or life insurance options with zero obligation or pressure.')}
-              </p>
+          <div className={leadSubmitted ? "" : "grid-2"} style={{ gap: '3rem', alignItems: 'flex-start' }}>
+            {!leadSubmitted && (
+              <div>
+                <span className="pill-badge" style={{ marginBottom: '1rem', background: 'var(--accent-sky-light)', border: 'none' }}>
+                  <ShieldCheck size={16} color="var(--primary-blue)" /> {lang === 'ml' ? 'നേരിട്ടുള്ള സഹായം' : 'Direct Consultancy'}
+                </span>
+                <h2 style={{ fontSize: '2rem', marginBottom: '1rem', lineHeight: 1.25 }}>
+                  {t('leadFormTitle', 'Get a Free Consultation')}
+                </h2>
+                <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                  {t('leadFormSubtitle', 'Share a few details and Ameen Nellikkunnan will get back to you with the right health insurance options with zero obligation or pressure.')}
+                </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
-                  <CheckCircle2 size={18} color="var(--primary-blue)" />
-                  <span>{lang === 'ml' ? 'മികച്ച കമ്പനികളിൽ നിന്നുള്ള സുതാര്യമായ വിവരങ്ങൾ' : 'Unbiased recommendations from 4 top insurers'}</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
-                  <CheckCircle2 size={18} color="var(--primary-blue)" />
-                  <span>{lang === 'ml' ? 'അധിക ചാർജുകളോ ഏജൻസി കമ്മീഷനുകളോ ഇല്ല' : 'Zero service fees or commission markups'}</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
-                  <CheckCircle2 size={18} color="var(--primary-blue)" />
-                  <span>{lang === 'ml' ? 'ആശുപത്രി ക്ലെയിമുകളിൽ സമ്പൂർണ്ണ സഹായം' : 'Hands-on claim settlement assistance'}</span>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
+                    <CheckCircle2 size={18} color="var(--primary-blue)" />
+                    <span>{lang === 'ml' ? 'മികച്ച കമ്പനികളിൽ നിന്നുള്ള സുതാര്യമായ വിവരങ്ങൾ' : 'Unbiased recommendations from top insurers'}</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
+                    <CheckCircle2 size={18} color="var(--primary-blue)" />
+                    <span>{lang === 'ml' ? 'അധിക ചാർജുകളോ ഏജൻസി കമ്മീഷനുകളോ ഇല്ല' : 'Zero service fees or commission markups'}</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
+                    <CheckCircle2 size={18} color="var(--primary-blue)" />
+                    <span>{lang === 'ml' ? 'ആശുപത്രി ക്ലെയിമുകളിൽ സമ്പൂർണ്ണ സഹായം' : 'Hands-on claim settlement assistance'}</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
 
-            {/* Lead Form Box */}
+            {/* Lead Form Box / Post Consultation Offers View */}
             <div style={{
               background: 'var(--bg-card-alt)',
               borderRadius: 'var(--radius-md)',
               padding: '2rem',
-              border: '1px solid var(--border-light)'
+              border: '1px solid var(--border-light)',
+              width: '100%'
             }}>
               {!leadSubmitted ? (
                 <form onSubmit={handleLeadSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -411,6 +470,55 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                     />
                   </div>
 
+                  {/* Pincode Input with Auto Location Update */}
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem' }}>
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, marginBottom: '0.3rem' }}>
+                        Pincode *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        maxLength={6}
+                        placeholder="e.g. 673001"
+                        value={leadForm.pincode}
+                        onChange={handlePincodeChange}
+                        style={{
+                          width: '100%',
+                          padding: '0.75rem 1rem',
+                          borderRadius: 'var(--radius-sm)',
+                          border: '1px solid var(--border-light)',
+                          background: '#ffffff',
+                          fontSize: '0.92rem',
+                          outline: 'none'
+                        }}
+                      />
+                    </div>
+
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, marginBottom: '0.3rem' }}>
+                        Location / City
+                      </label>
+                      <input
+                        type="text"
+                        readOnly
+                        placeholder="Auto-updated via pincode"
+                        value={leadForm.location}
+                        style={{
+                          width: '100%',
+                          padding: '0.75rem 1rem',
+                          borderRadius: 'var(--radius-sm)',
+                          border: '1px solid var(--border-light)',
+                          background: '#f1f5f9',
+                          color: '#0f172a',
+                          fontWeight: 700,
+                          fontSize: '0.88rem',
+                          outline: 'none'
+                        }}
+                      />
+                    </div>
+                  </div>
+
                   <div>
                     <label style={{ display: 'block', fontSize: '0.82rem', fontWeight: 700, marginBottom: '0.3rem' }}>
                       {t('leadFormEmail', 'Email Address')}
@@ -450,9 +558,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                         outline: 'none'
                       }}
                     >
-                      <option value="Health Insurance">{lang === 'ml' ? 'ആരോഗ്യ ഇൻഷുറൻസ് (Health)' : 'Health Insurance'}</option>
-                      <option value="Life Insurance">{lang === 'ml' ? 'ലൈഫ് ഇൻഷുറൻസ് (Life)' : 'Life Insurance'}</option>
-                      <option value="General Enquiry">{lang === 'ml' ? 'പൊതുവിവരങ്ങൾ (General Enquiry)' : 'General Enquiry'}</option>
+                      <option value="Health Insurance">Health Insurance</option>
                     </select>
                   </div>
 
@@ -461,12 +567,75 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                   </button>
                 </form>
               ) : (
-                <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
-                  <CheckCircle2 size={46} color="var(--primary-blue)" style={{ margin: '0 auto 1rem' }} />
-                  <h4 style={{ fontSize: '1.4rem', marginBottom: '0.4rem' }}>{t('leadFormSuccessTitle', 'Thank You!')}</h4>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-                    {t('leadFormSuccessDesc', 'Muhammed Ameen will contact you shortly regarding your inquiry.')}
-                  </p>
+                /* Post Consultation Plan Offers & Details Section */
+                <div>
+                  <div style={{ textAlign: 'center', marginBottom: '2rem', paddingBottom: '1.2rem', borderBottom: '1px solid var(--border-light)' }}>
+                    <CheckCircle2 size={48} color="var(--primary-blue)" style={{ margin: '0 auto 0.8rem' }} />
+                    <h3 style={{ fontSize: '1.6rem', marginBottom: '0.4rem', color: 'var(--text-dark)' }}>{t('leadFormSuccessTitle', 'Thank You, ' + (leadForm.fullName || 'Valued Customer') + '!')}</h3>
+                    <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }}>
+                      Ameen Nellikkunnan has received your details for <strong>{leadForm.location ? leadForm.location : 'your area'}</strong> and will call you back shortly. In the meantime, explore our top featured health insurance plan offers below:
+                    </p>
+                  </div>
+
+                  <h4 style={{ fontSize: '1.2rem', marginBottom: '1.2rem', color: 'var(--primary-blue)', textAlign: 'center' }}>
+                    🔥 Top Health Insurance Offers & Details
+                  </h4>
+
+                  <div className="grid-3" style={{ gap: '1.2rem' }}>
+                    {/* Offer Card 1 */}
+                    <div style={{ background: '#ffffff', padding: '1.2rem', borderRadius: '12px', border: '1px solid var(--border-light)', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
+                      <span style={{ fontSize: '0.72rem', fontWeight: 800, background: '#dbeafe', color: 'var(--primary-blue)', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>STAR HEALTH</span>
+                      <h5 style={{ fontSize: '1.1rem', margin: '0.5rem 0 0.3rem' }}>Star Super Star</h5>
+                      <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.4, marginBottom: '0.8rem' }}>
+                        100% Cashless Hospitalization, Zero Room Rent Capping, Automatic 100% Restoration.
+                      </p>
+                      <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--primary-blue)', marginBottom: '0.8rem' }}>
+                        Sum Insured: ₹5L - ₹1 Crore
+                      </div>
+                      <button onClick={() => handleNavClick('products')} className="btn-secondary" style={{ width: '100%', padding: '0.55rem', fontSize: '0.8rem' }}>
+                        Explore Offer Details
+                      </button>
+                    </div>
+
+                    {/* Offer Card 2 - Aditya Birla with NRI discount highlight */}
+                    <div style={{ background: '#ffffff', padding: '1.2rem', borderRadius: '12px', border: '2px solid #058340', boxShadow: '0 4px 12px rgba(5, 131, 64, 0.1)', position: 'relative' }}>
+                      <span style={{ fontSize: '0.72rem', fontWeight: 800, background: '#dcfce7', color: '#058340', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>ADITYA BIRLA</span>
+                      <span style={{ position: 'absolute', top: '12px', right: '12px', fontSize: '0.68rem', fontWeight: 800, background: '#fef08a', color: '#854d0e', padding: '0.2rem 0.5rem', borderRadius: '4px' }}>
+                        ✨ NRI Special Discount
+                      </span>
+                      <h5 style={{ fontSize: '1.1rem', margin: '0.5rem 0 0.3rem' }}>Health Assure</h5>
+                      <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.4, marginBottom: '0.8rem' }}>
+                        HealthReturns™ wellness rewards plus <strong>exclusive discounts for NRIs & expat families</strong>.
+                      </p>
+                      <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#058340', marginBottom: '0.8rem' }}>
+                        Sum Insured: ₹3L - ₹2 Crore
+                      </div>
+                      <button onClick={() => handleNavClick('products')} className="btn-primary" style={{ width: '100%', padding: '0.55rem', fontSize: '0.8rem', background: '#058340' }}>
+                        Claim NRI Offer
+                      </button>
+                    </div>
+
+                    {/* Offer Card 3 */}
+                    <div style={{ background: '#ffffff', padding: '1.2rem', borderRadius: '12px', border: '1px solid var(--border-light)', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
+                      <span style={{ fontSize: '0.72rem', fontWeight: 800, background: '#fae8ff', color: '#a21caf', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>WOMEN & MATERNITY</span>
+                      <h5 style={{ fontSize: '1.1rem', margin: '0.5rem 0 0.3rem' }}>Star Womens Care</h5>
+                      <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.4, marginBottom: '0.8rem' }}>
+                        Normal & C-Section delivery cover, Day-1 Newborn cover, and vaccination allowance.
+                      </p>
+                      <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#a21caf', marginBottom: '0.8rem' }}>
+                        Sum Insured: ₹5L - ₹25L
+                      </div>
+                      <button onClick={() => handleNavClick('products')} className="btn-secondary" style={{ width: '100%', padding: '0.55rem', fontSize: '0.8rem' }}>
+                        View Maternity Cover
+                      </button>
+                    </div>
+                  </div>
+
+                  <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
+                    <button onClick={() => setLeadSubmitted(false)} className="btn-secondary" style={{ padding: '0.6rem 1.4rem', fontSize: '0.85rem' }}>
+                      Submit Another Consultation Request
+                    </button>
+                  </div>
                 </div>
               )}
             </div>

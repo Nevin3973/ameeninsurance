@@ -39,7 +39,7 @@ export default function ClaimsPage({ onNavigate }) {
           </h1>
 
           <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', maxWidth: '820px', lineHeight: 1.6 }}>
-            Muhammed Ameen provides direct hospital insurance desk coordination, Pre-Auth authorization management, and 100% claim settlement support for your family.
+            Ameen Nellikkunnan provides direct hospital insurance desk coordination, Pre-Auth authorization management, and 100% claim settlement support for your family.
           </p>
         </div>
       </div>
@@ -170,7 +170,7 @@ export default function ClaimsPage({ onNavigate }) {
                 <CheckCircle2 size={46} color="var(--primary-blue)" style={{ margin: '0 auto 1rem' }} />
                 <h4 style={{ fontSize: '1.3rem', marginBottom: '0.4rem' }}>Request Received!</h4>
                 <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>
-                  Muhammed Ameen has received your priority claim assistance request and will call you immediately.
+                  Ameen Nellikkunnan has received your priority claim assistance request and will call you immediately.
                 </p>
               </div>
             )}

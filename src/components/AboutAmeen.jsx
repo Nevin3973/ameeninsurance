@@ -44,7 +44,7 @@ export default function AboutAmeen() {
               <img
                 src="/Ameen.png"
                 onError={(e) => { e.target.src = '/Ameen.jpg'; }}
-                alt="Muhammed Ameen - Independent Insurance Consultant"
+                alt="Ameen Nellikkunnan - Independent Insurance Consultant"
                 style={{
                   width: '100%',
                   height: '100%',
@@ -56,7 +56,7 @@ export default function AboutAmeen() {
             </div>
 
             <h3 style={{ fontSize: '1.8rem', marginBottom: '0.3rem', color: 'var(--text-dark)' }}>
-              Muhammed Ameen
+              Ameen Nellikkunnan
             </h3>
 
             <p style={{ color: 'var(--primary-blue)', fontWeight: 700, fontSize: '0.95rem', marginBottom: '1rem' }}>
@@ -99,11 +99,11 @@ export default function AboutAmeen() {
             </span>
 
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', marginBottom: '1.2rem', lineHeight: 1.25 }}>
-              About Muhammed Ameen
+              About Ameen Nellikkunnan
             </h2>
 
             <p style={{ fontSize: '1.08rem', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '1.2rem' }}>
-              With over 15 years of dedicated experience in health insurance and financial protection, <strong>Muhammed Ameen</strong> has guided more than 5,000 families and individuals in choosing the right insurance cover for their unique medical and financial goals.
+              With over 15 years of dedicated experience in health insurance and financial protection, <strong>Ameen Nellikkunnan</strong> has guided more than 5,000 families and individuals in choosing the right insurance cover for their unique medical and financial goals.
             </p>
 
             <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '2rem' }}>

@@ -24,7 +24,7 @@ export default function AboutPage({ onNavigate }) {
           </h1>
 
           <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', maxWidth: '820px', lineHeight: 1.6 }}>
-            Muhammed Ameen provides transparent, unbiased advisory across India's premier health and life insurance companies to ensure your family gets maximum coverage with zero hidden capping.
+            Ameen Nellikkunnan provides transparent, unbiased advisory across India's premier health and life insurance companies to ensure your family gets maximum coverage with zero hidden capping.
           </p>
         </div>
       </div>
@@ -56,7 +56,7 @@ export default function AboutPage({ onNavigate }) {
               Ready to Protect Your Family’s Future?
             </h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '1rem', maxWidth: '640px' }}>
-              Book a free, zero-obligation advisory session with Muhammed Ameen to review your existing policy or compare top new plans.
+              Book a free, zero-obligation advisory session with Ameen Nellikkunnan to review your existing policy or compare top new plans.
             </p>
           </div>
 

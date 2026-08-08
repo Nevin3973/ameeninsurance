@@ -436,7 +436,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
           <div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', marginBottom: '1.8rem' }}>
               {recommendations.map((rec, idx) => {
-                const waMsg = encodeURIComponent(`Hi Muhammed Ameen, I used your Plan Finder Wizard and was recommended the ${rec.name} (${rec.company}) policy. I would like to get a quote.`);
+                const waMsg = encodeURIComponent(`Hi Ameen Nellikkunnan, I used your Plan Finder Wizard and was recommended the ${rec.name} (${rec.company}) policy. I would like to get a quote.`);
                 const waUrl = `https://wa.me/919812345678?text=${waMsg}`;
 
                 return (

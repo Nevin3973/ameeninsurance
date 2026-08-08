@@ -25,9 +25,9 @@ export default function InsurancePartners({ onSelectPartner }) {
       brandName: 'Aditya Birla Health Insurance',
       legalName: 'Aditya Birla Health Insurance Company Limited',
       logo: '/aditya-birla.webp',
-      overview: 'Pioneer of HealthReturns™ incentivised wellness programs with 10,000+ cashless healthcare providers.',
+      overview: 'Pioneer of HealthReturns™ wellness programs with 10,000+ cashless providers. NRIs receive exclusive discounts when opting for Aditya Birla Health Insurance.',
       hospitals: '10,000+ Hospitals',
-      tag: 'Wellness & Rewards Pioneer',
+      tag: 'Wellness Pioneer • NRI Discount Available',
       logoHeight: '50px'
     },
     {
@@ -49,16 +49,6 @@ export default function InsurancePartners({ onSelectPartner }) {
       hospitals: '8,000+ Hospitals',
       tag: 'Multinational PSU Giant',
       logoHeight: '50px'
-    },
-    {
-      id: 'national-insurance',
-      brandName: 'National Insurance',
-      legalName: 'National Insurance Company Limited',
-      logo: '/National.svg',
-      overview: "India's oldest public sector general insurance company providing comprehensive health, floater & personal cover.",
-      hospitals: '6,500+ Hospitals',
-      tag: 'Govt. PSU Pioneer',
-      logoHeight: '52px'
     }
   ];
 

@@ -33,12 +33,12 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
 
   return (
     <div style={{ position: 'sticky', top: 0, zIndex: 100, width: '100%' }}>
-      {/* 1. Top Star Health-Style Utility Notification & Contact Bar */}
-      <div style={{
+      {/* 1. Sleek Utility Notification & Helpline Bar */}
+      <div className="top-utility-bar" style={{
         background: '#0f172a',
         color: '#ffffff',
         fontSize: '0.82rem',
-        padding: '0.45rem 1.5rem',
+        padding: '0.4rem 1.2rem',
         borderBottom: '1px solid rgba(255,255,255,0.1)'
       }}>
         <div style={{
@@ -47,12 +47,11 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          flexWrap: 'wrap',
           gap: '0.6rem'
         }}>
-          {/* Left Side: Direct Helpline & IRDAI License Badge */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.4rem' }}>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#93c5fd', fontWeight: 600 }}>
+          {/* Left Side: Helpline & IRDAI Badge */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', whiteSpace: 'nowrap', overflowX: 'auto' }}>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#93c5fd', fontWeight: 600, fontSize: '0.78rem' }}>
               <ShieldCheck size={14} color="#60a5fa" /> IRDAI Licensed Advisory
             </span>
             <a
@@ -60,6 +59,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
               style={{
                 color: '#ffffff',
                 fontWeight: 700,
+                fontSize: '0.78rem',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.35rem',
@@ -71,8 +71,8 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
             </a>
           </div>
 
-          {/* Right Side: Language Toggle */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
+          {/* Right Side: Language Toggle (Desktop Only) */}
+          <div className="desktop-top-lang" style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
             <button
               onClick={toggleLanguage}
               title={lang === 'en' ? 'Switch to Malayalam' : 'Switch to English'}
@@ -80,54 +80,56 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.4rem',
-                padding: '0.3rem 0.95rem',
+                padding: '0.25rem 0.85rem',
                 borderRadius: '9999px',
                 border: '1px solid rgba(255,255,255,0.3)',
                 background: 'rgba(255,255,255,0.12)',
                 color: '#ffffff',
-                fontSize: '0.82rem',
+                fontSize: '0.78rem',
                 fontWeight: 700,
                 cursor: 'pointer',
                 transition: 'all 0.2s ease'
               }}
             >
-              <Globe size={14} color="#93c5fd" />
+              <Globe size={13} color="#93c5fd" />
               <span>{lang === 'en' ? 'മലയാളം' : 'English'}</span>
             </button>
           </div>
         </div>
       </div>
 
-      {/* 2. Full-Width Edge-to-Edge Navigation Bar with Scroll Animation */}
+      {/* 2. Full-Width Edge-to-Edge Navigation Header */}
       <header style={{
         width: '100%',
+        position: 'relative',
         background: isScrolled ? 'rgba(255, 255, 255, 0.96)' : '#ffffff',
         backdropFilter: isScrolled ? 'blur(10px)' : 'none',
         borderBottom: '1px solid var(--border-light)',
         boxShadow: isScrolled ? '0 8px 30px rgba(0, 0, 0, 0.08)' : '0 2px 10px rgba(0, 0, 0, 0.03)',
         transition: 'all 0.3s ease-in-out'
       }}>
-        <div style={{
+        <div className="nav-container" style={{
           maxWidth: '1600px',
           margin: '0 auto',
-          height: isScrolled ? '62px' : '70px',
+          height: isScrolled ? '58px' : '66px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           padding: '0 2rem',
           transition: 'all 0.3s ease-in-out'
         }}>
-          {/* Brand Logo Text on Far Left */}
+          {/* Brand Logo Text */}
           <div
             onClick={() => handleNavClick('hero')}
+            className="brand-logo"
             style={{
               fontFamily: 'var(--font-heading)',
               fontWeight: 800,
-              fontSize: '1.45rem',
+              fontSize: '1.4rem',
               letterSpacing: '-0.02em',
               cursor: 'pointer',
               whiteSpace: 'nowrap',
-              marginRight: '1rem',
+              marginRight: '0.8rem',
               color: 'var(--text-dark)',
               flexShrink: 0
             }}
@@ -135,7 +137,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
             Ameen <span style={{ color: 'var(--primary-blue)' }}>Insurance</span>
           </div>
 
-          {/* Navigation Links + Book Consultation CTA Group */}
+          {/* Navigation Links + Book Consultation CTA Group (Desktop) */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.6rem', marginLeft: 'auto' }} className="desktop-only">
             <nav style={{
               display: 'flex',
@@ -171,9 +173,9 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
               onClick={() => handleNavClick('booking')}
               className="btn-primary nav-book-btn"
               style={{
-                height: '42px',
-                padding: '0 1.4rem',
-                fontSize: '0.88rem',
+                height: '40px',
+                padding: '0 1.3rem',
+                fontSize: '0.85rem',
                 fontWeight: 700,
                 borderRadius: '9999px',
                 whiteSpace: 'nowrap',
@@ -186,79 +188,104 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
                 flexShrink: 0
               }}
             >
-              <Calendar size={16} color="#ffffff" /> Book Consultation
+              <Calendar size={15} color="#ffffff" /> Book Consultation
             </button>
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Mobile Navigation"
-            style={{
-              display: 'none',
-              background: 'var(--bg-card-alt)',
-              border: '1px solid var(--border-light)',
-              borderRadius: '12px',
-              color: 'var(--text-dark)',
-              cursor: 'pointer',
-              padding: 0,
-              width: '42px',
-              height: '42px',
-              alignItems: 'center',
-              justifyContent: 'center',
-              marginLeft: 'auto'
-            }}
-            className="mobile-hamburger"
-          >
-            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          {/* Mobile Right Controls: Compact Malayalam Language Pill + Hamburger */}
+          <div className="mobile-controls" style={{ display: 'none', alignItems: 'center', gap: '0.5rem', marginLeft: 'auto' }}>
+            <button
+              onClick={toggleLanguage}
+              title={lang === 'en' ? 'Switch to Malayalam' : 'Switch to English'}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.3rem',
+                padding: '0.3rem 0.75rem',
+                borderRadius: '9999px',
+                border: '1.5px solid var(--primary-blue)',
+                background: lang === 'ml' ? 'var(--accent-sky-light)' : '#ffffff',
+                color: 'var(--primary-blue)',
+                fontSize: '0.78rem',
+                fontWeight: 800,
+                cursor: 'pointer',
+                whiteSpace: 'nowrap'
+              }}
+            >
+              <Globe size={13} color="var(--primary-blue)" />
+              <span>{lang === 'en' ? 'മലയാളം' : 'ENG'}</span>
+            </button>
+
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle Mobile Navigation"
+              style={{
+                background: 'var(--bg-card-alt)',
+                border: '1px solid var(--border-light)',
+                borderRadius: '10px',
+                color: 'var(--text-dark)',
+                cursor: 'pointer',
+                padding: 0,
+                width: '38px',
+                height: '38px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+              className="mobile-hamburger"
+            >
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Drawer */}
+        {/* Mobile Drawer (Anchored directly under header) */}
         {mobileMenuOpen && (
           <div style={{
             position: 'absolute',
-            top: '125px',
-            left: '1rem',
-            right: '1rem',
+            top: '100%',
+            left: '0.75rem',
+            right: '0.75rem',
             background: '#ffffff',
-            borderRadius: '20px',
+            borderRadius: '16px',
             border: '1px solid var(--border-light)',
-            padding: '1.2rem 1.5rem',
+            padding: '1rem 1.25rem',
             display: 'flex',
             flexDirection: 'column',
-            gap: '0.6rem',
-            boxShadow: '0 12px 30px rgba(0, 0, 0, 0.15)'
+            gap: '0.4rem',
+            boxShadow: '0 16px 36px rgba(0, 0, 0, 0.16)',
+            zIndex: 1000
           }}>
-            {/* Mobile Language Switcher Row */}
+            {/* Mobile Language Switcher Row in Drawer */}
             <div style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              paddingBottom: '0.8rem',
-              borderBottom: '1px solid var(--border-light)'
+              paddingBottom: '0.6rem',
+              borderBottom: '1px solid var(--border-light)',
+              marginBottom: '0.2rem'
             }}>
-              <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-muted)' }}>
-                Language:
+              <span style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-muted)' }}>
+                Language Preference:
               </span>
               <button
                 onClick={toggleLanguage}
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '0.4rem',
-                  height: '38px',
-                  padding: '0 1rem',
+                  gap: '0.35rem',
+                  height: '34px',
+                  padding: '0 0.85rem',
                   borderRadius: '9999px',
                   border: '1.5px solid var(--primary-blue)',
                   background: lang === 'ml' ? 'var(--accent-sky-light)' : '#ffffff',
                   color: 'var(--primary-blue)',
-                  fontSize: '0.88rem',
+                  fontSize: '0.82rem',
                   fontWeight: 800,
                   cursor: 'pointer'
                 }}
               >
-                <Globe size={15} color="var(--primary-blue)" />
+                <Globe size={14} color="var(--primary-blue)" />
                 <span>{lang === 'en' ? 'മലയാളം' : 'English'}</span>
               </button>
             </div>
@@ -269,13 +296,13 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
                 onClick={() => handleNavClick(item.id)}
                 style={{
                   textAlign: 'left',
-                  padding: '0.7rem 0',
-                  fontSize: '1rem',
+                  padding: '0.6rem 0',
+                  fontSize: '0.95rem',
                   fontWeight: 600,
                   color: activeTab === item.id ? 'var(--primary-blue)' : 'var(--text-dark)',
                   background: 'transparent',
                   border: 'none',
-                  borderBottom: '1px solid var(--border-light)'
+                  borderBottom: '1px solid #f1f5f9'
                 }}
               >
                 {item.label}
@@ -285,17 +312,23 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
             <button
               onClick={() => handleNavClick('booking')}
               className="btn-primary"
-              style={{ width: '100%', padding: '0.85rem', marginTop: '0.6rem' }}
+              style={{ width: '100%', padding: '0.75rem', marginTop: '0.5rem', fontSize: '0.9rem' }}
             >
-              <Calendar size={18} /> Book Consultation
+              <Calendar size={16} /> Book Consultation
             </button>
           </div>
         )}
 
         <style>{`
           @media (max-width: 960px) {
-            .desktop-only { display: none !important; }
-            .mobile-hamburger { display: flex !important; }
+            .desktop-only, .desktop-top-lang { display: none !important; }
+            .mobile-controls { display: flex !important; }
+            .nav-container { padding: 0 1rem !important; }
+            .brand-logo { font-size: 1.25rem !important; }
+          }
+          @media (max-width: 480px) {
+            .top-utility-bar { padding: 0.35rem 0.75rem !important; }
+            .brand-logo { font-size: 1.15rem !important; }
           }
         `}</style>
       </header>

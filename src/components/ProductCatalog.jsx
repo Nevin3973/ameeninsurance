@@ -24,8 +24,8 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       fullName: "Aditya Birla Health Insurance Company Limited",
       regNo: "IRDAI Reg. No. 153",
       hospitals: "11,000+ Cashless Hospitals",
-      tagline: "HealthReturns & Active Wellness Pioneer",
-      desc: "Earn up to 100% of your premium back as HealthReturns by staying active. Features zero room rent capping and global emergency hospitalisation cover."
+      tagline: "HealthReturns & Active Wellness Pioneer • Exclusive NRI Discount",
+      desc: "Earn up to 100% of your premium back as HealthReturns by staying active. NRIs receive exclusive discounts when opting for Aditya Birla Health Insurance policies."
     },
     "united-india": {
       name: "United India Insurance",
@@ -42,14 +42,6 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       hospitals: "8,200+ Network Hospitals",
       tagline: "India's Premier & Largest Public Sector General Insurer",
       desc: "Over 100 years of trusted legacy offering high claim-settlement credibility, low co-payments, and flexible individual/family floater covers."
-    },
-    "national-insurance": {
-      name: "National Insurance",
-      fullName: "National Insurance Company Limited",
-      regNo: "Public Sector Undertaking (PSU)",
-      hospitals: "6,800+ Network Hospitals",
-      tagline: "Reliable Public Sector Health & Family Cover",
-      desc: "Pioneer PSU health insurer delivering reliable medical protection for families, senior citizens, and corporate employees across India."
     }
   };
 
@@ -145,19 +137,19 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       company: "Aditya Birla Health Insurance",
       category: "family",
       image: "/prod-young.png",
-      desc: "Comprehensive medical coverage with HealthReturns rewards for maintaining an active healthy lifestyle.",
+      desc: "Comprehensive medical coverage with HealthReturns rewards and special NRI premium discounts.",
       descMl: "ദിനംപ്രതി Fitness നും ആരോഗ്യം നിലനിർത്തുന്നതിനും HealthReturns റിവാർഡ് ബോണസ് നൽകുന്ന പ്ലാൻ.",
       eligibility: "91 Days to Lifetime Renewability",
       sumInsured: "₹3 Lakhs to ₹2 Crore",
       coverage: "Hospitalisation, Ayush Treatment, Domiciliary Care",
       waitingPeriod: "30 Days Initial (36 Months Pre-existing)",
       benefits: [
+        "Special NRI Discount: Exclusive discounts when opting for Aditya Birla",
         "Earn up to 100% premium back as HealthReturns",
         "Unlimited refill of sum insured for unrelated illnesses",
-        "In-patient AYUSH (Ayurveda/Homeopathy) treatment cover",
-        "Mental health hospitalisation cover included"
+        "In-patient AYUSH (Ayurveda/Homeopathy) treatment cover"
       ],
-      idealFor: "Health-conscious families seeking lifestyle rewards"
+      idealFor: "Health-conscious families & NRIs seeking lifestyle rewards and discounts"
     },
     {
       id: "activ-one-max",
@@ -166,19 +158,19 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       company: "Aditya Birla Health Insurance",
       category: "individual",
       image: "/prod-family.png",
-      desc: "VIP healthcare insurance offering single private room, global emergency cover, and 100% Reload benefit.",
+      desc: "VIP healthcare insurance offering single private room, global emergency cover, and NRI discounts.",
       descMl: "അടിയന്തിര മെഡിക്കൽ ഘട്ടത്തിൽ 100% Reload Benefit & Single Private AC Room സൗകര്യം.",
       eligibility: "18 Yrs - 70 Yrs",
       sumInsured: "₹10 Lakhs to ₹6 Crore",
       coverage: "Worldwide Emergency, Executive Suite, Organ Donor",
       waitingPeriod: "30 Days Initial (12 Months Reduced Waiting option)",
       benefits: [
+        "Special NRI discount for overseas residents & expat families",
         "Single Private AC Room and Suite upgrade allowed",
         "International emergency medical treatment cover",
-        "Chronic management program for Diabetes and Hypertension from Day 1",
-        "Personal health coach and nutritionist assigned"
+        "Chronic management program for Diabetes and Hypertension from Day 1"
       ],
-      idealFor: "Executives and HNWIs desiring VIP global hospital care"
+      idealFor: "Executives, NRIs, and HNWIs desiring VIP global hospital care"
     },
     {
       id: "activ-yuva",
@@ -187,16 +179,16 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       company: "Aditya Birla Health Insurance",
       category: "young",
       image: "/prod-young.png",
-      desc: "Tailored for young active professionals with wearable step-tracking discounts and low starter premiums.",
+      desc: "Tailored for young active professionals with step-tracking discounts and special NRI rates.",
       descMl: "യുവാക്കൾക്കും Young Professionals നും കുറഞ്ഞ പ്രീമിയത്തിൽ ഉയർന്ന Health Cover.",
       eligibility: "18 Yrs - 35 Yrs",
       sumInsured: "₹5 Lakhs to ₹50 Lakhs",
       coverage: "Inpatient, Accident Emergency, OPD Wellness",
       waitingPeriod: "30 Days Initial",
       benefits: [
+        "Special NRI discount for young expats & NRIs",
         "Connect Apple Watch / Fitbit for up to 30% renewal discount",
         "Zero deductible on first claim",
-        "Emergency ambulance and air ambulance assistance",
         "Diagnostic lab tests and virtual doctor consults"
       ],
       idealFor: "Young professionals and college graduates seeking affordable health cover"
@@ -284,27 +276,6 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
         "Lifetime policy renewability"
       ],
       idealFor: "Families seeking PSU safety with special girl child protection"
-    },
-    {
-      id: "national-parivar",
-      name: "National Parivar Mediclaim",
-      partnerKey: "national-insurance",
-      company: "National Insurance Company Limited",
-      category: "family",
-      image: "/prod-family.png",
-      desc: "Comprehensive family floater policy backed by National Insurance PSU heritage.",
-      descMl: "National Insurance PSU ബാക്കിംഗുള്ള 100% Recharge Benefit അടങ്ങിയ ഫാമിലി പോളിസി.",
-      eligibility: "18 Yrs - 65 Yrs",
-      sumInsured: "₹6 Lakhs to ₹50 Lakhs",
-      coverage: "Hospitalisation, Critical Illness Add-on, Organ Donor",
-      waitingPeriod: "30 Days Initial",
-      benefits: [
-        "Pioneer PSU insurer with deep presence across India",
-        "Recharge benefit up to 100% of sum insured",
-        "Coverage for modern robotic and cyberknife surgeries",
-        "Tax savings under Section 80D"
-      ],
-      idealFor: "Families looking for high sum insured PSU coverage"
     }
   ];
 
@@ -319,10 +290,9 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
   const partners = [
     { id: "all", label: "All Insurers" },
     { id: "star-health", label: "Star Health" },
-    { id: "aditya-birla", label: "Aditya Birla" },
+    { id: "aditya-birla", label: "Aditya Birla (NRI Discount)" },
     { id: "united-india", label: "United India (PSU)" },
-    { id: "new-india", label: "New India Assurance (PSU)" },
-    { id: "national-insurance", label: "National Insurance (PSU)" }
+    { id: "new-india", label: "New India Assurance (PSU)" }
   ];
 
   const filteredProducts = products.filter(p => {
@@ -352,7 +322,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
             Compare & Explore Insurance Plans
           </h2>
           <p style={{ fontSize: "1.05rem", color: "var(--text-muted)", lineHeight: 1.6 }}>
-            Muhammed Ameen helps you select transparent policies from India's leading Standalone Health specialists and Public Sector Undertaking (PSU) insurers.
+            Ameen Nellikkunnan helps you select transparent policies from India's leading Standalone Health specialists and Public Sector Undertaking (PSU) insurers.
           </p>
         </div>
 

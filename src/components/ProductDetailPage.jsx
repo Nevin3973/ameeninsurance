@@ -148,7 +148,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                 </p>
                 <div style={{ marginTop: '0.6rem', fontSize: '0.85rem', color: '#94a3b8', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                   <span>✓ 100% Cashless Claim Assistance</span>
-                  <span>✓ Free 1-on-1 Consultation by Muhammed Ameen</span>
+                  <span>✓ Free 1-on-1 Consultation by Ameen Nellikkunnan</span>
                 </div>
               </div>
             )}
@@ -353,7 +353,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                   <CheckCircle2 size={46} color="var(--primary-blue)" style={{ margin: '0 auto 1rem' }} />
                   <h4 style={{ fontSize: '1.3rem', marginBottom: '0.4rem' }}>Enquiry Sent!</h4>
                   <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>
-                    Muhammed Ameen will review the details for <strong>{product.name}</strong> and call you back shortly.
+                    Ameen Nellikkunnan will review the details for <strong>{product.name}</strong> and call you back shortly.
                   </p>
                 </div>
               )}
@@ -371,7 +371,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                   Need Immediate Guidance?
                 </div>
                 <a
-                  href={`https://wa.me/919812345678?text=${encodeURIComponent(`Hi Muhammed Ameen, I am reviewing ${product.name} (${product.company}) and want to get a custom quote.`)}`}
+                  href={`https://wa.me/919812345678?text=${encodeURIComponent(`Hi Ameen Nellikkunnan, I am reviewing ${product.name} (${product.company}) and want to get a custom quote.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"

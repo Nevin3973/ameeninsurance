@@ -81,7 +81,7 @@ export default function App() {
             {/* 1. Hero Image Carousel, Direct Lead Capture & Trust Bar */}
             <Hero onNavigate={handleNavigate} onOpenWizard={() => setIsWizardOpen(true)} />
 
-            {/* 2. Muhammed Ameen's Consultant Profile & Credentials (Brought Up!) */}
+            {/* 2. Ameen Nellikkunnan's Consultant Profile & Credentials (Brought Up!) */}
             <AboutAmeen />
 
             {/* 3. Featured Insurance Plans Preview */}

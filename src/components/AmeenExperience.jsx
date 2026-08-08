@@ -6,7 +6,7 @@ export default function AmeenExperience() {
     {
       num: '01',
       title: 'Get Expert 1-on-1 Guidance',
-      desc: 'Talk directly to Muhammed Ameen with 15 years of independent insurance expertise. Get clear, unbiased advice tailored to your family without pushy sales tactics or spam calls.',
+      desc: 'Talk directly to Ameen Nellikkunnan with 15 years of independent insurance expertise. Get clear, unbiased advice tailored to your family without pushy sales tactics or spam calls.',
       highlights: [
         { label: '30-Min Consultation', icon: Clock },
         { label: 'Zero Cost & Zero Fee', icon: CheckCircle2 },

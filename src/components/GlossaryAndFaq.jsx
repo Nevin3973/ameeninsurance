@@ -12,7 +12,7 @@ export default function GlossaryAndFaq() {
     },
     {
       q: 'Why consult an independent insurance advisor instead of buying directly?',
-      a: 'Muhammed Ameen provides 15 years of impartial guidance across Star Health, Aditya Birla, United India, and New India Assurance. You get identical premiums with dedicated personal claim support.'
+      a: 'Ameen Nellikkunnan provides 15 years of impartial guidance across Star Health, Aditya Birla, United India, and New India Assurance. You get identical premiums with dedicated personal claim support.'
     },
     {
       q: 'Can I add family members to an existing policy later?',

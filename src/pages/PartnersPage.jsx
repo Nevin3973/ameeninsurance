@@ -23,7 +23,7 @@ export default function PartnersPage({ onNavigate, onSelectPartner }) {
           </h1>
 
           <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', maxWidth: '820px', lineHeight: 1.6 }}>
-            Muhammed Ameen represents your best interests by offering unbiased comparison across India's leading Standalone Health specialists and Public Sector Undertaking (PSU) insurers.
+            Ameen Nellikkunnan represents your best interests by offering unbiased comparison across India's leading Standalone Health specialists and Public Sector Undertaking (PSU) insurers.
           </p>
         </div>
       </div>
@@ -58,7 +58,7 @@ export default function PartnersPage({ onNavigate, onSelectPartner }) {
             <Building2 size={36} color="var(--primary-blue)" style={{ marginBottom: '1rem' }} />
             <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>PSU & Private Options</h3>
             <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
-              Choose between sovereign-backed PSU general insurers (United India, New India, National Insurance) or feature-rich standalone specialists (Star Health, Aditya Birla).
+              Choose between sovereign-backed PSU general insurers (United India, New India Assurance) or feature-rich standalone specialists (Star Health, Aditya Birla).
             </p>
           </div>
         </div>
