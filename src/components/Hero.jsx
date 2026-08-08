@@ -153,13 +153,13 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
       <div style={{
         position: 'relative',
         width: '100%',
-        minHeight: '640px',
+        minHeight: '440px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
-        marginBottom: '3.5rem',
-        paddingTop: '110px'
+        marginBottom: '2.5rem',
+        paddingTop: '90px'
       }}>
         {/* Carousel Slide Images (Crossfade Animation & 100% Fit Visibility) */}
         {heroSlides.map((slide, idx) => (
@@ -183,14 +183,14 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
           />
         ))}
 
-        {/* Rich Dark Gradient Overlay for Maximum Text Contrast */}
+        {/* Soft Dark Gradient Overlay */}
         <div style={{
           position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',
           height: '100%',
-          background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.72) 0%, rgba(15, 23, 42, 0.6) 50%, rgba(15, 23, 42, 0.88) 100%)',
+          background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.45) 0%, rgba(15, 23, 42, 0.25) 50%, rgba(15, 23, 42, 0.6) 100%)',
           zIndex: 2
         }} />
 
@@ -212,51 +212,20 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
           <ChevronRight size={24} />
         </button>
 
-        {/* Overlaid Slide Content & Actions */}
+        {/* Overlaid Buttons & Round Checkbox Indicators */}
         <div className="container" style={{
           position: 'relative',
           zIndex: 3,
           textAlign: 'center',
           color: '#ffffff',
-          padding: '3rem 1.5rem 4.5rem'
+          padding: '4rem 1.5rem 2rem',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center'
         }}>
-          <div className="pill-badge" style={{
-            marginBottom: '1.2rem',
-            background: 'rgba(255, 255, 255, 0.18)',
-            backdropFilter: 'blur(8px)',
-            color: '#ffffff',
-            border: '1px solid rgba(255, 255, 255, 0.3)'
-          }}>
-            <Award size={16} color="#60a5fa" /> {activeSlideData.badge}
-          </div>
-
-          <h1 style={{
-            fontSize: 'clamp(2.2rem, 5.2vw, 3.5rem)',
-            lineHeight: 1.15,
-            fontWeight: 800,
-            marginBottom: '1.2rem',
-            color: '#ffffff',
-            textShadow: '0 2px 10px rgba(0, 0, 0, 0.35)',
-            maxWidth: '920px',
-            margin: '0 auto 1.2rem'
-          }}>
-            {activeSlideData.title}
-          </h1>
-
-          <p style={{
-            fontSize: '1.18rem',
-            lineHeight: 1.6,
-            color: '#f1f5f9',
-            marginBottom: '2.2rem',
-            maxWidth: '740px',
-            margin: '0 auto 2.2rem',
-            textShadow: '0 1px 5px rgba(0, 0, 0, 0.35)'
-          }}>
-            {activeSlideData.subtitle}
-          </p>
-
           {/* Action Buttons Overlaid on Banner */}
-          <div style={{ display: 'flex', gap: '1.2rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
+          <div style={{ display: 'flex', gap: '1.2rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
             <button
               onClick={() => handleNavClick(activeSlideData.primaryBtnTarget)}
               className="btn-primary"
@@ -304,15 +273,6 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                 {activeSlideData.secondaryBtnText}
               </button>
             )}
-          </div>
-
-          {/* Dynamic Highlight Badges */}
-          <div style={{ display: 'flex', gap: '0.8rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '1.8rem' }}>
-            {activeSlideData.pills.map((pill, idx) => (
-              <div key={idx} className="pill-badge" style={{ background: 'rgba(255, 255, 255, 0.16)', color: '#ffffff', border: '1px solid rgba(255, 255, 255, 0.28)' }}>
-                {pill}
-              </div>
-            ))}
           </div>
 
           {/* Carousel Slide Indicators (Round Checkbox Style) */}

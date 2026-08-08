@@ -4,6 +4,7 @@ import { MessageSquare, PhoneCall, X, Send, CheckCircle2, ShieldCheck } from 'lu
 export default function FloatingWidgets({ onBookConsultation }) {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
+  const [hasScrolledPastHero, setHasScrolledPastHero] = useState(false);
   const [enquiryForm, setEnquiryForm] = useState({
     name: '',
     pincode: '',
@@ -17,6 +18,12 @@ export default function FloatingWidgets({ onBookConsultation }) {
   useEffect(() => {
     let timer = null;
     const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setHasScrolledPastHero(true);
+      } else {
+        setHasScrolledPastHero(false);
+      }
+
       setIsScrolling(true);
       if (timer) clearTimeout(timer);
       timer = setTimeout(() => {
@@ -100,6 +107,8 @@ export default function FloatingWidgets({ onBookConsultation }) {
   const whatsappMessage = encodeURIComponent("Hi Ameen Nellikkunnan, I would like to get a free health insurance consultation.");
   const whatsappUrl = `https://wa.me/919812345678?text=${whatsappMessage}`;
 
+  const isVisible = hasScrolledPastHero && !isScrolling;
+
   return (
     <>
       {/* Floating Action Buttons Container (Bottom Right) */}
@@ -112,10 +121,10 @@ export default function FloatingWidgets({ onBookConsultation }) {
         flexDirection: 'column',
         alignItems: 'flex-end',
         gap: '12px',
-        opacity: isScrolling ? 0 : 1,
-        transform: isScrolling ? 'translateY(18px) scale(0.92)' : 'translateY(0) scale(1)',
-        pointerEvents: isScrolling ? 'none' : 'auto',
-        transition: 'opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0) scale(1)' : 'translateY(18px) scale(0.92)',
+        pointerEvents: isVisible ? 'auto' : 'none',
+        transition: 'opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)'
       }}>
         {/* Floating Enquiry Button */}
         <button

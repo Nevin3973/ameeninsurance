@@ -49,13 +49,18 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
           justifyContent: 'space-between',
           gap: '0.6rem'
         }}>
-          {/* Left Side: Helpline & IRDAI Badge */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem', whiteSpace: 'nowrap', overflowX: 'auto' }}>
+          {/* Left Side: IRDAI License Badge */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', whiteSpace: 'nowrap' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#93c5fd', fontWeight: 600, fontSize: '0.78rem' }}>
               <ShieldCheck size={14} color="#60a5fa" /> IRDAI Licensed Advisory
             </span>
+          </div>
+
+          {/* Right Side: Phone Number Helpline & Desktop Language Toggle */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', whiteSpace: 'nowrap', marginLeft: 'auto' }}>
             <a
               href="tel:+919812345678"
+              title="Call Helpline"
               style={{
                 color: '#ffffff',
                 fontWeight: 700,
@@ -69,31 +74,30 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
             >
               <PhoneCall size={14} color="#60a5fa" /> Helpline: +91 98123 45678
             </a>
-          </div>
 
-          {/* Right Side: Language Toggle (Desktop Only) */}
-          <div className="desktop-top-lang" style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-            <button
-              onClick={toggleLanguage}
-              title={lang === 'en' ? 'Switch to Malayalam' : 'Switch to English'}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-                padding: '0.25rem 0.85rem',
-                borderRadius: '9999px',
-                border: '1px solid rgba(255,255,255,0.3)',
-                background: 'rgba(255,255,255,0.12)',
-                color: '#ffffff',
-                fontSize: '0.78rem',
-                fontWeight: 700,
-                cursor: 'pointer',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              <Globe size={13} color="#93c5fd" />
-              <span>{lang === 'en' ? 'മലയാളം' : 'English'}</span>
-            </button>
+            <div className="desktop-top-lang" style={{ display: 'flex', alignItems: 'center' }}>
+              <button
+                onClick={toggleLanguage}
+                title={lang === 'en' ? 'Switch to Malayalam' : 'Switch to English'}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  padding: '0.25rem 0.85rem',
+                  borderRadius: '9999px',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                  background: 'rgba(255,255,255,0.12)',
+                  color: '#ffffff',
+                  fontSize: '0.78rem',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                <Globe size={13} color="#93c5fd" />
+                <span>{lang === 'en' ? 'മലയാളം' : 'English'}</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -605,7 +605,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.8rem" }}>
               <a
-                href={`https://wa.me/919812345678?text=${encodeURIComponent(`Hi Muhammed Ameen, I would like to get a quote and details for ${activeModalProduct.name} (${activeModalProduct.company}).`)}`}
+                href={`https://wa.me/919812345678?text=${encodeURIComponent(`Hi Ameen Nellikkunnan, I would like to get a quote and details for ${activeModalProduct.name} (${activeModalProduct.company}).`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
