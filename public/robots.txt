@@ -1,0 +1,7 @@
+# User-agent rules for Ameen Insurance Advisory
+User-agent: *
+Allow: /
+Disallow: /dist/
+
+# Sitemap Location for Search Engines (Google, Bing, Yahoo)
+Sitemap: https://ameeninsurance.com/sitemap.xml

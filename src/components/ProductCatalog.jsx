@@ -16,6 +16,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       fullName: "Star Health and Allied Insurance Company Limited",
       regNo: "IRDAI Reg. No. 129",
       hospitals: "14,000+ Cashless Hospitals",
+      logo: "/star-health.png",
       tagline: "India's #1 Standalone Health Specialist",
       desc: "Comprehensive health insurance with in-house claim settlement, unlimited automatic restoration, Package A home nursing & consumables, and dedicated women & senior citizen coverage."
     },
@@ -24,6 +25,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       fullName: "Aditya Birla Health Insurance Company Limited",
       regNo: "IRDAI Reg. No. 153",
       hospitals: "11,000+ Cashless Hospitals",
+      logo: "/aditya-birla.webp",
       tagline: "HealthReturns™ & Active Wellness Pioneer • Exclusive NRI Discounts",
       desc: "Earn up to 100% of your premium back through HealthReturns™ (EAT • MOVE • HEAL). Offers up to 11X cover boost, Yuva Reload, and tiered NRI discounts up to 25%."
     },
@@ -32,6 +34,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       fullName: "United India Insurance Company Limited",
       regNo: "Public Sector Undertaking (PSU)",
       hospitals: "7,500+ Network Hospitals",
+      logo: "/united-india.webp",
       tagline: "Sovereign PSU Security & Joint Family Protection",
       desc: "Government-backed Public Sector Undertaking offering Family Medicare with AYUSH treatment, donor expenses, optional restoration, optional maternity, and Section 80D tax benefits."
     },
@@ -40,6 +43,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       fullName: "The New India Assurance Company Limited",
       regNo: "Government of India Enterprise",
       hospitals: "8,200+ Network Hospitals",
+      logo: "/NewIndiaAssurance.svg",
       tagline: "India's Premier & Largest Public Sector General Insurer",
       desc: "Over 100 years of trusted legacy. Features Yuva Bharat Health Policy with Base, Gold, and Platinum tiers, Mother & Well-Baby benefits, and healthy parameter premium discounts."
     }
@@ -53,6 +57,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       company: "Star Health Insurance",
       category: "family",
       image: "/prod-star-super-star.png",
+      membersCovered: "Nuclear Family (Self, Spouse & Children)",
       desc: "Comprehensive protection with unlimited SI restoration, zero room rent capping (₹7.5L+), Package A consumables & Freeze Your Age premium lock.",
       descMl: "അൺലിമിറ്റഡ് റീസ്റ്റോറേഷൻ, നോ റൂം റെന്റ് ലിമിറ്റ്, Package A കൺസ്യൂമബിൾസ് & ഫ്രീസ് യുവർ ഏജ് പ്രീമിയം ലോക്ക് ആനുകൂല്യം.",
       eligibility: "18 Yrs - 65 Yrs (Children from 16 days)",
@@ -70,7 +75,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
         "STAR Wellness Program discounts & AI-driven face scan health checks"
       ],
       optionalCovers: ["Limitless Care (Unlimited SI for 1 claim)", "Mamta Women Wellness", "In-Clinic Consultation", "Stay Fit Fitness"],
-      idealFor: "Families seeking comprehensive high-cover protection with zero room limits and home care"
+      idealFor: "Nuclear families seeking high-cover protection with zero room limits and home care"
     },
     {
       id: "star-health-assure",
@@ -78,7 +83,8 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       partnerKey: "star-health",
       company: "Star Health Insurance",
       category: "family",
-      image: "/prod-family.png",
+      image: "/prod-united-family.png",
+      membersCovered: "Joint Family & Dependent Parents",
       desc: "Family-floater indemnity policy featuring automatic restoration, home care treatment, preventive checkup limits, and maternity cover.",
       descMl: "കുടുംബങ്ങൾക്ക് ഹോം കെയർ ചികിത്സ, ഓട്ടോമാറ്റിക് റീസ്റ്റോറേഷൻ, ഹെൽത്ത് ചെക്കപ്പ് & പ്രസവ ചെലവുകൾ നൽകുന്ന പ്ലാൻ.",
       eligibility: "18 Yrs - 75 Yrs (Floater / Individual)",
@@ -95,7 +101,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
         "Unlimited Tele-consultation via STAR Health App"
       ],
       optionalCovers: ["Value Network 15% co-pay discount", "Hospital Daily Cash Allowance", "Personal Accident Cover"],
-      idealFor: "Families wanting broad hospitalisation with home care and preventive health checkups"
+      idealFor: "Joint families wanting broad hospitalisation with home care and preventive health checkups"
     },
     {
       id: "womens-care",
@@ -103,7 +109,8 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       partnerKey: "star-health",
       company: "Star Health Insurance",
       category: "women",
-      image: "/prod-women.png",
+      image: "/prod-womens-care.png",
+      membersCovered: "Women, Expecting Mothers & Newborns",
       desc: "Dedicated women-centric policy covering maternity, assisted reproduction (ART), newborn vaccination, ante-natal care, and STAR Mother cover.",
       descMl: "വനിതകൾക്കായി ഡെലിവറി, അസിസ്റ്റഡ് റീപ്രൊഡക്ഷൻ (ART), ന്യൂബോൺ വാക്സിനേഷൻ & മദർ കവർ അടങ്ങിയ പ്രത്യേക പോളിസി.",
       eligibility: "18 Yrs - 75 Yrs (Individual / Floater)",
@@ -129,6 +136,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       company: "Aditya Birla Health Insurance",
       category: "young",
       image: "/prod-activ-yuva.png",
+      membersCovered: "Single Active Adults (Age 18-35)",
       desc: "Healthy Har Din - Zindagi Win-Win. Earn up to 100% premium back via EAT•MOVE•HEAL, 11X cover boost, Yuva Reload & Travel ON/OFF.",
       descMl: "യുവാക്കൾക്ക് EAT•MOVE•HEAL വഴി 100% പ്രീമിയം തിരികെ, 11X കവർ ബൂസ്റ്റ് & ട്രാവൽ ON/OFF ഫീച്ചർ.",
       eligibility: "18 Yrs - 35 Yrs",
@@ -154,6 +162,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       company: "Aditya Birla Health Insurance",
       category: "individual",
       image: "/prod-activ-one-max.png",
+      membersCovered: "Executives, NRIs & High Net-Worth Individuals",
       desc: "VIP healthcare plan with HealthReturns™, Super Credit up to 500% (max ₹3 Cr), Super Reload unlimited refills & tiered NRI discounts up to 25%.",
       descMl: "100% പ്രീമിയം ഹെൽത്ത് റിട്ടേൺസ്, 500% സൂപ്പർ ക്രഡിറ്റ്, അൺലിമിറ്റഡ് സൂപ്പർ റീലോഡ് & പ്രവാസി സ്പെഷ്യൽ ഡിസ്കൗണ്ട്.",
       eligibility: "18 Yrs - 70 Yrs",
@@ -180,6 +189,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       company: "United India Insurance Company Limited",
       category: "family",
       image: "/prod-united-family.png",
+      membersCovered: "Parents, Spouse & Dependent Children",
       desc: "Sovereign government PSU family floater policy covering inpatient hospitalisation, AYUSH systems, day care, and optional maternity benefits.",
       descMl: "കേന്ദ്ര സർക്കാർ PSU കമ്പനിയായ United India യുടെ കുടുംബ സുരക്ഷാ പോളിസി (AYUSH & ടാക്സ് ബെനഫിറ്റ്).",
       eligibility: "18 Yrs - 65 Yrs (Up to 6 family members)",
@@ -205,6 +215,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       company: "United India Insurance Company Limited",
       category: "individual",
       image: "/prod-young.png",
+      membersCovered: "Individual Adult Policyholder",
       desc: "Classic public sector individual medical plan offering sovereign reliability, cumulative bonus, and low co-payment options.",
       descMl: "ലളിതമായ പ്രീമിയത്തിൽ ഗവൺമെന്റ് സുരക്ഷ നൽകുന്ന യുണൈറ്റഡ് ഇന്ത്യ ഇൻഡിവിജ്വൽ പോളിസി.",
       eligibility: "18 Yrs - 65 Yrs",
@@ -229,6 +240,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       company: "The New India Assurance Company Limited",
       category: "young",
       image: "/prod-new-india-yuva-bharat.png",
+      membersCovered: "Young Couples & Newborn Babies",
       desc: "Empowering Better Health for young adults & families with Base, Gold, and Platinum tier plans, Mother & Well-Baby benefits, and health parameter discounts.",
       descMl: "Base, Gold & Platinum പ്ലാനുകളിൽ വരുന്ന New India Assurance യുവ ഭാരത് ഹെൽത്ത് പോളിസി.",
       eligibility: "18 Yrs - 45 Yrs (Children 91 days - 25 Yrs)",
@@ -254,7 +266,8 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       partnerKey: "new-india",
       company: "The New India Assurance Company Limited",
       category: "family",
-      image: "/prod-women.png",
+      image: "/prod-new-india-asha-kiran.png",
+      membersCovered: "Families with a Girl Child",
       desc: "Specialized floater policy for families with girl child premium discounts and built-in personal accident cover for primary earner.",
       descMl: "പെൺകുട്ടികളുള്ള കുടുംബങ്ങൾക്ക് പ്രീമിയത്തിൽ 5% സ്പെഷ്യൽ ഡിസ്കൗണ്ടും പേഴ്സണൽ ആക്സിഡന്റ് പരിരക്ഷയും.",
       eligibility: "18 Yrs - 65 Yrs",
@@ -451,43 +464,102 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                   }}
                   className="product-card-img"
                 />
-                <div style={{ position: "absolute", bottom: "12px", left: "14px", display: "flex", gap: "0.4rem", flexWrap: "wrap", zIndex: 2 }}>
-                  <span style={{
-                    background: "var(--primary-blue)",
-                    color: "#ffffff",
-                    fontSize: "0.75rem",
-                    fontWeight: 800,
-                    letterSpacing: "0.03em",
-                    padding: "0.25rem 0.75rem",
-                    borderRadius: "9999px",
-                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.25)"
+                {/* Top-Right Insurer Brand Logo Overlay Badge */}
+                {partnerProfiles[product.partnerKey]?.logo && (
+                  <div style={{
+                    position: "absolute",
+                    top: "10px",
+                    right: "10px",
+                    background: "rgba(255, 255, 255, 0.95)",
+                    padding: "0.3rem 0.65rem",
+                    borderRadius: "8px",
+                    boxShadow: "0 2px 10px rgba(0, 0, 0, 0.2)",
+                    zIndex: 3,
+                    display: "flex",
+                    alignItems: "center",
+                    border: "1px solid rgba(226, 232, 240, 0.8)"
                   }}>
-                    {product.category.toUpperCase()}
-                  </span>
-                  {product.nriDiscount && (
+                    <img
+                      src={partnerProfiles[product.partnerKey].logo}
+                      alt={product.company}
+                      style={{ height: "22px", width: "auto", objectFit: "contain", display: "block" }}
+                    />
+                  </div>
+                )}
+
+                {/* Bottom Soft Gradient Overlay for Contrast */}
+                <div style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: "70%",
+                  background: "linear-gradient(to top, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0) 100%)",
+                  pointerEvents: "none",
+                  zIndex: 1
+                }} />
+
+                {/* Overlay Badges Container */}
+                <div style={{ position: "absolute", bottom: "10px", left: "12px", right: "12px", display: "flex", flexDirection: "column", gap: "0.4rem", zIndex: 2 }}>
+                  <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap", alignItems: "center" }}>
                     <span style={{
-                      background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+                      background: "var(--primary-blue)",
                       color: "#ffffff",
                       fontSize: "0.72rem",
                       fontWeight: 800,
-                      padding: "0.25rem 0.65rem",
+                      letterSpacing: "0.03em",
+                      padding: "0.2rem 0.65rem",
                       borderRadius: "9999px",
-                      boxShadow: "0 2px 8px rgba(16, 185, 129, 0.3)"
+                      boxShadow: "0 2px 8px rgba(0, 0, 0, 0.25)"
                     }}>
-                      ✈️ NRI DISCOUNT
+                      {product.category.toUpperCase()}
                     </span>
-                  )}
-                  {product.tierOptions && (
-                    <span style={{
-                      background: "#0f172a",
-                      color: "#fbbf24",
-                      fontSize: "0.72rem",
-                      fontWeight: 800,
+                    {product.nriDiscount && (
+                      <span style={{
+                        background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+                        color: "#ffffff",
+                        fontSize: "0.7rem",
+                        fontWeight: 800,
+                        padding: "0.2rem 0.6rem",
+                        borderRadius: "9999px",
+                        boxShadow: "0 2px 8px rgba(16, 185, 129, 0.3)"
+                      }}>
+                        ✈️ NRI DISCOUNT
+                      </span>
+                    )}
+                    {product.tierOptions && (
+                      <span style={{
+                        background: "#0f172a",
+                        color: "#fbbf24",
+                        fontSize: "0.7rem",
+                        fontWeight: 800,
+                        padding: "0.2rem 0.6rem",
+                        borderRadius: "9999px"
+                      }}>
+                        ⭐ {product.tierOptions.join("/")}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Members Covered Specific Representation Overlay */}
+                  {product.membersCovered && (
+                    <div style={{
+                      fontSize: "0.75rem",
+                      fontWeight: 700,
+                      color: "#ffffff",
+                      background: "rgba(15, 23, 42, 0.75)",
+                      backdropFilter: "blur(4px)",
                       padding: "0.25rem 0.65rem",
-                      borderRadius: "9999px"
+                      borderRadius: "6px",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "0.35rem",
+                      border: "1px solid rgba(255, 255, 255, 0.2)",
+                      maxWidth: "fit-content"
                     }}>
-                      ⭐ {product.tierOptions.join("/")}
-                    </span>
+                      <span>👨‍👩‍👧‍👦 Covered:</span>
+                      <span style={{ color: "#60a5fa" }}>{product.membersCovered}</span>
+                    </div>
                   )}
                 </div>
               </div>

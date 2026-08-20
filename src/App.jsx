@@ -47,6 +47,56 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Dynamic SEO Title & Meta Description Manager
+  React.useEffect(() => {
+    let title = "Ameen Nellikkunnan Insurance Advisory | Health Insurance Specialist";
+    let metaDesc = "Ameen Nellikkunnan is an independent IRDAI licensed health insurance consultant with 15+ years expertise guiding families and NRIs across Star Health, Aditya Birla, United India & New India Assurance.";
+
+    if (selectedProduct) {
+      title = `${selectedProduct.name} - ${selectedProduct.company} | Ameen Insurance Advisory`;
+      metaDesc = `${selectedProduct.desc} Sum Insured: ${selectedProduct.sumInsured}. Get unbiased advisory from Ameen Nellikkunnan.`;
+    } else {
+      switch (activeTab) {
+        case 'about':
+          title = "About Ameen Nellikkunnan | 15+ Years IRDAI Health Insurance Specialist";
+          metaDesc = "Learn about Ameen Nellikkunnan's 15+ years of independent health insurance consultancy, ₹150+ Cr claim advocacy, and client reviews.";
+          break;
+        case 'products':
+          title = "Compare Health Insurance Plans | Star Health, Aditya Birla & PSU Insurers";
+          metaDesc = "Compare Star Health Super Star, Star Assure, Women Care, Aditya Birla Activ Yuva, Activ One MAX, and PSU policies with zero hidden capping.";
+          break;
+        case 'partners':
+          title = "IRDAI Authorized Partner Insurers & 14,000+ Cashless Hospital Network";
+          metaDesc = "Explore network hospital counts and claim settlement credibility of Star Health, Aditya Birla, United India, and New India Assurance.";
+          break;
+        case 'nri':
+          title = "NRI Health Insurance Advisory | Exclusive 15%-25% Discounts for GCC & Expats";
+          metaDesc = "Specialized health insurance guidance for NRIs in GCC, UAE, Saudi Arabia, Qatar & overseas. Claim up to 25% NRI discount on Aditya Birla plans.";
+          break;
+        case 'claims':
+          title = "24/7 Emergency Cashless Hospital Claim Support | Ameen Insurance Advisory";
+          metaDesc = "Direct hospital desk coordination and 100% claim settlement advocacy across 14,000+ cashless network hospitals.";
+          break;
+        case 'faq':
+          title = "Health Insurance FAQs & Guidance | Ameen Nellikkunnan";
+          metaDesc = "Find answers to top health insurance questions regarding maternity waiting periods, cashless admission, PED cover, and NRI discounts.";
+          break;
+        case 'booking':
+          title = "Book Free 1-on-1 Health Insurance Consultation | Ameen Nellikkunnan";
+          metaDesc = "Schedule a direct phone or WhatsApp consultation with independent IRDAI consultant Ameen Nellikkunnan for unbiased policy recommendations.";
+          break;
+        default:
+          break;
+      }
+    }
+
+    document.title = title;
+    const metaTag = document.querySelector('meta[name="description"]');
+    if (metaTag) {
+      metaTag.setAttribute('content', metaDesc);
+    }
+  }, [activeTab, selectedProduct]);
+
   // Render Sub-page based on active tab selection
   const renderSubPage = () => {
     if (selectedProduct) {
