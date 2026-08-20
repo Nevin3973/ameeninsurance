@@ -161,38 +161,20 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
         paddingTop: '90px'
       }}>
         {/* Ad Banner Image Display Container */}
-        <div style={{
-          position: 'relative',
-          width: '100%',
-          minHeight: '220px',
-          maxHeight: '520px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          overflow: 'hidden',
-          background: '#020617'
-        }}>
+        <div className="hero-banner-container">
           {heroSlides.map((slide, idx) => (
             <picture
               key={slide.id}
+              className="hero-banner-picture"
               style={{
-                width: '100%',
-                display: idx === currentSlide ? 'block' : 'none',
-                transition: 'opacity 0.5s ease-in-out'
+                display: idx === currentSlide ? 'block' : 'none'
               }}
             >
               <source media="(max-width: 768px)" srcSet={slide.mobileImage || slide.image} />
               <img
                 src={slide.image}
                 alt={slide.title}
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  maxHeight: '520px',
-                  objectFit: 'contain',
-                  display: 'block',
-                  margin: '0 auto'
-                }}
+                className="hero-banner-img"
               />
             </picture>
           ))}

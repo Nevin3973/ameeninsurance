@@ -521,6 +521,21 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                 </div>
 
                 <div>
+                  {/* Who Can Pick This / Ideal For Callout Box */}
+                  <div style={{
+                    padding: "0.6rem 0.85rem",
+                    borderRadius: "8px",
+                    background: "linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)",
+                    border: "1px solid #bbf7d0",
+                    fontSize: "0.83rem",
+                    color: "#166534",
+                    marginBottom: "0.8rem",
+                    fontWeight: 600,
+                    lineHeight: 1.45
+                  }}>
+                    🎯 <strong>WHO CAN PICK THIS:</strong> {product.idealFor}
+                  </div>
+
                   <div style={{
                     padding: "0.75rem",
                     borderRadius: "var(--radius-sm)",
