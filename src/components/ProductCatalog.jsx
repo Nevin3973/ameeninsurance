@@ -448,8 +448,8 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
         <div className="grid-3" style={{ gap: "1.8rem" }}>
           {filteredProducts.map((product) => (
             <div key={product.id} className="clean-card" style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", padding: 0, overflow: "hidden" }}>
-              {/* Product Full Opaque Cover Image Header */}
-              <div style={{ aspectRatio: "16 / 9", minHeight: "190px", overflow: "hidden", position: "relative", background: "#ffffff" }}>
+              {/* Completely Clean & Unobscured Product Image (0% Overlapping Elements) */}
+              <div style={{ aspectRatio: "16 / 9", minHeight: "195px", overflow: "hidden", position: "relative", background: "#f8fafc" }}>
                 <img
                   src={product.image}
                   alt={product.name}
@@ -457,121 +457,94 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    objectPosition: "center 20%",
+                    objectPosition: "center",
                     display: "block",
-                    background: "#ffffff",
                     transition: "transform 0.4s ease"
                   }}
                   className="product-card-img"
                 />
-                {/* Top-Right Insurer Brand Logo Overlay Badge */}
-                {partnerProfiles[product.partnerKey]?.logo && (
-                  <div style={{
-                    position: "absolute",
-                    top: "10px",
-                    right: "10px",
-                    background: "rgba(255, 255, 255, 0.95)",
-                    padding: "0.3rem 0.65rem",
-                    borderRadius: "8px",
-                    boxShadow: "0 2px 10px rgba(0, 0, 0, 0.2)",
-                    zIndex: 3,
-                    display: "flex",
-                    alignItems: "center",
-                    border: "1px solid rgba(226, 232, 240, 0.8)"
-                  }}>
-                    <img
-                      src={partnerProfiles[product.partnerKey].logo}
-                      alt={product.company}
-                      style={{ height: "22px", width: "auto", objectFit: "contain", display: "block" }}
-                    />
-                  </div>
-                )}
-
-                {/* Bottom Soft Gradient Overlay for Contrast */}
-                <div style={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  height: "70%",
-                  background: "linear-gradient(to top, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0) 100%)",
-                  pointerEvents: "none",
-                  zIndex: 1
-                }} />
-
-                {/* Overlay Badges Container */}
-                <div style={{ position: "absolute", bottom: "10px", left: "12px", right: "12px", display: "flex", flexDirection: "column", gap: "0.4rem", zIndex: 2 }}>
-                  <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap", alignItems: "center" }}>
-                    <span style={{
-                      background: "var(--primary-blue)",
-                      color: "#ffffff",
-                      fontSize: "0.72rem",
-                      fontWeight: 800,
-                      letterSpacing: "0.03em",
-                      padding: "0.2rem 0.65rem",
-                      borderRadius: "9999px",
-                      boxShadow: "0 2px 8px rgba(0, 0, 0, 0.25)"
-                    }}>
-                      {product.category.toUpperCase()}
-                    </span>
-                    {product.nriDiscount && (
-                      <span style={{
-                        background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
-                        color: "#ffffff",
-                        fontSize: "0.7rem",
-                        fontWeight: 800,
-                        padding: "0.2rem 0.6rem",
-                        borderRadius: "9999px",
-                        boxShadow: "0 2px 8px rgba(16, 185, 129, 0.3)"
-                      }}>
-                        ✈️ NRI DISCOUNT
-                      </span>
-                    )}
-                    {product.tierOptions && (
-                      <span style={{
-                        background: "#0f172a",
-                        color: "#fbbf24",
-                        fontSize: "0.7rem",
-                        fontWeight: 800,
-                        padding: "0.2rem 0.6rem",
-                        borderRadius: "9999px"
-                      }}>
-                        ⭐ {product.tierOptions.join("/")}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Members Covered Specific Representation Overlay */}
-                  {product.membersCovered && (
-                    <div style={{
-                      fontSize: "0.75rem",
-                      fontWeight: 700,
-                      color: "#ffffff",
-                      background: "rgba(15, 23, 42, 0.75)",
-                      backdropFilter: "blur(4px)",
-                      padding: "0.25rem 0.65rem",
-                      borderRadius: "6px",
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: "0.35rem",
-                      border: "1px solid rgba(255, 255, 255, 0.2)",
-                      maxWidth: "fit-content"
-                    }}>
-                      <span>👨‍👩‍👧‍👦 Covered:</span>
-                      <span style={{ color: "#60a5fa" }}>{product.membersCovered}</span>
-                    </div>
-                  )}
-                </div>
               </div>
 
               {/* Card Content Body */}
-              <div style={{ padding: "1.5rem", display: "flex", flexDirection: "column", justifyContent: "space-between", flex: 1 }}>
+              <div style={{ padding: "1.4rem", display: "flex", flexDirection: "column", justifyContent: "space-between", flex: 1 }}>
                 <div>
-                  <h3 style={{ fontSize: "1.25rem", marginBottom: "0.3rem" }}>{product.name}</h3>
-                  <p style={{ fontSize: "0.8rem", fontWeight: 700, color: "var(--primary-blue)", marginBottom: "0.8rem" }}>
+                  {/* Badges & Insurer Logo Header Row */}
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem", marginBottom: "0.8rem", flexWrap: "wrap" }}>
+                    <div style={{ display: "flex", gap: "0.35rem", flexWrap: "wrap", alignItems: "center" }}>
+                      <span style={{
+                        background: "var(--primary-blue)",
+                        color: "#ffffff",
+                        fontSize: "0.72rem",
+                        fontWeight: 800,
+                        letterSpacing: "0.03em",
+                        padding: "0.2rem 0.65rem",
+                        borderRadius: "9999px"
+                      }}>
+                        {product.category.toUpperCase()}
+                      </span>
+                      {product.nriDiscount && (
+                        <span style={{
+                          background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+                          color: "#ffffff",
+                          fontSize: "0.7rem",
+                          fontWeight: 800,
+                          padding: "0.2rem 0.65rem",
+                          borderRadius: "9999px"
+                        }}>
+                          ✈️ NRI DISCOUNT
+                        </span>
+                      )}
+                      {product.tierOptions && (
+                        <span style={{
+                          background: "#0f172a",
+                          color: "#fbbf24",
+                          fontSize: "0.7rem",
+                          fontWeight: 800,
+                          padding: "0.2rem 0.65rem",
+                          borderRadius: "9999px"
+                        }}>
+                          ⭐ {product.tierOptions.join("/")}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Insurer Partner Brand Logo */}
+                    {partnerProfiles[product.partnerKey]?.logo && (
+                      <div style={{ background: "#f8fafc", padding: "0.25rem 0.5rem", borderRadius: "6px", border: "1px solid var(--border-light)", display: "flex", alignItems: "center" }}>
+                        <img
+                          src={partnerProfiles[product.partnerKey].logo}
+                          alt={product.company}
+                          style={{ height: "20px", width: "auto", objectFit: "contain", display: "block" }}
+                        />
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Members Covered Pill Badge */}
+                  {product.membersCovered && (
+                    <div style={{
+                      fontSize: "0.78rem",
+                      fontWeight: 700,
+                      color: "var(--primary-blue)",
+                      background: "var(--accent-sky-light)",
+                      padding: "0.3rem 0.75rem",
+                      borderRadius: "8px",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "0.4rem",
+                      marginBottom: "0.8rem",
+                      border: "1px solid #dbeafe"
+                    }}>
+                      <span>👨‍👩‍👧‍👦 Covered Members:</span>
+                      <strong style={{ color: "var(--text-dark)" }}>{product.membersCovered}</strong>
+                    </div>
+                  )}
+
+                  <h3 style={{ fontSize: "1.25rem", marginBottom: "0.2rem" }}>{product.name}</h3>
+                  <p style={{ fontSize: "0.8rem", fontWeight: 700, color: "var(--primary-blue)", marginBottom: "0.7rem" }}>
                     {product.company}
                   </p>
-                  <p style={{ fontSize: "0.9rem", color: "var(--text-muted)", lineHeight: 1.55, marginBottom: "0.8rem" }}>
+                  <p style={{ fontSize: "0.88rem", color: "var(--text-muted)", lineHeight: 1.55, marginBottom: "0.8rem" }}>
                     {product.desc}
                   </p>
 
@@ -583,7 +556,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                       borderRadius: "8px",
                       fontSize: "0.84rem",
                       color: "#0369a1",
-                      marginBottom: "1.2rem",
+                      marginBottom: "0.8rem",
                       fontWeight: 600,
                       fontFamily: "var(--font-malayalam)"
                     }}>
