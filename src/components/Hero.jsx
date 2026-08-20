@@ -75,6 +75,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
     {
       id: 'family-protection',
       image: '/family-hero-notext.png',
+      mobileImage: '/family-hero-notext.png',
       badge: t('heroBadge1', 'Ameen Nellikkunnan • Independent Insurance Consultant'),
       title: t('heroTitle1', 'Protect Your Family with the Right Health & Life Cover'),
       subtitle: t('heroSubtitle1', "15 years of independent guidance across India's top 4 insurance partners."),
@@ -87,6 +88,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
     {
       id: 'claim-advocacy',
       image: '/hero-slide-3.png',
+      mobileImage: '/hero-slide-3.png',
       badge: t('heroBadge2', '100% Dedicated Claim Settlement Support'),
       title: t('heroTitle2', 'Hassle-Free Cashless Admission & 24/7 Claim Support'),
       subtitle: t('heroSubtitle2', 'Direct hospital desk coordination across 14,000+ network hospitals.'),
@@ -100,6 +102,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
     {
       id: 'unbiased-partners',
       image: '/hero-banner.png',
+      mobileImage: '/hero-banner.png',
       badge: t('heroBadge3', 'IRDAI Licensed Partner Advisory'),
       title: t('heroTitle3', 'Compare Plans Across Star Health, Aditya Birla & PSU Insurers'),
       subtitle: t('heroSubtitle3', 'Zero hidden capping & transparent room rent guidance.'),
@@ -148,178 +151,179 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
   const activeSlideData = heroSlides[currentSlide];
 
   return (
-    <section id="hero" style={{ background: '#ffffff', padding: '0 0 4rem', marginTop: '-90px' }}>
-      {/* FULL-WIDTH DYNAMIC HERO CAROUSEL */}
+    <section id="hero" style={{ background: '#f8fafc', padding: '0 0 3.5rem', marginTop: '-90px' }}>
+      {/* FULL-WIDTH DYNAMIC AD BANNER CAROUSEL */}
       <div style={{
         position: 'relative',
         width: '100%',
-        minHeight: '440px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        background: '#0f172a',
         overflow: 'hidden',
-        marginBottom: '2.5rem',
         paddingTop: '90px'
       }}>
-        {/* Carousel Slide Images (Crossfade Animation & 100% Fit Visibility) */}
-        {heroSlides.map((slide, idx) => (
-          <img
-            key={slide.id}
-            src={slide.image}
-            alt={slide.title}
-            className="hero-slide-img"
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center center',
-              zIndex: idx === currentSlide ? 1 : 0,
-              opacity: idx === currentSlide ? 1 : 0,
-              transition: 'opacity 0.8s ease-in-out'
-            }}
-          />
-        ))}
-
-        {/* Soft Dark Gradient Overlay */}
+        {/* Ad Banner Image Display Container */}
         <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.45) 0%, rgba(15, 23, 42, 0.25) 50%, rgba(15, 23, 42, 0.6) 100%)',
-          zIndex: 2
-        }} />
-
-        {/* Left Arrow Navigation Button (Hidden) */}
-        <button
-          onClick={handlePrevSlide}
-          aria-label="Previous Slide"
-          style={{ display: 'none' }}
-        >
-          <ChevronLeft size={24} />
-        </button>
-
-        {/* Right Arrow Navigation Button (Hidden) */}
-        <button
-          onClick={handleNextSlide}
-          aria-label="Next Slide"
-          style={{ display: 'none' }}
-        >
-          <ChevronRight size={24} />
-        </button>
-
-        {/* Overlaid Buttons & Round Checkbox Indicators */}
-        <div className="container" style={{
           position: 'relative',
-          zIndex: 3,
-          textAlign: 'center',
-          color: '#ffffff',
-          padding: '4rem 1.5rem 2rem',
+          width: '100%',
+          minHeight: '220px',
+          maxHeight: '520px',
           display: 'flex',
-          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden',
+          background: '#020617'
+        }}>
+          {heroSlides.map((slide, idx) => (
+            <picture
+              key={slide.id}
+              style={{
+                width: '100%',
+                display: idx === currentSlide ? 'block' : 'none',
+                transition: 'opacity 0.5s ease-in-out'
+              }}
+            >
+              <source media="(max-width: 768px)" srcSet={slide.mobileImage || slide.image} />
+              <img
+                src={slide.image}
+                alt={slide.title}
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxHeight: '520px',
+                  objectFit: 'contain',
+                  display: 'block',
+                  margin: '0 auto'
+                }}
+              />
+            </picture>
+          ))}
+        </div>
+
+        {/* Dedicated Control Bar Directly Below Ad Banner (0% Overlap) */}
+        <div style={{
+          background: 'linear-gradient(180deg, #0f172a 0%, #1e293b 100%)',
+          borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+          padding: '0.75rem 1rem',
+          display: 'flex',
           alignItems: 'center',
           justifyContent: 'center'
         }}>
-          {/* Action Buttons Overlaid on Banner */}
-          <div style={{ display: 'flex', gap: '1.2rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
-            <button
-              onClick={() => handleNavClick(activeSlideData.primaryBtnTarget)}
-              className="btn-primary"
-              style={{
-                padding: '0.95rem 2.4rem',
-                fontSize: '1.05rem',
-                background: '#1d4ed8',
-                boxShadow: '0 4px 14px rgba(29, 78, 216, 0.4)'
-              }}
-            >
-              {activeSlideData.primaryBtnText} <ArrowRight size={18} />
-            </button>
-
-            {activeSlideData.isExternalSecondary ? (
-              <a
-                href={activeSlideData.secondaryBtnTarget}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-secondary"
-                style={{
-                  padding: '0.95rem 2.4rem',
-                  fontSize: '1.05rem',
-                  background: '#ffffff',
-                  color: '#058340',
-                  border: 'none',
-                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.2)',
-                  textDecoration: 'none'
-                }}
-              >
-                {activeSlideData.secondaryBtnText}
-              </a>
-            ) : (
-              <button
-                onClick={() => handleNavClick(activeSlideData.secondaryBtnTarget)}
-                className="btn-secondary"
-                style={{
-                  padding: '0.95rem 2.4rem',
-                  fontSize: '1.05rem',
-                  background: '#ffffff',
-                  color: '#0f172a',
-                  border: 'none',
-                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.2)'
-                }}
-              >
-                {activeSlideData.secondaryBtnText}
-              </button>
-            )}
-          </div>
-
-          {/* Carousel Slide Indicators (Round Checkbox Style) */}
-          <div style={{ display: 'flex', gap: '0.8rem', justifyContent: 'center', alignItems: 'center' }}>
-            {heroSlides.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentSlide(idx)}
-                aria-label={`Go to slide ${idx + 1}`}
-                style={{
-                  background: 'transparent',
-                  border: 'none',
-                  cursor: 'pointer',
-                  padding: '4px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'all 0.25s ease',
-                  transform: idx === currentSlide ? 'scale(1.15)' : 'scale(1)'
-                }}
-              >
-                {idx === currentSlide ? (
-                  <div style={{
-                    width: '22px',
-                    height: '22px',
-                    borderRadius: '50%',
-                    background: 'linear-gradient(135deg, #60a5fa, #2563eb)',
-                    color: '#ffffff',
-                    display: 'flex',
+          <div className="container" style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '1rem',
+            flexWrap: 'wrap',
+            maxWidth: '1200px',
+            margin: '0 auto'
+          }}>
+            {/* Round Checkbox Indicators */}
+            <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
+              {heroSlides.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentSlide(idx)}
+                  aria-label={`Go to slide ${idx + 1}`}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    padding: '2px',
+                    display: 'inline-flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    boxShadow: '0 0 12px rgba(96, 165, 250, 0.7)'
-                  }}>
-                    <CheckCircle2 size={16} color="#ffffff" />
-                  </div>
-                ) : (
-                  <div style={{
-                    width: '20px',
-                    height: '20px',
-                    borderRadius: '50%',
-                    border: '2px solid rgba(255, 255, 255, 0.5)',
-                    background: 'rgba(255, 255, 255, 0.15)',
                     transition: 'all 0.25s ease'
-                  }} />
-                )}
+                  }}
+                >
+                  {idx === currentSlide ? (
+                    <div style={{
+                      width: '20px',
+                      height: '20px',
+                      borderRadius: '50%',
+                      background: 'linear-gradient(135deg, #60a5fa, #2563eb)',
+                      color: '#ffffff',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: '0 0 10px rgba(96, 165, 250, 0.7)'
+                    }}>
+                      <CheckCircle2 size={14} color="#ffffff" />
+                    </div>
+                  ) : (
+                    <div style={{
+                      width: '18px',
+                      height: '18px',
+                      borderRadius: '50%',
+                      border: '2px solid rgba(255, 255, 255, 0.4)',
+                      background: 'rgba(255, 255, 255, 0.1)',
+                      transition: 'all 0.25s ease'
+                    }} />
+                  )}
+                </button>
+              ))}
+            </div>
+
+            {/* Side-by-Side Small Action Buttons */}
+            <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
+              <button
+                onClick={() => handleNavClick(activeSlideData.primaryBtnTarget)}
+                className="btn-primary"
+                style={{
+                  padding: '0.5rem 1.25rem',
+                  fontSize: '0.85rem',
+                  fontWeight: 700,
+                  height: '36px',
+                  whiteSpace: 'nowrap',
+                  background: '#1d4ed8',
+                  boxShadow: '0 3px 10px rgba(29, 78, 216, 0.4)'
+                }}
+              >
+                {activeSlideData.primaryBtnText} <ArrowRight size={14} />
               </button>
-            ))}
+
+              {activeSlideData.isExternalSecondary ? (
+                <a
+                  href={activeSlideData.secondaryBtnTarget}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-secondary"
+                  style={{
+                    padding: '0.5rem 1.25rem',
+                    fontSize: '0.85rem',
+                    fontWeight: 700,
+                    height: '36px',
+                    whiteSpace: 'nowrap',
+                    background: '#ffffff',
+                    color: '#058340',
+                    border: 'none',
+                    boxShadow: '0 3px 10px rgba(0, 0, 0, 0.2)',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  {activeSlideData.secondaryBtnText}
+                </a>
+              ) : (
+                <button
+                  onClick={() => handleNavClick(activeSlideData.secondaryBtnTarget)}
+                  className="btn-secondary"
+                  style={{
+                    padding: '0.5rem 1.25rem',
+                    fontSize: '0.85rem',
+                    fontWeight: 700,
+                    height: '36px',
+                    whiteSpace: 'nowrap',
+                    background: '#ffffff',
+                    color: '#0f172a',
+                    border: 'none',
+                    boxShadow: '0 3px 10px rgba(0, 0, 0, 0.2)'
+                  }}
+                >
+                  {activeSlideData.secondaryBtnText}
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

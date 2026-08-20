@@ -16,16 +16,16 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       fullName: "Star Health and Allied Insurance Company Limited",
       regNo: "IRDAI Reg. No. 129",
       hospitals: "14,000+ Cashless Hospitals",
-      tagline: "India's #1 Standalone Health Insurance Specialist",
-      desc: "Specialized in fast in-house claim settlement without Third Party Administrators (TPA). Offers 100% restoration benefits and comprehensive maternity protection."
+      tagline: "India's #1 Standalone Health Specialist",
+      desc: "Comprehensive health insurance with in-house claim settlement, unlimited automatic restoration, Package A home nursing & consumables, and dedicated women & senior citizen coverage."
     },
     "aditya-birla": {
       name: "Aditya Birla Health Insurance",
       fullName: "Aditya Birla Health Insurance Company Limited",
       regNo: "IRDAI Reg. No. 153",
       hospitals: "11,000+ Cashless Hospitals",
-      tagline: "HealthReturns & Active Wellness Pioneer • Exclusive NRI Discount",
-      desc: "Earn up to 100% of your premium back as HealthReturns by staying active. NRIs receive exclusive discounts when opting for Aditya Birla Health Insurance policies."
+      tagline: "HealthReturns™ & Active Wellness Pioneer • Exclusive NRI Discounts",
+      desc: "Earn up to 100% of your premium back through HealthReturns™ (EAT • MOVE • HEAL). Offers up to 11X cover boost, Yuva Reload, and tiered NRI discounts up to 25%."
     },
     "united-india": {
       name: "United India Insurance",
@@ -33,7 +33,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       regNo: "Public Sector Undertaking (PSU)",
       hospitals: "7,500+ Network Hospitals",
       tagline: "Sovereign PSU Security & Joint Family Protection",
-      desc: "Established Public Sector Undertaking providing government-backed health insurance security with high tax deduction limits under Section 80D."
+      desc: "Government-backed Public Sector Undertaking offering Family Medicare with AYUSH treatment, donor expenses, optional restoration, optional maternity, and Section 80D tax benefits."
     },
     "new-india": {
       name: "New India Assurance",
@@ -41,136 +41,86 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       regNo: "Government of India Enterprise",
       hospitals: "8,200+ Network Hospitals",
       tagline: "India's Premier & Largest Public Sector General Insurer",
-      desc: "Over 100 years of trusted legacy offering high claim-settlement credibility, low co-payments, and flexible individual/family floater covers."
+      desc: "Over 100 years of trusted legacy. Features Yuva Bharat Health Policy with Base, Gold, and Platinum tiers, Mother & Well-Baby benefits, and healthy parameter premium discounts."
     }
   };
 
   const products = [
     {
       id: "star-super-star",
-      name: "Star Super Star",
+      name: "Star Super Star (Secure)",
       partnerKey: "star-health",
       company: "Star Health Insurance",
       category: "family",
       image: "/prod-family.png",
-      desc: "Complete family healthcare protection featuring annual cumulative bonus and zero sub-limits on ICU rooms.",
-      descMl: "കുടുംബത്തിന് 100% Cashless Hospitalisation, Zero Room Rent Capping & Cumulative Bonus ആനുകൂല്യം.",
+      desc: "Comprehensive protection with unlimited SI restoration, zero room rent capping (₹7.5L+), Package A consumables & Freeze Your Age premium lock.",
+      descMl: "അൺലിമിറ്റഡ് റീസ്റ്റോറേഷൻ, നോ റൂം റെന്റ് ലിമിറ്റ്, Package A കൺസ്യൂമബിൾസ് & ഫ്രീസ് യുവർ ഏജ് പ്രീമിയം ലോക്ക് ആനുകൂല്യം.",
       eligibility: "18 Yrs - 65 Yrs (Children from 16 days)",
-      sumInsured: "₹5 Lakhs to ₹1 Crore",
-      coverage: "Inpatient, Day Care Procedures, Pre/Post Hospitalisation",
+      sumInsured: "₹7.5 Lakhs to ₹1 Crore+",
+      coverage: "Inpatient, Air & Road Ambulance, Day Care, AYUSH, Modern Treatments",
       waitingPeriod: "30 Days Initial (24 Months Pre-existing)",
+      nriDiscount: false,
+      tierOptions: ["Essential", "Value Plus"],
       benefits: [
-        "Automatic 100% restoration of sum insured",
-        "No capping on room rent and ICU charges",
-        "Annual health checkups for all covered members",
-        "Organ donor expenses covered up to sum insured"
+        "Automatic 100% SI restoration (unlimited times for related & unrelated illnesses)",
+        "Zero room-rent limit on ₹7.5L+ sum insured plans (Single Private AC room)",
+        "Package A: Nursing at Home (₹1,000/day), Durable Medical Equipment (up to ₹1L) & Consumables cover",
+        "Freeze Your Age: Premium locked at entry age until first claim",
+        "Air Ambulance up to ₹5 Lakhs & 10+ Modern Treatments (Robotic Surgery, etc.)",
+        "STAR Wellness Program discounts & AI-driven face scan health checks"
       ],
-      idealFor: "Families looking for high-cover cashless medical protection"
+      optionalCovers: ["Limitless Care (Unlimited SI for 1 claim)", "Mamta Women Wellness", "In-Clinic Consultation", "Stay Fit Fitness"],
+      idealFor: "Families seeking comprehensive high-cover protection with zero room limits and home care"
+    },
+    {
+      id: "star-health-assure",
+      name: "Star Health Assure",
+      partnerKey: "star-health",
+      company: "Star Health Insurance",
+      category: "family",
+      image: "/prod-family.png",
+      desc: "Family-floater indemnity policy featuring automatic restoration, home care treatment, preventive checkup limits, and maternity cover.",
+      descMl: "കുടുംബങ്ങൾക്ക് ഹോം കെയർ ചികിത്സ, ഓട്ടോമാറ്റിക് റീസ്റ്റോറേഷൻ, ഹെൽത്ത് ചെക്കപ്പ് & പ്രസവ ചെലവുകൾ നൽകുന്ന പ്ലാൻ.",
+      eligibility: "18 Yrs - 75 Yrs (Floater / Individual)",
+      sumInsured: "₹5 Lakhs to ₹2 Crore",
+      coverage: "Hospitalisation, Home Care, AYUSH, Maternity, Organ Donor",
+      waitingPeriod: "30 Days Initial (24 Months Maternity)",
+      nriDiscount: false,
+      benefits: [
+        "Home Care Treatment up to 10% of SI (max ₹5 Lakhs per policy year)",
+        "Air Ambulance up to 10% of Sum Insured per year",
+        "Preventive Health Check-up limits up to ₹15,000 (floater) / ₹8,000 (individual)",
+        "Maternity Expenses up to 10% of SI after 24-month waiting period",
+        "Accompanying Person Accommodation allowance (₹1,000/day up to 10 days)",
+        "Unlimited Tele-consultation via STAR Health App"
+      ],
+      optionalCovers: ["Value Network 15% co-pay discount", "Hospital Daily Cash Allowance", "Personal Accident Cover"],
+      idealFor: "Families wanting broad hospitalisation with home care and preventive health checkups"
     },
     {
       id: "womens-care",
-      name: "Star Womens Care",
+      name: "Star Women Care",
       partnerKey: "star-health",
       company: "Star Health Insurance",
       category: "women",
       image: "/prod-women.png",
-      desc: "Dedicated women and maternity insurance covering delivery, newborn care, and congenital disease cover.",
-      descMl: "Maternity, Delivery, Newborn Baby Care എന്നിവയ്ക്ക് സാമ്പത്തിക സുരക്ഷ നൽകുന്ന പ്ലാൻ.",
-      eligibility: "18 Yrs - 45 Yrs (Maternity specific)",
-      sumInsured: "₹5 Lakhs to ₹25 Lakhs",
-      coverage: "Maternity, Delivery, Newborn Baby, Assisted Reproduction",
-      waitingPeriod: "12 Months for Maternity Coverage",
-      benefits: [
-        "Normal and C-section delivery expenses covered",
-        "Newborn baby coverage from Day 1 up to sum insured",
-        "Vaccination expenses for newborn up to 12 months",
-        "Assisted reproduction treatment benefits"
-      ],
-      idealFor: "Expectant mothers and young couples planning a family"
-    },
-    {
-      id: "star-senior-carpet",
-      name: "Star Senior Citizens Red Carpet",
-      partnerKey: "star-health",
-      company: "Star Health Insurance",
-      category: "individual",
-      image: "/prod-family.png",
-      desc: "No pre-insurance medical test required for senior citizens aged 60 to 75 years.",
-      descMl: "60 വയസ്സിന് മുകളിലുള്ളവർക്ക് Pre-insurance Medical Test ആവശ്യമില്ലാത്ത Senior Citizen പ്ലാൻ.",
-      eligibility: "60 Yrs - 75 Yrs",
-      sumInsured: "₹1 Lakh to ₹25 Lakhs",
-      coverage: "Inpatient Hospitalisation, Outpatient Consultations",
-      waitingPeriod: "12 Months Pre-existing Cover",
-      benefits: [
-        "No pre-policy medical screening test required",
-        "Day care procedures and medical consultations included",
-        "Co-payment option for flexible affordable premiums",
-        "Cover for pre-existing medical conditions after 1 year"
-      ],
-      idealFor: "Senior citizen parents seeking immediate cashless coverage"
-    },
-    {
-      id: "star-comprehensive",
-      name: "Star Comprehensive Health Policy",
-      partnerKey: "star-health",
-      company: "Star Health Insurance",
-      category: "family",
-      image: "/prod-family.png",
-      desc: "All-in-one comprehensive cover with zero capping, OPD consultations, and air ambulance assistance.",
-      descMl: "Air Ambulance, OPD consultations & AYUSH ചികിത്സകൾ അടങ്ങുന്ന Comprehensive ഫാമിലി പ്ലാൻ.",
-      eligibility: "18 Yrs - 65 Yrs",
+      desc: "Dedicated women-centric policy covering maternity, assisted reproduction (ART), newborn vaccination, ante-natal care, and STAR Mother cover.",
+      descMl: "വനിതകൾക്കായി ഡെലിവറി, അസിസ്റ്റഡ് റീപ്രൊഡക്ഷൻ (ART), ന്യൂബോൺ വാക്സിനേഷൻ & മദർ കവർ അടങ്ങിയ പ്രത്യേക പോളിസി.",
+      eligibility: "18 Yrs - 75 Yrs (Individual / Floater)",
       sumInsured: "₹5 Lakhs to ₹1 Crore",
-      coverage: "Inpatient, Outpatient OPD, Dental & Ophthalmic",
-      waitingPeriod: "30 Days Initial",
+      coverage: "Maternity, Assisted Reproduction, Newborn Care, In-Utero Surgery",
+      waitingPeriod: "24 Months for Voluntary Sterilisation & Specific Covers",
+      nriDiscount: false,
       benefits: [
-        "Outpatient dental and ophthalmic treatments covered",
-        "100% reload of sum insured once exhausted",
-        "Hospital daily cash allowance included",
-        "Air ambulance emergency transportation"
+        "Assisted Reproduction Treatment (ART) up to ₹3 Lakhs (based on SI)",
+        "Newborn Vaccination (up to ₹3,500) & Paediatrician consults (4/yr up to 12 yrs)",
+        "Ante-Natal / Pregnancy care & Delivery Expenses up to ₹1 Lakh",
+        "STAR Mother Cover: Accommodation for mother when child under 12 is in ICU",
+        "In-Utero Fetal Surgery, Bariatric Surgery & Miscarriage due to accident cover",
+        "Metabolic Screening for newborn up to ₹3,500"
       ],
-      idealFor: "Comprehensive zero-gap family medical security"
-    },
-    {
-      id: "health-assure",
-      name: "Aditya Birla Health Assure",
-      partnerKey: "aditya-birla",
-      company: "Aditya Birla Health Insurance",
-      category: "family",
-      image: "/prod-young.png",
-      desc: "Comprehensive medical coverage with HealthReturns rewards and special NRI premium discounts.",
-      descMl: "ദിനംപ്രതി Fitness നും ആരോഗ്യം നിലനിർത്തുന്നതിനും HealthReturns റിവാർഡ് ബോണസ് നൽകുന്ന പ്ലാൻ.",
-      eligibility: "91 Days to Lifetime Renewability",
-      sumInsured: "₹3 Lakhs to ₹2 Crore",
-      coverage: "Hospitalisation, Ayush Treatment, Domiciliary Care",
-      waitingPeriod: "30 Days Initial (36 Months Pre-existing)",
-      benefits: [
-        "Special NRI Discount: Exclusive discounts when opting for Aditya Birla",
-        "Earn up to 100% premium back as HealthReturns",
-        "Unlimited refill of sum insured for unrelated illnesses",
-        "In-patient AYUSH (Ayurveda/Homeopathy) treatment cover"
-      ],
-      idealFor: "Health-conscious families & NRIs seeking lifestyle rewards and discounts"
-    },
-    {
-      id: "activ-one-max",
-      name: "Aditya Birla Activ One Max",
-      partnerKey: "aditya-birla",
-      company: "Aditya Birla Health Insurance",
-      category: "individual",
-      image: "/prod-family.png",
-      desc: "VIP healthcare insurance offering single private room, global emergency cover, and NRI discounts.",
-      descMl: "അടിയന്തിര മെഡിക്കൽ ഘട്ടത്തിൽ 100% Reload Benefit & Single Private AC Room സൗകര്യം.",
-      eligibility: "18 Yrs - 70 Yrs",
-      sumInsured: "₹10 Lakhs to ₹6 Crore",
-      coverage: "Worldwide Emergency, Executive Suite, Organ Donor",
-      waitingPeriod: "30 Days Initial (12 Months Reduced Waiting option)",
-      benefits: [
-        "Special NRI discount for overseas residents & expat families",
-        "Single Private AC Room and Suite upgrade allowed",
-        "International emergency medical treatment cover",
-        "Chronic management program for Diabetes and Hypertension from Day 1"
-      ],
-      idealFor: "Executives, NRIs, and HNWIs desiring VIP global hospital care"
+      optionalCovers: ["Lump Sum on Diagnosis of Cancer for female insureds"],
+      idealFor: "Women, expecting mothers, and young families prioritizing maternity & child healthcare"
     },
     {
       id: "activ-yuva",
@@ -179,19 +129,49 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       company: "Aditya Birla Health Insurance",
       category: "young",
       image: "/prod-young.png",
-      desc: "Tailored for young active professionals with step-tracking discounts and special NRI rates.",
-      descMl: "യുവാക്കൾക്കും Young Professionals നും കുറഞ്ഞ പ്രീമിയത്തിൽ ഉയർന്ന Health Cover.",
+      desc: "Healthy Har Din - Zindagi Win-Win. Earn up to 100% premium back via EAT•MOVE•HEAL, 11X cover boost, Yuva Reload & Travel ON/OFF.",
+      descMl: "യുവാക്കൾക്ക് EAT•MOVE•HEAL വഴി 100% പ്രീമിയം തിരികെ, 11X കവർ ബൂസ്റ്റ് & ട്രാവൽ ON/OFF ഫീച്ചർ.",
       eligibility: "18 Yrs - 35 Yrs",
-      sumInsured: "₹5 Lakhs to ₹50 Lakhs",
-      coverage: "Inpatient, Accident Emergency, OPD Wellness",
+      sumInsured: "₹5 Lakhs to ₹50 Lakhs (Unlimited SI Option)",
+      coverage: "Inpatient, Day Care, Mental Illness, HIV/AIDS, Obesity, OPD",
       waitingPeriod: "30 Days Initial",
+      nriDiscount: true,
       benefits: [
-        "Special NRI discount for young expats & NRIs",
-        "Connect Apple Watch / Fitbit for up to 30% renewal discount",
-        "Zero deductible on first claim",
-        "Diagnostic lab tests and virtual doctor consults"
+        "HealthReturns™: Earn up to 100% Base Premium back via EAT • MOVE • HEAL activities",
+        "Yuva Credit: Base SI increases by 100% per renewal up to 11X cover in 11 years",
+        "Yuva Reload: 2X cover on 1st claim; unlimited refill for subsequent claims",
+        "Worldwide Maternity Cover option even when single",
+        "Pause Policy ON/OFF while travelling abroad (up to 15% premium back)",
+        "Optional OPD Cover up to 5X Base Premium & Income Protect Cover"
       ],
-      idealFor: "Young professionals and college graduates seeking affordable health cover"
+      optionalCovers: ["Worldwide Maternity", "OPD Cover (5X base premium)", "Income Protect Cover"],
+      idealFor: "Young active professionals wanting health rewards, high coverage multipliers & global flex"
+    },
+    {
+      id: "activ-one-max",
+      name: "Aditya Birla Activ One MAX",
+      partnerKey: "aditya-birla",
+      company: "Aditya Birla Health Insurance",
+      category: "individual",
+      image: "/prod-family.png",
+      desc: "VIP healthcare plan with HealthReturns™, Super Credit up to 500% (max ₹3 Cr), Super Reload unlimited refills & tiered NRI discounts up to 25%.",
+      descMl: "100% പ്രീമിയം ഹെൽത്ത് റിട്ടേൺസ്, 500% സൂപ്പർ ക്രഡിറ്റ്, അൺലിമിറ്റഡ് സൂപ്പർ റീലോഡ് & പ്രവാസി സ്പെഷ്യൽ ഡിസ്കൗണ്ട്.",
+      eligibility: "18 Yrs - 70 Yrs",
+      sumInsured: "₹10 Lakhs to ₹6 Crore",
+      coverage: "Any Room, Worldwide Emergency, Super Credit, Super Reload",
+      waitingPeriod: "30 Days Initial (Option for Reduced PED Waiting)",
+      nriDiscount: true,
+      nriTierText: "15% (₹10L-15L SI) | 20% (₹15L-25L SI) | 25% (₹25L+ SI)",
+      benefits: [
+        "Special Tiered NRI Discount: 15% (₹10L-15L SI), 20% (₹15L-25L SI), 25% (₹25L+ SI)",
+        "Super Credit: Base SI increases by 100%/year up to 500% (max ₹3 Crore)",
+        "Super Reload: Unlimited refills up to 100% SI from 2nd claim onwards",
+        "HealthReturns™: Earn up to 100% premium back through active lifestyle tracking",
+        "Any Room category choice with zero capping on major hospitalisation expenses",
+        "Claim Protect cover for listed non-medical / non-payable consumables"
+      ],
+      optionalCovers: ["International Emergency Cover", "Chronic Management Program (Diabetes/Hypertension)"],
+      idealFor: "Executives, NRIs, and families seeking high SI multipliers, premium returns & suite room access"
     },
     {
       id: "family-medicare",
@@ -200,61 +180,73 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       company: "United India Insurance Company Limited",
       category: "family",
       image: "/prod-family.png",
-      desc: "Government-backed PSU family floater plan with trusted wide network coverage and tax savings under Sec 80D.",
-      descMl: "കേന്ദ്ര സർക്കാർ PSU കമ്പനിയായ United India യുടെ വിശ്വസനീയ കുടുംബ സുരക്ഷാ പ്ലാൻ.",
-      eligibility: "18 Yrs - 65 Yrs (Parents and Grandparents eligible)",
+      desc: "Sovereign government PSU family floater policy covering inpatient hospitalisation, AYUSH systems, day care, and optional maternity benefits.",
+      descMl: "കേന്ദ്ര സർക്കാർ PSU കമ്പനിയായ United India യുടെ കുടുംബ സുരക്ഷാ പോളിസി (AYUSH & ടാക്സ് ബെനഫിറ്റ്).",
+      eligibility: "18 Yrs - 65 Yrs (Up to 6 family members)",
       sumInsured: "₹3 Lakhs to ₹25 Lakhs",
-      coverage: "All Medical Expenses, Pre/Post Hospitalisation",
+      coverage: "Inpatient, Day Care, AYUSH, Pre/Post, Donor Expenses, Road Ambulance",
       waitingPeriod: "30 Days Initial (36 Months Pre-existing)",
+      nriDiscount: false,
       benefits: [
-        "Trusted Public Sector Undertaking (PSU) security",
-        "Covers dependent parents and in-laws in a single floater policy",
-        "No co-payment up to age 60",
-        "Income Tax deduction under Section 80D up to ₹75,000"
+        "Sovereign Public Sector Undertaking (PSU) backing with 7,500+ network hospitals",
+        "Inpatient hospitalisation, Day Care Procedures & Road Ambulance covered",
+        "AYUSH Treatment: Inpatient Ayurvedic, Homeopathic & Unani covered",
+        "Donor Expenses & Organ Donor Benefit included",
+        "Cost of annual preventive health check-up included",
+        "Tax Deduction under Section 80D up to ₹75,000"
       ],
-      idealFor: "Joint families seeking PSU reliability and tax benefits"
+      optionalCovers: ["Restoration of Sum Insured", "Maternity Expenses & Newborn Cover", "Daily Cash Allowance"],
+      idealFor: "Families preferring trusted government PSU backing with flexible floater coverage"
     },
     {
-      id: "individual-mediclassic-psu",
+      id: "united-individual-medicare",
       name: "United India Individual Health Policy",
       partnerKey: "united-india",
       company: "United India Insurance Company Limited",
       category: "individual",
       image: "/prod-young.png",
-      desc: "Classic public sector individual medical insurance with sovereign security and economical premiums.",
-      descMl: "ഇന്ത്യയിലുടനീളമുള്ള സർക്കാർ & സ്വകാര്യ ആശുപത്രികളിൽ Cashless സേവനം ലഭിക്കുന്ന PSU പോളിസി.",
+      desc: "Classic public sector individual medical plan offering sovereign reliability, cumulative bonus, and low co-payment options.",
+      descMl: "ലളിതമായ പ്രീമിയത്തിൽ ഗവൺമെന്റ് സുരക്ഷ നൽകുന്ന യുണൈറ്റഡ് ഇന്ത്യ ഇൻഡിവിജ്വൽ പോളിസി.",
       eligibility: "18 Yrs - 65 Yrs",
       sumInsured: "₹2 Lakhs to ₹15 Lakhs",
-      coverage: "Hospitalisation, Surgery, ICU",
+      coverage: "Hospitalisation, Surgery, ICU, AYUSH, Day Care",
       waitingPeriod: "30 Days Initial",
+      nriDiscount: false,
       benefits: [
-        "Sovereign government PSU backing",
-        "Covers Ayurvedic & Unani hospitalisation",
-        "Cumulative bonus of 5% for every claim-free year",
-        "Seamless cashless admission in government and private hospitals"
+        "Sovereign Government of India PSU protection",
+        "5% Cumulative Bonus for every claim-free policy year",
+        "Covers Ayurvedic & Unani inpatient hospitalisation",
+        "Modern treatment methods and technological advancement coverage",
+        "Direct cashless treatment across government and private network hospitals"
       ],
-      idealFor: "Individual policyholders preferring PSU reliability"
+      optionalCovers: ["Sum Insured Restoration", "Daily Hospital Cash"],
+      idealFor: "Individual policyholders seeking economical PSU security"
     },
     {
       id: "yuva-bharat",
-      name: "New India Yuva Bharat",
+      name: "New India Yuva Bharat Health Policy",
       partnerKey: "new-india",
       company: "The New India Assurance Company Limited",
       category: "young",
       image: "/prod-young.png",
-      desc: "Affordable modern health policy for India workforce with high claim settlement ratios.",
-      descMl: "New India Assurance നൽകുന്ന വിശ്വസനീയ യംഗ് പ്രൊഫഷണൽ Health Insurance.",
-      eligibility: "18 Yrs - 45 Yrs",
-      sumInsured: "₹5 Lakhs to ₹50 Lakhs",
-      coverage: "Hospitalisation, Road Accident, Roadside Ambulance",
-      waitingPeriod: "30 Days Initial",
+      desc: "Empowering Better Health for young adults & families with Base, Gold, and Platinum tier plans, Mother & Well-Baby benefits, and health parameter discounts.",
+      descMl: "Base, Gold & Platinum പ്ലാനുകളിൽ വരുന്ന New India Assurance യുവ ഭാരത് ഹെൽത്ത് പോളിസി.",
+      eligibility: "18 Yrs - 45 Yrs (Children 91 days - 25 Yrs)",
+      sumInsured: "₹5 Lakhs to ₹1 Crore",
+      coverage: "Base / Gold / Platinum Tiers, Critical Illness, Maternity, Air Ambulance",
+      waitingPeriod: "30 Days Initial (24 Months PED / Mental / Genetic)",
+      nriDiscount: false,
+      tierOptions: ["Base Plan", "Gold Plan", "Platinum Plan"],
       benefits: [
-        "India largest public sector health insurer guarantee",
-        "Cumulative bonus of 10% for every claim-free year",
-        "Modern day-care treatments and cataract surgery cover",
-        "Cashless facility across 8,200+ government and private hospitals"
+        "3 Tiered Plans: Base (Hospital Cash, Shared Room), Gold (Air Ambulance, Critical Illness), Platinum (Mother & Well-Baby)",
+        "Platinum Plan: Infertility Treatment, Maternity Benefit, Pre-term Birth & Newborn Vaccination",
+        "Up to 10% discount for healthy parameters (BMI, Blood Sugar & Blood Pressure)",
+        "2.5% Loyalty Discount, 10% Digital Discount & up to 15% Floater Discount",
+        "Pre-hospitalisation 60 days & Post-hospitalisation 90 days",
+        "AYUSH Treatment covered up to 100% of Sum Insured"
       ],
-      idealFor: "First-time insurance buyers and young earners"
+      optionalCovers: ["Gold: Air Ambulance & Critical Illness", "Platinum: Infertility & Birth Right Benefit"],
+      idealFor: "Young families wanting flexible tier options (Base/Gold/Platinum) from India's largest PSU insurer"
     },
     {
       id: "new-india-asha-kiran",
@@ -263,19 +255,21 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       company: "The New India Assurance Company Limited",
       category: "family",
       image: "/prod-women.png",
-      desc: "Specialized floater policy for families with girl child benefits and personal accident cover.",
-      descMl: "പെൺകുട്ടികളുള്ള കുടുംബങ്ങൾക്ക് പ്രീമിയത്തിൽ 5% Special Discount ആനുകൂല്യം.",
+      desc: "Specialized floater policy for families with girl child premium discounts and built-in personal accident cover for primary earner.",
+      descMl: "പെൺകുട്ടികളുള്ള കുടുംബങ്ങൾക്ക് പ്രീമിയത്തിൽ 5% സ്പെഷ്യൽ ഡിസ്കൗണ്ടും പേഴ്സണൽ ആക്സിഡന്റ് പരിരക്ഷയും.",
       eligibility: "18 Yrs - 65 Yrs",
       sumInsured: "₹3 Lakhs to ₹15 Lakhs",
       coverage: "Family Floater, Personal Accident, Girl Child Discount",
       waitingPeriod: "30 Days Initial",
+      nriDiscount: false,
       benefits: [
-        "5% discount on premium if policy includes a girl child",
-        "Built-in Personal Accident benefit for primary earner",
+        "5% Special Discount on premium if policy includes a girl child",
+        "Built-in Personal Accident benefit for the primary earning member",
         "No room rent cap on selected sum insured options",
-        "Lifetime policy renewability"
+        "Lifetime policy renewability with broad public-sector network access"
       ],
-      idealFor: "Families seeking PSU safety with special girl child protection"
+      optionalCovers: ["Auto Top-Up", "Hospital Cash Allowance"],
+      idealFor: "Families with daughters looking for PSU reliability with extra girl-child savings"
     }
   ];
 
@@ -457,22 +451,45 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                   }}
                   className="product-card-img"
                 />
-                <span style={{
-                  position: "absolute",
-                  bottom: "12px",
-                  left: "14px",
-                  background: "var(--primary-blue)",
-                  color: "#ffffff",
-                  fontSize: "0.75rem",
-                  fontWeight: 800,
-                  letterSpacing: "0.03em",
-                  padding: "0.25rem 0.75rem",
-                  borderRadius: "9999px",
-                  boxShadow: "0 2px 8px rgba(0, 0, 0, 0.25)",
-                  zIndex: 2
-                }}>
-                  {product.category.toUpperCase()}
-                </span>
+                <div style={{ position: "absolute", bottom: "12px", left: "14px", display: "flex", gap: "0.4rem", flexWrap: "wrap", zIndex: 2 }}>
+                  <span style={{
+                    background: "var(--primary-blue)",
+                    color: "#ffffff",
+                    fontSize: "0.75rem",
+                    fontWeight: 800,
+                    letterSpacing: "0.03em",
+                    padding: "0.25rem 0.75rem",
+                    borderRadius: "9999px",
+                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.25)"
+                  }}>
+                    {product.category.toUpperCase()}
+                  </span>
+                  {product.nriDiscount && (
+                    <span style={{
+                      background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+                      color: "#ffffff",
+                      fontSize: "0.72rem",
+                      fontWeight: 800,
+                      padding: "0.25rem 0.65rem",
+                      borderRadius: "9999px",
+                      boxShadow: "0 2px 8px rgba(16, 185, 129, 0.3)"
+                    }}>
+                      ✈️ NRI DISCOUNT
+                    </span>
+                  )}
+                  {product.tierOptions && (
+                    <span style={{
+                      background: "#0f172a",
+                      color: "#fbbf24",
+                      fontSize: "0.72rem",
+                      fontWeight: 800,
+                      padding: "0.25rem 0.65rem",
+                      borderRadius: "9999px"
+                    }}>
+                      ⭐ {product.tierOptions.join("/")}
+                    </span>
+                  )}
+                </div>
               </div>
 
               {/* Card Content Body */}

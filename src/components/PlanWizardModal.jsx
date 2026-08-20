@@ -32,84 +32,103 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
   };
 
   const calculateRecommendations = (finalAnswers) => {
-    // Recommendation Logic based on User Answers
+    // Recommendation Logic based on User Answers aligned with health_insurance_website_content_summary.md
     let matches = [];
 
     if (finalAnswers.target === 'women') {
       matches.push({
         id: 'womens-care',
-        name: 'Star Womens Care',
+        name: 'Star Women Care',
         company: 'Star Health Insurance',
-        matchPercent: '98% Match',
-        desc: 'Dedicated women policy with maternity, delivery, newborn baby cover from Day 1, and assisted reproduction benefits.',
-        sumInsured: '₹5 Lakhs to ₹25 Lakhs',
-        highlight: 'Ideal for expecting mothers & maternity planning'
+        matchPercent: '99% Match',
+        desc: 'Specialized women policy featuring Assisted Reproduction (ART up to ₹3L), delivery expenses, newborn vaccination & STAR Mother cover.',
+        sumInsured: '₹5 Lakhs to ₹1 Crore',
+        highlight: 'Women & Maternity Specialist Choice'
       });
       matches.push({
-        id: 'star-super-star',
-        name: 'Star Super Star',
-        company: 'Star Health Insurance',
-        matchPercent: '92% Match',
-        desc: 'Complete family healthcare protection featuring 100% automatic restoration and zero room caps.',
+        id: 'yuva-bharat',
+        name: 'New India Yuva Bharat (Platinum)',
+        company: 'The New India Assurance Company Limited',
+        matchPercent: '93% Match',
+        desc: 'PSU policy with Platinum plan Mother & Well-Baby benefits including infertility treatment, pre-term birth & vaccination.',
         sumInsured: '₹5 Lakhs to ₹1 Crore',
-        highlight: 'Comprehensive family floater protection'
+        highlight: 'PSU Mother & Well-Baby Protection'
       });
     } else if (finalAnswers.target === 'parents') {
       matches.push({
+        id: 'star-health-assure',
+        name: 'Star Health Assure',
+        company: 'Star Health Insurance',
+        matchPercent: '97% Match',
+        desc: 'Family floater featuring Home Care treatment up to ₹5L, 100% automatic restoration, and preventive health checkups.',
+        sumInsured: '₹5 Lakhs to ₹2 Crore',
+        highlight: 'Home Care & Unlimited Automatic Restoration'
+      });
+      matches.push({
         id: 'family-medicare',
-        name: 'Family Medicare (PSU)',
-        company: 'United India Insurance',
-        matchPercent: '96% Match',
-        desc: 'Trusted PSU policy covering dependent parents with no co-payment up to age 60 and Section 80D tax benefits.',
+        name: 'United India Family Medicare',
+        company: 'United India Insurance Company Limited',
+        matchPercent: '94% Match',
+        desc: 'Sovereign Government PSU policy covering dependent family members, AYUSH Ayurvedic treatment, and Section 80D tax savings.',
         sumInsured: '₹3 Lakhs to ₹25 Lakhs',
-        highlight: 'PSU Trust for Elderly Parents in Kerala'
+        highlight: 'Government PSU Security & AYUSH Cover'
       });
+    } else if (finalAnswers.target === 'self' || finalAnswers.priority === 'budget') {
       matches.push({
-        id: 'activ-one-max',
-        name: 'Activ One Max',
+        id: 'activ-yuva',
+        name: 'Aditya Birla Activ Yuva',
         company: 'Aditya Birla Health Insurance',
-        matchPercent: '91% Match',
-        desc: 'Chronic management program for Diabetes & Hypertension from Day 1 with single private room access.',
-        sumInsured: '₹10 Lakhs to ₹6 Crore',
-        highlight: 'Day-1 Pre-existing chronic care'
+        matchPercent: '98% Match',
+        desc: 'Healthy Har Din plan — earn up to 100% premium back as HealthReturns™, up to 11X cover boost in 11 years & travel ON/OFF.',
+        sumInsured: '₹5 Lakhs to ₹50 Lakhs',
+        highlight: 'Young & Active HealthReturns™ Rewards'
       });
-    } else if (finalAnswers.coverage === 'high') {
+      matches.push({
+        id: 'yuva-bharat',
+        name: 'New India Yuva Bharat (Base/Gold)',
+        company: 'The New India Assurance Company Limited',
+        matchPercent: '92% Match',
+        desc: 'Government PSU plan for age 18-45 with up to 10% healthy parameter discount (BMI/sugar/BP) & hospital cash.',
+        sumInsured: '₹5 Lakhs to ₹1 Crore',
+        highlight: 'Affordable PSU Starter Policy'
+      });
+    } else if (finalAnswers.coverage === 'high' || finalAnswers.priority === 'no_cap') {
       matches.push({
         id: 'activ-one-max',
-        name: 'Activ One Max VIP',
+        name: 'Aditya Birla Activ One MAX',
         company: 'Aditya Birla Health Insurance',
         matchPercent: '99% Match',
-        desc: 'VIP healthcare insurance featuring worldwide emergency cover, executive suite upgrade, and organ donor cover.',
+        desc: 'VIP healthcare policy with Super Credit up to 500% (max ₹3 Cr), Super Reload unlimited refills, and up to 25% NRI discount.',
         sumInsured: '₹10 Lakhs to ₹6 Crore',
-        highlight: 'Global VIP Hospital Protection'
+        highlight: 'VIP Super Credit & Exclusive NRI Discount'
       });
       matches.push({
         id: 'star-super-star',
-        name: 'Star Super Star Premium',
+        name: 'Star Super Star (Secure)',
         company: 'Star Health Insurance',
-        matchPercent: '94% Match',
-        desc: 'No capping on room rent & ICU charges with annual cumulative bonus up to 100%.',
-        sumInsured: '₹10 Lakhs to ₹1 Crore',
-        highlight: 'High sum assured family cover'
+        matchPercent: '95% Match',
+        desc: 'Unlimited restoration, Package A home nursing & consumables, zero room rent capping, and entry age premium lock.',
+        sumInsured: '₹7.5 Lakhs to ₹1 Crore+',
+        highlight: 'Zero Room Rent Limit & Package A Consumables'
       });
     } else {
       matches.push({
         id: 'star-super-star',
-        name: 'Star Super Star',
+        name: 'Star Super Star (Secure)',
         company: 'Star Health Insurance',
         matchPercent: '97% Match',
-        desc: 'Complete family healthcare protection featuring annual cumulative bonus and zero sub-limits on ICU rooms.',
-        sumInsured: '₹5 Lakhs to ₹1 Crore',
-        highlight: 'Top-rated family floater plan'
+        desc: 'Comprehensive protection featuring Package A consumables cover, unlimited restoration, and Freeze Your Age premium lock.',
+        sumInsured: '₹7.5 Lakhs to ₹1 Crore+',
+        highlight: 'Top-Rated Family Protection'
       });
       matches.push({
-        id: 'health-assure',
-        name: 'Health Assure',
+        id: 'activ-one-max',
+        name: 'Aditya Birla Activ One MAX',
         company: 'Aditya Birla Health Insurance',
         matchPercent: '93% Match',
-        desc: 'Earn up to 100% premium back as HealthReturns rewards for active living plus AYUSH treatment cover.',
-        sumInsured: '₹3 Lakhs to ₹2 Crore',
-        highlight: 'HealthReturns rewards & AYUSH cover'
+        desc: 'Earn up to 100% HealthReturns™, Super Credit up to 500%, Super Reload, and NRI discounts up to 25%.',
+        sumInsured: '₹10 Lakhs to ₹6 Crore',
+        highlight: 'HealthReturns™ & Super Credit'
       });
     }
 

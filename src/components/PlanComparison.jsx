@@ -9,56 +9,62 @@ export default function PlanComparison({ onSelectPlan }) {
 
   const plans = [
     {
-      id: 'silver',
-      name: lang === 'ml' ? 'സിൽവർ എസ്സൻഷ്യൽ' : 'Silver Essential',
-      monthlyPrice: 49,
-      annualPrice: 42,
-      desc: lang === 'ml' ? 'വ്യക്തികൾക്കുള്ള സുരക്ഷിതമായ അടിസ്ഥാന ആശുപത്രി സംരക്ഷണം.' : 'Ideal for individuals seeking reliable core hospital protection.',
+      id: 'essential',
+      name: lang === 'ml' ? 'എസ്സൻഷ്യൽ ഹെൽത്ത് പ്രൊട്ടക്ട്' : 'Essential Health Protect',
+      monthlyPrice: 850,
+      annualPrice: 720,
+      desc: lang === 'ml' ? 'യുവാക്കൾക്കും ചെറു കുടുംബങ്ങൾക്കും അനുയോജ്യമായ അടിസ്ഥാന ഇൻ-പേഷ്യന്റ് പോളിസി.' : 'Ideal for young earners & small families seeking core cashless hospitalisation.',
       popular: false,
       features: {
-        maxCoverage: lang === 'ml' ? '₹15 ലക്ഷം / വർഷം' : '$150,000 / Year',
-        networkHospitals: lang === 'ml' ? '2,000+ ആശുപത്രികൾ' : '2,000+ Hospitals',
-        deductible: '₹10,000',
+        maxCoverage: lang === 'ml' ? '₹5 ലക്ഷം - ₹10 ലക്ഷം' : '₹5 Lakhs - ₹10 Lakhs',
+        networkHospitals: lang === 'ml' ? '7,500+ ആശുപത്രികൾ (PSU/Private)' : '7,500+ Hospitals (PSU/Private)',
+        deductible: '₹0 (Zero Deductible)',
         inpatient: true,
         outpatient: false,
         cashless: true,
-        worldwideTravel: false
+        worldwideTravel: false,
+        restoration: '100% Automatic Restoration',
+        nriDiscount: 'Up to 15% NRI Discount'
       }
     },
     {
-      id: 'gold',
-      name: lang === 'ml' ? 'ഗോൾഡ് പ്രിഫേർഡ്' : 'Gold Preferred',
-      monthlyPrice: 89,
-      annualPrice: 75,
-      desc: lang === 'ml' ? 'കുടുംബങ്ങൾക്കുള്ള സമഗ്രമായ കവറേജും ഔട്ട്‌പേഷ്യന്റ് ക്ലിനിക്ക് സഹായവും.' : 'Comprehensive coverage for families with outpatient & clinic consults included.',
+      id: 'comprehensive',
+      name: lang === 'ml' ? 'സൂപ്പർ ഫാമിലി കോംപ്രിഹെൻസീവ്' : 'Super Family Comprehensive',
+      monthlyPrice: 1450,
+      annualPrice: 1230,
+      desc: lang === 'ml' ? 'സീറോ റൂം റെന്റ് ക്യാപ്പിംഗും അൺലിമിറ്റഡ് റീസ്റ്റോറേഷനുമുള്ള ജനപ്രിയ ഫാമിലി പ്ലാൻ.' : 'Comprehensive protection with zero room-rent caps, unlimited restoration & Package A consumables.',
       popular: true,
       badge: lang === 'ml' ? 'ഏറ്റവും ജനപ്രിയം' : 'MOST POPULAR',
       features: {
-        maxCoverage: lang === 'ml' ? '₹50 ലക്ഷം / വർഷം' : '$500,000 / Year',
-        networkHospitals: lang === 'ml' ? '4,500+ ആശുപത്രികൾ' : '4,500+ Hospitals',
-        deductible: '₹5,000',
+        maxCoverage: lang === 'ml' ? '₹15 ലക്ഷം - ₹50 ലക്ഷം' : '₹15 Lakhs - ₹50 Lakhs',
+        networkHospitals: lang === 'ml' ? '14,000+ കാഷ്‌ലെസ് നെറ്റ്‌വർക്ക്' : '14,000+ Cashless Network',
+        deductible: '₹0 (Zero Deductible)',
         inpatient: true,
         outpatient: true,
         cashless: true,
-        worldwideTravel: true
+        worldwideTravel: false,
+        restoration: 'Unlimited Restoration (Star/Aditya Birla)',
+        nriDiscount: 'Up to 20% NRI Discount'
       }
     },
     {
-      id: 'platinum',
-      name: lang === 'ml' ? 'പ്ലാറ്റിനം എക്സിക്യൂട്ടീവ്' : 'Platinum Executive',
-      monthlyPrice: 149,
-      annualPrice: 126,
-      desc: lang === 'ml' ? 'സീറോ ഡിഡക്റ്റബിളോട് കൂടിയ വിഐപി ആഗോള ആശുപത്രി ചികിത്സാ കവറേജ്.' : 'VIP global protection with zero deductibles and private hospital room access.',
+      id: "vip-max",
+      name: lang === 'ml' ? 'വിഐപി എക്സിക്യൂട്ടീവ് ഗ്ലോബൽ' : 'VIP Executive Global',
+      monthlyPrice: 2800,
+      annualPrice: 2380,
+      desc: lang === 'ml' ? '500% സൂപ്പർ ക്രെഡിറ്റ്, അൺലിമിറ്റഡ് റീലോഡ് & സ്യൂട്ട് റൂം സൗകര്യമുള്ള VIP കവറേജ്.' : 'VIP global protection with Super Credit up to 500% (max ₹3 Cr), Super Reload & suite room access.',
       popular: false,
-      badge: lang === 'ml' ? 'വിഐപി എക്സിക്യൂട്ടീവ്' : 'VIP EXECUTIVE',
+      badge: lang === 'ml' ? 'വിഐപി സൂപ്പർ ക്രെഡിറ്റ്' : 'VIP SUPER CREDIT',
       features: {
-        maxCoverage: lang === 'ml' ? '₹2 കോടി / വർഷം' : '$2,000,000 / Year',
+        maxCoverage: lang === 'ml' ? '₹1 കോടി - ₹6 കോടി' : '₹1 Crore - ₹6 Crore',
         networkHospitals: lang === 'ml' ? 'ഗ്ലോബൽ വിഐപി നെറ്റ്‌വർക്ക്' : 'Global VIP Network',
-        deductible: lang === 'ml' ? '₹0 (സീറോ ഡിഡക്റ്റബിൾ)' : '$0 (Zero Deductible)',
+        deductible: '₹0 (Zero Deductible)',
         inpatient: true,
         outpatient: true,
         cashless: true,
-        worldwideTravel: true
+        worldwideTravel: true,
+        restoration: '500% Super Credit + Unlimited Reload',
+        nriDiscount: '25% Tier-1 NRI Discount'
       }
     }
   ];
@@ -165,8 +171,8 @@ export default function PlanComparison({ onSelectPlan }) {
                   </p>
 
                   <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.3rem', marginBottom: '1.2rem' }}>
-                    <span style={{ fontSize: '2.4rem', fontWeight: 800, color: 'var(--text-dark)' }}>${price}</span>
-                    <span style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>/ month</span>
+                    <span style={{ fontSize: '2.4rem', fontWeight: 800, color: 'var(--text-dark)' }}>₹{price}</span>
+                    <span style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>/ month approx</span>
                   </div>
 
                   <hr style={{ border: 'none', borderTop: '1px solid var(--border-light)', marginBottom: '1.2rem' }} />

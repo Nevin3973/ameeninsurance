@@ -223,6 +223,40 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
               </div>
             </div>
 
+            {/* Optional Covers & Add-ons Box */}
+            {product.optionalCovers && product.optionalCovers.length > 0 && (
+              <div className="clean-card" style={{ borderLeft: '4px solid #f59e0b' }}>
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: '#b45309', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  ⚡ Available Optional Covers & Add-on Benefits
+                </h3>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: '0.8rem' }}>
+                  Customize your coverage by adding optional benefits (subject to additional premium & eligibility terms):
+                </p>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem' }} className="responsive-grid-equal">
+                  {product.optionalCovers.map((opt, idx) => (
+                    <div key={idx} style={{ padding: '0.6rem 0.8rem', background: '#fffbeb', borderRadius: '8px', border: '1px solid #fef3c7', fontSize: '0.86rem', color: '#92400e', fontWeight: 600 }}>
+                      + {opt}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Special NRI Discount Details Box */}
+            {product.nriDiscount && (
+              <div className="clean-card" style={{ background: 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)', border: '1px solid #a7f3d0' }}>
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: '#047857', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  ✈️ Special NRI Premium Discount Ladder
+                </h3>
+                <p style={{ fontSize: '0.9rem', color: '#065f46', lineHeight: 1.5, marginBottom: '0.8rem' }}>
+                  {product.nriTierText || "Exclusive discounts available for Non-Resident Indians (NRIs) and overseas residents across Sum Insured tiers."}
+                </p>
+                <div style={{ fontSize: '0.82rem', color: '#047857', fontWeight: 600, background: '#ffffff', padding: '0.6rem 1rem', borderRadius: '8px', display: 'inline-block' }}>
+                  💡 Contact Ameen Nellikkunnan with your passport copy & NRI status to lock in instant policy discounts.
+                </div>
+              </div>
+            )}
+
             {/* Inclusions & Exclusions Breakdown */}
             <div className="clean-card">
               <h3 style={{ fontSize: '1.3rem', marginBottom: '1.2rem' }}>
@@ -241,13 +275,13 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                 </div>
 
                 <div style={{ padding: '1rem', background: 'var(--bg-card-alt)', borderRadius: 'var(--radius-sm)', borderLeft: '4px solid var(--primary-blue)' }}>
-                  <strong style={{ color: 'var(--text-dark)', display: 'block', marginBottom: '0.3rem' }}>DAY CARE PROCEDURES</strong>
-                  <p style={{ color: 'var(--text-muted)' }}>All modern day-care treatments requiring less than 24 hours hospital stay (dialysis, chemotherapy, eye surgery) covered up to sum insured.</p>
+                  <strong style={{ color: 'var(--text-dark)', display: 'block', marginBottom: '0.3rem' }}>DAY CARE PROCEDURES & MODERN TREATMENTS</strong>
+                  <p style={{ color: 'var(--text-muted)' }}>All day-care treatments requiring less than 24 hours stay, plus modern treatments like robotic surgery, bronchial thermoplasty, and vaporisation of prostate.</p>
                 </div>
               </div>
             </div>
 
-            {/* Ideal Customer Profile */}
+            {/* Ideal Customer Profile & Advisor Recommendation */}
             <div style={{
               background: 'var(--bg-hero)',
               padding: '1.5rem',
@@ -264,6 +298,19 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                   {product.idealFor}
                 </p>
               </div>
+            </div>
+
+            {/* Regulatory Disclaimer Notice */}
+            <div style={{
+              fontSize: '0.8rem',
+              color: 'var(--text-subtle)',
+              lineHeight: 1.5,
+              padding: '1rem',
+              background: '#f8fafc',
+              borderRadius: '8px',
+              border: '1px solid #e2e8f0'
+            }}>
+              ⚖️ <strong>Regulatory Disclaimer:</strong> Benefits, limits, waiting periods, eligibility, exclusions, optional covers, and premiums are subject to the applicable policy wording, prospectus, Customer Information Sheet (CIS), schedule, and underwriting terms of the respective insurer ({product.company}).
             </div>
 
           </div>
