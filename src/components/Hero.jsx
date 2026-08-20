@@ -76,41 +76,41 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
       id: 'family-protection',
       image: '/family-hero-notext.png',
       mobileImage: '/family-hero-notext.png',
-      badge: t('heroBadge1', 'Ameen Nellikkunnan • Independent Insurance Consultant'),
-      title: t('heroTitle1', 'Protect Your Family with the Right Health & Life Cover'),
-      subtitle: t('heroSubtitle1', "15 years of independent guidance across India's top 4 insurance partners."),
+      badge: t('heroBadge1', 'Ameen Nellikkunnan • Independent Insurance Advisor (Kozhikode, Kerala)'),
+      title: t('heroTitle1', 'Honest Health Insurance Advice — Without The Sales Pressure'),
+      subtitle: t('heroSubtitle1', "15 years of personal guidance helping families and NRIs compare policy terms with clear room-rent explanations."),
       primaryBtnText: t('heroBtnCompare', 'Compare Plans'),
       primaryBtnTarget: 'products',
-      secondaryBtnText: t('heroBtnBook', 'Book Consultation'),
+      secondaryBtnText: t('heroBtnBook', 'Talk to Ameen'),
       secondaryBtnTarget: 'booking',
-      pills: lang === 'ml' ? ['15+ വർഷത്തെ പ്രവൃത്തിപരിചയം', 'സൗജന്യ നേർക്കുനേർ ഉപദേശം'] : ['15+ Years Experience', 'Free 1-on-1 Advice']
+      pills: lang === 'ml' ? ['15+ വർഷത്തെ പ്രവൃത്തിപരിചയം', 'സൗജന്യ നേർക്കുനേർ ഉപദേശം'] : ['15+ Years Experience', 'Direct 1-on-1 Advice']
     },
     {
       id: 'claim-advocacy',
       image: '/hero-slide-3.png',
       mobileImage: '/hero-slide-3.png',
-      badge: t('heroBadge2', '100% Dedicated Claim Settlement Support'),
-      title: t('heroTitle2', 'Hassle-Free Cashless Admission & 24/7 Claim Support'),
-      subtitle: t('heroSubtitle2', 'Direct hospital desk coordination across 14,000+ network hospitals.'),
-      primaryBtnText: t('heroBtnClaims', 'Claims Assistance'),
+      badge: t('heroBadge2', 'Hospital Claim Desk Support'),
+      title: t('heroTitle2', 'When a Hospital Admission Happens, You Deal With Me Directly'),
+      subtitle: t('heroSubtitle2', 'No calling nameless call-centers. I handle cashless authorization desk paperwork with network hospital TPAs.'),
+      primaryBtnText: t('heroBtnClaims', 'Claims Support'),
       primaryBtnTarget: 'claims',
       secondaryBtnText: t('heroBtnWhatsapp', 'WhatsApp Ameen'),
       secondaryBtnTarget: claimsWaUrl,
       isExternalSecondary: true,
-      pills: lang === 'ml' ? ['14,000+ ആശുപത്രികൾ', '24/7 അടിയന്തര സഹായം'] : ['14,000+ Hospitals', '24/7 Emergency Support']
+      pills: lang === 'ml' ? ['14,000+ ആശുപത്രികൾ', 'അടിയന്തര സഹായം'] : ['14,000+ Hospitals', 'Direct Claim Help']
     },
     {
       id: 'unbiased-partners',
       image: '/hero-banner.png',
       mobileImage: '/hero-banner.png',
-      badge: t('heroBadge3', 'IRDAI Licensed Partner Advisory'),
-      title: t('heroTitle3', 'Compare Plans Across Star Health, Aditya Birla & PSU Insurers'),
-      subtitle: t('heroSubtitle3', 'Zero hidden capping & transparent room rent guidance.'),
+      badge: t('heroBadge3', 'IRDAI Licensed Agent #129/153'),
+      title: t('heroTitle3', 'Compare Star Health, Aditya Birla & Government PSU Policies'),
+      subtitle: t('heroSubtitle3', 'Transparent room rent limits, pre-existing waiting periods, and authentic NRI discounts.'),
       primaryBtnText: t('heroBtnPartners', 'View Partners'),
       primaryBtnTarget: 'partners',
-      secondaryBtnText: t('heroBtnCalculate', 'Calculate Premium'),
+      secondaryBtnText: t('heroBtnCalculate', 'Check Plans'),
       secondaryBtnTarget: 'products',
-      pills: lang === 'ml' ? ['സുതാര്യമായ താരതമ്യം', 'അധിക ചിലവുകളില്ല'] : ['Unbiased Comparison', 'Zero Extra Cost']
+      pills: lang === 'ml' ? ['സുതാര്യമായ താരതമ്യം', 'അധിക ചിലവുകളില്ല'] : ['Unbiased Comparison', 'Zero Extra Charge']
     }
   ];
 
@@ -325,27 +325,27 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
             {!leadSubmitted && (
               <div>
                 <span className="pill-badge" style={{ marginBottom: '1rem', background: 'var(--accent-sky-light)', border: 'none' }}>
-                  <ShieldCheck size={16} color="var(--primary-blue)" /> {lang === 'ml' ? 'നേരിട്ടുള്ള സഹായം' : 'Direct Consultancy'}
+                  <ShieldCheck size={16} color="var(--primary-blue)" /> {lang === 'ml' ? 'നേരിട്ടുള്ള ഉപദേശം' : 'Direct Advisor Contact'}
                 </span>
                 <h2 style={{ fontSize: '2rem', marginBottom: '1rem', lineHeight: 1.25 }}>
-                  {t('leadFormTitle', 'Get a Free Consultation')}
+                  {t('leadFormTitle', 'Request a Personal Callback')}
                 </h2>
                 <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                  {t('leadFormSubtitle', 'Share a few details and Ameen Nellikkunnan will get back to you with the right health insurance options with zero obligation or pressure.')}
+                  {t('leadFormSubtitle', "Share your details and I'll personally review policy options for your family. No obligation, no spam calls.")}
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
                     <CheckCircle2 size={18} color="var(--primary-blue)" />
-                    <span>{lang === 'ml' ? 'മികച്ച കമ്പനികളിൽ നിന്നുള്ള സുതാര്യമായ വിവരങ്ങൾ' : 'Unbiased recommendations from top insurers'}</span>
+                    <span>{lang === 'ml' ? 'മികച്ച കമ്പനികളിൽ നിന്നുള്ള സുതാര്യമായ വിവരങ്ങൾ' : 'Side-by-side comparison across Star, Aditya Birla & PSU insurers'}</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
                     <CheckCircle2 size={18} color="var(--primary-blue)" />
-                    <span>{lang === 'ml' ? 'അധിക ചാർജുകളോ ഏജൻസി കമ്മീഷനുകളോ ഇല്ല' : 'Zero service fees or commission markups'}</span>
+                    <span>{lang === 'ml' ? 'അധിക ചാർജുകളോ ഏജൻസി കമ്മീഷനുകളോ ഇല്ല' : 'Zero extra fees or hidden broker markups'}</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
                     <CheckCircle2 size={18} color="var(--primary-blue)" />
-                    <span>{lang === 'ml' ? 'ആശുപത്രി ക്ലെയിമുകളിൽ സമ്പൂർണ്ണ സഹായം' : 'Hands-on claim settlement assistance'}</span>
+                    <span>{lang === 'ml' ? 'ആശുപത്രി ക്ലെയിമുകളിൽ സമ്പൂർണ്ണ സഹായം' : 'Direct hospital claim desk assistance when admitted'}</span>
                   </div>
                 </div>
               </div>

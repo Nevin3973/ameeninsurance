@@ -106,9 +106,27 @@ export default function AboutAmeen() {
               With over 15 years of dedicated experience in health insurance and financial protection, <strong>Ameen Nellikkunnan</strong> has guided more than 5,000 families and individuals in choosing the right insurance cover for their unique medical and financial goals.
             </p>
 
-            <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '2rem' }}>
+            <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               Unlike direct sales agents representing a single company, Ameen operates as an independent advisor across India's top 4 insurers (<em>Star Health, Aditya Birla Health, United India, and New India Assurance</em>) to ensure zero hidden capping and 100% claim settlement support.
             </p>
+
+            {/* Personal Human Quote Block */}
+            <blockquote style={{
+              margin: '0 0 1.8rem',
+              padding: '1.25rem 1.5rem',
+              background: '#f8fafc',
+              borderLeft: '4px solid var(--primary-blue)',
+              borderRadius: '0 12px 12px 0',
+              fontSize: '0.96rem',
+              fontStyle: 'italic',
+              color: 'var(--text-dark)',
+              lineHeight: 1.6
+            }}>
+              "When a client calls me at 11 PM because their family member was admitted to emergency care, they don't want insurance jargon or call-center menus. They need someone local who understands the hospital desk, knows policy terms inside out, and gets the paperwork cleared. That is what I do every single day."
+              <footer style={{ marginTop: '0.6rem', fontWeight: 700, fontStyle: 'normal', fontSize: '0.86rem', color: 'var(--primary-blue)' }}>
+                — Ameen Nellikkunnan (Kozhikode, Kerala)
+              </footer>
+            </blockquote>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {coreValues.map((val, idx) => (
