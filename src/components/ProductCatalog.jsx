@@ -56,11 +56,12 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       partnerKey: "star-health",
       company: "Star Health Insurance",
       category: "family",
+      categories: ["family", "individual", "women"],
       image: "/prod-star-super-star.png",
-      membersCovered: "Nuclear Family (Self, Spouse & Children)",
+      membersCovered: "Individual / Nuclear Family (Self, Spouse & Children)",
       desc: "Comprehensive protection with unlimited SI restoration, zero room rent capping (₹7.5L+), Package A consumables & Freeze Your Age premium lock.",
       descMl: "അൺലിമിറ്റഡ് റീസ്റ്റോറേഷൻ, നോ റൂം റെന്റ് ലിമിറ്റ്, Package A കൺസ്യൂമബിൾസ് & ഫ്രീസ് യുവർ ഏജ് പ്രീമിയം ലോക്ക് ആനുകൂല്യം.",
-      eligibility: "18 Yrs - 65 Yrs (Children from 16 days)",
+      eligibility: "18 Yrs - 65 Yrs (Individual / Floater)",
       sumInsured: "₹7.5 Lakhs to ₹1 Crore+",
       coverage: "Inpatient, Air & Road Ambulance, Day Care, AYUSH, Modern Treatments",
       waitingPeriod: "30 Days Initial (24 Months Pre-existing)",
@@ -75,7 +76,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
         "STAR Wellness Program discounts & AI-driven face scan health checks"
       ],
       optionalCovers: ["Limitless Care (Unlimited SI for 1 claim)", "Mamta Women Wellness", "In-Clinic Consultation", "Stay Fit Fitness"],
-      idealFor: "Nuclear families seeking high-cover protection with zero room limits and home care"
+      idealFor: "Individual adults & nuclear families seeking high-cover protection with zero room limits and home care"
     },
     {
       id: "star-health-assure",
@@ -83,11 +84,12 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       partnerKey: "star-health",
       company: "Star Health Insurance",
       category: "family",
+      categories: ["family", "individual", "women"],
       image: "/prod-united-family.png",
-      membersCovered: "Joint Family & Dependent Parents",
-      desc: "Family-floater indemnity policy featuring automatic restoration, home care treatment, preventive checkup limits, and maternity cover.",
-      descMl: "കുടുംബങ്ങൾക്ക് ഹോം കെയർ ചികിത്സ, ഓട്ടോമാറ്റിക് റീസ്റ്റോറേഷൻ, ഹെൽത്ത് ചെക്കപ്പ് & പ്രസവ ചെലവുകൾ നൽകുന്ന പ്ലാൻ.",
-      eligibility: "18 Yrs - 75 Yrs (Floater / Individual)",
+      membersCovered: "Individual / Joint Family & Dependent Parents",
+      desc: "Family-floater & individual indemnity policy featuring automatic restoration, home care treatment, preventive checkup limits, and maternity cover.",
+      descMl: "വ്യക്തികൾക്കും കുടുംബങ്ങൾക്കും ഹോം കെയർ ചികിത്സ, ഓട്ടോമാറ്റിക് റീസ്റ്റോറേഷൻ, ഹെൽത്ത് ചെക്കപ്പ് & പ്രസവ ചെലവുകൾ നൽകുന്ന പ്ലാൻ.",
+      eligibility: "18 Yrs - 75 Yrs (Individual / Floater)",
       sumInsured: "₹5 Lakhs to ₹2 Crore",
       coverage: "Hospitalisation, Home Care, AYUSH, Maternity, Organ Donor",
       waitingPeriod: "30 Days Initial (24 Months Maternity)",
@@ -101,7 +103,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
         "Unlimited Tele-consultation via STAR Health App"
       ],
       optionalCovers: ["Value Network 15% co-pay discount", "Hospital Daily Cash Allowance", "Personal Accident Cover"],
-      idealFor: "Joint families wanting broad hospitalisation with home care and preventive health checkups"
+      idealFor: "Individual adults & joint families wanting broad hospitalisation with home care and preventive health checkups"
     },
     {
       id: "womens-care",
@@ -109,6 +111,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       partnerKey: "star-health",
       company: "Star Health Insurance",
       category: "women",
+      categories: ["women", "family"],
       image: "/prod-womens-care.png",
       membersCovered: "Women, Expecting Mothers & Newborns",
       desc: "Dedicated women-centric policy covering maternity, assisted reproduction (ART), newborn vaccination, ante-natal care, and STAR Mother cover.",
@@ -135,6 +138,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       partnerKey: "aditya-birla",
       company: "Aditya Birla Health Insurance",
       category: "young",
+      categories: ["young", "women"],
       image: "/prod-activ-yuva.png",
       membersCovered: "Single Active Adults (Age 18-35)",
       desc: "Healthy Har Din - Zindagi Win-Win. Earn up to 100% premium back via EAT•MOVE•HEAL, 11X cover boost, Yuva Reload & Travel ON/OFF.",
@@ -161,6 +165,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       partnerKey: "aditya-birla",
       company: "Aditya Birla Health Insurance",
       category: "individual",
+      categories: ["individual", "family", "women"],
       image: "/prod-activ-one-max.png",
       membersCovered: "Executives, NRIs & High Net-Worth Individuals",
       desc: "VIP healthcare plan with HealthReturns™, Super Credit up to 500% (max ₹3 Cr), Super Reload unlimited refills & tiered NRI discounts up to 25%.",
@@ -239,6 +244,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
       partnerKey: "new-india",
       company: "The New India Assurance Company Limited",
       category: "young",
+      categories: ["young", "family", "women"],
       image: "/prod-new-india-yuva-bharat.png",
       membersCovered: "Young Couples & Newborn Babies",
       desc: "Empowering Better Health for young adults & families with Base, Gold, and Platinum tier plans, Mother & Well-Baby benefits, and health parameter discounts.",
@@ -303,7 +309,9 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
   ];
 
   const filteredProducts = products.filter(p => {
-    const matchesCat = selectedCategory === "all" || p.category === selectedCategory;
+    const matchesCat = selectedCategory === "all" || 
+      p.category === selectedCategory || 
+      (Array.isArray(p.categories) && p.categories.includes(selectedCategory));
     const matchesPartner = selectedPartner === "all" || p.partnerKey === selectedPartner;
     const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           p.company.toLowerCase().includes(searchQuery.toLowerCase());
@@ -480,7 +488,9 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                         padding: "0.2rem 0.65rem",
                         borderRadius: "9999px"
                       }}>
-                        {product.category.toUpperCase()}
+                        {Array.isArray(product.categories)
+                          ? product.categories.map(c => c.toUpperCase()).join(" & ")
+                          : product.category.toUpperCase()}
                       </span>
                       {product.nriDiscount && (
                         <span style={{
@@ -681,7 +691,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.8rem" }}>
               <a
-                href={`https://wa.me/919812345678?text=${encodeURIComponent(`Hi Ameen Nellikkunnan, I would like to get a quote and details for ${activeModalProduct.name} (${activeModalProduct.company}).`)}`}
+                href={`https://wa.me/917025984646?text=${encodeURIComponent(`Hi Ameen Nellikkunnan, I would like to get a quote and details for ${activeModalProduct.name} (${activeModalProduct.company}).`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"

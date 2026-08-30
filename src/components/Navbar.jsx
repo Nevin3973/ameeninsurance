@@ -59,7 +59,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
           {/* Right Side: Phone Number Helpline & Desktop Language Toggle */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', whiteSpace: 'nowrap', marginLeft: 'auto' }}>
             <a
-              href="tel:+919812345678"
+              href="tel:+917025984646"
               title="Call Helpline"
               style={{
                 color: '#ffffff',
@@ -72,7 +72,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
                 transition: 'color 0.2s ease'
               }}
             >
-              <PhoneCall size={14} color="#60a5fa" /> Helpline: +91 98123 45678
+              <PhoneCall size={14} color="#60a5fa" /> Helpline: +91 70259 84646
             </a>
 
             <div className="desktop-top-lang" style={{ display: 'flex', alignItems: 'center' }}>

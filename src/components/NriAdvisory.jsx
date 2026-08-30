@@ -29,7 +29,7 @@ export default function NriAdvisory({ onBookConsultation, onOpenWizard }) {
   ];
 
   const nriWhatsAppMsg = encodeURIComponent("Hi Ameen Nellikkunnan, I am an NRI looking for health insurance for my parents in Kerala. Please guide me on Aditya Birla NRI discounts and Star Health plans.");
-  const nriWhatsAppUrl = `https://wa.me/919812345678?text=${nriWhatsAppMsg}`;
+  const nriWhatsAppUrl = `https://wa.me/917025984646?text=${nriWhatsAppMsg}`;
 
   return (
     <section id="nri" className="section-padding" style={{ background: 'linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%)' }}>

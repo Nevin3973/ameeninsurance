@@ -46,11 +46,47 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
         highlight: 'Women & Maternity Specialist Choice'
       });
       matches.push({
+        id: 'star-super-star',
+        name: 'Star Super Star (Secure)',
+        company: 'Star Health Insurance',
+        matchPercent: '96% Match',
+        desc: 'Comprehensive protection with unlimited SI restoration, zero room rent capping, Package A consumables & Freeze Your Age premium lock. Women as proposer eligible.',
+        sumInsured: '₹7.5 Lakhs to ₹1 Crore+',
+        highlight: 'Zero Room Rent & Premium Lock for Women'
+      });
+      matches.push({
+        id: 'star-health-assure',
+        name: 'Star Health Assure',
+        company: 'Star Health Insurance',
+        matchPercent: '94% Match',
+        desc: 'Individual & floater indemnity policy with automatic restoration, home care treatment, preventive checkups & maternity cover. Women as proposer eligible.',
+        sumInsured: '₹5 Lakhs to ₹2 Crore',
+        highlight: 'Home Care & Maternity for Women Proposers'
+      });
+      matches.push({
+        id: 'activ-one-max',
+        name: 'Aditya Birla Activ One MAX',
+        company: 'Aditya Birla Health Insurance',
+        matchPercent: '92% Match',
+        desc: 'VIP healthcare with Super Credit up to 500%, HealthReturns™ up to 100% premium back & NRI discounts. Women as proposer eligible.',
+        sumInsured: '₹10 Lakhs to ₹6 Crore',
+        highlight: 'VIP Super Credit for Women Proposers'
+      });
+      matches.push({
+        id: 'activ-yuva',
+        name: 'Aditya Birla Activ Yuva',
+        company: 'Aditya Birla Health Insurance',
+        matchPercent: '90% Match',
+        desc: 'Young women earn up to 100% premium back via HealthReturns™, 11X cover boost & Worldwide Maternity option. Women as proposer eligible.',
+        sumInsured: '₹5 Lakhs to ₹50 Lakhs',
+        highlight: 'HealthReturns™ & Maternity for Young Women'
+      });
+      matches.push({
         id: 'yuva-bharat',
         name: 'New India Yuva Bharat (Platinum)',
         company: 'The New India Assurance Company Limited',
-        matchPercent: '93% Match',
-        desc: 'PSU policy with Platinum plan Mother & Well-Baby benefits including infertility treatment, pre-term birth & vaccination.',
+        matchPercent: '88% Match',
+        desc: 'PSU policy with Platinum plan Mother & Well-Baby benefits including infertility treatment, pre-term birth & vaccination. Women as proposer eligible.',
         sumInsured: '₹5 Lakhs to ₹1 Crore',
         highlight: 'PSU Mother & Well-Baby Protection'
       });
@@ -73,7 +109,35 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
         sumInsured: '₹3 Lakhs to ₹25 Lakhs',
         highlight: 'Government PSU Security & AYUSH Cover'
       });
-    } else if (finalAnswers.target === 'self' || finalAnswers.priority === 'budget') {
+    } else if (finalAnswers.target === 'self') {
+      matches.push({
+        id: 'star-super-star',
+        name: 'Star Super Star (Secure)',
+        company: 'Star Health Insurance',
+        matchPercent: '98% Match',
+        desc: 'Comprehensive individual & floater protection with unlimited SI restoration, zero room rent capping (₹7.5L+), Package A consumables & Freeze Your Age premium lock.',
+        sumInsured: '₹7.5 Lakhs to ₹1 Crore+',
+        highlight: 'Zero Room Rent Capping & Individual Lock'
+      });
+      matches.push({
+        id: 'star-health-assure',
+        name: 'Star Health Assure',
+        company: 'Star Health Insurance',
+        matchPercent: '95% Match',
+        desc: 'Individual & floater indemnity policy featuring automatic restoration, home care treatment, preventive checkups & tele-consultations.',
+        sumInsured: '₹5 Lakhs to ₹2 Crore',
+        highlight: 'Individual & Floater Home Care Cover'
+      });
+      matches.push({
+        id: 'activ-yuva',
+        name: 'Aditya Birla Activ Yuva',
+        company: 'Aditya Birla Health Insurance',
+        matchPercent: '93% Match',
+        desc: 'Healthy Har Din plan — earn up to 100% premium back as HealthReturns™, up to 11X cover boost in 11 years & travel ON/OFF.',
+        sumInsured: '₹5 Lakhs to ₹50 Lakhs',
+        highlight: 'Young & Active HealthReturns™ Rewards'
+      });
+    } else if (finalAnswers.priority === 'budget') {
       matches.push({
         id: 'activ-yuva',
         name: 'Aditya Birla Activ Yuva',
@@ -456,7 +520,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', marginBottom: '1.8rem' }}>
               {recommendations.map((rec, idx) => {
                 const waMsg = encodeURIComponent(`Hi Ameen Nellikkunnan, I used your Plan Finder Wizard and was recommended the ${rec.name} (${rec.company}) policy. I would like to get a quote.`);
-                const waUrl = `https://wa.me/919812345678?text=${waMsg}`;
+                const waUrl = `https://wa.me/917025984646?text=${waMsg}`;
 
                 return (
                   <div

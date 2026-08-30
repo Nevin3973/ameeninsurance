@@ -48,7 +48,7 @@ export default function Footer({ onNavigate }) {
           <div>
             <h4 style={{ color: '#ffffff', fontSize: '1rem', marginBottom: '1rem' }}>Contact</h4>
             <p style={{ color: '#94a3b8', lineHeight: 1.8 }}>
-              Phone: +91 98123 45678<br />
+              Phone: +91 70259 84646<br />
               Email: contact@ameeninsurance.com<br />
               Business Hours: Mon - Sat, 10:00 AM - 7:00 PM
             </p>

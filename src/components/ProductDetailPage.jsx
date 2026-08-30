@@ -418,7 +418,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                   Need Immediate Guidance?
                 </div>
                 <a
-                  href={`https://wa.me/919812345678?text=${encodeURIComponent(`Hi Ameen Nellikkunnan, I am reviewing ${product.name} (${product.company}) and want to get a custom quote.`)}`}
+                  href={`https://wa.me/917025984646?text=${encodeURIComponent(`Hi Ameen Nellikkunnan, I am reviewing ${product.name} (${product.company}) and want to get a custom quote.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"
@@ -427,7 +427,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                   WhatsApp Ameen Directly
                 </a>
                 <a
-                  href="tel:+919812345678"
+                  href="tel:+917025984646"
                   style={{
                     fontWeight: 700,
                     color: 'var(--primary-blue)',
@@ -439,7 +439,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                     marginTop: '0.4rem'
                   }}
                 >
-                  <PhoneCall size={16} /> Call Ameen: +91 98123 45678
+                  <PhoneCall size={16} /> Call Ameen: +91 70259 84646
                 </a>
               </div>
             </div>

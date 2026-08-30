@@ -69,7 +69,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
     }
   };
 
-  const claimsWaUrl = `https://wa.me/919812345678?text=${encodeURIComponent("Hi Ameen Nellikkunnan, I need emergency assistance with a hospital claim.")}`;
+  const claimsWaUrl = `https://wa.me/917025984646?text=${encodeURIComponent("Hi Ameen Nellikkunnan, I need emergency assistance with a hospital claim.")}`;
 
   const heroSlides = [
     {
@@ -494,6 +494,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                       }}
                     >
                       <option value="Health Insurance">Health Insurance</option>
+                      <option value="Life Insurance">Life Insurance</option>
                     </select>
                   </div>
 

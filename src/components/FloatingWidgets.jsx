@@ -105,7 +105,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
   };
 
   const whatsappMessage = encodeURIComponent("Hi Ameen Nellikkunnan, I would like to get a free health insurance consultation.");
-  const whatsappUrl = `https://wa.me/919812345678?text=${whatsappMessage}`;
+  const whatsappUrl = `https://wa.me/917025984646?text=${whatsappMessage}`;
 
   const isVisible = hasScrolledPastHero && !isScrolling;
 
@@ -189,7 +189,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
         textAlign: 'center'
       }}>
         <a
-          href="tel:+919812345678"
+          href="tel:+917025984646"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -202,7 +202,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
           }}
         >
           <PhoneCall size={20} color="#60a5fa" />
-          Call Now: +91 98123 45678
+          Call Now: +91 70259 84646
         </a>
       </div>
 
@@ -344,6 +344,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
                     }}
                   >
                     <option value="Health Insurance">Health Insurance (Family & Individual)</option>
+                    <option value="Life Insurance">Life Insurance (Term & Endowment)</option>
                   </select>
                 </div>
 

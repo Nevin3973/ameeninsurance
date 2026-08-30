@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Heart, ShieldAlert, Car, Home, Plane, Check, ArrowRight, Printer, X } from 'lucide-react';
+import { Heart, ShieldAlert, Check, ArrowRight, Printer, X } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 export default function QuoteCalculator({ initialConfig }) {
@@ -17,9 +17,7 @@ export default function QuoteCalculator({ initialConfig }) {
 
   const categories = [
     { id: 'health', label: 'Health Insurance', icon: Heart },
-    { id: 'life', label: 'Life Insurance', icon: ShieldAlert },
-    { id: 'motor', label: 'Motor Policy', icon: Car },
-    { id: 'home', label: 'Property & Home', icon: Home }
+    { id: 'life', label: 'Life Insurance', icon: ShieldAlert }
   ];
 
   // Simple Premium Formula

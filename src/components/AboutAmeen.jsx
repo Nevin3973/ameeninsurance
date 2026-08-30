@@ -42,8 +42,7 @@ export default function AboutAmeen() {
               background: 'linear-gradient(180deg, #dbeafe 0%, #ffffff 100%)'
             }}>
               <img
-                src="/Ameen.png"
-                onError={(e) => { e.target.src = '/Ameen.jpg'; }}
+                src="/Ameen.webp"
                 alt="Ameen Nellikkunnan - Independent Insurance Consultant"
                 style={{
                   width: '100%',
@@ -60,7 +59,7 @@ export default function AboutAmeen() {
             </h3>
 
             <p style={{ color: 'var(--primary-blue)', fontWeight: 700, fontSize: '0.95rem', marginBottom: '1rem' }}>
-              Independent Insurance Consultant & Wealth Advisor
+              Independent Health & Life Insurance Consultant
             </p>
 
             <div style={{ display: 'flex', gap: '0.6rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '1.8rem' }}>
@@ -74,14 +73,14 @@ export default function AboutAmeen() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
               <a
-                href="tel:+919812345678"
+                href="tel:+917025984646"
                 className="btn-primary"
                 style={{ width: '100%', padding: '0.85rem' }}
               >
-                <PhoneCall size={18} /> Call +91 98123 45678
+                <PhoneCall size={18} /> Call +91 70259 84646
               </a>
               <a
-                href="https://wa.me/919812345678"
+                href="https://wa.me/917025984646"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-secondary"

@@ -53,29 +53,23 @@ export const translations = {
     statRating: '4.9 ★ / 5 Client Rating',
 
     // Product Catalog
-    catalogTitle: 'Explore Comprehensive Insurance Solutions',
-    catalogSubtitle: 'Tailored policies from top IRDAI certified partners with zero hidden terms.',
+    catalogTitle: 'Explore Health & Life Insurance Solutions',
+    catalogSubtitle: 'Tailored health and life insurance policies from top IRDAI certified partners with zero hidden terms.',
     viewDetails: 'View Details & Benefits',
     getQuote: 'Get Instant Quote',
 
     // Product Names & Descriptions
     healthTitle: 'Health Insurance & Family Floater',
     healthDesc: 'Cashless hospital admission, zero room rent capping, pre & post hospitalization coverage up to ₹1 Crore.',
-    motorTitle: 'Motor & Two-Wheeler Insurance',
-    motorDesc: 'Instant renewal, zero-depreciation coverage, engine protect, and 24x7 roadside breakdown assistance.',
     termLifeTitle: 'Term Life Insurance',
     termLifeDesc: 'Secure your family\'s financial future with high life cover up to ₹2 Crore at affordable premiums with critical illness rider.',
-    businessTitle: 'Commercial & Property Insurance',
-    businessDesc: 'Comprehensive coverage for shops, offices, inventory, fire hazards, and business interruption liabilities.',
-    pensionTitle: 'Retirement & Savings Plans',
-    pensionDesc: 'Guaranteed returns, tax savings under 80C, pension plans for a stress-free senior living.',
 
     // Common Buttons & Labels
     backToHome: '← Back to Overview',
     bookConsultationNow: 'Book Consultation Now',
     submit: 'Submit',
     cancel: 'Cancel',
-    callNow: 'Call Now: +91 98123 45678',
+    callNow: 'Call Now: +91 70259 84646',
     whatsappUs: 'WhatsApp Support',
 
     // Plan Comparison
@@ -89,7 +83,7 @@ export const translations = {
     footerDesc: 'Ameen Nellikkunnan is a certified independent insurance consultant dedicated to providing unbiased guidance across India\'s leading insurance providers.',
     quickLinks: 'Quick Links',
     contactUs: 'Contact Us',
-    address: 'Calicut & Cochin Offices, Kerala, India',
+    address: 'Palakkad, Kerala, India',
     rights: 'All rights reserved.'
   },
   ml: {
@@ -141,29 +135,23 @@ export const translations = {
     statRating: '4.9 ★ / 5 ഉപഭോക്തൃ റേറ്റിംഗ്',
 
     // Product Catalog (Malayalam)
-    catalogTitle: 'ഞങ്ങളുടെ ഇൻഷുറൻസ് സേവനങ്ങൾ',
-    catalogSubtitle: 'സുതാര്യവും വിശ്വസനീയവുമായ ഇൻഷുറൻസ് പദ്ധതികൾ ഒരു കുടക്കീഴിൽ.',
+    catalogTitle: 'ആരോഗ്യ & ലൈഫ് ഇൻഷുറൻസ് പരിഹാരങ്ങൾ',
+    catalogSubtitle: 'സുതാര്യവും വിശ്വസനീയവുമായ ആരോഗ്യ, ലൈഫ് ഇൻഷുറൻസ് പദ്ധതികൾ ഒരു കുടക്കീഴിൽ.',
     viewDetails: 'വിശദാംശങ്ങൾ കാണുക',
     getQuote: 'ക്വോട്ട് ലഭ്യമാക്കുക',
 
     // Product Names & Descriptions (Malayalam)
     healthTitle: 'ആരോഗ്യ ഇൻഷുറൻസ് (Health Insurance)',
     healthDesc: 'ക്യാഷ്‌ലെസ് ആശുപത്രി അഡ്മിഷൻ, റൂം റെന്റ് പരിധിയില്ലാത്ത കവറേജ്, ₹1 കോടി വരെയുള്ള ചികിത്സാ സംരക്ഷണം.',
-    motorTitle: 'മോട്ടോർ & വാഹനം ഇൻഷുറൻസ്',
-    motorDesc: 'വേഗത്തിലുള്ള പോളിസി പുതുക്കൽ, സീറോ ഡെപ്രിസിയേഷൻ സംരക്ഷണം, 24x7 റോഡ്‌സൈഡ് അസിസ്റ്റൻസ്.',
     termLifeTitle: 'ലൈഫ് & ടേം ഇൻഷുറൻസ്',
     termLifeDesc: 'കുടുംബത്തിന്റെ സാമ്പത്തിക ഭാവിക്കായി കുറഞ്ഞ പ്രീമിയത്തിൽ ₹2 കോടി വരെയുള്ള ആകർഷകമായ ലൈഫ് കവർ.',
-    businessTitle: 'ബിസിനസ് & പ്രോപ്പർട്ടി ഇൻഷുറൻസ്',
-    businessDesc: 'കടകൾ, ഓഫീസുകൾ, സ്റ്റോക്ക്, തീപിടുത്തം, ബിസിനസ്സ് സുരക്ഷ എന്നിവയ്ക്കുള്ള ഇൻഷുറൻസ്.',
-    pensionTitle: 'പെൻഷൻ & സമ്പാദ്യ പദ്ധതികൾ',
-    pensionDesc: 'ഉറപ്പുള്ള ലാഭവും നികുതി ഇളവുകളും നൽകുവാൻ സഹായിക്കുന്ന സുരക്ഷിത പെൻഷൻ പ്ലാനുകൾ.',
 
     // Common Buttons & Labels (Malayalam)
     backToHome: '← മുൻ പേജിലേക്ക് മടങ്ങുക',
     bookConsultationNow: 'കൺസൾട്ടേഷൻ ബുക്ക് ചെയ്യുക',
     submit: 'സമർപ്പിക്കുക',
     cancel: 'റദ്ദാക്കുക',
-    callNow: 'വിളിക്കൂ: +91 98123 45678',
+    callNow: 'വിളിക്കൂ: +91 70259 84646',
     whatsappUs: 'വാട്ട്‌സ്ആപ്പ് സഹായം',
 
     // Plan Comparison (Malayalam)
@@ -177,7 +165,7 @@ export const translations = {
     footerDesc: 'അമീൻ നെല്ലിക്കുന്നൻ കേരളത്തിലെ പ്രമുഖ സ്വതന്ത്ര ഇൻഷുറൻസ് ഉപദേശകനാണ്.',
     quickLinks: 'പ്രധാന ലിങ്കുകൾ',
     contactUs: 'ബന്ധപ്പെടാൻ',
-    address: 'കോഴിക്കോട് & കൊച്ചി ഓഫീസുകൾ, കേരളം, ഇന്ത്യ',
+    address: 'പാലക്കാട്, കേരളം, ഇന്ത്യ',
     rights: 'എല്ലാ അവകാശങ്ങളും സംരക്ഷിതം.'
   }
 };
