@@ -100,15 +100,42 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
       pills: lang === 'ml' ? ['അപകട ചികിത്സാ സുരക്ഷ', 'ക്ലെയിം അടിയന്തര സഹായം'] : ['Accident & Trauma Cover', '24/7 Claim Desk Support']
     },
     {
+      id: 'family-protection',
+      image: '/family-hero-notext.png',
+      mobileImage: '/family-hero-notext.png',
+      badge: t('heroBadge4', 'Family Floater & Senior Citizen Health Coverage'),
+      title: t('heroTitle4', 'Protect Your Entire Family — Parents, Spouse & Children in One Policy'),
+      subtitle: t('heroSubtitle4', '100% restoration of sum insured, zero room-rent capping, and pre-existing disease coverage tailored for Indian families.'),
+      primaryBtnText: t('heroBtnFamily', 'Compare Family Plans'),
+      primaryBtnTarget: 'products',
+      secondaryBtnText: t('heroBtnRoomRent', 'Check Room Rent Limits'),
+      secondaryBtnTarget: 'products',
+      pills: lang === 'ml' ? ['100% റീസ്റ്റോറേഷൻ അലവൻസ്', 'റൂം റെന്റ് ക്യാപ്പിംഗ് ഇല്ല'] : ['100% Unlimited Restore', 'Zero Room Rent Capping']
+    },
+    {
+      id: 'nri-expats',
+      image: '/hero-slide-3.png',
+      mobileImage: '/hero-slide-3.png',
+      badge: t('heroBadge5', 'GCC Expat & NRI Health Advisory (UAE, KSA, Qatar, Oman)'),
+      title: t('heroTitle5', 'Exclusive 15% - 25% NRI Discounts on Health Insurance for Parents'),
+      subtitle: t('heroSubtitle5', 'Special Aditya Birla Health Assure & Star Health policy packages for non-resident Indians protecting parents in Kerala.'),
+      primaryBtnText: t('heroBtnNri', 'Claim NRI Discount'),
+      primaryBtnTarget: 'nri',
+      secondaryBtnText: t('heroBtnWhatsapp', 'WhatsApp Advisory'),
+      secondaryBtnTarget: claimsWaUrl,
+      isExternalSecondary: true,
+      pills: lang === 'ml' ? ['25% വരെ NRI ഡിസ്കൗണ്ട്', 'കേരളത്തിൽ ക്യാഷ്‌ലെസ്സ് സൗകര്യം'] : ['Up to 25% NRI Discount', 'Cashless Care in Kerala']
+    },
+    {
       id: 'unbiased-advisory',
       image: '/hero-banner.png',
       mobileImage: '/hero-banner.png',
       badge: t('heroBadge3', 'IRDAI Licensed Health Insurance Specialist #129/153 (Kozhikode)'),
       title: t('heroTitle3', 'Compare Star Health, Aditya Birla & Government PSU Policies'),
-      subtitle: t('heroSubtitle3', '15+ years of honest 1-on-1 advice for families & GCC NRIs with zero sales pressure or hidden capping.'),
-      primaryBtnText: t('heroBtnCompare', 'Compare All Plans'),
-      primaryBtnTarget: 'products',
-      secondaryBtnText: t('heroBtnBook', 'Book Consultation'),
+      subtitle: t('heroSubtitle3', '15+ years of honest 1-on-1 advice for families & GCC NRIs with zero sales pressure or hidden commission markups.'),
+      primaryBtnText: t('heroBtnCompare', 'Compare All Partners'),
+      primaryBtnTarget: 'partners',
+      secondaryBtnText: t('heroBtnBook', 'Book Free Consultation'),
       secondaryBtnTarget: 'booking',
       pills: lang === 'ml' ? ['15+ വർഷത്തെ വിശ്വസ്തത', 'സുതാര്യമായ താരതമ്യം'] : ['15+ Years Trust in Kozhikode', 'Unbiased 1-on-1 Guidance']
     }
