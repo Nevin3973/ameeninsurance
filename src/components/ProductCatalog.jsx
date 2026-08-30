@@ -679,6 +679,17 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
               {activeModalProduct.desc}
             </p>
 
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.8rem", marginBottom: "1rem", fontSize: "0.82rem" }}>
+              <div style={{ padding: "0.65rem 0.85rem", background: "var(--bg-card-alt)", borderRadius: "var(--radius-sm)", border: "1px solid var(--border-light)" }}>
+                <strong style={{ color: "var(--text-dark)", display: "block", marginBottom: "0.15rem" }}>💳 EMI FREQUENCY:</strong>
+                <p style={{ color: "var(--primary-blue)", fontWeight: 700 }}>Monthly / Half-Yearly / Annual EMI</p>
+              </div>
+              <div style={{ padding: "0.65rem 0.85rem", background: "var(--bg-card-alt)", borderRadius: "var(--radius-sm)", border: "1px solid var(--border-light)" }}>
+                <strong style={{ color: "var(--text-dark)", display: "block", marginBottom: "0.15rem" }}>🗓️ POLICY TENURE:</strong>
+                <p style={{ color: "#166534", fontWeight: 700 }}>1 Year, 2 Year & 3 Year Options</p>
+              </div>
+            </div>
+
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.8rem", marginBottom: "1.2rem", fontSize: "0.85rem" }}>
               <div style={{ padding: "0.75rem", background: "var(--bg-card-alt)", borderRadius: "var(--radius-sm)" }}>
                 <strong>ELIGIBILITY:</strong>

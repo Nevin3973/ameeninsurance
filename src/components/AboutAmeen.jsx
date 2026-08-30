@@ -1,7 +1,9 @@
-import React from 'react';
-import { Award, ShieldCheck, PhoneCall, CheckCircle2, UserCheck, HeartHandshake } from 'lucide-react';
+import React, { useState } from 'react';
+import { Award, ShieldCheck, PhoneCall, CheckCircle2, UserCheck, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function AboutAmeen() {
+  const [showFullAboutMobile, setShowFullAboutMobile] = useState(false);
+
   const achievements = [
     { value: '15+', label: 'Years Experience', desc: 'Dedicated health & life advisory' },
     { value: '5,000+', label: 'Families Protected', desc: 'Individual & family floater plans' },
@@ -19,23 +21,23 @@ export default function AboutAmeen() {
     <section id="about" className="section-padding" style={{ background: '#ffffff' }}>
       <div className="container">
         {/* Main 2-Column About Layout */}
-        <div className="grid-2" style={{ gap: '3.5rem', alignItems: 'center', marginBottom: '4rem' }}>
+        <div className="grid-2" style={{ gap: '3.5rem', alignItems: 'center', marginBottom: '3rem' }}>
           
           {/* Left Column: Consultant Profile Card */}
           <div className="clean-card" style={{
             background: 'linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%)',
             border: '1px solid #bae6fd',
             borderRadius: 'var(--radius-lg)',
-            padding: '2.5rem',
+            padding: '2rem 1.8rem',
             textAlign: 'center'
           }}>
             {/* Organic Capsule Oval Portrait */}
             <div style={{
               position: 'relative',
               width: '100%',
-              maxWidth: '220px',
-              height: '260px',
-              margin: '0 auto 1.5rem',
+              maxWidth: '200px',
+              height: '240px',
+              margin: '0 auto 1.2rem',
               borderRadius: '110px',
               overflow: 'hidden',
               boxShadow: '0 16px 36px rgba(30, 64, 175, 0.16)',
@@ -54,15 +56,15 @@ export default function AboutAmeen() {
               />
             </div>
 
-            <h3 style={{ fontSize: '1.8rem', marginBottom: '0.3rem', color: 'var(--text-dark)' }}>
+            <h3 style={{ fontSize: '1.7rem', marginBottom: '0.3rem', color: 'var(--text-dark)' }}>
               Ameen Nellikkunnan
             </h3>
 
-            <p style={{ color: 'var(--primary-blue)', fontWeight: 700, fontSize: '0.95rem', marginBottom: '1rem' }}>
+            <p style={{ color: 'var(--primary-blue)', fontWeight: 700, fontSize: '0.92rem', marginBottom: '1rem' }}>
               Independent Health & Life Insurance Consultant
             </p>
 
-            <div style={{ display: 'flex', gap: '0.6rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '1.8rem' }}>
+            <div style={{ display: 'flex', gap: '0.6rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
               <span className="pill-badge" style={{ background: '#ffffff', border: 'none', fontSize: '0.78rem' }}>
                 <Award size={14} /> 15 Years Expertise
               </span>
@@ -75,7 +77,7 @@ export default function AboutAmeen() {
               <a
                 href="tel:+917025984646"
                 className="btn-primary"
-                style={{ width: '100%', padding: '0.85rem' }}
+                style={{ width: '100%', padding: '0.8rem' }}
               >
                 <PhoneCall size={18} /> Call +91 70259 84646
               </a>
@@ -84,7 +86,7 @@ export default function AboutAmeen() {
                 target="_blank"
                 rel="noreferrer"
                 className="btn-secondary"
-                style={{ width: '100%', padding: '0.85rem', color: '#058340', borderColor: '#bbf7d0' }}
+                style={{ width: '100%', padding: '0.8rem', color: '#058340', borderColor: '#bbf7d0' }}
               >
                 Chat on WhatsApp
               </a>
@@ -93,65 +95,106 @@ export default function AboutAmeen() {
 
           {/* Right Column: Biography & Value Proposition */}
           <div>
-            <span className="pill-badge" style={{ marginBottom: '1rem', background: 'var(--accent-sky-light)', border: 'none' }}>
+            <span className="pill-badge" style={{ marginBottom: '0.8rem', background: 'var(--accent-sky-light)', border: 'none' }}>
               <UserCheck size={16} /> Trusted Advisory
             </span>
 
-            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', marginBottom: '1.2rem', lineHeight: 1.25 }}>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', marginBottom: '1rem', lineHeight: 1.25 }}>
               About Ameen Nellikkunnan
             </h2>
 
-            <p style={{ fontSize: '1.08rem', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '1.2rem' }}>
+            <p style={{ fontSize: '1.05rem', color: 'var(--text-muted)', lineHeight: 1.65, marginBottom: '1rem' }}>
               With over 15 years of dedicated experience in health insurance and financial protection, <strong>Ameen Nellikkunnan</strong> has guided more than 5,000 families and individuals in choosing the right insurance cover for their unique medical and financial goals.
             </p>
 
-            <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-              Unlike direct sales agents representing a single company, Ameen operates as an independent advisor across India's top 4 insurers (<em>Star Health, Aditya Birla Health, United India, and New India Assurance</em>) to ensure zero hidden capping and 100% claim settlement support.
-            </p>
+            {/* Mobile Collapsible Wrapper */}
+            <div className={`about-extended-content ${showFullAboutMobile ? 'mobile-visible' : 'mobile-hidden'}`}>
+              <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', lineHeight: 1.65, marginBottom: '1.2rem' }}>
+                Unlike direct sales agents representing a single company, Ameen operates as an independent advisor across India's top 4 insurers (<em>Star Health, Aditya Birla Health, United India, and New India Assurance</em>) to ensure zero hidden capping and 100% claim settlement support.
+              </p>
 
-            {/* Personal Human Quote Block */}
-            <blockquote style={{
-              margin: '0 0 1.8rem',
-              padding: '1.25rem 1.5rem',
-              background: '#f8fafc',
-              borderLeft: '4px solid var(--primary-blue)',
-              borderRadius: '0 12px 12px 0',
-              fontSize: '0.96rem',
-              fontStyle: 'italic',
-              color: 'var(--text-dark)',
-              lineHeight: 1.6
-            }}>
-              "When a client calls me at 11 PM because their family member was admitted to emergency care, they don't want insurance jargon or call-center menus. They need someone local who understands the hospital desk, knows policy terms inside out, and gets the paperwork cleared. That is what I do every single day."
-              <footer style={{ marginTop: '0.6rem', fontWeight: 700, fontStyle: 'normal', fontSize: '0.86rem', color: 'var(--primary-blue)' }}>
-                - Ameen Nellikkunnan (Palakkad, Kerala)
-              </footer>
-            </blockquote>
+              {/* Personal Human Quote Block */}
+              <blockquote style={{
+                margin: '0 0 1.5rem',
+                padding: '1.1rem 1.3rem',
+                background: '#f8fafc',
+                borderLeft: '4px solid var(--primary-blue)',
+                borderRadius: '0 12px 12px 0',
+                fontSize: '0.92rem',
+                fontStyle: 'italic',
+                color: 'var(--text-dark)',
+                lineHeight: 1.6
+              }}>
+                "When a client calls me at 11 PM because their family member was admitted to emergency care, they don't want insurance jargon or call-center menus. They need someone local who understands the hospital desk, knows policy terms inside out, and gets the paperwork cleared. That is what I do every single day."
+                <footer style={{ marginTop: '0.5rem', fontWeight: 700, fontStyle: 'normal', fontSize: '0.84rem', color: 'var(--primary-blue)' }}>
+                  - Ameen Nellikkunnan (Palakkad, Kerala)
+                </footer>
+              </blockquote>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              {coreValues.map((val, idx) => (
-                <div key={idx} style={{ display: 'flex', gap: '0.9rem', alignItems: 'flex-start' }}>
-                  <div style={{
-                    minWidth: '28px',
-                    height: '28px',
-                    borderRadius: '50%',
-                    background: 'var(--accent-sky-light)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginTop: '0.2rem'
-                  }}>
-                    <CheckCircle2 size={18} color="var(--primary-blue)" />
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem', marginBottom: '1.2rem' }}>
+                {coreValues.map((val, idx) => (
+                  <div key={idx} style={{ display: 'flex', gap: '0.8rem', alignItems: 'flex-start' }}>
+                    <div style={{
+                      minWidth: '26px',
+                      height: '26px',
+                      borderRadius: '50%',
+                      background: 'var(--accent-sky-light)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginTop: '0.2rem',
+                      flexShrink: 0
+                    }}>
+                      <CheckCircle2 size={16} color="var(--primary-blue)" />
+                    </div>
+                    <div>
+                      <h4 style={{ fontSize: '1rem', marginBottom: '0.15rem' }}>{val.title}</h4>
+                      <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>{val.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 style={{ fontSize: '1.05rem', marginBottom: '0.2rem' }}>{val.title}</h4>
-                    <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>{val.desc}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
+
+            {/* Mobile Read More / Show Less Toggle Button */}
+            <button
+              onClick={() => setShowFullAboutMobile(!showFullAboutMobile)}
+              className="about-mobile-toggle-btn"
+              style={{
+                display: 'none',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.4rem',
+                width: '100%',
+                padding: '0.65rem 1rem',
+                borderRadius: '9999px',
+                border: '1px solid var(--border-light)',
+                background: 'var(--bg-card-alt)',
+                color: 'var(--primary-blue)',
+                fontWeight: 700,
+                fontSize: '0.85rem',
+                cursor: 'pointer',
+                marginTop: '0.5rem'
+              }}
+            >
+              <span>{showFullAboutMobile ? 'Show Less Details' : 'Read Full Biography & Values'}</span>
+              {showFullAboutMobile ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+            </button>
           </div>
 
         </div>
+
+        <style>{`
+          @media (max-width: 768px) {
+            .about-mobile-toggle-btn { display: flex !important; }
+            .about-extended-content.mobile-hidden { display: none !important; }
+            .about-extended-content.mobile-visible { display: block !important; }
+          }
+          @media (min-width: 769px) {
+            .about-extended-content { display: block !important; }
+            .about-mobile-toggle-btn { display: none !important; }
+          }
+        `}</style>
 
         {/* 4 Achievements & Stats Bar */}
         <div className="grid-4" style={{ gap: '1.5rem', width: '100%', alignItems: 'stretch' }}>
