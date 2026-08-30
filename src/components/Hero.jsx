@@ -368,7 +368,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
                     <CheckCircle2 size={18} color="var(--primary-blue)" />
-                    <span><strong>{lang === 'ml' ? 'ഇഎംഐ സൗകര്യം ലഭ്യമാണ് (പ്രതിമാസം / വാർഷികം)' : 'Flexible EMI Available (Monthly / Half-Yearly / Yearly)'}</strong></span>
+                    <span><strong>{lang === 'ml' ? 'ഇഎംഐ സൗകര്യം ലഭ്യമാണ്' : 'EMI Available'}</strong></span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
                     <CheckCircle2 size={18} color="var(--primary-blue)" />
