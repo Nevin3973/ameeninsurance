@@ -548,9 +548,6 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
                         <span style={{ background: '#e0f2fe', color: '#0369a1', padding: '0.2rem 0.6rem', borderRadius: '9999px', fontSize: '0.72rem', fontWeight: 800 }}>
                           💳 EMI Available
                         </span>
-                        <span style={{ background: '#f0fdf4', color: '#15803d', padding: '0.2rem 0.6rem', borderRadius: '9999px', fontSize: '0.72rem', fontWeight: 800 }}>
-                          🗓️ 1, 2 & 3 Yr Plans
-                        </span>
                       </div>
                       <span style={{ fontSize: '0.8rem', color: 'var(--text-subtle)', fontWeight: 600 }}>{rec.sumInsured}</span>
                     </div>
