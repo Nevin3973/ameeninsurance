@@ -9,6 +9,7 @@ import FloatingWidgets from './components/FloatingWidgets';
 import ProductDetailPage from './components/ProductDetailPage';
 import NriAdvisory from './components/NriAdvisory';
 import PlanWizardModal from './components/PlanWizardModal';
+import PrivacyTermsModal from './components/PrivacyTermsModal';
 import AboutAmeen from './components/AboutAmeen';
 
 // Dedicated Sub-Pages
@@ -25,6 +26,8 @@ export default function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedPartnerFilter, setSelectedPartnerFilter] = useState('all');
   const [isWizardOpen, setIsWizardOpen] = useState(false);
+  const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+  const [privacyModalTab, setPrivacyModalTab] = useState('privacy');
 
   const handleSelectProduct = (product) => {
     setSelectedProduct(product);
@@ -188,7 +191,13 @@ export default function App() {
       </main>
 
       {/* Persistent Footer */}
-      <Footer onNavigate={handleNavigate} />
+      <Footer
+        onNavigate={handleNavigate}
+        onOpenPrivacyModal={(tab) => {
+          setPrivacyModalTab(tab);
+          setIsPrivacyModalOpen(true);
+        }}
+      />
 
       {/* Global Floating WhatsApp, Quick Enquiry & AI Assistant Widgets */}
       <FloatingWidgets />
@@ -199,6 +208,13 @@ export default function App() {
         onClose={() => setIsWizardOpen(false)}
         onSelectProduct={handleSelectProduct}
         onBookConsultation={() => handleNavigate('booking')}
+      />
+
+      {/* WhatsApp Business API Compliance & Privacy Modal */}
+      <PrivacyTermsModal
+        isOpen={isPrivacyModalOpen}
+        onClose={() => setIsPrivacyModalOpen(false)}
+        initialTab={privacyModalTab}
       />
     </div>
   );

@@ -1,9 +1,15 @@
 import React from 'react';
 
-export default function Footer({ onNavigate }) {
+export default function Footer({ onNavigate, onOpenPrivacyModal }) {
   const handleLinkClick = (tabId) => {
     if (onNavigate) {
       onNavigate(tabId);
+    }
+  };
+
+  const handleOpenLegal = (tab = 'privacy') => {
+    if (onOpenPrivacyModal) {
+      onOpenPrivacyModal(tab);
     }
   };
 
@@ -26,9 +32,12 @@ export default function Footer({ onNavigate }) {
             }}>
               Ameen <span style={{ color: '#60a5fa' }}>Insurance</span>
             </div>
-            <p style={{ color: '#94a3b8', lineHeight: 1.6 }}>
-              Independent insurance consultancy for health and life cover, backed by 15 years of industry experience.
+            <p style={{ color: '#94a3b8', lineHeight: 1.6, marginBottom: '1rem' }}>
+              Independent IRDAI authorized health and life insurance advisory (Reg. #129/153), offering unbiased plan comparisons and 24/7 cashless hospital claim assistance.
             </p>
+            <div style={{ fontSize: '0.78rem', color: '#64748b', background: 'rgba(255,255,255,0.04)', padding: '0.6rem 0.85rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.08)' }}>
+              💬 <strong>WhatsApp Messaging Notice:</strong> Communications via WhatsApp (+91 70259 84646) are conducted in compliance with Meta Business Partner Guidelines. Reply STOP anytime to opt-out.
+            </div>
           </div>
 
           <div>
@@ -46,12 +55,20 @@ export default function Footer({ onNavigate }) {
           </div>
 
           <div>
-            <h4 style={{ color: '#ffffff', fontSize: '1rem', marginBottom: '1rem' }}>Contact</h4>
-            <p style={{ color: '#94a3b8', lineHeight: 1.8 }}>
+            <h4 style={{ color: '#ffffff', fontSize: '1rem', marginBottom: '1rem' }}>Contact & Support</h4>
+            <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '1rem' }}>
               Phone: +91 70259 84646<br />
               Email: contact@ameeninsurance.com<br />
-              Business Hours: Mon - Sat, 10:00 AM - 7:00 PM
+              Address: Mavoor Road, Kozhikode, Kerala 673001<br />
+              Hours: Mon - Sat, 8:00 AM - 9:00 PM
             </p>
+            <div style={{ display: 'flex', gap: '0.8rem', fontSize: '0.8rem' }}>
+              <button onClick={() => handleOpenLegal('privacy')} style={{ background: 'none', border: 'none', color: '#60a5fa', cursor: 'pointer', padding: 0, textDecoration: 'underline' }}>Privacy Policy</button>
+              <span style={{ color: '#475569' }}>•</span>
+              <button onClick={() => handleOpenLegal('whatsapp')} style={{ background: 'none', border: 'none', color: '#4ade80', cursor: 'pointer', padding: 0, textDecoration: 'underline' }}>WhatsApp API Policy</button>
+              <span style={{ color: '#475569' }}>•</span>
+              <button onClick={() => handleOpenLegal('terms')} style={{ background: 'none', border: 'none', color: '#60a5fa', cursor: 'pointer', padding: 0, textDecoration: 'underline' }}>Terms</button>
+            </div>
           </div>
         </div>
 
@@ -62,7 +79,7 @@ export default function Footer({ onNavigate }) {
           color: '#64748b',
           fontSize: '0.8rem'
         }}>
-          © 2026 Ameen Insurance. All rights reserved. • Privacy Policy • Terms & Conditions
+          © 2026 Ameen Nellikkunnan Insurance Advisory. All rights reserved. • Licensed under IRDAI Reg. #129/153.
         </div>
       </div>
     </footer>

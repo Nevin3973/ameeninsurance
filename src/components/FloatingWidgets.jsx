@@ -373,6 +373,10 @@ export default function FloatingWidgets({ onBookConsultation }) {
                 <button type="submit" className="btn-primary" style={{ width: '100%', padding: '0.85rem' }}>
                   Submit Enquiry <Send size={16} />
                 </button>
+
+                <p style={{ fontSize: '0.72rem', color: 'var(--text-subtle)', textAlign: 'center', marginTop: '0.6rem', lineHeight: 1.4 }}>
+                  💬 By submitting, you consent to receive health insurance consultation messages via WhatsApp (+91 70259 84646). Reply STOP anytime to opt-out.
+                </p>
               </form>
             ) : (
               <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
