@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showMobileNotice, setShowMobileNotice] = useState(true);
+  const [showMobileNotice, setShowMobileNotice] = useState(false);
   const { lang, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
@@ -16,12 +16,19 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Auto-disappear mobile top notification popup after 4.5 seconds
+  // Show mobile top notification popup 1 second after page load, then auto-disappear after 3 seconds max
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowMobileNotice(false);
-    }, 4500);
-    return () => clearTimeout(timer);
+    const showTimer = setTimeout(() => {
+      setShowMobileNotice(true);
+
+      const hideTimer = setTimeout(() => {
+        setShowMobileNotice(false);
+      }, 3000); // 3 seconds max
+
+      return () => clearTimeout(hideTimer);
+    }, 1000); // 1 second delay after load
+
+    return () => clearTimeout(showTimer);
   }, []);
 
   const navItems = [

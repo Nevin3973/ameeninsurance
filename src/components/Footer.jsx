@@ -56,7 +56,7 @@ export default function Footer({ onNavigate, onOpenPrivacyModal }) {
             <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '1rem' }}>
               Phone: +91 70259 84646<br />
               Email: contact@ameeninsurance.com<br />
-              Address: Mavoor Road, Kozhikode, Kerala 673001<br />
+              Address: Stadium Bypass Road, Palakkad, Kerala 678001<br />
               Hours: Mon - Sat, 8:00 AM - 9:00 PM
             </p>
             <div style={{ display: 'flex', gap: '0.8rem', fontSize: '0.8rem' }}>

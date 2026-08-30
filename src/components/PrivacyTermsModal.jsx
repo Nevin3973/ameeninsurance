@@ -111,7 +111,7 @@ export default function PrivacyTermsModal({ isOpen, onClose, initialTab = 'priva
 
             <h4 style={{ color: 'var(--text-dark)', fontSize: '1.1rem', marginBottom: '0.6rem' }}>3. Pincode & Geo-Location Data</h4>
             <p style={{ marginBottom: '1rem' }}>
-              We use postal pincode API verification to identify local network hospital availability in your district (e.g. Kozhikode, Malappuram, Ernakulam) to recommend policies with nearby cashless admission facilities.
+              We use postal pincode API verification to identify local network hospital availability in your district (e.g. Palakkad, Malappuram, Ernakulam) to recommend policies with nearby cashless admission facilities.
             </p>
           </div>
         )}

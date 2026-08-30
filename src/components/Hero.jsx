@@ -22,11 +22,12 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
     if (val.trim().length === 6) {
       const pinNum = val.trim();
       const knownPincodes = {
-        '673001': 'Kozhikode (Calicut), Kerala',
-        '673002': 'Calicut Beach, Kozhikode, Kerala',
-        '673004': 'Calicut Arts College, Kozhikode, Kerala',
-        '673016': 'Feroke, Kozhikode, Kerala',
-        '673601': 'Koduvally, Kozhikode, Kerala',
+        '678001': 'Palakkad Town, Kerala',
+        '678002': 'Palakkad Fort / Stadium Bypass, Kerala',
+        '678004': 'Kottayi, Palakkad, Kerala',
+        '678101': 'Chittur, Palakkad, Kerala',
+        '678501': 'Alathur, Palakkad, Kerala',
+        '679101': 'Ottapalam, Palakkad, Kerala',
         '682001': 'Kochi (Cochin), Kerala',
         '682011': 'Kaloor, Ernakulam, Kerala',
         '682016': 'MG Road, Ernakulam, Kerala',
@@ -35,7 +36,6 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
         '695001': 'Trivandrum (Thiruvananthapuram), Kerala',
         '695011': 'Vellayambalam, Trivandrum, Kerala',
         '670001': 'Kannur, Kerala',
-        '678001': 'Palakkad, Kerala',
         '680001': 'Thrissur, Kerala',
         '686001': 'Kottayam, Kerala',
         '689101': 'Tiruvalla, Pathanamthitta, Kerala',
@@ -130,14 +130,14 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
       id: 'unbiased-advisory',
       image: '/hero-banner.png',
       mobileImage: '/hero-banner.png',
-      badge: t('heroBadge3', 'IRDAI Licensed Health Insurance Specialist #129/153 (Kozhikode)'),
+      badge: t('heroBadge3', 'IRDAI Licensed Health Insurance Specialist #129/153 (Palakkad)'),
       title: t('heroTitle3', 'Compare Star Health, Aditya Birla & Government PSU Policies'),
       subtitle: t('heroSubtitle3', '15+ years of honest 1-on-1 advice for families & GCC NRIs with zero sales pressure or hidden commission markups.'),
       primaryBtnText: t('heroBtnCompare', 'Compare All Partners'),
       primaryBtnTarget: 'partners',
       secondaryBtnText: t('heroBtnBook', 'Book Free Consultation'),
       secondaryBtnTarget: 'booking',
-      pills: lang === 'ml' ? ['15+ വർഷത്തെ വിശ്വസ്തത', 'സുതാര്യമായ താരതമ്യം'] : ['15+ Years Trust in Kozhikode', 'Unbiased 1-on-1 Guidance']
+      pills: lang === 'ml' ? ['15+ വർഷത്തെ വിശ്വസ്തത', 'സുതാര്യമായ താരതമ്യം'] : ['15+ Years Trust in Palakkad', 'Unbiased 1-on-1 Guidance']
     }
   ];
 

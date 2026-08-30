@@ -123,7 +123,7 @@ export default function AboutAmeen() {
             }}>
               "When a client calls me at 11 PM because their family member was admitted to emergency care, they don't want insurance jargon or call-center menus. They need someone local who understands the hospital desk, knows policy terms inside out, and gets the paperwork cleared. That is what I do every single day."
               <footer style={{ marginTop: '0.6rem', fontWeight: 700, fontStyle: 'normal', fontSize: '0.86rem', color: 'var(--primary-blue)' }}>
-                - Ameen Nellikkunnan (Kozhikode, Kerala)
+                - Ameen Nellikkunnan (Palakkad, Kerala)
               </footer>
             </blockquote>
 
