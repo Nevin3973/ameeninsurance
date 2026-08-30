@@ -11,7 +11,7 @@
 
 This report delivers a battle-tested **SEO Strategy, Google Sitelink Architecture, and Local SEO Keyword Playbook** specifically customized for **Ameen Nellikkunnan Insurance Advisory**. 
 
-By strategically optimizing for high-intent insurance categories—**Maternity & Newborn Protection**, **Accident & Emergency Care**, **NRI Expat Discounts**, and **Unbiased Health Insurance Advisory**—the web app is engineered to achieve #1 organic search visibility in **Kozhikode & Kerala**, while driving qualified leads from GCC NRIs.
+By strategically optimizing for high-intent insurance categories: **Maternity & Newborn Protection**, **Accident & Emergency Care**, **NRI Expat Discounts**, and **Unbiased Health Insurance Advisory**, the web app is engineered to achieve #1 organic search visibility in **Kozhikode & Kerala**, while driving qualified leads from GCC NRIs.
 
 ---
 

@@ -50,7 +50,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
         name: 'Star Super Star (Secure)',
         company: 'Star Health Insurance',
         matchPercent: '96% Match',
-        desc: 'Comprehensive protection with unlimited SI restoration, zero room rent capping, Package A consumables & Freeze Your Age premium lock. Women as proposer eligible.',
+        desc: 'Full protection with unlimited SI restoration, zero room rent capping, Package A consumables & Freeze Your Age premium lock. Women as proposer eligible.',
         sumInsured: '₹7.5 Lakhs to ₹1 Crore+',
         highlight: 'Zero Room Rent & Premium Lock for Women'
       });
@@ -115,7 +115,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
         name: 'Star Super Star (Secure)',
         company: 'Star Health Insurance',
         matchPercent: '98% Match',
-        desc: 'Comprehensive individual & floater protection with unlimited SI restoration, zero room rent capping (₹7.5L+), Package A consumables & Freeze Your Age premium lock.',
+        desc: 'Full individual & floater protection with unlimited SI restoration, zero room rent capping (₹7.5L+), Package A consumables & Freeze Your Age premium lock.',
         sumInsured: '₹7.5 Lakhs to ₹1 Crore+',
         highlight: 'Zero Room Rent Capping & Individual Lock'
       });
@@ -133,7 +133,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
         name: 'Aditya Birla Activ Yuva',
         company: 'Aditya Birla Health Insurance',
         matchPercent: '93% Match',
-        desc: 'Healthy Har Din plan — earn up to 100% premium back as HealthReturns™, up to 11X cover boost in 11 years & travel ON/OFF.',
+        desc: 'Healthy Har Din plan: earn up to 100% premium back as HealthReturns™, up to 11X cover boost in 11 years & travel ON/OFF.',
         sumInsured: '₹5 Lakhs to ₹50 Lakhs',
         highlight: 'Young & Active HealthReturns™ Rewards'
       });
@@ -143,7 +143,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
         name: 'Aditya Birla Activ Yuva',
         company: 'Aditya Birla Health Insurance',
         matchPercent: '98% Match',
-        desc: 'Healthy Har Din plan — earn up to 100% premium back as HealthReturns™, up to 11X cover boost in 11 years & travel ON/OFF.',
+        desc: 'Healthy Har Din plan: earn up to 100% premium back as HealthReturns™, up to 11X cover boost in 11 years & travel ON/OFF.',
         sumInsured: '₹5 Lakhs to ₹50 Lakhs',
         highlight: 'Young & Active HealthReturns™ Rewards'
       });
@@ -181,7 +181,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
         name: 'Star Super Star (Secure)',
         company: 'Star Health Insurance',
         matchPercent: '97% Match',
-        desc: 'Comprehensive protection featuring Package A consumables cover, unlimited restoration, and Freeze Your Age premium lock.',
+        desc: 'Full protection featuring Package A consumables cover, unlimited restoration, and Freeze Your Age premium lock.',
         sumInsured: '₹7.5 Lakhs to ₹1 Crore+',
         highlight: 'Top-Rated Family Protection'
       });
