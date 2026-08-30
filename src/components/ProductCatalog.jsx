@@ -319,8 +319,8 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
   });
 
   const handleEnquire = (productName) => {
-    setEnquireSubmittedToast(true);
-    setTimeout(() => setEnquireSubmittedToast(false), 4500);
+    setEnquireSubmittedToast(productName);
+    setTimeout(() => setEnquireSubmittedToast(null), 4500);
   };
 
   const currentPartnerInfo = partnerProfiles[selectedPartner];

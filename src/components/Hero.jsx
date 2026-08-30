@@ -73,44 +73,44 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
 
   const heroSlides = [
     {
-      id: 'family-protection',
-      image: '/family-hero-notext.png',
-      mobileImage: '/family-hero-notext.png',
-      badge: t('heroBadge1', 'Ameen Nellikkunnan • Independent Insurance Advisor (Kozhikode, Kerala)'),
-      title: t('heroTitle1', 'Honest Health Insurance Advice — Without The Sales Pressure'),
-      subtitle: t('heroSubtitle1', "15 years of personal guidance helping families and NRIs compare policy terms with clear room-rent explanations."),
-      primaryBtnText: t('heroBtnCompare', 'Compare Plans'),
+      id: 'maternity-care',
+      image: '/hero-maternity-indian.png',
+      mobileImage: '/hero-maternity-indian.png',
+      badge: t('heroBadge1', 'Star Women Care & Maternity Protection • Day-1 Newborn Cover'),
+      title: t('heroTitle1', 'Comprehensive Maternity & Family Health Protection in Kerala'),
+      subtitle: t('heroSubtitle1', 'Normal & C-Section delivery cover, Day-1 newborn hospitalisation, ART coverage & vaccination benefits with zero hassle.'),
+      primaryBtnText: t('heroBtnMaternity', 'Explore Maternity Cover'),
       primaryBtnTarget: 'products',
       secondaryBtnText: t('heroBtnBook', 'Talk to Ameen'),
       secondaryBtnTarget: 'booking',
-      pills: lang === 'ml' ? ['15+ വർഷത്തെ പ്രവൃത്തിപരിചയം', 'സൗജന്യ നേർക്കുനേർ ഉപദേശം'] : ['15+ Years Experience', 'Direct 1-on-1 Advice']
+      pills: lang === 'ml' ? ['പ്രസവ ചികിത്സാ പരിരക്ഷ', 'നവജാത ശിശു കവറേജ്'] : ['Maternity Delivery Cover', 'Day-1 Newborn Protection']
     },
     {
-      id: 'claim-advocacy',
-      image: '/hero-slide-3.png',
-      mobileImage: '/hero-slide-3.png',
-      badge: t('heroBadge2', 'Hospital Claim Desk Support'),
-      title: t('heroTitle2', 'When a Hospital Admission Happens, You Deal With Me Directly'),
-      subtitle: t('heroSubtitle2', 'No calling nameless call-centers. I handle cashless authorization desk paperwork with network hospital TPAs.'),
-      primaryBtnText: t('heroBtnClaims', 'Claims Support'),
+      id: 'accident-care',
+      image: '/hero-accident-care-indian.png',
+      mobileImage: '/hero-accident-care-indian.png',
+      badge: t('heroBadge2', '24/7 Personal Accident & Emergency Care Desk Support'),
+      title: t('heroTitle2', 'Accident Trauma & Hospitalization Cover — Direct Claim Advocacy'),
+      subtitle: t('heroSubtitle2', 'Instant cashless admission at 14,000+ network hospital helpdesks during accidental emergencies & critical medical trauma.'),
+      primaryBtnText: t('heroBtnAccident', 'Emergency Claim Help'),
       primaryBtnTarget: 'claims',
       secondaryBtnText: t('heroBtnWhatsapp', 'WhatsApp Ameen'),
       secondaryBtnTarget: claimsWaUrl,
       isExternalSecondary: true,
-      pills: lang === 'ml' ? ['14,000+ ആശുപത്രികൾ', 'അടിയന്തര സഹായം'] : ['14,000+ Hospitals', 'Direct Claim Help']
+      pills: lang === 'ml' ? ['അപകട ചികിത്സാ സുരക്ഷ', 'ക്ലെയിം അടിയന്തര സഹായം'] : ['Accident & Trauma Cover', '24/7 Claim Desk Support']
     },
     {
-      id: 'unbiased-partners',
+      id: 'unbiased-advisory',
       image: '/hero-banner.png',
       mobileImage: '/hero-banner.png',
-      badge: t('heroBadge3', 'IRDAI Licensed Agent #129/153'),
+      badge: t('heroBadge3', 'IRDAI Licensed Health Insurance Specialist #129/153 (Kozhikode)'),
       title: t('heroTitle3', 'Compare Star Health, Aditya Birla & Government PSU Policies'),
-      subtitle: t('heroSubtitle3', 'Transparent room rent limits, pre-existing waiting periods, and authentic NRI discounts.'),
-      primaryBtnText: t('heroBtnPartners', 'View Partners'),
-      primaryBtnTarget: 'partners',
-      secondaryBtnText: t('heroBtnCalculate', 'Check Plans'),
-      secondaryBtnTarget: 'products',
-      pills: lang === 'ml' ? ['സുതാര്യമായ താരതമ്യം', 'അധിക ചിലവുകളില്ല'] : ['Unbiased Comparison', 'Zero Extra Charge']
+      subtitle: t('heroSubtitle3', '15+ years of honest 1-on-1 advice for families & GCC NRIs with zero sales pressure or hidden capping.'),
+      primaryBtnText: t('heroBtnCompare', 'Compare All Plans'),
+      primaryBtnTarget: 'products',
+      secondaryBtnText: t('heroBtnBook', 'Book Consultation'),
+      secondaryBtnTarget: 'booking',
+      pills: lang === 'ml' ? ['15+ വർഷത്തെ വിശ്വസ്തത', 'സുതാര്യമായ താരതമ്യം'] : ['15+ Years Trust in Kozhikode', 'Unbiased 1-on-1 Guidance']
     }
   ];
 
