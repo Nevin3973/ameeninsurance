@@ -49,10 +49,16 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
           justifyContent: 'space-between',
           gap: '0.6rem'
         }}>
-          {/* Left Side: IRDAI License Badge */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', whiteSpace: 'nowrap' }}>
+          {/* Left Side: IRDAI License Badge & EMI / Multi-Year Badges */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#93c5fd', fontWeight: 600, fontSize: '0.78rem' }}>
               <ShieldCheck size={14} color="#60a5fa" /> IRDAI Licensed Advisory
+            </span>
+            <span style={{ background: 'rgba(37, 99, 235, 0.25)', color: '#93c5fd', padding: '0.15rem 0.65rem', borderRadius: '9999px', fontSize: '0.74rem', fontWeight: 700 }}>
+              💳 {lang === 'ml' ? 'ഇഎംഐ സൗകര്യം ലഭ്യമാണ്' : 'EMI Available (Monthly / Yearly)'}
+            </span>
+            <span style={{ background: 'rgba(16, 185, 129, 0.25)', color: '#6ee7b7', padding: '0.15rem 0.65rem', borderRadius: '9999px', fontSize: '0.74rem', fontWeight: 700 }}>
+              🗓️ {lang === 'ml' ? '1, 2 & 3 വർഷത്തെ പ്ലാനുകൾ' : '1 Year, 2 Year & 3 Year Plans Available'}
             </span>
           </div>
 

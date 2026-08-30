@@ -533,17 +533,25 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
                       padding: '1.5rem'
                     }}
                   >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                      <span style={{
-                        background: idx === 0 ? 'var(--primary-blue)' : 'var(--bg-hero)',
-                        color: idx === 0 ? '#ffffff' : 'var(--primary-blue)',
-                        padding: '0.25rem 0.85rem',
-                        borderRadius: '9999px',
-                        fontSize: '0.78rem',
-                        fontWeight: 800
-                      }}>
-                        {rec.matchPercent}
-                      </span>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.4rem' }}>
+                      <div style={{ display: 'flex', gap: '0.3rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                        <span style={{
+                          background: idx === 0 ? 'var(--primary-blue)' : 'var(--bg-hero)',
+                          color: idx === 0 ? '#ffffff' : 'var(--primary-blue)',
+                          padding: '0.25rem 0.85rem',
+                          borderRadius: '9999px',
+                          fontSize: '0.78rem',
+                          fontWeight: 800
+                        }}>
+                          {rec.matchPercent}
+                        </span>
+                        <span style={{ background: '#e0f2fe', color: '#0369a1', padding: '0.2rem 0.6rem', borderRadius: '9999px', fontSize: '0.72rem', fontWeight: 800 }}>
+                          💳 EMI Available
+                        </span>
+                        <span style={{ background: '#f0fdf4', color: '#15803d', padding: '0.2rem 0.6rem', borderRadius: '9999px', fontSize: '0.72rem', fontWeight: 800 }}>
+                          🗓️ 1, 2 & 3 Yr Plans
+                        </span>
+                      </div>
                       <span style={{ fontSize: '0.8rem', color: 'var(--text-subtle)', fontWeight: 600 }}>{rec.sumInsured}</span>
                     </div>
 

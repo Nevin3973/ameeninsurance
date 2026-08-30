@@ -492,6 +492,28 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                           ? product.categories.map(c => c.toUpperCase()).join(" & ")
                           : product.category.toUpperCase()}
                       </span>
+                      <span style={{
+                        background: "#e0f2fe",
+                        color: "#0369a1",
+                        fontSize: "0.7rem",
+                        fontWeight: 800,
+                        padding: "0.2rem 0.65rem",
+                        borderRadius: "9999px",
+                        border: "1px solid #bae6fd"
+                      }}>
+                        💳 EMI AVAILABLE
+                      </span>
+                      <span style={{
+                        background: "#f0fdf4",
+                        color: "#15803d",
+                        fontSize: "0.7rem",
+                        fontWeight: 800,
+                        padding: "0.2rem 0.65rem",
+                        borderRadius: "9999px",
+                        border: "1px solid #bbf7d0"
+                      }}>
+                        🗓️ 1, 2 & 3 YR PLANS
+                      </span>
                       {product.nriDiscount && (
                         <span style={{
                           background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",

@@ -368,7 +368,11 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
                     <CheckCircle2 size={18} color="var(--primary-blue)" />
-                    <span>{lang === 'ml' ? 'അധിക ചാർജുകളോ ഏജൻസി കമ്മീഷനുകളോ ഇല്ല' : 'Zero extra fees or hidden broker markups'}</span>
+                    <span><strong>{lang === 'ml' ? 'ഇഎംഐ സൗകര്യം ലഭ്യമാണ് (പ്രതിമാസം / വാർഷികം)' : 'Flexible EMI Available (Monthly / Half-Yearly / Yearly)'}</strong></span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
+                    <CheckCircle2 size={18} color="var(--primary-blue)" />
+                    <span><strong>{lang === 'ml' ? '1, 2 & 3 വർഷത്തെ പ്ലാനുകൾ ലഭ്യമാണ്' : '1 Year, 2 Year & 3 Year Multi-Year Plans Available'}</strong></span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '0.92rem' }}>
                     <CheckCircle2 size={18} color="var(--primary-blue)" />
