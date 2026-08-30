@@ -54,7 +54,7 @@ export default function PrivacyTermsModal({ isOpen, onClose, initialTab = 'priva
           </div>
           <div>
             <h3 style={{ fontSize: '1.4rem', color: 'var(--text-dark)' }}>
-              Legal Compliance & WhatsApp Business Policies
+              Legal Information & Policies
             </h3>
             <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
               Ameen Nellikkunnan Insurance Advisory • IRDAI Reg. #129/153
@@ -78,21 +78,6 @@ export default function PrivacyTermsModal({ isOpen, onClose, initialTab = 'priva
             }}
           >
             <Lock size={14} style={{ display: 'inline', marginRight: '0.4rem' }} /> Privacy Policy
-          </button>
-          <button
-            onClick={() => setActiveTab('whatsapp')}
-            style={{
-              padding: '0.5rem 1.2rem',
-              borderRadius: '9999px',
-              border: 'none',
-              background: activeTab === 'whatsapp' ? '#25D366' : 'var(--bg-card-alt)',
-              color: activeTab === 'whatsapp' ? '#ffffff' : 'var(--text-dark)',
-              fontWeight: 700,
-              fontSize: '0.85rem',
-              cursor: 'pointer'
-            }}
-          >
-            <MessageSquare size={14} style={{ display: 'inline', marginRight: '0.4rem' }} /> WhatsApp API Policy
           </button>
           <button
             onClick={() => setActiveTab('terms')}
@@ -127,45 +112,6 @@ export default function PrivacyTermsModal({ isOpen, onClose, initialTab = 'priva
             <h4 style={{ color: 'var(--text-dark)', fontSize: '1.1rem', marginBottom: '0.6rem' }}>3. Pincode & Geo-Location Data</h4>
             <p style={{ marginBottom: '1rem' }}>
               We use postal pincode API verification to identify local network hospital availability in your district (e.g. Kozhikode, Malappuram, Ernakulam) to recommend policies with nearby cashless admission facilities.
-            </p>
-          </div>
-        )}
-
-        {/* Tab 2: WhatsApp Business API Policy Compliance */}
-        {activeTab === 'whatsapp' && (
-          <div style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
-            <div style={{
-              background: '#f0fdf4',
-              border: '1px solid #bbf7d0',
-              padding: '1rem',
-              borderRadius: '12px',
-              marginBottom: '1.2rem',
-              color: '#166534'
-            }}>
-              <strong style={{ display: 'block', fontSize: '0.95rem', marginBottom: '0.3rem' }}>
-                ✅ Meta & WhatsApp Business Commerce Policy Compliant
-              </strong>
-              Our platform adheres strictly to Meta's Business Messaging Policy, Commerce Policy for Financial & Professional Services, and WhatsApp API Terms of Service.
-            </div>
-
-            <h4 style={{ color: 'var(--text-dark)', fontSize: '1.1rem', marginBottom: '0.6rem' }}>1. Explicit Opt-In Consent</h4>
-            <p style={{ marginBottom: '1rem' }}>
-              By clicking "WhatsApp Ameen", submitting a callback enquiry, or scanning our QR code, you grant explicit consent to receive transactional health insurance quotes, hospital claim updates, and advisory messages from Ameen Nellikkunnan (+91 70259 84646) via the WhatsApp Business API infrastructure.
-            </p>
-
-            <h4 style={{ color: 'var(--text-dark)', fontSize: '1.1rem', marginBottom: '0.6rem' }}>2. Permitted Service Category</h4>
-            <p style={{ marginBottom: '1rem' }}>
-              Insurance advisory and customer support are fully authorized financial services under Meta Commerce Guidelines. We do not process direct credit card payments or store credit card details over WhatsApp chat.
-            </p>
-
-            <h4 style={{ color: 'var(--text-dark)', fontSize: '1.1rem', marginBottom: '0.6rem' }}>3. Instant Opt-Out Mechanism</h4>
-            <p style={{ marginBottom: '1rem' }}>
-              You may opt-out of receiving WhatsApp messages at any time. Simply reply <strong>STOP</strong> or <strong>UNSUBSCRIBE</strong> in the WhatsApp chat window, or contact us at <a href="mailto:optout@ameeninsurance.com">optout@ameeninsurance.com</a> for immediate removal from our contact list.
-            </p>
-
-            <h4 style={{ color: 'var(--text-dark)', fontSize: '1.1rem', marginBottom: '0.6rem' }}>4. 24-Hour Customer Care Window Compliance</h4>
-            <p style={{ marginBottom: '1rem' }}>
-              All automated or agent-initiated messages adhere to Meta's 24-hour messaging window regulations, ensuring non-intrusive communication.
             </p>
           </div>
         )}

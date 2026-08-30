@@ -528,10 +528,6 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                   <button type="submit" className="btn-primary" style={{ width: '100%', padding: '0.85rem', marginTop: '0.4rem' }}>
                     {t('leadFormSubmit', 'Get My Free Quote')} <ArrowRight size={16} />
                   </button>
-
-                  <p style={{ fontSize: '0.74rem', color: 'var(--text-subtle)', textAlign: 'center', marginTop: '0.6rem', lineHeight: 1.45 }}>
-                    💬 By submitting, you consent to receive health insurance quotes & consultation messages via WhatsApp (+91 70259 84646). Reply STOP anytime to opt-out.
-                  </p>
                 </form>
               ) : (
                 /* Post Consultation Plan Offers & Details Section */

@@ -32,12 +32,9 @@ export default function Footer({ onNavigate, onOpenPrivacyModal }) {
             }}>
               Ameen <span style={{ color: '#60a5fa' }}>Insurance</span>
             </div>
-            <p style={{ color: '#94a3b8', lineHeight: 1.6, marginBottom: '1rem' }}>
+            <p style={{ color: '#94a3b8', lineHeight: 1.6 }}>
               Independent IRDAI authorized health and life insurance advisory (Reg. #129/153), offering unbiased plan comparisons and 24/7 cashless hospital claim assistance.
             </p>
-            <div style={{ fontSize: '0.78rem', color: '#64748b', background: 'rgba(255,255,255,0.04)', padding: '0.6rem 0.85rem', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.08)' }}>
-              💬 <strong>WhatsApp Messaging Notice:</strong> Communications via WhatsApp (+91 70259 84646) are conducted in compliance with Meta Business Partner Guidelines. Reply STOP anytime to opt-out.
-            </div>
           </div>
 
           <div>
@@ -65,9 +62,7 @@ export default function Footer({ onNavigate, onOpenPrivacyModal }) {
             <div style={{ display: 'flex', gap: '0.8rem', fontSize: '0.8rem' }}>
               <button onClick={() => handleOpenLegal('privacy')} style={{ background: 'none', border: 'none', color: '#60a5fa', cursor: 'pointer', padding: 0, textDecoration: 'underline' }}>Privacy Policy</button>
               <span style={{ color: '#475569' }}>•</span>
-              <button onClick={() => handleOpenLegal('whatsapp')} style={{ background: 'none', border: 'none', color: '#4ade80', cursor: 'pointer', padding: 0, textDecoration: 'underline' }}>WhatsApp API Policy</button>
-              <span style={{ color: '#475569' }}>•</span>
-              <button onClick={() => handleOpenLegal('terms')} style={{ background: 'none', border: 'none', color: '#60a5fa', cursor: 'pointer', padding: 0, textDecoration: 'underline' }}>Terms</button>
+              <button onClick={() => handleOpenLegal('terms')} style={{ background: 'none', border: 'none', color: '#60a5fa', cursor: 'pointer', padding: 0, textDecoration: 'underline' }}>Terms of Service</button>
             </div>
           </div>
         </div>
