@@ -5,6 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showMobileNotice, setShowMobileNotice] = useState(true);
   const { lang, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
@@ -13,6 +14,14 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Auto-disappear mobile top notification popup after 4.5 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowMobileNotice(false);
+    }, 4500);
+    return () => clearTimeout(timer);
   }, []);
 
   const navItems = [
@@ -329,6 +338,57 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
           </div>
         )}
 
+        {/* Auto-disappearing Mobile Notification Banner Popup */}
+        {showMobileNotice && (
+          <div className="mobile-utility-popup" style={{
+            position: 'fixed',
+            top: '12px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 1100,
+            width: 'calc(100% - 24px)',
+            maxWidth: '440px',
+            background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+            color: '#ffffff',
+            padding: '0.6rem 0.95rem',
+            borderRadius: '9999px',
+            boxShadow: '0 10px 25px rgba(0, 0, 0, 0.35)',
+            border: '1px solid rgba(255, 255, 255, 0.18)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '0.4rem'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.74rem', fontWeight: 700, overflow: 'hidden', whiteSpace: 'nowrap' }}>
+              <span style={{ color: '#60a5fa', flexShrink: 0 }}>🛡️ IRDAI Authorized</span>
+              <span style={{ color: '#64748b' }}>•</span>
+              <span style={{ color: '#93c5fd', flexShrink: 0 }}>💳 EMI Available</span>
+              <span style={{ color: '#64748b' }}>•</span>
+              <span style={{ color: '#6ee7b7', flexShrink: 0 }}>🗓️ 1, 2 & 3 Yr Plans</span>
+            </div>
+
+            <button
+              onClick={() => setShowMobileNotice(false)}
+              aria-label="Dismiss notification"
+              style={{
+                background: 'rgba(255, 255, 255, 0.18)',
+                border: 'none',
+                borderRadius: '50%',
+                color: '#ffffff',
+                width: '22px',
+                height: '22px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                flexShrink: 0
+              }}
+            >
+              <X size={12} />
+            </button>
+          </div>
+        )}
+
         <style>{`
           @media (max-width: 960px) {
             .desktop-only, .desktop-top-lang { display: none !important; }
@@ -336,8 +396,14 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
             .nav-container { padding: 0 1rem !important; }
             .brand-logo { font-size: 1.25rem !important; }
           }
+          @media (max-width: 768px) {
+            .top-utility-bar { display: none !important; }
+            .mobile-utility-popup { display: flex !important; }
+          }
+          @media (min-width: 769px) {
+            .mobile-utility-popup { display: none !important; }
+          }
           @media (max-width: 480px) {
-            .top-utility-bar { padding: 0.35rem 0.75rem !important; }
             .brand-logo { font-size: 1.15rem !important; }
           }
         `}</style>
