@@ -45,7 +45,7 @@ export default function InsurancePartners({ onSelectPartner }) {
       brandName: 'New India Assurance',
       legalName: 'The New India Assurance Company Limited',
       logo: '/NewIndiaAssurance.svg',
-      overview: "India's largest multinational public sector insurer rated A- (Excellent) by AM Best, offering comprehensive health and life cover.",
+      overview: "India's largest multinational public sector insurer rated A- (Excellent) by AM Best, offering comprehensive health cover.",
       hospitals: '8,000+ Hospitals',
       tag: 'Multinational PSU Giant',
       logoHeight: '50px'
@@ -71,7 +71,7 @@ export default function InsurancePartners({ onSelectPartner }) {
             Our Trusted Insurance Partners
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem' }}>
-            We work directly with India's top health & life insurance companies to bring you unbiased policy choices and 100% claim settlement advocacy.
+            We work directly with India's top health insurance companies to bring you unbiased policy choices and 100% claim settlement advocacy.
           </p>
         </div>
 

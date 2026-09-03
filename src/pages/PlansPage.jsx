@@ -35,11 +35,11 @@ export default function PlansPage({ onNavigate, onOpenWizard, initialPartnerFilt
           </div>
 
           <h1 style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3rem)', marginBottom: '0.8rem', color: 'var(--text-dark)' }}>
-            Health & Life Insurance Plans
+            Health Insurance Plans
           </h1>
 
           <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', maxWidth: '820px', lineHeight: 1.6, marginBottom: '2rem' }}>
-            Explore IRDAI licensed health policies, family floater plans, maternity benefits, and term life insurance with transparent room rent caps and restoration benefits.
+            Explore IRDAI licensed health policies, family floater plans, and maternity benefits with transparent room rent caps and restoration benefits.
           </p>
 
           {/* Sub-Navigation Tabs */}

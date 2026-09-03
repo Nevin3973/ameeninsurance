@@ -342,7 +342,9 @@ export default function FloatingWidgets({ onBookConsultation }) {
                     }}
                   >
                     <option value="Health Insurance">Health Insurance (Family & Individual)</option>
-                    <option value="Life Insurance">Life Insurance (Term & Endowment)</option>
+                    <option value="Maternity & Women Care">Maternity & Women's Health Care</option>
+                    <option value="Senior Citizen Health">Senior Citizen Health Insurance</option>
+                    <option value="NRI Expat Health Cover">NRI Expat Health Cover</option>
                   </select>
                 </div>
 

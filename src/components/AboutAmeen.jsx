@@ -5,7 +5,7 @@ export default function AboutAmeen() {
   const [showFullAboutMobile, setShowFullAboutMobile] = useState(false);
 
   const achievements = [
-    { value: '15+', label: 'Years Experience', desc: 'Dedicated health & life advisory' },
+    { value: '15+', label: 'Years Experience', desc: 'Dedicated health insurance advisory' },
     { value: '5,000+', label: 'Families Protected', desc: 'Individual & family floater plans' },
     { value: '₹50+ Cr', label: 'Claims Assisted', desc: 'Hands-on hospital settlement' },
     { value: '99.2%', label: 'Client Retention', desc: 'Trusted long-term relationships' }
@@ -61,7 +61,7 @@ export default function AboutAmeen() {
             </h3>
 
             <p style={{ color: 'var(--primary-blue)', fontWeight: 700, fontSize: '0.92rem', marginBottom: '1rem' }}>
-              Independent Health & Life Insurance Consultant
+              Independent Health Insurance Consultant
             </p>
 
             <div style={{ display: 'flex', gap: '0.6rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '1.5rem' }}>

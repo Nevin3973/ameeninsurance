@@ -24,7 +24,7 @@ export default function AboutPage({ onNavigate }) {
           </h1>
 
           <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', maxWidth: '820px', lineHeight: 1.6 }}>
-            Ameen Nellikkunnan provides transparent, unbiased advisory across India's premier health and life insurance companies to ensure your family gets maximum coverage with zero hidden capping.
+            Ameen Nellikkunnan provides transparent, unbiased advisory across India's premier health insurance companies to ensure your family gets maximum coverage with zero hidden capping.
           </p>
         </div>
       </div>

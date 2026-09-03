@@ -18,7 +18,7 @@ export const translations = {
 
     // Hero Section
     heroBadge1: 'Ameen Nellikkunnan • Independent Insurance Consultant',
-    heroTitle1: 'Protect Your Family with the Right Health & Life Cover',
+    heroTitle1: 'Protect Your Family with the Right Health Cover',
     heroSubtitle1: "15 years of independent guidance across India's top 4 insurance partners.",
     heroBtnCompare: 'Compare Plans',
     heroBtnBook: 'Book Consultation',
@@ -53,16 +53,16 @@ export const translations = {
     statRating: '4.9 ★ / 5 Client Rating',
 
     // Product Catalog
-    catalogTitle: 'Explore Health & Life Insurance Solutions',
-    catalogSubtitle: 'Tailored health and life insurance policies from top IRDAI certified partners with zero hidden terms.',
+    catalogTitle: 'Explore Health Insurance Solutions',
+    catalogSubtitle: 'Tailored health insurance policies from top IRDAI certified partners with zero hidden terms.',
     viewDetails: 'View Details & Benefits',
     getQuote: 'Get Instant Quote',
 
     // Product Names & Descriptions
     healthTitle: 'Health Insurance & Family Floater',
     healthDesc: 'Cashless hospital admission, zero room rent capping, pre & post hospitalization coverage up to ₹1 Crore.',
-    termLifeTitle: 'Term Life Insurance',
-    termLifeDesc: 'Secure your family\'s financial future with high life cover up to ₹2 Crore at affordable premiums with critical illness rider.',
+    maternityTitle: "Maternity & Women's Care",
+    maternityDesc: 'Normal & C-Section delivery cover, Day-1 newborn hospitalisation, ART coverage & vaccination benefits.',
 
     // Common Buttons & Labels
     backToHome: '← Back to Overview',
@@ -100,7 +100,7 @@ export const translations = {
 
     // Hero Section (Malayalam)
     heroBadge1: 'അമീൻ നെല്ലിക്കുന്നൻ • അംഗീകൃത ഇൻഷുറൻസ് ഉപദേശകൻ',
-    heroTitle1: 'നിങ്ങളുടെ കുടുംബത്തിന് ഏറ്റവും മികച്ച ആരോഗ്യ, ജീവൻ രക്ഷാ ഇൻഷുറൻസ്',
+    heroTitle1: 'നിങ്ങളുടെ കുടുംബത്തിന് ഏറ്റവും മികച്ച ആരോഗ്യ ഇൻഷുറൻസ്',
     heroSubtitle1: 'ഇന്ത്യയിലെ മുൻനിര ഇൻഷുറൻസ് കമ്പനികളിലൂടെ 15 വർഷത്തിലേറെയുള്ള സുതാര്യമായ സേവനം.',
     heroBtnCompare: 'Compare Plans',
     heroBtnBook: 'Book Consultation',
@@ -135,16 +135,16 @@ export const translations = {
     statRating: '4.9 ★ / 5 ഉപഭോക്തൃ റേറ്റിംഗ്',
 
     // Product Catalog (Malayalam)
-    catalogTitle: 'ആരോഗ്യ & ലൈഫ് ഇൻഷുറൻസ് പരിഹാരങ്ങൾ',
-    catalogSubtitle: 'സുതാര്യവും വിശ്വസനീയവുമായ ആരോഗ്യ, ലൈഫ് ഇൻഷുറൻസ് പദ്ധതികൾ ഒരു കുടക്കീഴിൽ.',
+    catalogTitle: 'ആരോഗ്യ ഇൻഷുറൻസ് പരിഹാരങ്ങൾ',
+    catalogSubtitle: 'സുതാര്യവും വിശ്വസനീയവുമായ ആരോഗ്യ ഇൻഷുറൻസ് പദ്ധതികൾ ഒരു കുടക്കീഴിൽ.',
     viewDetails: 'വിശദാംശങ്ങൾ കാണുക',
     getQuote: 'ക്വോട്ട് ലഭ്യമാക്കുക',
 
     // Product Names & Descriptions (Malayalam)
     healthTitle: 'ആരോഗ്യ ഇൻഷുറൻസ് (Health Insurance)',
     healthDesc: 'ക്യാഷ്‌ലെസ് ആശുപത്രി അഡ്മിഷൻ, റൂം റെന്റ് പരിധിയില്ലാത്ത കവറേജ്, ₹1 കോടി വരെയുള്ള ചികിത്സാ സംരക്ഷണം.',
-    termLifeTitle: 'ലൈഫ് & ടേം ഇൻഷുറൻസ്',
-    termLifeDesc: 'കുടുംബത്തിന്റെ സാമ്പത്തിക ഭാവിക്കായി കുറഞ്ഞ പ്രീമിയത്തിൽ ₹2 കോടി വരെയുള്ള ആകർഷകമായ ലൈഫ് കവർ.',
+    maternityTitle: 'പ്രസവ ഇൻഷുറൻസ് & വനിതാ സംരക്ഷണം',
+    maternityDesc: 'സാധാരണ & സി-സെക്ഷൻ പ്രസവ ചികിത്സകൾക്കും നവജാത ശിശു പരിചരണത്തിനുമുള്ള കവറേജ്.',
 
     // Common Buttons & Labels (Malayalam)
     backToHome: '← മുൻ പേജിലേക്ക് മടങ്ങുക',

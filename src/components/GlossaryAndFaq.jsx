@@ -32,7 +32,7 @@ export default function GlossaryAndFaq() {
             Frequently Asked Questions
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem' }}>
-            Clear, honest answers to help you navigate your health and life insurance choices.
+            Clear, honest answers to help you navigate your health insurance choices.
           </p>
         </div>
 

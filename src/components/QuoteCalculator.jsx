@@ -16,8 +16,7 @@ export default function QuoteCalculator({ initialConfig }) {
   }, [initialConfig]);
 
   const categories = [
-    { id: 'health', label: 'Health Insurance', icon: Heart },
-    { id: 'life', label: 'Life Insurance', icon: ShieldAlert }
+    { id: 'health', label: 'Health Insurance (Family & Individual)', icon: Heart }
   ];
 
   // Simple Premium Formula

@@ -520,8 +520,10 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                         outline: 'none'
                       }}
                     >
-                      <option value="Health Insurance">Health Insurance</option>
-                      <option value="Life Insurance">Life Insurance</option>
+                      <option value="Health Insurance">Health Insurance (Family & Individual)</option>
+                      <option value="Maternity Care">Maternity & Women's Health Care</option>
+                      <option value="Senior Citizen Health">Senior Citizen Health Cover</option>
+                      <option value="NRI Expat Health">GCC NRI Health Advisory</option>
                     </select>
                   </div>
 

@@ -23,7 +23,7 @@ export default function BookingPage({ onNavigate }) {
           </h1>
 
           <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', maxWidth: '820px', lineHeight: 1.6 }}>
-            Book a dedicated consultation slot directly with Ameen Nellikkunnan. Get impartial health insurance policy reviews, family floater comparisons, or life insurance guidance.
+            Book a dedicated consultation slot directly with Ameen Nellikkunnan. Get impartial health insurance policy reviews, family floater comparisons, or maternity & senior citizen plan guidance.
           </p>
         </div>
       </div>
