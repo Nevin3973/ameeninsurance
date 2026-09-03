@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, CheckCircle2, ShieldCheck, Award, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { sendLeadEmail } from '../services/emailService';
 
 export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
   const { lang, t } = useLanguage();
@@ -22,6 +23,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
     if (val.trim().length === 6) {
       const pinNum = val.trim();
       const knownPincodes = {
+        '678583': 'Mannarkkad Road, Ariyambavu, Palakkad, Kerala',
         '678001': 'Palakkad Town, Kerala',
         '678002': 'Palakkad Fort / Stadium Bypass, Kerala',
         '678004': 'Kottayi, Palakkad, Kerala',
@@ -160,6 +162,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
   const handleLeadSubmit = (e) => {
     e.preventDefault();
     if (leadForm.fullName && leadForm.phone) {
+      sendLeadEmail({ ...leadForm, source: 'Hero Callback Form' });
       setLeadSubmitted(true);
     }
   };

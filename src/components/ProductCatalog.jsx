@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Search, Eye, ArrowRight, X, Check, Building2, Hospital, ShieldCheck, PhoneCall } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import { sendLeadEmail } from "../services/emailService";
 
 export default function ProductCatalog({ onBookConsultation, onSelectProduct, initialPartnerFilter }) {
   const { lang, t } = useLanguage();
@@ -319,6 +320,10 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
   });
 
   const handleEnquire = (productName) => {
+    sendLeadEmail({
+      insuranceType: productName,
+      source: `Product Catalog (${productName})`
+    });
     setEnquireSubmittedToast(productName);
     setTimeout(() => setEnquireSubmittedToast(null), 4500);
   };

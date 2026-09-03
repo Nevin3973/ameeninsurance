@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MessageSquare, PhoneCall, X, Send, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { sendLeadEmail } from '../services/emailService';
 
 export default function FloatingWidgets({ onBookConsultation }) {
   const [enquiryOpen, setEnquiryOpen] = useState(false);
@@ -45,6 +46,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
     if (val.trim().length === 6) {
       const pinNum = val.trim();
       const knownPincodes = {
+        '678583': 'Mannarkkad Road, Ariyambavu, Palakkad, Kerala',
         '678001': 'Palakkad Town, Kerala',
         '678002': 'Palakkad Fort / Stadium Bypass, Kerala',
         '678004': 'Kottayi, Palakkad, Kerala',
@@ -93,6 +95,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
   const handleEnquirySubmit = (e) => {
     e.preventDefault();
     if (enquiryForm.name && enquiryForm.phone) {
+      sendLeadEmail({ ...enquiryForm, source: 'Floating Widget Enquiry Modal' });
       setEnquirySubmitted(true);
       setTimeout(() => {
         setEnquirySubmitted(false);

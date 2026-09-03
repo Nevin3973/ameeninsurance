@@ -1,19 +1,39 @@
 import React, { useState } from 'react';
 import { Calendar, Video, Building, CheckCircle2, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { sendLeadEmail } from '../services/emailService';
 
 export default function AgentBooking() {
   const { lang, t } = useLanguage();
   const [meetingType, setMeetingType] = useState('video');
-  const [selectedDate, setSelectedDate] = useState('2026-08-03');
+  const [selectedDate, setSelectedDate] = useState(() => {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    return tomorrow.toISOString().split('T')[0];
+  });
   const [selectedTimeSlot, setSelectedTimeSlot] = useState('10:30 AM');
+  const [bookingForm, setBookingForm] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    notes: ''
+  });
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
 
   const timeSlots = ['09:00 AM', '10:30 AM', '01:00 PM', '02:30 PM', '04:00 PM', '05:30 PM'];
 
   const handleBookingSubmit = (e) => {
     e.preventDefault();
-    setBookingConfirmed(true);
+    if (bookingForm.name && bookingForm.phone) {
+      sendLeadEmail({
+        ...bookingForm,
+        selectedDate,
+        selectedTimeSlot,
+        meetingType,
+        source: 'Consultation Booking Form'
+      });
+      setBookingConfirmed(true);
+    }
   };
 
   return (
@@ -31,6 +51,71 @@ export default function AgentBooking() {
         {!bookingConfirmed ? (
           <div className="clean-card" style={{ maxWidth: '640px', margin: '0 auto' }}>
             <form onSubmit={handleBookingSubmit}>
+              {/* Contact Information Fields */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.2rem' }}>
+                <div>
+                  <label style={{ display: 'block', fontWeight: 700, fontSize: '0.82rem', marginBottom: '0.3rem' }}>
+                    {lang === 'ml' ? 'മുഴുവൻ പേര് *' : 'Full Name *'}
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder={lang === 'ml' ? 'പേര് നൽകുക' : 'Enter your name'}
+                    value={bookingForm.name}
+                    onChange={(e) => setBookingForm({ ...bookingForm, name: e.target.value })}
+                    style={{
+                      width: '100%',
+                      padding: '0.7rem 0.9rem',
+                      borderRadius: 'var(--radius-sm)',
+                      border: '1px solid var(--border-light)',
+                      fontSize: '0.9rem',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <label style={{ display: 'block', fontWeight: 700, fontSize: '0.82rem', marginBottom: '0.3rem' }}>
+                    {lang === 'ml' ? 'ഫോൺ നമ്പർ *' : 'Phone Number *'}
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder={lang === 'ml' ? 'ഫോൺ നമ്പർ' : 'Enter mobile number'}
+                    value={bookingForm.phone}
+                    onChange={(e) => setBookingForm({ ...bookingForm, phone: e.target.value })}
+                    style={{
+                      width: '100%',
+                      padding: '0.7rem 0.9rem',
+                      borderRadius: 'var(--radius-sm)',
+                      border: '1px solid var(--border-light)',
+                      fontSize: '0.9rem',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div style={{ marginBottom: '1.2rem' }}>
+                <label style={{ display: 'block', fontWeight: 700, fontSize: '0.82rem', marginBottom: '0.3rem' }}>
+                  {lang === 'ml' ? 'ഇമെയിൽ വിലാസം (ഓപ്ഷണൽ)' : 'Email Address (Optional)'}
+                </label>
+                <input
+                  type="email"
+                  placeholder={lang === 'ml' ? 'ഇമെയിൽ വിലാസം' : 'Enter email address'}
+                  value={bookingForm.email}
+                  onChange={(e) => setBookingForm({ ...bookingForm, email: e.target.value })}
+                  style={{
+                    width: '100%',
+                    padding: '0.7rem 0.9rem',
+                    borderRadius: 'var(--radius-sm)',
+                    border: '1px solid var(--border-light)',
+                    fontSize: '0.9rem',
+                    outline: 'none'
+                  }}
+                />
+              </div>
+
               <div style={{ marginBottom: '1.5rem' }}>
                 <label style={{ display: 'block', fontWeight: 700, fontSize: '0.88rem', marginBottom: '0.6rem' }}>
                   {lang === 'ml' ? '1. കൂടിക്കാഴ്ച രീതി തിരഞ്ഞെടുക്കുക' : '1. Select Consultation Method'}
@@ -136,7 +221,7 @@ export default function AgentBooking() {
             <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
               {lang === 'ml'
                 ? `അമീൻ നെല്ലിക്കുന്നൻ ${selectedDate}-ൽ ${selectedTimeSlot}-ന് നിങ്ങളെ ബന്ധപ്പെടുന്നതായിരിക്കും.`
-                : `Ameen Nellikkunnan will connect with you on ${selectedDate} at ${selectedTimeSlot} via ${meetingType === 'video' ? 'Google Meet Video Call' : 'Office Meeting'}.`}
+                : `Thank you, ${bookingForm.name || 'Valued Customer'}! Ameen Nellikkunnan will connect with you on ${selectedDate} at ${selectedTimeSlot} via ${meetingType === 'video' ? 'Google Meet Video Call' : 'Office Meeting'}.`}
             </p>
             <button onClick={() => setBookingConfirmed(false)} className="btn-secondary">
               {lang === 'ml' ? 'മറ്റൊരു സെഷൻ ബുക്ക് ചെയ്യുക' : 'Book Another Session'}
@@ -147,3 +232,4 @@ export default function AgentBooking() {
     </section>
   );
 }
+

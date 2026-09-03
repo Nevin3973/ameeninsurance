@@ -143,8 +143,8 @@ export default function Footer({ onNavigate, onOpenPrivacyModal }) {
             <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '1rem' }}>
               Phone: <a href="tel:+917025984646" style={{ color: '#ffffff', textDecoration: 'none' }}>+91 70259 84646</a><br />
               Email: <a href="mailto:info@ameenhealthinsurance.com" style={{ color: '#60a5fa', textDecoration: 'none', fontWeight: 600 }}>info@ameenhealthinsurance.com</a><br />
-              Address: Stadium Bypass Road, Palakkad, Kerala 678001<br />
-              Hours: Mon - Sat, 8:00 AM - 9:00 PM
+              Address: Mannarkkad Road, Ariyambavu, Palakkad, Kerala 678583<br />
+              Hours: Mon - Sun, 9:00 AM - 6:00 PM
             </p>
             <div style={{ display: 'flex', gap: '0.8rem', fontSize: '0.8rem' }}>
               <button onClick={() => handleOpenLegal('privacy')} style={{ background: 'none', border: 'none', color: '#60a5fa', cursor: 'pointer', padding: 0, textDecoration: 'underline' }}>Privacy Policy</button>
