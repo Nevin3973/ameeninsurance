@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft, CheckCircle2, ShieldCheck, Calendar, PhoneCall, Send, Award, Clock, FileText, Check, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { sendLeadEmail } from '../services/emailService';
 
 export default function ProductDetailPage({ product, onBack, onBookConsultation }) {
   const { lang, t } = useLanguage();
@@ -15,6 +16,14 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (enquiryForm.fullName && enquiryForm.phone) {
+      sendLeadEmail({
+        fullName: enquiryForm.fullName,
+        phone: enquiryForm.phone,
+        email: enquiryForm.email,
+        insuranceType: product.name || 'Health Insurance',
+        notes: `Company: ${product.company || 'N/A'}, Preferred Sum Insured: ${enquiryForm.sumInsured}`,
+        source: `Product Detail Page (${product.name})`
+      });
       setSubmitted(true);
     }
   };

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ClaimsAssistant from '../components/ClaimsAssistant';
 import { ShieldCheck, PhoneCall, FileText, CheckCircle2, AlertCircle, HelpCircle, Send } from 'lucide-react';
+import { sendLeadEmail } from '../services/emailService';
 
 export default function ClaimsPage({ onNavigate }) {
   const [claimHelpForm, setClaimHelpForm] = useState({
@@ -15,6 +16,14 @@ export default function ClaimsPage({ onNavigate }) {
   const handleHelpSubmit = (e) => {
     e.preventDefault();
     if (claimHelpForm.patientName && claimHelpForm.phone) {
+      sendLeadEmail({
+        patientName: claimHelpForm.patientName,
+        phone: claimHelpForm.phone,
+        location: claimHelpForm.hospitalName,
+        notes: `Policy No: ${claimHelpForm.policyNumber || 'N/A'}, Claim Type: ${claimHelpForm.claimType}`,
+        insuranceType: 'Emergency Claim Assistance',
+        source: 'Claims Assistance Page Form'
+      });
       setHelpSubmitted(true);
     }
   };

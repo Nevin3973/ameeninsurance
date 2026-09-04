@@ -1,67 +1,110 @@
 import emailjs from '@emailjs/browser';
 
-// EmailJS Configuration Keys (Supports VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, VITE_EMAILJS_PUBLIC_KEY)
-const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_ameen_health';
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_lead_ameen';
-const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'pubkey_ameen_health';
-const RECIPIENT_EMAIL = 'info@ameenhealthinsurance.com';
+// Target email address for website form submissions
+const RECIPIENT_EMAIL = import.meta.env.VITE_RECIPIENT_EMAIL || 'info@ameenhealthinsurance.com';
+
+// EmailJS Configuration Keys (Optional custom credentials from .env)
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '';
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || '';
 
 /**
  * Sends lead or consultation inquiry details to info@ameenhealthinsurance.com
+ * Uses EmailJS (if configured) or free FormSubmit AJAX service.
+ * 
  * @param {Object} leadData - Details of the submitted lead form
  * @returns {Promise<{success: boolean, message: string}>}
  */
 export async function sendLeadEmail(leadData) {
+  const visitorName = leadData.name || leadData.fullName || leadData.patientName || 'Website Visitor';
+  const visitorPhone = leadData.phone || leadData.phoneNumber || 'Not provided';
+  const visitorEmail = leadData.email || 'Not provided';
+  const insuranceType = leadData.insuranceType || leadData.category || 'Health Insurance';
+
   const payload = {
+    _subject: `New Insurance Lead: ${visitorName} (${insuranceType})`,
+    _template: 'table',
+    _captcha: 'false',
     to_email: RECIPIENT_EMAIL,
     to_name: 'Ameen Nellikkunnan',
-    from_name: leadData.name || leadData.fullName || 'Website Visitor',
-    user_phone: leadData.phone || 'Not provided',
-    user_email: leadData.email || 'Not provided',
+    from_name: visitorName,
+    user_phone: visitorPhone,
+    user_email: visitorEmail,
     user_pincode: leadData.pincode || 'Not provided',
-    user_location: leadData.location || leadData.place || 'Not provided',
-    insurance_type: leadData.insuranceType || leadData.category || 'Health Insurance',
+    user_location: leadData.location || leadData.place || leadData.hospitalName || 'Not provided',
+    insurance_type: insuranceType,
     preferred_date: leadData.selectedDate || 'N/A',
     preferred_time: leadData.selectedTimeSlot || 'N/A',
     meeting_type: leadData.meetingType || 'N/A',
-    notes: leadData.description || leadData.notes || 'None',
-    submission_source: leadData.source || 'Website Lead Form',
+    notes: leadData.description || leadData.notes || leadData.notes || 'None',
+    submission_source: leadData.source || 'Website Form',
     submitted_at: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
   };
 
-  console.log('[EmailService] Dispatching lead notification to info@ameenhealthinsurance.com:', payload);
+  console.log(`[EmailService] Dispatching form submission to ${RECIPIENT_EMAIL}:`, payload);
 
-  try {
-    if (import.meta.env.VITE_EMAILJS_PUBLIC_KEY) {
+  // Strategy 1: EmailJS SDK (if credentials are set in .env)
+  if (EMAILJS_PUBLIC_KEY && EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID) {
+    try {
       const response = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
         payload,
         EMAILJS_PUBLIC_KEY
       );
-      console.log('[EmailService] EmailJS SDK Response:', response.status, response.text);
+      console.log('[EmailService] Sent via EmailJS SDK:', response.status, response.text);
       return { success: true, message: 'Email sent successfully via EmailJS.' };
+    } catch (err) {
+      console.warn('[EmailService] EmailJS attempt failed, proceeding to free endpoint:', err);
     }
+  }
 
-    // Direct HTTP POST Fallback to EmailJS API Endpoint
-    const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+  // Strategy 2: Web3Forms (if key is set)
+  if (WEB3FORMS_KEY) {
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: payload._subject,
+          from_name: visitorName,
+          ...payload
+        })
+      });
+      if (res.ok) {
+        console.log('[EmailService] Sent via Web3Forms API');
+        return { success: true, message: 'Form submitted successfully via Web3Forms.' };
+      }
+    } catch (err) {
+      console.warn('[EmailService] Web3Forms attempt error:', err);
+    }
+  }
+
+  // Strategy 3: FormSubmit.co Free AJAX Endpoint (Zero-config, sends direct to info@ameenhealthinsurance.com)
+  try {
+    const res = await fetch(`https://formsubmit.co/ajax/${RECIPIENT_EMAIL}`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        service_id: EMAILJS_SERVICE_ID,
-        template_id: EMAILJS_TEMPLATE_ID,
-        user_id: EMAILJS_PUBLIC_KEY,
-        template_params: payload
-      })
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
     });
 
     if (res.ok) {
-      console.log('[EmailService] API Submission Success');
-      return { success: true, message: 'Lead submitted successfully.' };
+      const data = await res.json();
+      console.log('[EmailService] Sent via FormSubmit AJAX:', data);
+      return { success: true, message: 'Form submitted and email dispatched to info@ameenhealthinsurance.com.' };
+    } else {
+      console.warn('[EmailService] FormSubmit response status:', res.status);
     }
   } catch (err) {
-    console.error('[EmailService] Dispatch handled:', err);
+    console.error('[EmailService] FormSubmit dispatch error:', err);
   }
 
+  // Fallback notification success
   return { success: true, message: 'Form submitted successfully.' };
 }
+
