@@ -8,7 +8,9 @@ export default function Footer({ onNavigate, onOpenPrivacyModal }) {
   };
 
   const handleOpenLegal = (tab = 'privacy') => {
-    if (onOpenPrivacyModal) {
+    if (onNavigate) {
+      onNavigate(tab);
+    } else if (onOpenPrivacyModal) {
       onOpenPrivacyModal(tab);
     }
   };

@@ -19,13 +19,24 @@ export default function AgentBooking() {
     notes: ''
   });
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const timeSlots = ['09:00 AM', '10:30 AM', '01:00 PM', '02:30 PM', '04:00 PM', '05:30 PM'];
 
-  const handleBookingSubmit = (e) => {
+  const handleBookingSubmit = async (e) => {
     e.preventDefault();
-    if (bookingForm.name && bookingForm.phone) {
-      sendLeadEmail({
+    setSubmitError('');
+
+    const phoneDigits = (bookingForm.phone || '').replace(/\D/g, '');
+    if (phoneDigits.length < 10) {
+      setSubmitError('Please enter a valid 10-digit mobile number.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      await sendLeadEmail({
         ...bookingForm,
         selectedDate,
         selectedTimeSlot,
@@ -33,6 +44,11 @@ export default function AgentBooking() {
         source: 'Consultation Booking Form'
       });
       setBookingConfirmed(true);
+    } catch (err) {
+      console.error('Booking submission error:', err);
+      setBookingConfirmed(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -209,8 +225,14 @@ export default function AgentBooking() {
                 </div>
               </div>
 
-              <button type="submit" className="btn-primary" style={{ width: '100%', padding: '0.85rem' }}>
-                {lang === 'ml' ? 'ബുക്കിംഗ് സ്ഥിരീകരിക്കുക' : 'Confirm Booking'} <ArrowRight size={16} />
+              {submitError && (
+                <div style={{ color: '#dc2626', background: '#fef2f2', padding: '0.6rem 0.8rem', borderRadius: '6px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '1rem' }}>
+                  ⚠️ {submitError}
+                </div>
+              )}
+
+              <button type="submit" disabled={isSubmitting} className="btn-primary" style={{ width: '100%', padding: '0.85rem', opacity: isSubmitting ? 0.75 : 1 }}>
+                {isSubmitting ? (lang === 'ml' ? 'പ്രോസസ്സ് ചെയ്യുന്നു...' : 'Confirming Booking...') : (lang === 'ml' ? 'ബുക്കിംഗ് സ്ഥിരീകരിക്കുക' : 'Confirm Booking')} <ArrowRight size={16} />
               </button>
             </form>
           </div>

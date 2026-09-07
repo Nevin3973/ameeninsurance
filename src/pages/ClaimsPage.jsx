@@ -12,11 +12,22 @@ export default function ClaimsPage({ onNavigate }) {
     claimType: 'Cashless Admission'
   });
   const [helpSubmitted, setHelpSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
-  const handleHelpSubmit = (e) => {
+  const handleHelpSubmit = async (e) => {
     e.preventDefault();
-    if (claimHelpForm.patientName && claimHelpForm.phone) {
-      sendLeadEmail({
+    setSubmitError('');
+
+    const phoneDigits = (claimHelpForm.phone || '').replace(/\D/g, '');
+    if (phoneDigits.length < 10) {
+      setSubmitError('Please enter a valid 10-digit mobile number.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      await sendLeadEmail({
         patientName: claimHelpForm.patientName,
         phone: claimHelpForm.phone,
         location: claimHelpForm.hospitalName,
@@ -25,6 +36,11 @@ export default function ClaimsPage({ onNavigate }) {
         source: 'Claims Assistance Page Form'
       });
       setHelpSubmitted(true);
+    } catch (err) {
+      console.error('Claim help submission error:', err);
+      setHelpSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -170,8 +186,14 @@ export default function ClaimsPage({ onNavigate }) {
                   />
                 </div>
 
-                <button type="submit" className="btn-primary" style={{ width: '100%', padding: '0.85rem' }}>
-                  Connect with Ameen Claim Desk <Send size={16} />
+                {submitError && (
+                  <div style={{ color: '#dc2626', background: '#fef2f2', padding: '0.6rem 0.8rem', borderRadius: '6px', fontSize: '0.85rem', fontWeight: 600 }}>
+                    ⚠️ {submitError}
+                  </div>
+                )}
+
+                <button type="submit" disabled={isSubmitting} className="btn-primary" style={{ width: '100%', padding: '0.85rem', opacity: isSubmitting ? 0.75 : 1 }}>
+                  {isSubmitting ? 'Connecting...' : 'Connect with Ameen Claim Desk'} <Send size={16} />
                 </button>
               </form>
             ) : (

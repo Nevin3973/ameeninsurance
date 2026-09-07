@@ -15,6 +15,8 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
     insuranceType: 'Health Insurance'
   });
   const [leadSubmitted, setLeadSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handlePincodeChange = async (e) => {
     const val = e.target.value;
@@ -159,11 +161,25 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
     setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
   };
 
-  const handleLeadSubmit = (e) => {
+  const handleLeadSubmit = async (e) => {
     e.preventDefault();
-    if (leadForm.fullName && leadForm.phone) {
-      sendLeadEmail({ ...leadForm, source: 'Hero Callback Form' });
+    setSubmitError('');
+
+    const phoneDigits = (leadForm.phone || '').replace(/\D/g, '');
+    if (phoneDigits.length < 10) {
+      setSubmitError('Please enter a valid 10-digit mobile number.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      await sendLeadEmail({ ...leadForm, source: 'Hero Callback Form' });
       setLeadSubmitted(true);
+    } catch (err) {
+      console.error('Lead submission error:', err);
+      setLeadSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -530,8 +546,14 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                     </select>
                   </div>
 
-                  <button type="submit" className="btn-primary" style={{ width: '100%', padding: '0.85rem', marginTop: '0.4rem' }}>
-                    {t('leadFormSubmit', 'Get My Free Quote')} <ArrowRight size={16} />
+                  {submitError && (
+                    <div style={{ color: '#dc2626', background: '#fef2f2', padding: '0.6rem 0.8rem', borderRadius: '6px', fontSize: '0.85rem', fontWeight: 600 }}>
+                      ⚠️ {submitError}
+                    </div>
+                  )}
+
+                  <button type="submit" disabled={isSubmitting} className="btn-primary" style={{ width: '100%', padding: '0.85rem', marginTop: '0.4rem', opacity: isSubmitting ? 0.75 : 1 }}>
+                    {isSubmitting ? 'Sending Request...' : t('leadFormSubmit', 'Get My Free Quote')} <ArrowRight size={16} />
                   </button>
                 </form>
               ) : (

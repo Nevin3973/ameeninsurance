@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProductCatalog from './components/ProductCatalog';
@@ -19,15 +19,63 @@ import PartnersPage from './pages/PartnersPage';
 import ClaimsPage from './pages/ClaimsPage';
 import FaqPage from './pages/FaqPage';
 import BookingPage from './pages/BookingPage';
-import { ArrowRight, ShieldCheck, Award } from 'lucide-react';
+import PrivacyPage from './pages/PrivacyPage';
+import TermsPage from './pages/TermsPage';
+import { ArrowRight } from 'lucide-react';
+
+const tabPathMap = {
+  hero: '/',
+  about: '/about',
+  products: '/plans',
+  partners: '/partners',
+  nri: '/nri',
+  claims: '/claims',
+  faq: '/faq',
+  booking: '/booking',
+  privacy: '/privacy-policy',
+  terms: '/terms-of-service'
+};
+
+const getTabFromLocation = () => {
+  const path = window.location.pathname.toLowerCase().replace(/\/$/, '') || '/';
+  const hash = window.location.hash.toLowerCase();
+
+  if (path === '/privacy' || path === '/privacy-policy' || path === '/privacy.html' || path === '/privacy-policy.html' || hash === '#privacy' || hash === '#privacy-policy') {
+    return 'privacy';
+  }
+  if (path === '/terms' || path === '/terms-of-service' || path === '/terms.html' || path === '/terms-of-service.html' || hash === '#terms' || hash === '#terms-of-service') {
+    return 'terms';
+  }
+  if (path === '/about' || hash === '#about') return 'about';
+  if (path === '/plans' || path === '/products' || hash === '#plans' || hash === '#products') return 'products';
+  if (path === '/partners' || hash === '#partners') return 'partners';
+  if (path === '/nri' || hash === '#nri') return 'nri';
+  if (path === '/claims' || hash === '#claims') return 'claims';
+  if (path === '/faq' || hash === '#faq') return 'faq';
+  if (path === '/booking' || hash === '#booking') return 'booking';
+
+  return 'hero';
+};
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('hero');
+  const [activeTab, setActiveTab] = useState(() => getTabFromLocation());
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedPartnerFilter, setSelectedPartnerFilter] = useState('all');
   const [isWizardOpen, setIsWizardOpen] = useState(false);
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
   const [privacyModalTab, setPrivacyModalTab] = useState('privacy');
+
+  // Handle browser back/forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const newTab = getTabFromLocation();
+      setActiveTab(newTab);
+      setSelectedProduct(null);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   const handleSelectProduct = (product) => {
     setSelectedProduct(product);
@@ -37,8 +85,7 @@ export default function App() {
   const handleSelectPartner = (partnerId) => {
     setSelectedPartnerFilter(partnerId);
     setSelectedProduct(null);
-    setActiveTab('products');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    handleNavigate('products');
   };
 
   const handleNavigate = (tabId) => {
@@ -47,6 +94,12 @@ export default function App() {
       setSelectedPartnerFilter('all');
     }
     setActiveTab(tabId);
+
+    const path = tabPathMap[tabId] || '/';
+    if (window.location.pathname !== path) {
+      window.history.pushState({ tabId }, '', path);
+    }
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -88,6 +141,14 @@ export default function App() {
           title = "Book Free 1-on-1 Health Insurance Consultation | Ameen Nellikkunnan";
           metaDesc = "Schedule a direct phone or WhatsApp consultation with independent IRDAI consultant Ameen Nellikkunnan for unbiased policy recommendations.";
           break;
+        case 'privacy':
+          title = "Privacy Policy & WhatsApp Data Protection | Ameen Insurance Advisory";
+          metaDesc = "Official Privacy Policy for Ameen Nellikkunnan Insurance Advisory. Aligned with WhatsApp Business API compliance, data deletion request procedure & DPDP Act 2023.";
+          break;
+        case 'terms':
+          title = "Terms of Service & Advisory Disclosure | Ameen Insurance Advisory";
+          metaDesc = "Terms of Service for Ameen Nellikkunnan Insurance Advisory (IRDAI Reg #129/153). Learn about zero commission markups, WhatsApp messaging terms & claim advocacy.";
+          break;
         default:
           break;
       }
@@ -127,6 +188,10 @@ export default function App() {
         return <FaqPage onNavigate={handleNavigate} />;
       case 'booking':
         return <BookingPage onNavigate={handleNavigate} />;
+      case 'privacy':
+        return <PrivacyPage onNavigate={handleNavigate} />;
+      case 'terms':
+        return <TermsPage onNavigate={handleNavigate} />;
       case 'hero':
       default:
         return (
@@ -134,7 +199,7 @@ export default function App() {
             {/* 1. Hero Image Carousel, Direct Lead Capture & Trust Bar */}
             <Hero onNavigate={handleNavigate} onOpenWizard={() => setIsWizardOpen(true)} />
 
-            {/* 2. Ameen Nellikkunnan's Consultant Profile & Credentials (Brought Up!) */}
+            {/* 2. Ameen Nellikkunnan's Consultant Profile & Credentials */}
             <AboutAmeen />
 
             {/* 3. Featured Insurance Plans Preview */}
@@ -194,8 +259,7 @@ export default function App() {
       <Footer
         onNavigate={handleNavigate}
         onOpenPrivacyModal={(tab) => {
-          setPrivacyModalTab(tab);
-          setIsPrivacyModalOpen(true);
+          handleNavigate(tab === 'terms' ? 'terms' : 'privacy');
         }}
       />
 

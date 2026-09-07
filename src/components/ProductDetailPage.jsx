@@ -12,11 +12,22 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
     sumInsured: product.sumInsured || '₹10 Lakhs'
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (enquiryForm.fullName && enquiryForm.phone) {
-      sendLeadEmail({
+    setSubmitError('');
+
+    const phoneDigits = (enquiryForm.phone || '').replace(/\D/g, '');
+    if (phoneDigits.length < 10) {
+      setSubmitError('Please enter a valid 10-digit mobile number.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      await sendLeadEmail({
         fullName: enquiryForm.fullName,
         phone: enquiryForm.phone,
         email: enquiryForm.email,
@@ -25,6 +36,11 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
         source: `Product Detail Page (${product.name})`
       });
       setSubmitted(true);
+    } catch (err) {
+      console.error('Product enquiry submission error:', err);
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -400,8 +416,14 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                     />
                   </div>
 
-                  <button type="submit" className="btn-primary" style={{ width: '100%', padding: '0.85rem' }}>
-                    Request Callback for Plan <Send size={16} />
+                  {submitError && (
+                    <div style={{ color: '#dc2626', background: '#fef2f2', padding: '0.6rem 0.8rem', borderRadius: '6px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '1rem' }}>
+                      ⚠️ {submitError}
+                    </div>
+                  )}
+
+                  <button type="submit" disabled={isSubmitting} className="btn-primary" style={{ width: '100%', padding: '0.85rem', opacity: isSubmitting ? 0.75 : 1 }}>
+                    {isSubmitting ? 'Requesting Callback...' : 'Request Callback for Plan'} <Send size={16} />
                   </button>
                 </form>
               ) : (

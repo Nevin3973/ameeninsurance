@@ -15,6 +15,8 @@ export default function FloatingWidgets({ onBookConsultation }) {
     insuranceType: 'Health Insurance'
   });
   const [enquirySubmitted, setEnquirySubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   useEffect(() => {
     let timer = null;
@@ -92,16 +94,30 @@ export default function FloatingWidgets({ onBookConsultation }) {
     }
   };
 
-  const handleEnquirySubmit = (e) => {
+  const handleEnquirySubmit = async (e) => {
     e.preventDefault();
-    if (enquiryForm.name && enquiryForm.phone) {
-      sendLeadEmail({ ...enquiryForm, source: 'Floating Widget Enquiry Modal' });
+    setSubmitError('');
+
+    const phoneDigits = (enquiryForm.phone || '').replace(/\D/g, '');
+    if (phoneDigits.length < 10) {
+      setSubmitError('Please enter a valid 10-digit mobile number.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      await sendLeadEmail({ ...enquiryForm, source: 'Floating Widget Enquiry Modal' });
       setEnquirySubmitted(true);
       setTimeout(() => {
         setEnquirySubmitted(false);
         setEnquiryOpen(false);
         setEnquiryForm({ name: '', pincode: '', place: '', phone: '', description: '', insuranceType: 'Health Insurance' });
       }, 3000);
+    } catch (err) {
+      console.error('Enquiry submission error:', err);
+      setEnquirySubmitted(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -373,8 +389,14 @@ export default function FloatingWidgets({ onBookConsultation }) {
                   />
                 </div>
 
-                <button type="submit" className="btn-primary" style={{ width: '100%', padding: '0.85rem' }}>
-                  Submit Enquiry <Send size={16} />
+                {submitError && (
+                  <div style={{ color: '#dc2626', background: '#fef2f2', padding: '0.6rem 0.8rem', borderRadius: '6px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '1rem' }}>
+                    ⚠️ {submitError}
+                  </div>
+                )}
+
+                <button type="submit" disabled={isSubmitting} className="btn-primary" style={{ width: '100%', padding: '0.85rem', opacity: isSubmitting ? 0.75 : 1 }}>
+                  {isSubmitting ? 'Submitting Enquiry...' : 'Submit Enquiry'} <Send size={16} />
                 </button>
               </form>
             ) : (

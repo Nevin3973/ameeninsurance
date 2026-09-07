@@ -82,7 +82,7 @@ export async function sendLeadEmail(leadData) {
     }
   }
 
-  // Strategy 3: FormSubmit.co Free AJAX Endpoint (Zero-config, sends direct to info@ameenhealthinsurance.com)
+  // Strategy 3: FormSubmit.co Free AJAX Endpoint (Zero-config, sends direct to recipient email)
   try {
     const res = await fetch(`https://formsubmit.co/ajax/${RECIPIENT_EMAIL}`, {
       method: 'POST',
@@ -93,18 +93,29 @@ export async function sendLeadEmail(leadData) {
       body: JSON.stringify(payload)
     });
 
-    if (res.ok) {
-      const data = await res.json();
+    const data = await res.json().catch(() => ({}));
+
+    if (res.ok && data.success !== 'false' && data.success !== false) {
       console.log('[EmailService] Sent via FormSubmit AJAX:', data);
-      return { success: true, message: 'Form submitted and email dispatched to info@ameenhealthinsurance.com.' };
+      return { success: true, message: `Form submitted and email dispatched to ${RECIPIENT_EMAIL}.` };
     } else {
-      console.warn('[EmailService] FormSubmit response status:', res.status);
+      const errMsg = data.message || `FormSubmit returned status ${res.status}`;
+      console.warn('[EmailService] FormSubmit response warning:', errMsg);
+      
+      if (errMsg.toLowerCase().includes('activate') || res.status === 403) {
+        console.warn(`[EmailService] ACTION REQUIRED: Check ${RECIPIENT_EMAIL} inbox for the FormSubmit activation link!`);
+        return {
+          success: false,
+          needsActivation: true,
+          message: `FormSubmit requires activation. Check ${RECIPIENT_EMAIL} inbox and click "Activate Form".`
+        };
+      }
+      return { success: false, message: errMsg };
     }
   } catch (err) {
     console.error('[EmailService] FormSubmit dispatch error:', err);
+    return { success: false, message: err.message || 'Network error sending form.' };
   }
-
-  // Fallback notification success
-  return { success: true, message: 'Form submitted successfully.' };
 }
+
 
