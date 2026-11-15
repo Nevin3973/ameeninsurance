@@ -242,7 +242,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
                 style={{
                   flex: 1,
                   height: '6px',
-                  borderRadius: '9999px',
+                  borderRadius: 0,
                   background: step <= currentStep ? 'var(--primary-blue)' : 'var(--border-light)',
                   transition: 'all 0.3s ease'
                 }}
@@ -263,7 +263,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
                 onClick={() => handleSelectAnswer('target', 'family')}
                 style={{
                   padding: '1.2rem',
-                  borderRadius: 'var(--radius-md)',
+                  borderRadius: 0,
                   border: '1px solid var(--border-light)',
                   background: '#ffffff',
                   textAlign: 'left',
@@ -281,7 +281,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
                 onClick={() => handleSelectAnswer('target', 'parents')}
                 style={{
                   padding: '1.2rem',
-                  borderRadius: 'var(--radius-md)',
+                  borderRadius: 0,
                   border: '1px solid var(--border-light)',
                   background: '#ffffff',
                   textAlign: 'left',
@@ -299,7 +299,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
                 onClick={() => handleSelectAnswer('target', 'women')}
                 style={{
                   padding: '1.2rem',
-                  borderRadius: 'var(--radius-md)',
+                  borderRadius: 0,
                   border: '1px solid var(--border-light)',
                   background: '#ffffff',
                   textAlign: 'left',
@@ -317,7 +317,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
                 onClick={() => handleSelectAnswer('target', 'self')}
                 style={{
                   padding: '1.2rem',
-                  borderRadius: 'var(--radius-md)',
+                  borderRadius: 0,
                   border: '1px solid var(--border-light)',
                   background: '#ffffff',
                   textAlign: 'left',
@@ -346,7 +346,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
                 onClick={() => handleSelectAnswer('coverage', 'medium')}
                 style={{
                   padding: '1.1rem',
-                  borderRadius: 'var(--radius-sm)',
+                  borderRadius: 0,
                   border: '1px solid var(--border-light)',
                   background: '#ffffff',
                   textAlign: 'left',
@@ -368,7 +368,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
                 onClick={() => handleSelectAnswer('coverage', 'essential')}
                 style={{
                   padding: '1.1rem',
-                  borderRadius: 'var(--radius-sm)',
+                  borderRadius: 0,
                   border: '1px solid var(--border-light)',
                   background: '#ffffff',
                   textAlign: 'left',
@@ -390,7 +390,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
                 onClick={() => handleSelectAnswer('coverage', 'high')}
                 style={{
                   padding: '1.1rem',
-                  borderRadius: 'var(--radius-sm)',
+                  borderRadius: 0,
                   border: '1px solid var(--border-light)',
                   background: '#ffffff',
                   textAlign: 'left',
@@ -432,7 +432,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
                 onClick={() => handleSelectAnswer('priority', 'no_cap')}
                 style={{
                   padding: '1.1rem',
-                  borderRadius: 'var(--radius-sm)',
+                  borderRadius: 0,
                   border: '1px solid var(--border-light)',
                   background: '#ffffff',
                   textAlign: 'left',
@@ -449,7 +449,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
                 onClick={() => handleSelectAnswer('priority', 'cashless')}
                 style={{
                   padding: '1.1rem',
-                  borderRadius: 'var(--radius-sm)',
+                  borderRadius: 0,
                   border: '1px solid var(--border-light)',
                   background: '#ffffff',
                   textAlign: 'left',
@@ -466,7 +466,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
                 onClick={() => handleSelectAnswer('priority', 'ayush')}
                 style={{
                   padding: '1.1rem',
-                  borderRadius: 'var(--radius-sm)',
+                  borderRadius: 0,
                   border: '1px solid var(--border-light)',
                   background: '#ffffff',
                   textAlign: 'left',
@@ -483,7 +483,7 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
                 onClick={() => handleSelectAnswer('priority', 'budget')}
                 style={{
                   padding: '1.1rem',
-                  borderRadius: 'var(--radius-sm)',
+                  borderRadius: 0,
                   border: '1px solid var(--border-light)',
                   background: '#ffffff',
                   textAlign: 'left',
@@ -533,13 +533,13 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
                           background: idx === 0 ? 'var(--primary-blue)' : 'var(--bg-hero)',
                           color: idx === 0 ? '#ffffff' : 'var(--primary-blue)',
                           padding: '0.25rem 0.85rem',
-                          borderRadius: '9999px',
+                          borderRadius: 0,
                           fontSize: '0.78rem',
                           fontWeight: 800
                         }}>
                           {rec.matchPercent}
                         </span>
-                        <span style={{ background: '#e0f2fe', color: '#0369a1', padding: '0.2rem 0.6rem', borderRadius: '9999px', fontSize: '0.72rem', fontWeight: 800 }}>
+                        <span style={{ background: '#e0f2fe', color: '#0369a1', padding: '0.2rem 0.6rem', borderRadius: 0, fontSize: '0.72rem', fontWeight: 800 }}>
                           💳 EMI Available
                         </span>
                       </div>

@@ -48,7 +48,7 @@ export default function PlansPage({ onNavigate, onOpenWizard, initialPartnerFilt
               onClick={onOpenWizard}
               style={{
                 padding: '0.75rem 1.4rem',
-                borderRadius: 'var(--radius-full)',
+                borderRadius: 0,
                 border: 'none',
                 background: 'linear-gradient(135deg, var(--primary-blue), #2563eb)',
                 color: '#ffffff',
@@ -69,7 +69,7 @@ export default function PlansPage({ onNavigate, onOpenWizard, initialPartnerFilt
               onClick={() => setActivePlanTab('catalog')}
               style={{
                 padding: '0.75rem 1.4rem',
-                borderRadius: 'var(--radius-full)',
+                borderRadius: 0,
                 border: activePlanTab === 'catalog' ? 'none' : '1px solid var(--border-light)',
                 background: activePlanTab === 'catalog' ? 'var(--primary-blue)' : '#ffffff',
                 color: activePlanTab === 'catalog' ? '#ffffff' : 'var(--text-dark)',
@@ -89,7 +89,7 @@ export default function PlansPage({ onNavigate, onOpenWizard, initialPartnerFilt
               onClick={() => setActivePlanTab('comparison')}
               style={{
                 padding: '0.75rem 1.4rem',
-                borderRadius: 'var(--radius-full)',
+                borderRadius: 0,
                 border: activePlanTab === 'comparison' ? 'none' : '1px solid var(--border-light)',
                 background: activePlanTab === 'comparison' ? 'var(--primary-blue)' : '#ffffff',
                 color: activePlanTab === 'comparison' ? '#ffffff' : 'var(--text-dark)',
@@ -109,7 +109,7 @@ export default function PlansPage({ onNavigate, onOpenWizard, initialPartnerFilt
               onClick={() => setActivePlanTab('calculator')}
               style={{
                 padding: '0.75rem 1.4rem',
-                borderRadius: 'var(--radius-full)',
+                borderRadius: 0,
                 border: activePlanTab === 'calculator' ? 'none' : '1px solid var(--border-light)',
                 background: activePlanTab === 'calculator' ? 'var(--primary-blue)' : '#ffffff',
                 color: activePlanTab === 'calculator' ? '#ffffff' : 'var(--text-dark)',

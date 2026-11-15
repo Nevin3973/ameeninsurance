@@ -105,7 +105,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
             {product.image && (
               <div style={{
                 height: '180px',
-                borderRadius: '16px',
+                borderRadius: 0,
                 overflow: 'hidden',
                 boxShadow: '0 8px 25px rgba(0,0,0,0.08)',
                 border: '1px solid var(--border-light)'
@@ -140,7 +140,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                 background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
                 color: '#ffffff',
                 padding: '1.2rem 1.6rem',
-                borderRadius: 'var(--radius-md)',
+                borderRadius: 0,
                 fontFamily: 'var(--font-malayalam)',
                 boxShadow: '0 8px 20px rgba(15, 23, 42, 0.15)',
                 borderLeft: '5px solid var(--primary-blue)'
@@ -161,7 +161,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                 background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
                 color: '#ffffff',
                 padding: '1.2rem 1.6rem',
-                borderRadius: 'var(--radius-md)',
+                borderRadius: 0,
                 boxShadow: '0 8px 20px rgba(15, 23, 42, 0.15)',
                 borderLeft: '5px solid var(--primary-blue)'
               }}>
@@ -232,7 +232,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                   <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.7rem', fontSize: '0.95rem', color: 'var(--text-dark)' }}>
                     <div style={{
                       background: 'var(--accent-sky-light)',
-                      borderRadius: '50%',
+                      borderRadius: 0,
                       padding: '4px',
                       display: 'flex',
                       alignItems: 'center',
@@ -259,7 +259,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem' }} className="responsive-grid-equal">
                   {product.optionalCovers.map((opt, idx) => (
-                    <div key={idx} style={{ padding: '0.6rem 0.8rem', background: '#fffbeb', borderRadius: '8px', border: '1px solid #fef3c7', fontSize: '0.86rem', color: '#92400e', fontWeight: 600 }}>
+                    <div key={idx} style={{ padding: '0.6rem 0.8rem', background: '#fffbeb', borderRadius: 0, border: '1px solid #fef3c7', fontSize: '0.86rem', color: '#92400e', fontWeight: 600 }}>
                       + {opt}
                     </div>
                   ))}
@@ -276,7 +276,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                 <p style={{ fontSize: '0.9rem', color: '#065f46', lineHeight: 1.5, marginBottom: '0.8rem' }}>
                   {product.nriTierText || "Exclusive discounts available for Non-Resident Indians (NRIs) and overseas residents across Sum Insured tiers."}
                 </p>
-                <div style={{ fontSize: '0.82rem', color: '#047857', fontWeight: 600, background: '#ffffff', padding: '0.6rem 1rem', borderRadius: '8px', display: 'inline-block' }}>
+                <div style={{ fontSize: '0.82rem', color: '#047857', fontWeight: 600, background: '#ffffff', padding: '0.6rem 1rem', borderRadius: 0, display: 'inline-block' }}>
                   💡 Contact Ameen Nellikkunnan with your passport copy & NRI status to lock in instant policy discounts.
                 </div>
               </div>
@@ -289,17 +289,17 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
               </h3>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.92rem' }}>
-                <div style={{ padding: '1rem', background: 'var(--bg-card-alt)', borderRadius: 'var(--radius-sm)', borderLeft: '4px solid var(--primary-blue)' }}>
+                <div style={{ padding: '1rem', background: 'var(--bg-card-alt)', borderRadius: 0, borderLeft: '4px solid var(--primary-blue)' }}>
                   <strong style={{ color: 'var(--text-dark)', display: 'block', marginBottom: '0.3rem' }}>INPATIENT HOSPITALISATION</strong>
                   <p style={{ color: 'var(--text-muted)' }}>Covers room rent, ICU charges, nursing care, surgeon fees, OT expenses, and anesthetist charges without sub-limits.</p>
                 </div>
 
-                <div style={{ padding: '1rem', background: 'var(--bg-card-alt)', borderRadius: 'var(--radius-sm)', borderLeft: '4px solid var(--primary-blue)' }}>
+                <div style={{ padding: '1rem', background: 'var(--bg-card-alt)', borderRadius: 0, borderLeft: '4px solid var(--primary-blue)' }}>
                   <strong style={{ color: 'var(--text-dark)', display: 'block', marginBottom: '0.3rem' }}>PRE & POST HOSPITALISATION</strong>
                   <p style={{ color: 'var(--text-muted)' }}>Pre-hospitalisation medical expenses covered for 60 days and post-hospitalisation follow-up expenses covered for 90 days.</p>
                 </div>
 
-                <div style={{ padding: '1rem', background: 'var(--bg-card-alt)', borderRadius: 'var(--radius-sm)', borderLeft: '4px solid var(--primary-blue)' }}>
+                <div style={{ padding: '1rem', background: 'var(--bg-card-alt)', borderRadius: 0, borderLeft: '4px solid var(--primary-blue)' }}>
                   <strong style={{ color: 'var(--text-dark)', display: 'block', marginBottom: '0.3rem' }}>DAY CARE PROCEDURES & MODERN TREATMENTS</strong>
                   <p style={{ color: 'var(--text-muted)' }}>All day-care treatments requiring less than 24 hours stay, plus modern treatments like robotic surgery, bronchial thermoplasty, and vaporisation of prostate.</p>
                 </div>
@@ -310,7 +310,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
             <div style={{
               background: 'var(--bg-hero)',
               padding: '1.5rem',
-              borderRadius: 'var(--radius-md)',
+              borderRadius: 0,
               border: '1px solid var(--border-light)',
               display: 'flex',
               alignItems: 'center',
@@ -332,7 +332,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
               lineHeight: 1.5,
               padding: '1rem',
               background: '#f8fafc',
-              borderRadius: '8px',
+              borderRadius: 0,
               border: '1px solid #e2e8f0'
             }}>
               ⚖️ <strong>Regulatory Disclaimer:</strong> Benefits, limits, waiting periods, eligibility, exclusions, optional covers, and premiums are subject to the applicable policy wording, prospectus, Customer Information Sheet (CIS), schedule, and underwriting terms of the respective insurer ({product.company}).
@@ -367,7 +367,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                       style={{
                         width: '100%',
                         padding: '0.7rem',
-                        borderRadius: 'var(--radius-sm)',
+                        borderRadius: 0,
                         border: '1px solid var(--border-light)',
                         fontSize: '0.9rem',
                         outline: 'none'
@@ -388,7 +388,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                       style={{
                         width: '100%',
                         padding: '0.7rem',
-                        borderRadius: 'var(--radius-sm)',
+                        borderRadius: 0,
                         border: '1px solid var(--border-light)',
                         fontSize: '0.9rem',
                         outline: 'none'
@@ -407,7 +407,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                       style={{
                         width: '100%',
                         padding: '0.7rem',
-                        borderRadius: 'var(--radius-sm)',
+                        borderRadius: 0,
                         border: '1px solid var(--border-light)',
                         fontSize: '0.9rem',
                         fontWeight: 600,
@@ -417,7 +417,7 @@ export default function ProductDetailPage({ product, onBack, onBookConsultation 
                   </div>
 
                   {submitError && (
-                    <div style={{ color: '#dc2626', background: '#fef2f2', padding: '0.6rem 0.8rem', borderRadius: '6px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '1rem' }}>
+                    <div style={{ color: '#dc2626', background: '#fef2f2', padding: '0.6rem 0.8rem', borderRadius: 0, fontSize: '0.85rem', fontWeight: 600, marginBottom: '1rem' }}>
                       ⚠️ {submitError}
                     </div>
                   )}

@@ -63,7 +63,7 @@ export default function QuoteCalculator({ initialConfig }) {
                   alignItems: 'center',
                   gap: '0.5rem',
                   padding: '0.65rem 1.3rem',
-                  borderRadius: 'var(--radius-sm)',
+                  borderRadius: 0,
                   border: isSelected ? 'none' : '1px solid var(--border-light)',
                   background: isSelected ? 'var(--primary-blue)' : '#ffffff',
                   color: isSelected ? '#ffffff' : 'var(--text-dark)',
@@ -188,7 +188,7 @@ export default function QuoteCalculator({ initialConfig }) {
               Reference ID: <strong>AMN-2026-8942</strong>
             </p>
 
-            <div style={{ background: 'var(--bg-card-alt)', padding: '1rem', borderRadius: 'var(--radius-sm)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
+            <div style={{ background: 'var(--bg-card-alt)', padding: '1rem', borderRadius: 0, marginBottom: '1.5rem', fontSize: '0.9rem' }}>
               <p>Coverage: <strong>${coverageAmount.toLocaleString()}</strong></p>
               <p>Locked Premium: <strong style={{ color: 'var(--primary-blue)' }}>${currentMonthlyPrice}/month</strong></p>
               <p>Rate Guarantee: <strong>30 Days</strong></p>

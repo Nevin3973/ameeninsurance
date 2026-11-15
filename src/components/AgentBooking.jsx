@@ -82,7 +82,7 @@ export default function AgentBooking() {
                     style={{
                       width: '100%',
                       padding: '0.7rem 0.9rem',
-                      borderRadius: 'var(--radius-sm)',
+                      borderRadius: 0,
                       border: '1px solid var(--border-light)',
                       fontSize: '0.9rem',
                       outline: 'none'
@@ -103,7 +103,7 @@ export default function AgentBooking() {
                     style={{
                       width: '100%',
                       padding: '0.7rem 0.9rem',
-                      borderRadius: 'var(--radius-sm)',
+                      borderRadius: 0,
                       border: '1px solid var(--border-light)',
                       fontSize: '0.9rem',
                       outline: 'none'
@@ -124,7 +124,7 @@ export default function AgentBooking() {
                   style={{
                     width: '100%',
                     padding: '0.7rem 0.9rem',
-                    borderRadius: 'var(--radius-sm)',
+                    borderRadius: 0,
                     border: '1px solid var(--border-light)',
                     fontSize: '0.9rem',
                     outline: 'none'
@@ -142,7 +142,7 @@ export default function AgentBooking() {
                     onClick={() => setMeetingType('video')}
                     style={{
                       padding: '0.75rem',
-                      borderRadius: 'var(--radius-sm)',
+                      borderRadius: 0,
                       border: meetingType === 'video' ? '2px solid var(--primary-blue)' : '1px solid var(--border-light)',
                       background: meetingType === 'video' ? 'var(--accent-sky-light)' : '#ffffff',
                       color: meetingType === 'video' ? 'var(--primary-blue)' : 'var(--text-dark)',
@@ -161,7 +161,7 @@ export default function AgentBooking() {
                     onClick={() => setMeetingType('in_person')}
                     style={{
                       padding: '0.75rem',
-                      borderRadius: 'var(--radius-sm)',
+                      borderRadius: 0,
                       border: meetingType === 'in_person' ? '2px solid var(--primary-blue)' : '1px solid var(--border-light)',
                       background: meetingType === 'in_person' ? 'var(--accent-sky-light)' : '#ffffff',
                       color: meetingType === 'in_person' ? 'var(--primary-blue)' : 'var(--text-dark)',
@@ -189,7 +189,7 @@ export default function AgentBooking() {
                   style={{
                     width: '100%',
                     padding: '0.75rem',
-                    borderRadius: 'var(--radius-sm)',
+                    borderRadius: 0,
                     border: '1px solid var(--border-light)',
                     fontSize: '0.92rem',
                     fontWeight: 600,
@@ -210,7 +210,7 @@ export default function AgentBooking() {
                       onClick={() => setSelectedTimeSlot(slot)}
                       style={{
                         padding: '0.6rem',
-                        borderRadius: 'var(--radius-sm)',
+                        borderRadius: 0,
                         border: selectedTimeSlot === slot ? '2px solid var(--primary-blue)' : '1px solid var(--border-light)',
                         background: selectedTimeSlot === slot ? 'var(--primary-blue)' : '#ffffff',
                         color: selectedTimeSlot === slot ? '#ffffff' : 'var(--text-dark)',
@@ -226,7 +226,7 @@ export default function AgentBooking() {
               </div>
 
               {submitError && (
-                <div style={{ color: '#dc2626', background: '#fef2f2', padding: '0.6rem 0.8rem', borderRadius: '6px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '1rem' }}>
+                <div style={{ color: '#dc2626', background: '#fef2f2', padding: '0.6rem 0.8rem', borderRadius: 0, fontSize: '0.85rem', fontWeight: 600, marginBottom: '1rem' }}>
                   ⚠️ {submitError}
                 </div>
               )}

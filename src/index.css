@@ -160,15 +160,16 @@ a:hover {
   height: fit-content;
 }
 
-/* Modal Overlay & Dialog Containment */
+/* Solid Modern Modal & Dialog Architecture (Zero Glassmorphism / Zero Blur) */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(4px);
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -182,43 +183,45 @@ a:hover {
   width: 100%;
   max-height: 85vh;
   overflow-y: auto;
-  padding: 2rem;
-  background: #ffffff;
-  border-radius: var(--radius-md);
+  padding: 2.2rem;
+  background: #ffffff !important;
+  border-radius: 0px !important;
+  border: 1px solid var(--border-light);
   position: relative;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.2);
 }
 
-/* Glassmorphism System Utilities */
+/* Crisp Corporate Panels (Zero Glassmorphism) */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.96) !important;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.16);
+  background: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 0px !important;
+  box-shadow: var(--shadow-md) !important;
 }
 
 .glass-panel-dark {
-  background: rgba(15, 23, 42, 0.94) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  background: #0f172a !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 0px !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3) !important;
   color: #ffffff;
 }
 
 .glass-card-interactive {
-  background: #ffffff;
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
+  background: #ffffff !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 0px !important;
   box-shadow: var(--shadow-sm);
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
 }
 
 .glass-card-interactive:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: var(--primary-blue);
+  transform: translateY(-2px);
+  border-color: var(--primary-blue) !important;
 }
 
 @media (max-width: 1024px) {
@@ -276,7 +279,7 @@ a:hover {
   .modal-content {
     padding: 1.25rem 1rem;
     max-height: 92vh;
-    border-radius: 16px;
+    border-radius: 0px !important;
   }
   .grid-4 {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -308,7 +311,7 @@ a:hover {
 .clean-card {
   background: var(--bg-surface);
   border: 1px solid var(--border-light);
-  border-radius: var(--radius-md);
+  border-radius: 0px !important;
   padding: 1.8rem;
   transition: all 0.25s ease;
 }
@@ -390,29 +393,18 @@ a:hover {
 }
 
 /* ==========================================================================
-   STRICT RECTANGULAR CORPORATE ARCHITECTURE (ZERO ROUNDED BUTTONS OR SECTIONS)
+   STRICT RECTANGULAR CORPORATE ARCHITECTURE (ZERO ROUNDED CORNERS ANYWHERE)
    ========================================================================== */
-button,
-input,
-select,
-textarea,
-.btn-primary,
-.btn-secondary,
-.clean-card,
-.modal-content,
-.pill-badge,
-.gold-badge,
-.glass-panel,
-.glass-card-interactive,
-.hero-banner-container,
-.hero-banner-img,
-div[style*="borderRadius"],
-button[style*="borderRadius"],
-a[style*="borderRadius"],
-span[style*="borderRadius"],
-input[style*="borderRadius"],
-select[style*="borderRadius"],
-textarea[style*="borderRadius"] {
+*,
+*::before,
+*::after,
+div, section, article, aside, header, footer, nav, main,
+button, input, select, textarea, form, a, span, p, h1, h2, h3, h4, h5, h6,
+.btn-primary, .btn-secondary, .clean-card, .modal-content, .pill-badge, .gold-badge,
+.glass-panel, .glass-panel-dark, .glass-card-interactive, .modal-overlay,
+.hero-banner-container, .hero-banner-img, picture, img, table, th, td,
+*[style*="border-radius"],
+*[style*="borderRadius"] {
   border-radius: 0px !important;
 }
 
@@ -458,7 +450,7 @@ textarea[style*="borderRadius"] {
 
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
-  border-radius: 9999px;
+  border-radius: 0px;
   border: 2px solid #f1f5f9;
 }
 

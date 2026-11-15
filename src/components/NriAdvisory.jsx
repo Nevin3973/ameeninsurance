@@ -50,7 +50,7 @@ export default function NriAdvisory({ onBookConsultation, onOpenWizard }) {
           <div style={{
             background: 'linear-gradient(135deg, #058340 0%, #15803d 100%)',
             color: '#ffffff',
-            borderRadius: '12px',
+            borderRadius: 0,
             padding: '1rem 1.5rem',
             marginTop: '1.5rem',
             boxShadow: '0 4px 15px rgba(5, 131, 64, 0.2)',
@@ -68,7 +68,7 @@ export default function NriAdvisory({ onBookConsultation, onOpenWizard }) {
         {/* Highlight Banner Card */}
         <div style={{
           background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
-          borderRadius: 'var(--radius-lg)',
+          borderRadius: 0,
           padding: '2.5rem',
           color: '#ffffff',
           marginBottom: '3.5rem',
@@ -82,7 +82,7 @@ export default function NriAdvisory({ onBookConsultation, onOpenWizard }) {
             right: '-50px',
             width: '200px',
             height: '200px',
-            borderRadius: '50%',
+            borderRadius: 0,
             background: 'rgba(96, 165, 250, 0.1)',
             pointerEvents: 'none'
           }} />
@@ -141,9 +141,9 @@ export default function NriAdvisory({ onBookConsultation, onOpenWizard }) {
             {/* Right Side Stats / Highlights Box */}
             <div style={{
               background: 'rgba(255, 255, 255, 0.06)',
-              backdropFilter: 'blur(12px)',
+              
               border: '1px solid rgba(255, 255, 255, 0.15)',
-              borderRadius: 'var(--radius-md)',
+              borderRadius: 0,
               padding: '1.8rem',
               display: 'flex',
               flexDirection: 'column',
@@ -185,7 +185,7 @@ export default function NriAdvisory({ onBookConsultation, onOpenWizard }) {
                 <div style={{
                   width: '46px',
                   height: '46px',
-                  borderRadius: '12px',
+                  borderRadius: 0,
                   background: 'var(--accent-sky-light)',
                   display: 'flex',
                   alignItems: 'center',
@@ -211,7 +211,7 @@ export default function NriAdvisory({ onBookConsultation, onOpenWizard }) {
           marginTop: '3rem',
           background: 'var(--bg-hero)',
           padding: '2.5rem',
-          borderRadius: 'var(--radius-lg)',
+          borderRadius: 0,
           border: '1px solid var(--border-light)'
         }}>
           <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Not sure which plan suits your family best?</h3>

@@ -162,7 +162,7 @@ export default function PrivacyPage({ onNavigate }) {
                 Under Indian DPDP Act 2023 regulations and Meta Developer Data Policies, users retain full rights to request complete deletion of their personal data from our active databases.
               </p>
 
-              <div style={{ background: 'var(--bg-card-alt)', padding: '1.2rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-light)', marginBottom: '1rem' }}>
+              <div style={{ background: 'var(--bg-card-alt)', padding: '1.2rem', borderRadius: 0, border: '1px solid var(--border-light)', marginBottom: '1rem' }}>
                 <h4 style={{ fontSize: '1rem', color: 'var(--text-dark)', marginBottom: '0.4rem' }}>Step-by-Step Data Deletion Request:</h4>
                 <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '0.6rem' }}>
                   If you wish to permanently erase your phone number, lead record, or WhatsApp consultation history from our servers, send an email request to:

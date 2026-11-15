@@ -137,7 +137,7 @@ export default function ClaimsPage({ onNavigate }) {
                     style={{
                       width: '100%',
                       padding: '0.7rem',
-                      borderRadius: 'var(--radius-sm)',
+                      borderRadius: 0,
                       border: '1px solid var(--border-light)',
                       fontSize: '0.9rem',
                       outline: 'none'
@@ -158,7 +158,7 @@ export default function ClaimsPage({ onNavigate }) {
                     style={{
                       width: '100%',
                       padding: '0.7rem',
-                      borderRadius: 'var(--radius-sm)',
+                      borderRadius: 0,
                       border: '1px solid var(--border-light)',
                       fontSize: '0.9rem',
                       outline: 'none'
@@ -178,7 +178,7 @@ export default function ClaimsPage({ onNavigate }) {
                     style={{
                       width: '100%',
                       padding: '0.7rem',
-                      borderRadius: 'var(--radius-sm)',
+                      borderRadius: 0,
                       border: '1px solid var(--border-light)',
                       fontSize: '0.9rem',
                       outline: 'none'
@@ -187,7 +187,7 @@ export default function ClaimsPage({ onNavigate }) {
                 </div>
 
                 {submitError && (
-                  <div style={{ color: '#dc2626', background: '#fef2f2', padding: '0.6rem 0.8rem', borderRadius: '6px', fontSize: '0.85rem', fontWeight: 600 }}>
+                  <div style={{ color: '#dc2626', background: '#fef2f2', padding: '0.6rem 0.8rem', borderRadius: 0, fontSize: '0.85rem', fontWeight: 600 }}>
                     ⚠️ {submitError}
                   </div>
                 )}

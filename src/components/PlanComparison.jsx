@@ -93,7 +93,7 @@ export default function PlanComparison({ onSelectPlan }) {
             alignItems: 'center',
             background: '#ffffff',
             padding: '0.35rem',
-            borderRadius: 'var(--radius-full)',
+            borderRadius: 0,
             border: '1px solid var(--border-light)',
             marginTop: '1.5rem'
           }}>
@@ -101,7 +101,7 @@ export default function PlanComparison({ onSelectPlan }) {
               onClick={() => setBillingCycle('monthly')}
               style={{
                 padding: '0.5rem 1.4rem',
-                borderRadius: 'var(--radius-full)',
+                borderRadius: 0,
                 border: 'none',
                 background: billingCycle === 'monthly' ? 'var(--primary-blue)' : 'transparent',
                 color: billingCycle === 'monthly' ? '#ffffff' : 'var(--text-muted)',
@@ -116,7 +116,7 @@ export default function PlanComparison({ onSelectPlan }) {
               onClick={() => setBillingCycle('annual')}
               style={{
                 padding: '0.5rem 1.4rem',
-                borderRadius: 'var(--radius-full)',
+                borderRadius: 0,
                 border: 'none',
                 background: billingCycle === 'annual' ? 'var(--primary-blue)' : 'transparent',
                 color: billingCycle === 'annual' ? '#ffffff' : 'var(--text-muted)',
@@ -155,7 +155,7 @@ export default function PlanComparison({ onSelectPlan }) {
                     background: 'var(--primary-blue)',
                     color: '#ffffff',
                     padding: '0.25rem 0.8rem',
-                    borderRadius: 'var(--radius-full)',
+                    borderRadius: 0,
                     fontSize: '0.7rem',
                     fontWeight: 800,
                     letterSpacing: '0.05em'
@@ -217,7 +217,7 @@ export default function PlanComparison({ onSelectPlan }) {
           right: '24px',
           background: '#ffffff',
           border: '2px solid var(--primary-blue)',
-          borderRadius: 'var(--radius-sm)',
+          borderRadius: 0,
           padding: '1rem 1.4rem',
           boxShadow: 'var(--shadow-md)',
           zIndex: 1000

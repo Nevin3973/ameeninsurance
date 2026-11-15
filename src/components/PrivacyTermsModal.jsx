@@ -15,7 +15,7 @@ export default function PrivacyTermsModal({ isOpen, onClose, initialTab = 'priva
           maxHeight: '85vh',
           overflowY: 'auto',
           padding: '2.2rem',
-          borderRadius: 'var(--radius-md)',
+          borderRadius: 0,
           background: '#ffffff'
         }}
         onClick={(e) => e.stopPropagation()}
@@ -29,7 +29,7 @@ export default function PrivacyTermsModal({ isOpen, onClose, initialTab = 'priva
             right: '1.2rem',
             background: 'var(--bg-card-alt)',
             border: 'none',
-            borderRadius: '50%',
+            borderRadius: 0,
             padding: '0.45rem',
             cursor: 'pointer',
             color: 'var(--text-dark)'
@@ -43,7 +43,7 @@ export default function PrivacyTermsModal({ isOpen, onClose, initialTab = 'priva
           <div style={{
             width: '42px',
             height: '42px',
-            borderRadius: '12px',
+            borderRadius: 0,
             background: 'var(--accent-sky-light)',
             display: 'flex',
             alignItems: 'center',
@@ -68,7 +68,7 @@ export default function PrivacyTermsModal({ isOpen, onClose, initialTab = 'priva
             onClick={() => setActiveTab('privacy')}
             style={{
               padding: '0.5rem 1.2rem',
-              borderRadius: '9999px',
+              borderRadius: 0,
               border: 'none',
               background: activeTab === 'privacy' ? 'var(--primary-blue)' : 'var(--bg-card-alt)',
               color: activeTab === 'privacy' ? '#ffffff' : 'var(--text-dark)',
@@ -83,7 +83,7 @@ export default function PrivacyTermsModal({ isOpen, onClose, initialTab = 'priva
             onClick={() => setActiveTab('terms')}
             style={{
               padding: '0.5rem 1.2rem',
-              borderRadius: '9999px',
+              borderRadius: 0,
               border: 'none',
               background: activeTab === 'terms' ? 'var(--primary-blue)' : 'var(--bg-card-alt)',
               color: activeTab === 'terms' ? '#ffffff' : 'var(--text-dark)',

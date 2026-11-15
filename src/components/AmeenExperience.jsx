@@ -44,7 +44,7 @@ export default function AmeenExperience() {
           {/* LEFT COLUMN: STICKY PINNED SIDEBAR (STAYS PINNED WHILE SCROLLING) */}
           <div className="sticky-column" style={{
             background: 'linear-gradient(135deg, #e0f2fe 0%, #f0f7ff 100%)',
-            borderRadius: 'var(--radius-lg)',
+            borderRadius: 0,
             padding: '2.5rem',
             border: '1px solid #bae6fd',
             boxShadow: '0 10px 30px rgba(2, 132, 199, 0.08)'
@@ -100,7 +100,7 @@ export default function AmeenExperience() {
                 className="clean-card"
                 style={{
                   padding: '2.2rem',
-                  borderRadius: 'var(--radius-lg)',
+                  borderRadius: 0,
                   background: '#ffffff',
                   border: '1px solid var(--border-light)',
                   boxShadow: 'var(--shadow-md)'
@@ -113,7 +113,7 @@ export default function AmeenExperience() {
                   justifyContent: 'center',
                   width: '48px',
                   height: '48px',
-                  borderRadius: '14px',
+                  borderRadius: 0,
                   background: 'var(--accent-sky-light)',
                   color: 'var(--primary-blue)',
                   fontWeight: 800,
@@ -144,7 +144,7 @@ export default function AmeenExperience() {
                           gap: '0.5rem',
                           padding: '0.5rem 0.9rem',
                           background: 'var(--bg-card-alt)',
-                          borderRadius: 'var(--radius-sm)',
+                          borderRadius: 0,
                           fontSize: '0.85rem',
                           fontWeight: 600,
                           color: 'var(--text-dark)',

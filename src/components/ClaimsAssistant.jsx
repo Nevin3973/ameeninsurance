@@ -26,7 +26,7 @@ export default function ClaimsAssistant() {
             <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '1.4rem' }}>
               Get treated at network hospitals without paying out of pocket. Show your digital insurance e-Card at admission, and Ameen Insurance coordinates direct bill settlement with the hospital.
             </p>
-            <div style={{ padding: '0.85rem 1rem', background: 'var(--bg-card-alt)', borderRadius: 'var(--radius-sm)', fontSize: '0.88rem' }}>
+            <div style={{ padding: '0.85rem 1rem', background: 'var(--bg-card-alt)', borderRadius: 0, fontSize: '0.88rem' }}>
               <strong style={{ color: 'var(--primary-blue)' }}>Requirements:</strong> Policy Number & Photo ID Card
             </div>
           </div>
@@ -40,7 +40,7 @@ export default function ClaimsAssistant() {
             <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', lineHeight: 1.6, marginBottom: '1.4rem' }}>
               Hospitalized at a non-network facility? Submit your medical bills, lab reports, and discharge summary. We audit and process your reimbursement directly into your bank account.
             </p>
-            <div style={{ padding: '0.85rem 1rem', background: 'var(--bg-card-alt)', borderRadius: 'var(--radius-sm)', fontSize: '0.88rem' }}>
+            <div style={{ padding: '0.85rem 1rem', background: 'var(--bg-card-alt)', borderRadius: 0, fontSize: '0.88rem' }}>
               <strong style={{ color: 'var(--primary-blue)' }}>Assistance:</strong> Direct document verification & filing
             </div>
           </div>

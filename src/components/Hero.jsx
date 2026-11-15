@@ -344,7 +344,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
           maxWidth: '1060px',
           margin: '0 auto',
           background: '#ffffff',
-          borderRadius: 'var(--radius-lg)',
+          borderRadius: 0,
           padding: '2.5rem',
           border: '1px solid var(--border-light)',
           boxShadow: 'var(--shadow-md)'
@@ -382,7 +382,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
             {/* Lead Form Box / Post Consultation Offers View */}
             <div style={{
               background: 'var(--bg-card-alt)',
-              borderRadius: 'var(--radius-md)',
+              borderRadius: 0,
               padding: '2rem',
               border: '1px solid var(--border-light)',
               width: '100%'
@@ -402,7 +402,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                       style={{
                         width: '100%',
                         padding: '0.75rem 1rem',
-                        borderRadius: 'var(--radius-sm)',
+                        borderRadius: 0,
                         border: '1px solid var(--border-light)',
                         background: '#ffffff',
                         fontSize: '0.92rem',
@@ -424,7 +424,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                       style={{
                         width: '100%',
                         padding: '0.75rem 1rem',
-                        borderRadius: 'var(--radius-sm)',
+                        borderRadius: 0,
                         border: '1px solid var(--border-light)',
                         background: '#ffffff',
                         fontSize: '0.92rem',
@@ -449,7 +449,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                         style={{
                           width: '100%',
                           padding: '0.75rem 1rem',
-                          borderRadius: 'var(--radius-sm)',
+                          borderRadius: 0,
                           border: '1px solid var(--border-light)',
                           background: '#ffffff',
                           fontSize: '0.92rem',
@@ -470,7 +470,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                         style={{
                           width: '100%',
                           padding: '0.75rem 1rem',
-                          borderRadius: 'var(--radius-sm)',
+                          borderRadius: 0,
                           border: '1px solid var(--border-light)',
                           background: '#f1f5f9',
                           color: '#0f172a',
@@ -494,7 +494,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                       style={{
                         width: '100%',
                         padding: '0.75rem 1rem',
-                        borderRadius: 'var(--radius-sm)',
+                        borderRadius: 0,
                         border: '1px solid var(--border-light)',
                         background: '#ffffff',
                         fontSize: '0.92rem',
@@ -513,7 +513,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                       style={{
                         width: '100%',
                         padding: '0.75rem 1rem',
-                        borderRadius: 'var(--radius-sm)',
+                        borderRadius: 0,
                         border: '1px solid var(--border-light)',
                         background: '#ffffff',
                         fontSize: '0.92rem',
@@ -529,7 +529,7 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                   </div>
 
                   {submitError && (
-                    <div style={{ color: '#dc2626', background: '#fef2f2', padding: '0.6rem 0.8rem', borderRadius: '6px', fontSize: '0.85rem', fontWeight: 600 }}>
+                    <div style={{ color: '#dc2626', background: '#fef2f2', padding: '0.6rem 0.8rem', borderRadius: 0, fontSize: '0.85rem', fontWeight: 600 }}>
                       ⚠️ {submitError}
                     </div>
                   )}
@@ -555,8 +555,8 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
 
                   <div className="grid-3" style={{ gap: '1.2rem' }}>
                     {/* Offer Card 1 */}
-                    <div style={{ background: '#ffffff', padding: '1.2rem', borderRadius: '12px', border: '1px solid var(--border-light)', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
-                      <span style={{ fontSize: '0.72rem', fontWeight: 800, background: '#dbeafe', color: 'var(--primary-blue)', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>STAR HEALTH</span>
+                    <div style={{ background: '#ffffff', padding: '1.2rem', borderRadius: 0, border: '1px solid var(--border-light)', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
+                      <span style={{ fontSize: '0.72rem', fontWeight: 800, background: '#dbeafe', color: 'var(--primary-blue)', padding: '0.2rem 0.6rem', borderRadius: 0 }}>STAR HEALTH</span>
                       <h5 style={{ fontSize: '1.1rem', margin: '0.5rem 0 0.3rem' }}>Star Super Star</h5>
                       <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.4, marginBottom: '0.8rem' }}>
                         100% Cashless Hospitalization, Zero Room Rent Capping, Automatic 100% Restoration.
@@ -570,9 +570,9 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                     </div>
 
                     {/* Offer Card 2 - Aditya Birla with NRI discount highlight */}
-                    <div style={{ background: '#ffffff', padding: '1.2rem', borderRadius: '12px', border: '2px solid #058340', boxShadow: '0 4px 12px rgba(5, 131, 64, 0.1)', position: 'relative' }}>
-                      <span style={{ fontSize: '0.72rem', fontWeight: 800, background: '#dcfce7', color: '#058340', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>ADITYA BIRLA</span>
-                      <span style={{ position: 'absolute', top: '12px', right: '12px', fontSize: '0.68rem', fontWeight: 800, background: '#fef08a', color: '#854d0e', padding: '0.2rem 0.5rem', borderRadius: '4px' }}>
+                    <div style={{ background: '#ffffff', padding: '1.2rem', borderRadius: 0, border: '2px solid #058340', boxShadow: '0 4px 12px rgba(5, 131, 64, 0.1)', position: 'relative' }}>
+                      <span style={{ fontSize: '0.72rem', fontWeight: 800, background: '#dcfce7', color: '#058340', padding: '0.2rem 0.6rem', borderRadius: 0 }}>ADITYA BIRLA</span>
+                      <span style={{ position: 'absolute', top: '12px', right: '12px', fontSize: '0.68rem', fontWeight: 800, background: '#fef08a', color: '#854d0e', padding: '0.2rem 0.5rem', borderRadius: 0 }}>
                         ✨ NRI Special Discount
                       </span>
                       <h5 style={{ fontSize: '1.1rem', margin: '0.5rem 0 0.3rem' }}>Health Assure</h5>
@@ -588,8 +588,8 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                     </div>
 
                     {/* Offer Card 3 */}
-                    <div style={{ background: '#ffffff', padding: '1.2rem', borderRadius: '12px', border: '1px solid var(--border-light)', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
-                      <span style={{ fontSize: '0.72rem', fontWeight: 800, background: '#fae8ff', color: '#a21caf', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>WOMEN & MATERNITY</span>
+                    <div style={{ background: '#ffffff', padding: '1.2rem', borderRadius: 0, border: '1px solid var(--border-light)', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
+                      <span style={{ fontSize: '0.72rem', fontWeight: 800, background: '#fae8ff', color: '#a21caf', padding: '0.2rem 0.6rem', borderRadius: 0 }}>WOMEN & MATERNITY</span>
                       <h5 style={{ fontSize: '1.1rem', margin: '0.5rem 0 0.3rem' }}>Star Womens Care</h5>
                       <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: 1.4, marginBottom: '0.8rem' }}>
                         Normal & C-Section delivery cover, Day-1 Newborn cover, and vaccination allowance.

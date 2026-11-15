@@ -5,7 +5,6 @@ import { useLanguage } from '../context/LanguageContext';
 export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showMobileNotice, setShowMobileNotice] = useState(false);
   const { lang, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
@@ -14,21 +13,6 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Show mobile top notification popup 1 second after page load, then auto-disappear after 3 seconds max
-  useEffect(() => {
-    const showTimer = setTimeout(() => {
-      setShowMobileNotice(true);
-
-      const hideTimer = setTimeout(() => {
-        setShowMobileNotice(false);
-      }, 3000); // 3 seconds max
-
-      return () => clearTimeout(hideTimer);
-    }, 1000); // 1 second delay after load
-
-    return () => clearTimeout(showTimer);
   }, []);
 
   const navItems = [
@@ -200,7 +184,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
                 padding: '0 1.3rem',
                 fontSize: '0.85rem',
                 fontWeight: 700,
-                borderRadius: '9999px',
+                borderRadius: 0,
                 whiteSpace: 'nowrap',
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -225,7 +209,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
                 alignItems: 'center',
                 gap: '0.3rem',
                 padding: '0.3rem 0.75rem',
-                borderRadius: '9999px',
+                borderRadius: 0,
                 border: '1.5px solid var(--primary-blue)',
                 background: lang === 'ml' ? 'var(--accent-sky-light)' : '#ffffff',
                 color: 'var(--primary-blue)',
@@ -245,7 +229,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
               style={{
                 background: 'var(--bg-card-alt)',
                 border: '1px solid var(--border-light)',
-                borderRadius: '10px',
+                borderRadius: 0,
                 color: 'var(--text-dark)',
                 cursor: 'pointer',
                 padding: 0,
@@ -270,7 +254,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
             left: '0.75rem',
             right: '0.75rem',
             background: '#ffffff',
-            borderRadius: '16px',
+            borderRadius: 0,
             border: '1px solid var(--border-light)',
             padding: '1rem 1.25rem',
             display: 'flex',
@@ -299,7 +283,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
                   gap: '0.35rem',
                   height: '34px',
                   padding: '0 0.85rem',
-                  borderRadius: '9999px',
+                  borderRadius: 0,
                   border: '1.5px solid var(--primary-blue)',
                   background: lang === 'ml' ? 'var(--accent-sky-light)' : '#ffffff',
                   color: 'var(--primary-blue)',
@@ -339,129 +323,6 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
             >
               <Calendar size={16} /> Book Consultation
             </button>
-          </div>
-        )}
-
-        {/* Auto-disappearing Center Rectangular Notification Card Modal */}
-        {showMobileNotice && (
-          <div
-            className="center-utility-overlay"
-            onClick={() => setShowMobileNotice(false)}
-            style={{
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background: 'rgba(15, 23, 42, 0.65)',
-              backdropFilter: 'blur(4px)',
-              zIndex: 1200,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '1rem',
-              animation: 'fadeIn 0.3s ease'
-            }}
-          >
-            <div
-              className="center-utility-card"
-              onClick={(e) => e.stopPropagation()}
-              style={{
-                width: '100%',
-                maxWidth: '400px',
-                background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
-                color: '#ffffff',
-                padding: '1.6rem',
-                borderRadius: '16px',
-                boxShadow: '0 20px 45px rgba(0, 0, 0, 0.45)',
-                border: '1px solid rgba(255, 255, 255, 0.16)',
-                position: 'relative'
-              }}
-            >
-              {/* Close Button */}
-              <button
-                onClick={() => setShowMobileNotice(false)}
-                aria-label="Dismiss notification"
-                style={{
-                  position: 'absolute',
-                  top: '1rem',
-                  right: '1rem',
-                  background: 'rgba(255, 255, 255, 0.12)',
-                  border: 'none',
-                  borderRadius: '50%',
-                  color: '#ffffff',
-                  width: '28px',
-                  height: '28px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  cursor: 'pointer'
-                }}
-              >
-                <X size={16} />
-              </button>
-
-              {/* IRDAI Header Badge */}
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.4rem',
-                background: 'rgba(96, 165, 250, 0.18)',
-                color: '#60a5fa',
-                padding: '0.3rem 0.85rem',
-                borderRadius: '9999px',
-                fontSize: '0.78rem',
-                fontWeight: 700,
-                marginBottom: '0.8rem'
-              }}>
-                <ShieldCheck size={15} color="#60a5fa" /> IRDAI Authorized #129/153
-              </div>
-
-              {/* Title & Subtitle */}
-              <h3 style={{ fontSize: '1.25rem', color: '#ffffff', marginBottom: '0.3rem', fontWeight: 800 }}>
-                Ameen Nellikkunnan Insurance Advisory
-              </h3>
-              <p style={{ fontSize: '0.84rem', color: '#94a3b8', marginBottom: '1.1rem', fontWeight: 600 }}>
-                Palakkad, Kerala • 15+ Years Trust
-              </p>
-
-              {/* Feature Highlights Grid */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.4rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: '#cbd5e1' }}>
-                  <span style={{ color: '#60a5fa', fontWeight: 800 }}>💳</span>
-                  <span><strong>EMI Available</strong></span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: '#cbd5e1' }}>
-                  <span style={{ color: '#34d399', fontWeight: 800 }}>🛡️</span>
-                  <span>Unbiased Multi-Insurer Comparisons</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: '#cbd5e1' }}>
-                  <span style={{ color: '#fbbf24', fontWeight: 800 }}>🏥</span>
-                  <span>24/7 Cashless Hospital Claim Assistance</span>
-                </div>
-              </div>
-
-              {/* Call-to-Action Buttons */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '0.6rem' }}>
-                <a
-                  href="https://wa.me/917025984646?text=Hi%20Ameen,%20I%20would%20like%20to%20get%20a%20free%20health%20insurance%20quote."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary"
-                  style={{
-                    background: '#25D366',
-                    color: '#ffffff',
-                    padding: '0.75rem',
-                    fontSize: '0.88rem',
-                    textAlign: 'center',
-                    fontWeight: 700,
-                    borderRadius: 'var(--radius-sm)'
-                  }}
-                >
-                  💬 WhatsApp Ameen for Quick Quote
-                </a>
-              </div>
-            </div>
           </div>
         )}
 

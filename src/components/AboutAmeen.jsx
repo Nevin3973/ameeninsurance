@@ -27,7 +27,7 @@ export default function AboutAmeen() {
           <div className="clean-card" style={{
             background: 'linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%)',
             border: '1px solid #bae6fd',
-            borderRadius: 'var(--radius-lg)',
+            borderRadius: 0,
             padding: '2rem 1.8rem',
             textAlign: 'center'
           }}>
@@ -120,7 +120,7 @@ export default function AboutAmeen() {
                 padding: '1.1rem 1.3rem',
                 background: '#f8fafc',
                 borderLeft: '4px solid var(--primary-blue)',
-                borderRadius: '0 12px 12px 0',
+                borderRadius: 0,
                 fontSize: '0.92rem',
                 fontStyle: 'italic',
                 color: 'var(--text-dark)',
@@ -138,7 +138,7 @@ export default function AboutAmeen() {
                     <div style={{
                       minWidth: '26px',
                       height: '26px',
-                      borderRadius: '50%',
+                      borderRadius: 0,
                       background: 'var(--accent-sky-light)',
                       display: 'flex',
                       alignItems: 'center',
@@ -168,7 +168,7 @@ export default function AboutAmeen() {
                 gap: '0.4rem',
                 width: '100%',
                 padding: '0.65rem 1rem',
-                borderRadius: '9999px',
+                borderRadius: 0,
                 border: '1px solid var(--border-light)',
                 background: 'var(--bg-card-alt)',
                 color: 'var(--primary-blue)',

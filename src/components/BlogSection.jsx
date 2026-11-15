@@ -73,7 +73,7 @@ Key factors when selecting family floater policies:
               key={art.id}
               className="glass-card-interactive"
               style={{
-                borderRadius: 'var(--radius-lg)',
+                borderRadius: 0,
                 background: 'var(--bg-surface)',
                 display: 'flex',
                 flexDirection: 'column',
@@ -134,7 +134,7 @@ Key factors when selecting family floater policies:
           right: 0,
           bottom: 0,
           background: 'rgba(15, 23, 42, 0.75)',
-          backdropFilter: 'blur(8px)',
+          
           zIndex: 1000,
           display: 'flex',
           alignItems: 'center',
@@ -148,7 +148,7 @@ Key factors when selecting family floater policies:
             overflowY: 'auto',
             padding: '2.2rem',
             background: 'var(--bg-surface)',
-            borderRadius: 'var(--radius-lg)'
+            borderRadius: 0
           }}>
             <span className="glow-pill" style={{ marginBottom: '0.8rem' }}>{selectedArticleModal.category}</span>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '0.8rem', lineHeight: 1.3 }}>{selectedArticleModal.title}</h3>

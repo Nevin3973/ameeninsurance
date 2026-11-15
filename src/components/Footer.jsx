@@ -54,7 +54,7 @@ export default function Footer({ onNavigate, onOpenPrivacyModal }) {
                   style={{
                     width: '38px',
                     height: '38px',
-                    borderRadius: '50%',
+                    borderRadius: 0,
                     background: 'rgba(255, 255, 255, 0.08)',
                     color: '#ffffff',
                     display: 'flex',
@@ -80,7 +80,7 @@ export default function Footer({ onNavigate, onOpenPrivacyModal }) {
                   style={{
                     width: '38px',
                     height: '38px',
-                    borderRadius: '50%',
+                    borderRadius: 0,
                     background: 'rgba(255, 255, 255, 0.08)',
                     color: '#ffffff',
                     display: 'flex',
@@ -106,7 +106,7 @@ export default function Footer({ onNavigate, onOpenPrivacyModal }) {
                   style={{
                     width: '38px',
                     height: '38px',
-                    borderRadius: '50%',
+                    borderRadius: 0,
                     background: 'rgba(255, 255, 255, 0.08)',
                     display: 'flex',
                     alignItems: 'center',

@@ -39,7 +39,7 @@ export default function AboutPage({ onNavigate }) {
       <div className="container" style={{ marginTop: '3rem' }}>
         <div style={{
           background: 'var(--bg-hero)',
-          borderRadius: 'var(--radius-lg)',
+          borderRadius: 0,
           padding: '3rem 2.5rem',
           border: '1px solid var(--border-light)',
           display: 'flex',

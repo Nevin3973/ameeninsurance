@@ -83,7 +83,7 @@ export default function InsurancePartners({ onSelectPartner }) {
               className={idx === 4 ? "clean-card partner-centered-tile" : "clean-card"}
               style={{
                 background: '#ffffff',
-                borderRadius: 'var(--radius-lg)',
+                borderRadius: 0,
                 padding: '2.2rem',
                 border: '1px solid var(--border-light)',
                 boxShadow: 'var(--shadow-md)',
@@ -104,7 +104,7 @@ export default function InsurancePartners({ onSelectPartner }) {
                     justifyContent: 'center',
                     background: '#ffffff',
                     padding: '0.6rem 1.2rem',
-                    borderRadius: '12px',
+                    borderRadius: 0,
                     border: '1px solid #e2e8f0',
                     boxShadow: '0 3px 10px rgba(0,0,0,0.05)'
                   }}>
@@ -130,7 +130,7 @@ export default function InsurancePartners({ onSelectPartner }) {
                     color: 'var(--primary-blue)',
                     background: 'var(--bg-hero)',
                     padding: '0.35rem 0.85rem',
-                    borderRadius: '9999px',
+                    borderRadius: 0,
                     border: '1px solid #bae6fd'
                   }}>
                     {partner.tag}
@@ -157,7 +157,7 @@ export default function InsurancePartners({ onSelectPartner }) {
                   gap: '0.6rem',
                   padding: '0.75rem 1rem',
                   background: 'var(--bg-card-alt)',
-                  borderRadius: 'var(--radius-sm)',
+                  borderRadius: 0,
                   border: '1px solid var(--border-light)',
                   marginBottom: '1.2rem',
                   fontSize: '0.85rem',

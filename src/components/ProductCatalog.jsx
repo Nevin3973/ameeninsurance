@@ -358,7 +358,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                 onClick={() => setSelectedPartner(pt.id)}
                 style={{
                   padding: "0.5rem 1.2rem",
-                  borderRadius: "9999px",
+                  borderRadius: 0,
                   border: selectedPartner === pt.id ? "none" : "1px solid var(--border-light)",
                   background: selectedPartner === pt.id ? "var(--primary-blue)" : "#ffffff",
                   color: selectedPartner === pt.id ? "#ffffff" : "var(--text-dark)",
@@ -389,7 +389,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
               style={{
                 width: "100%",
                 padding: "0.75rem 1rem 0.75rem 2.6rem",
-                borderRadius: "var(--radius-full)",
+                borderRadius: 0,
                 border: "1px solid var(--border-light)",
                 fontSize: "0.9rem",
                 outline: "none",
@@ -407,7 +407,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                 onClick={() => setSelectedCategory(cat.id)}
                 style={{
                   padding: "0.4rem 1rem",
-                  borderRadius: "var(--radius-full)",
+                  borderRadius: 0,
                   border: selectedCategory === cat.id ? "none" : "1px solid var(--border-light)",
                   background: selectedCategory === cat.id ? "#1e293b" : "rgba(241, 245, 249, 0.8)",
                   color: selectedCategory === cat.id ? "#ffffff" : "var(--text-dark)",
@@ -430,7 +430,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
           <div style={{
             background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
             color: "#ffffff",
-            borderRadius: "var(--radius-md)",
+            borderRadius: 0,
             padding: "1.8rem 2rem",
             marginBottom: "2.2rem",
             boxShadow: "0 8px 25px rgba(15, 23, 42, 0.15)",
@@ -438,7 +438,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
           }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "1rem" }}>
               <div>
-                <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(96, 165, 250, 0.15)", color: "#60a5fa", padding: "0.25rem 0.75rem", borderRadius: "9999px", fontSize: "0.78rem", fontWeight: 700, marginBottom: "0.6rem" }}>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(96, 165, 250, 0.15)", color: "#60a5fa", padding: "0.25rem 0.75rem", borderRadius: 0, fontSize: "0.78rem", fontWeight: 700, marginBottom: "0.6rem" }}>
                   <ShieldCheck size={14} /> DEDICATED PARTNER SHOWCASE
                 </div>
                 <h3 style={{ fontSize: "1.6rem", color: "#ffffff", marginBottom: "0.2rem" }}>{currentPartnerInfo.name}</h3>
@@ -448,7 +448,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                 </p>
               </div>
 
-              <div style={{ background: "rgba(255, 255, 255, 0.08)", padding: "1rem 1.4rem", borderRadius: "12px", border: "1px solid rgba(255, 255, 255, 0.12)", textAlign: "center", flexShrink: 0 }}>
+              <div style={{ background: "rgba(255, 255, 255, 0.08)", padding: "1rem 1.4rem", borderRadius: 0, border: "1px solid rgba(255, 255, 255, 0.12)", textAlign: "center", flexShrink: 0 }}>
                 <Hospital size={24} color="#60a5fa" style={{ margin: "0 auto 0.3rem" }} />
                 <div style={{ fontSize: "1.1rem", fontWeight: 800, color: "#ffffff" }}>{currentPartnerInfo.hospitals}</div>
                 <div style={{ fontSize: "0.78rem", color: "#94a3b8", fontWeight: 600 }}>Cashless Claim Counter</div>
@@ -491,7 +491,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                         fontWeight: 800,
                         letterSpacing: "0.03em",
                         padding: "0.2rem 0.65rem",
-                        borderRadius: "9999px"
+                        borderRadius: 0
                       }}>
                         {Array.isArray(product.categories)
                           ? product.categories.map(c => c.toUpperCase()).join(" & ")
@@ -503,7 +503,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                         fontSize: "0.7rem",
                         fontWeight: 800,
                         padding: "0.2rem 0.65rem",
-                        borderRadius: "9999px",
+                        borderRadius: 0,
                         border: "1px solid #bae6fd"
                       }}>
                         💳 EMI AVAILABLE
@@ -515,7 +515,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                           fontSize: "0.7rem",
                           fontWeight: 800,
                           padding: "0.2rem 0.65rem",
-                          borderRadius: "9999px"
+                          borderRadius: 0
                         }}>
                           ✈️ NRI DISCOUNT
                         </span>
@@ -527,7 +527,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                           fontSize: "0.7rem",
                           fontWeight: 800,
                           padding: "0.2rem 0.65rem",
-                          borderRadius: "9999px"
+                          borderRadius: 0
                         }}>
                           ⭐ {product.tierOptions.join("/")}
                         </span>
@@ -536,7 +536,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
 
                     {/* Insurer Partner Brand Logo */}
                     {partnerProfiles[product.partnerKey]?.logo && (
-                      <div style={{ background: "#f8fafc", padding: "0.25rem 0.5rem", borderRadius: "6px", border: "1px solid var(--border-light)", display: "flex", alignItems: "center" }}>
+                      <div style={{ background: "#f8fafc", padding: "0.25rem 0.5rem", borderRadius: 0, border: "1px solid var(--border-light)", display: "flex", alignItems: "center" }}>
                         <img
                           src={partnerProfiles[product.partnerKey].logo}
                           alt={product.company}
@@ -554,7 +554,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                       color: "var(--primary-blue)",
                       background: "var(--accent-sky-light)",
                       padding: "0.3rem 0.75rem",
-                      borderRadius: "8px",
+                      borderRadius: 0,
                       display: "inline-flex",
                       alignItems: "center",
                       gap: "0.4rem",
@@ -579,7 +579,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                       background: "linear-gradient(135deg, #f0f7ff 0%, #e0f2fe 100%)",
                       borderLeft: "3px solid var(--primary-blue)",
                       padding: "0.55rem 0.85rem",
-                      borderRadius: "8px",
+                      borderRadius: 0,
                       fontSize: "0.84rem",
                       color: "#0369a1",
                       marginBottom: "0.8rem",
@@ -608,7 +608,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
 
                   <div style={{
                     padding: "0.75rem",
-                    borderRadius: "var(--radius-sm)",
+                    borderRadius: 0,
                     background: "var(--bg-card-alt)",
                     border: "1px solid var(--border-light)",
                     fontSize: "0.82rem",
@@ -667,7 +667,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
                 right: "1.2rem",
                 background: "var(--bg-card-alt)",
                 border: "none",
-                borderRadius: "50%",
+                borderRadius: 0,
                 padding: "0.4rem",
                 cursor: "pointer"
               }}
@@ -685,22 +685,22 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
             </p>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.8rem", marginBottom: "1rem", fontSize: "0.82rem" }}>
-              <div style={{ padding: "0.65rem 0.85rem", background: "var(--bg-card-alt)", borderRadius: "var(--radius-sm)", border: "1px solid var(--border-light)" }}>
+              <div style={{ padding: "0.65rem 0.85rem", background: "var(--bg-card-alt)", borderRadius: 0, border: "1px solid var(--border-light)" }}>
                 <strong style={{ color: "var(--text-dark)", display: "block", marginBottom: "0.15rem" }}>💳 EMI FREQUENCY:</strong>
                 <p style={{ color: "var(--primary-blue)", fontWeight: 700 }}>Monthly / Half-Yearly / Annual EMI</p>
               </div>
-              <div style={{ padding: "0.65rem 0.85rem", background: "var(--bg-card-alt)", borderRadius: "var(--radius-sm)", border: "1px solid var(--border-light)" }}>
+              <div style={{ padding: "0.65rem 0.85rem", background: "var(--bg-card-alt)", borderRadius: 0, border: "1px solid var(--border-light)" }}>
                 <strong style={{ color: "var(--text-dark)", display: "block", marginBottom: "0.15rem" }}>🗓️ POLICY TENURE:</strong>
                 <p style={{ color: "#166534", fontWeight: 700 }}>1 Year, 2 Year & 3 Year Options</p>
               </div>
             </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.8rem", marginBottom: "1.2rem", fontSize: "0.85rem" }}>
-              <div style={{ padding: "0.75rem", background: "var(--bg-card-alt)", borderRadius: "var(--radius-sm)" }}>
+              <div style={{ padding: "0.75rem", background: "var(--bg-card-alt)", borderRadius: 0 }}>
                 <strong>ELIGIBILITY:</strong>
                 <p>{activeModalProduct.eligibility}</p>
               </div>
-              <div style={{ padding: "0.75rem", background: "var(--bg-card-alt)", borderRadius: "var(--radius-sm)" }}>
+              <div style={{ padding: "0.75rem", background: "var(--bg-card-alt)", borderRadius: 0 }}>
                 <strong>SUM INSURED:</strong>
                 <p style={{ color: "var(--primary-blue)", fontWeight: 700 }}>{activeModalProduct.sumInsured}</p>
               </div>
@@ -751,7 +751,7 @@ export default function ProductCatalog({ onBookConsultation, onSelectProduct, in
           background: "#0f172a",
           color: "#ffffff",
           padding: "0.85rem 1.6rem",
-          borderRadius: "9999px",
+          borderRadius: 0,
           boxShadow: "0 10px 25px rgba(0, 0, 0, 0.25)",
           display: "flex",
           alignItems: "center",

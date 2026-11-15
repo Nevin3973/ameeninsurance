@@ -271,7 +271,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
                     style={{
                       width: '100%',
                       padding: '0.7rem',
-                      borderRadius: 'var(--radius-sm)',
+                      borderRadius: 0,
                       border: '1px solid var(--border-light)',
                       background: '#ffffff',
                       color: 'var(--text-dark)',
@@ -295,7 +295,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
                       style={{
                         width: '100%',
                         padding: '0.7rem',
-                        borderRadius: 'var(--radius-sm)',
+                        borderRadius: 0,
                         border: '1px solid var(--border-light)',
                         background: '#ffffff',
                         color: 'var(--text-dark)',
@@ -316,7 +316,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
                       style={{
                         width: '100%',
                         padding: '0.7rem',
-                        borderRadius: 'var(--radius-sm)',
+                        borderRadius: 0,
                         border: '1px solid var(--border-light)',
                         background: '#f1f5f9',
                         color: '#0f172a',
@@ -340,7 +340,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
                     style={{
                       width: '100%',
                       padding: '0.7rem',
-                      borderRadius: 'var(--radius-sm)',
+                      borderRadius: 0,
                       border: '1px solid var(--border-light)',
                       background: '#ffffff',
                       color: 'var(--text-dark)',
@@ -359,7 +359,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
                     style={{
                       width: '100%',
                       padding: '0.7rem',
-                      borderRadius: 'var(--radius-sm)',
+                      borderRadius: 0,
                       border: '1px solid var(--border-light)',
                       background: '#ffffff',
                       color: 'var(--text-dark)',
@@ -385,7 +385,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
                     style={{
                       width: '100%',
                       padding: '0.7rem',
-                      borderRadius: 'var(--radius-sm)',
+                      borderRadius: 0,
                       border: '1px solid var(--border-light)',
                       background: '#ffffff',
                       color: 'var(--text-dark)',
@@ -396,7 +396,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
                 </div>
 
                 {submitError && (
-                  <div style={{ color: '#dc2626', background: '#fef2f2', padding: '0.6rem 0.8rem', borderRadius: '6px', fontSize: '0.85rem', fontWeight: 600, marginBottom: '1rem' }}>
+                  <div style={{ color: '#dc2626', background: '#fef2f2', padding: '0.6rem 0.8rem', borderRadius: 0, fontSize: '0.85rem', fontWeight: 600, marginBottom: '1rem' }}>
                     ⚠️ {submitError}
                   </div>
                 )}
