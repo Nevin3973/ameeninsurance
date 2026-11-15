@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, ShieldAlert, Check, ArrowRight, Printer, X } from 'lucide-react';
-import confetti from 'canvas-confetti';
 import { sendLeadEmail } from '../services/emailService';
 
 export default function QuoteCalculator({ initialConfig }) {
@@ -35,7 +34,6 @@ export default function QuoteCalculator({ initialConfig }) {
       notes: `Coverage: $${coverageAmount.toLocaleString()}, Insured Age: ${age}, Deductible: $${deductible}, Est. Premium: $${currentMonthlyPrice}/mo`,
       source: 'Instant Quote Calculator'
     });
-    confetti({ particleCount: 70, spread: 60, origin: { y: 0.6 } });
     setShowQuoteModal(true);
   };
 

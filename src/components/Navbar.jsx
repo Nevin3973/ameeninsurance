@@ -70,7 +70,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#93c5fd', fontWeight: 600, fontSize: '0.78rem' }}>
               <ShieldCheck size={14} color="#60a5fa" /> IRDAI Licensed Advisory
             </span>
-            <span style={{ background: 'rgba(37, 99, 235, 0.25)', color: '#93c5fd', padding: '0.15rem 0.65rem', borderRadius: '9999px', fontSize: '0.74rem', fontWeight: 700 }}>
+            <span style={{ background: 'rgba(37, 99, 235, 0.25)', color: '#93c5fd', padding: '0.15rem 0.65rem', borderRadius: 0, fontSize: '0.74rem', fontWeight: 700 }}>
               💳 {lang === 'ml' ? 'ഇഎംഐ സൗകര്യം ലഭ്യമാണ്' : 'EMI Options Available'}
             </span>
           </div>
@@ -103,7 +103,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
                   alignItems: 'center',
                   gap: '0.4rem',
                   padding: '0.25rem 0.85rem',
-                  borderRadius: '9999px',
+                  borderRadius: 0,
                   border: '1px solid rgba(255,255,255,0.3)',
                   background: 'rgba(255,255,255,0.12)',
                   color: '#ffffff',

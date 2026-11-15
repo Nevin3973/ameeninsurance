@@ -77,71 +77,71 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
 
   const heroSlides = [
     {
-      id: 'maternity-care',
-      image: '/hero-maternity-indian.png',
-      mobileImage: '/hero-maternity-indian.png',
-      badge: t('heroBadge1', 'Star Women Care & Maternity Protection • Day-1 Newborn Cover'),
-      title: t('heroTitle1', 'Maternity & Family Health Protection in Kerala'),
-      subtitle: t('heroSubtitle1', 'Normal & C-Section delivery cover, Day-1 newborn hospitalisation, ART coverage & vaccination benefits with zero hassle.'),
-      primaryBtnText: t('heroBtnMaternity', 'Explore Maternity Cover'),
+      id: 'emi-health-cover',
+      image: '/web-banner-1.webp',
+      mobileImage: '/web-banner-1-mobile.webp',
+      badge: lang === 'ml' ? 'ഇഎംഐ സൗകര്യം • 10% ഡൗൺപേയ്‌മെന്റ് • 0% ജിഎസ്ടി' : 'Easy EMI Available • 10% Down Payment • 0% GST',
+      title: lang === 'ml' ? 'ഹെൽത്ത് ഇൻഷുറൻസ് എടുക്കാൻ ഇനി വലിയ തുക മുടക്കേണ്ട!' : 'Affordable Health Insurance with Easy Monthly EMI',
+      subtitle: lang === 'ml' ? 'സ്റ്റാർ, നിവ ബൂപ, ആദിത്യ ബിർള, യുണൈറ്റഡ് ഇന്ത്യ, ന്യൂ ഇന്ത്യ തുടങ്ങിയ മുൻനിര കമ്പനികളുടെ പ്ലാനുകൾ 24-30 മാസത്തെ തവണകളായി സ്വന്തമാക്കൂ.' : 'Top plans from Star Health, Niva Bupa, Aditya Birla & PSU insurers with 24-30 months tenure and zero GST load.',
+      primaryBtnText: lang === 'ml' ? 'പ്ലാനുകൾ താരതമ്യം ചെയ്യുക' : 'Explore EMI Plans',
       primaryBtnTarget: 'products',
-      secondaryBtnText: t('heroBtnBook', 'Talk to Ameen'),
+      secondaryBtnText: lang === 'ml' ? 'അമീനുമായി സംസാരിക്കൂ' : 'Talk to Ameen',
       secondaryBtnTarget: 'booking',
-      pills: lang === 'ml' ? ['പ്രസവ ചികിത്സാ പരിരക്ഷ', 'നവജാത ശിശു കവറേജ്'] : ['Maternity Delivery Cover', 'Day-1 Newborn Protection']
+      pills: lang === 'ml' ? ['10% ഡൗൺപേയ്‌മെന്റ്', '0% ജിഎസ്ടി നിരക്കുകൾ'] : ['10% Down Payment', '0% GST on Premiums']
     },
     {
-      id: 'accident-care',
-      image: '/hero-accident-care-indian.png',
-      mobileImage: '/hero-accident-care-indian.png',
-      badge: t('heroBadge2', '24/7 Personal Accident & Emergency Care Desk Support'),
-      title: t('heroTitle2', 'Accident Trauma & Hospitalization Cover: Direct Claim Support'),
-      subtitle: t('heroSubtitle2', 'Instant cashless admission at 14,000+ network hospital helpdesks during accidental emergencies & critical medical trauma.'),
-      primaryBtnText: t('heroBtnAccident', 'Emergency Claim Help'),
-      primaryBtnTarget: 'claims',
-      secondaryBtnText: t('heroBtnWhatsapp', 'WhatsApp Ameen'),
+      id: 'star-super-star',
+      image: '/web-banner-2.webp',
+      mobileImage: '/web-banner-2-mobile.webp',
+      badge: lang === 'ml' ? 'സ്റ്റാർ ഹെൽത്ത് സൂപ്പർ സ്റ്റാർ • സമാധാനവും സുരക്ഷയും' : 'Star Health Super Star • Complete Family Care',
+      title: lang === 'ml' ? 'സമാധാനവും സുരക്ഷയും ഉറപ്പാക്കും ആരോഗ്യ ഇൻഷുറൻസ്' : 'Star Super Star: Peace of Mind & Lifelong Protection',
+      subtitle: lang === 'ml' ? 'ഗുണനിലവാരമുള്ള ചികിത്സ, ആശുപത്രികളിൽ ക്യാഷ്‌ലെസ്സ് സൗകര്യം, കുടുംബത്തെ സാമ്പത്തിക ബാധ്യതകളിൽ നിന്ന് സംരക്ഷിക്കുന്ന പ്ലാൻ.' : 'Quality medical care, hassle-free cashless hospitalization, and complete financial security for your entire family.',
+      primaryBtnText: lang === 'ml' ? 'സൂപ്പർ സ്റ്റാർ പ്ലാൻ കാണുക' : 'View Super Star Plan',
+      primaryBtnTarget: 'products',
+      secondaryBtnText: lang === 'ml' ? 'വാട്സാപ്പിൽ ബന്ധപ്പെടുക' : 'WhatsApp Ameen',
       secondaryBtnTarget: claimsWaUrl,
       isExternalSecondary: true,
-      pills: lang === 'ml' ? ['അപകട ചികിത്സാ സുരക്ഷ', 'ക്ലെയിം അടിയന്തര സഹായം'] : ['Accident & Trauma Cover', '24/7 Claim Desk Support']
+      pills: lang === 'ml' ? ['ക്യാഷ്‌ലെസ് സൗകര്യം', 'കുടുംബപരിരക്ഷ'] : ['Cashless Admission', 'Comprehensive Family Cover']
     },
     {
-      id: 'family-protection',
-      image: '/family-hero-notext.png',
-      mobileImage: '/family-hero-notext.png',
-      badge: t('heroBadge4', 'Family Floater & Senior Citizen Health Coverage'),
-      title: t('heroTitle4', 'Protect Your Entire Family: Parents, Spouse & Children in One Policy'),
-      subtitle: t('heroSubtitle4', '100% restoration of sum insured, zero room-rent capping, and pre-existing disease coverage designed for Indian families.'),
-      primaryBtnText: t('heroBtnFamily', 'Compare Family Plans'),
+      id: 'niva-bupa-unlimited',
+      image: '/web-banner-3.webp',
+      mobileImage: '/web-banner-3-mobile.webp',
+      badge: lang === 'ml' ? 'നിവ ബൂപ ഹെൽത്ത് ഇൻഷുറൻസ് • Get Unlimited Coverage' : 'Niva Bupa Health • Unlimited Coverage & Cancer Care',
+      title: lang === 'ml' ? 'ഹോസ്പിറ്റൽ ബില്ലുകൾക്ക് ഇനി പേടിവേണ്ട! Get Unlimited Coverage' : 'Zero Fear of Hospital Bills: Get Unlimited Coverage',
+      subtitle: lang === 'ml' ? 'ഹോസ്പിറ്റൽ ചികിത്സ ചിലവ് (OP & IP) കവറേജ്, ക്യാൻസർ ചികിത്സാ സംരക്ഷണം, ബജറ്റ് സൗഹൃദമായ പ്രീമിയം പ്ലാനുകൾ.' : 'Full coverage for OP & IP hospital treatments, dedicated cancer care protection, and budget-friendly family premiums.',
+      primaryBtnText: lang === 'ml' ? 'അൺലിമിറ്റഡ് പ്ലാൻ കാണുക' : 'Explore Unlimited Cover',
       primaryBtnTarget: 'products',
-      secondaryBtnText: t('heroBtnRoomRent', 'Check Room Rent Limits'),
-      secondaryBtnTarget: 'products',
-      pills: lang === 'ml' ? ['100% റീസ്റ്റോറേഷൻ അലവൻസ്', 'റൂം റെന്റ് ക്യാപ്പിംഗ് ഇല്ല'] : ['100% Unlimited Restore', 'Zero Room Rent Capping']
+      secondaryBtnText: lang === 'ml' ? 'ക്ലെയിം സഹായം' : 'Emergency Claim Help',
+      secondaryBtnTarget: 'claims',
+      pills: lang === 'ml' ? ['OP & IP കവറേജ്', 'ക്യാൻസർ കെയർ'] : ['OP & IP Hospitalization', 'Cancer Care Protection']
     },
     {
-      id: 'nri-expats',
-      image: '/hero-slide-3.png',
-      mobileImage: '/hero-slide-3.png',
-      badge: t('heroBadge5', 'GCC Expat & NRI Health Advisory (UAE, KSA, Qatar, Oman)'),
-      title: t('heroTitle5', 'Exclusive 15% - 25% NRI Discounts on Health Insurance for Parents'),
-      subtitle: t('heroSubtitle5', 'Special Aditya Birla Health Assure & Star Health policy packages for non-resident Indians protecting parents in Kerala.'),
-      primaryBtnText: t('heroBtnNri', 'Claim NRI Discount'),
-      primaryBtnTarget: 'nri',
-      secondaryBtnText: t('heroBtnWhatsapp', 'WhatsApp Advisory'),
+      id: 'star-health-assure',
+      image: '/web-banner-4.webp',
+      mobileImage: '/web-banner-4-mobile.webp',
+      badge: lang === 'ml' ? 'സ്റ്റാർ ഹെൽത്ത് അഷ്വർ & യംഗ് സ്റ്റാർ നിയോ' : 'Star Health Assure & Young Star Neo • Growing Families',
+      title: lang === 'ml' ? 'ചെറിയ പ്രീമിയം, വലിയ സംരക്ഷണം കുടുംബത്തെ സുരക്ഷിതരാക്കൂ' : 'Affordable Premium, Huge Protection: Secure Your Family',
+      subtitle: lang === 'ml' ? 'വലിയ ആശുപത്രി ബില്ലുകൾ കുടുംബത്തെ വർഷങ്ങളോളം സാമ്പത്തിക സമ്മർദ്ദത്തിലാക്കാതിരിക്കാൻ ഇന്നുതന്നെ പ്ലാൻ തിരഞ്ഞെടുക്കൂ.' : 'Protect your household from crushing hospital bills with maternity benefits, newborn coverage, and day-one readiness.',
+      primaryBtnText: lang === 'ml' ? 'മെറ്റേണിറ്റി & നിയോ കവർ' : 'Explore Young Star Neo',
+      primaryBtnTarget: 'products',
+      secondaryBtnText: lang === 'ml' ? 'അമീനുമായി സംസാരിക്കൂ' : 'Talk to Ameen',
+      secondaryBtnTarget: 'booking',
+      pills: lang === 'ml' ? ['ചെറിയ പ്രീമിയം', 'മെച്ചപ്പെട്ട ചികിത്സ'] : ['Low Starting Premium', 'Maternity & Child Protection']
+    },
+    {
+      id: 'maternity-and-psu',
+      image: '/web-banner-5.webp',
+      mobileImage: '/web-banner-5-mobile.webp',
+      badge: lang === 'ml' ? 'ആദിത്യ ബിർള മെറ്റേണിറ്റി (6 മാസം വെയിറ്റിംഗ്) & ഗവ. PSU പ്ലാനുകൾ' : 'Aditya Birla Maternity (6M Waiting) & Govt. PSU Floaters',
+      title: lang === 'ml' ? '6 മാസം മുതൽ മെറ്റേണിറ്റി കവറേജ് & ഗവ. ഇൻഷുറൻസ് പ്ലാനുകൾ' : 'Maternity Waiting as Low as 6 Months + PSU Family Plans',
+      subtitle: lang === 'ml' ? 'ആദിത്യ ബിർളയുടെ ഏറ്റവും കുറഞ്ഞ വെയിറ്റിംഗ് പീരിയഡ് മെറ്റേണിറ്റി പ്ലാനും യുണൈറ്റഡ് ഇന്ത്യ & ന്യൂ ഇന്ത്യ അഷ്വറൻസിന്റെ വിശ്വസ്ത ഗവൺമെന്റ് പോളിസികളും.' : 'Aditya Birla flexible 6/9/12/24-month maternity waiting period alongside trusted United India & New India Assurance policies.',
+      primaryBtnText: lang === 'ml' ? 'പ്ലാനുകൾ താരതമ്യം ചെയ്യുക' : 'Compare Maternity & PSU',
+      primaryBtnTarget: 'products',
+      secondaryBtnText: lang === 'ml' ? 'വാട്സാപ്പിൽ ചോദിക്കൂ' : 'WhatsApp Advisory',
       secondaryBtnTarget: claimsWaUrl,
       isExternalSecondary: true,
-      pills: lang === 'ml' ? ['25% വരെ NRI ഡിസ്കൗണ്ട്', 'കേരളത്തിൽ ക്യാഷ്‌ലെസ്സ് സൗകര്യം'] : ['Up to 25% NRI Discount', 'Cashless Care in Kerala']
-    },
-    {
-      id: 'unbiased-advisory',
-      image: '/hero-banner.png',
-      mobileImage: '/hero-banner.png',
-      badge: t('heroBadge3', 'IRDAI Licensed Health Insurance Specialist #129/153 (Palakkad)'),
-      title: t('heroTitle3', 'Compare Star Health, Aditya Birla & Government PSU Policies'),
-      subtitle: t('heroSubtitle3', '15+ years of honest 1-on-1 advice for families & GCC NRIs with zero sales pressure or hidden commission markups.'),
-      primaryBtnText: t('heroBtnCompare', 'Compare All Partners'),
-      primaryBtnTarget: 'partners',
-      secondaryBtnText: t('heroBtnBook', 'Book Free Consultation'),
-      secondaryBtnTarget: 'booking',
-      pills: lang === 'ml' ? ['15+ വർഷത്തെ വിശ്വസ്തത', 'സുതാര്യമായ താരതമ്യം'] : ['15+ Years Trust in Palakkad', 'Unbiased 1-on-1 Guidance']
+      pills: lang === 'ml' ? ['6 മാസം വെയിറ്റിംഗ് പീരിയഡ്', '100% സം ഇൻഷുർഡ് കവറേജ്'] : ['6-Month Waiting Period', '100% Day-Care Procedures']
     }
   ];
 
@@ -244,8 +244,8 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
             maxWidth: '1200px',
             margin: '0 auto'
           }}>
-            {/* Round Checkbox Indicators */}
-            <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
+            {/* Sleek Rectangular Slide Indicators */}
+            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
               {heroSlides.map((_, idx) => (
                 <button
                   key={idx}
@@ -255,37 +255,19 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
                     background: 'transparent',
                     border: 'none',
                     cursor: 'pointer',
-                    padding: '2px',
+                    padding: '6px 2px',
                     display: 'inline-flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    transition: 'all 0.25s ease'
+                    justifyContent: 'center'
                   }}
                 >
-                  {idx === currentSlide ? (
-                    <div style={{
-                      width: '20px',
-                      height: '20px',
-                      borderRadius: '50%',
-                      background: 'linear-gradient(135deg, #60a5fa, #2563eb)',
-                      color: '#ffffff',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      boxShadow: '0 0 10px rgba(96, 165, 250, 0.7)'
-                    }}>
-                      <CheckCircle2 size={14} color="#ffffff" />
-                    </div>
-                  ) : (
-                    <div style={{
-                      width: '18px',
-                      height: '18px',
-                      borderRadius: '50%',
-                      border: '2px solid rgba(255, 255, 255, 0.4)',
-                      background: 'rgba(255, 255, 255, 0.1)',
-                      transition: 'all 0.25s ease'
-                    }} />
-                  )}
+                  <div style={{
+                    width: idx === currentSlide ? '40px' : '22px',
+                    height: '4px',
+                    borderRadius: 0,
+                    background: idx === currentSlide ? '#60a5fa' : 'rgba(255, 255, 255, 0.3)',
+                    transition: 'all 0.3s ease'
+                  }} />
                 </button>
               ))}
             </div>

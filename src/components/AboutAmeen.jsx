@@ -31,17 +31,18 @@ export default function AboutAmeen() {
             padding: '2rem 1.8rem',
             textAlign: 'center'
           }}>
-            {/* Organic Capsule Oval Portrait */}
+            {/* Professional Framed Executive Portrait */}
             <div style={{
               position: 'relative',
               width: '100%',
-              maxWidth: '200px',
-              height: '240px',
-              margin: '0 auto 1.2rem',
-              borderRadius: '110px',
+              maxWidth: '220px',
+              height: '260px',
+              margin: '0 auto 1.4rem',
+              borderRadius: 0,
               overflow: 'hidden',
-              boxShadow: '0 16px 36px rgba(30, 64, 175, 0.16)',
-              background: 'linear-gradient(180deg, #dbeafe 0%, #ffffff 100%)'
+              border: '2px solid var(--border-light)',
+              boxShadow: '0 8px 24px rgba(15, 23, 42, 0.08)',
+              background: '#f8fafc'
             }}>
               <img
                 src="/Ameen.webp"

@@ -148,22 +148,23 @@ export default function FloatingWidgets({ onBookConsultation }) {
           onClick={() => setEnquiryOpen(true)}
           className="btn-primary"
           style={{
-            background: 'linear-gradient(135deg, var(--primary-blue), #058340)',
+            background: 'var(--primary-blue)',
             color: '#ffffff',
             fontWeight: 700,
-            fontSize: '0.92rem',
-            padding: '0.8rem 1.4rem',
-            borderRadius: 'var(--radius-full)',
+            fontSize: '0.88rem',
+            padding: '0.75rem 1.25rem',
+            borderRadius: 0,
             border: 'none',
             cursor: 'pointer',
-            boxShadow: '0 8px 20px rgba(1, 58, 222, 0.35)',
+            boxShadow: '0 4px 14px rgba(15, 23, 42, 0.25)',
             display: 'flex',
             alignItems: 'center',
             gap: '0.5rem',
-            transition: 'all 0.25s ease'
+            letterSpacing: '0.02em',
+            textTransform: 'uppercase'
           }}
         >
-          <MessageSquare size={18} /> Enquire Now
+          <MessageSquare size={16} /> Enquire Now
         </button>
 
         {/* Floating WhatsApp Button */}
@@ -172,23 +173,28 @@ export default function FloatingWidgets({ onBookConsultation }) {
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            width: '52px',
-            height: '52px',
-            borderRadius: '50%',
-            background: '#25D366',
+            height: '42px',
+            padding: '0 1rem',
+            borderRadius: 0,
+            background: '#16a34a',
             color: '#ffffff',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 8px 24px rgba(37, 211, 102, 0.45)',
+            gap: '0.5rem',
+            boxShadow: '0 4px 14px rgba(22, 163, 74, 0.3)',
             textDecoration: 'none',
-            transition: 'all 0.25s ease'
+            fontSize: '0.85rem',
+            fontWeight: 700,
+            textTransform: 'uppercase',
+            letterSpacing: '0.02em'
           }}
           title="Chat on WhatsApp"
         >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12.031 2c-5.517 0-9.997 4.48-9.997 9.998 0 1.763.459 3.479 1.33 4.996l-1.413 5.161 5.28-1.385c1.463.799 3.111 1.22 4.8 1.22h.004c5.518 0 9.998-4.48 9.998-9.998 0-2.67-1.04-5.18-2.929-7.07-1.89-1.89-4.4-2.93-7.073-2.93zm5.72 14.364c-.244.688-1.42 1.309-1.961 1.393-.497.077-1.144.11-1.844-.117-.427-.138-.977-.318-1.698-.632-2.996-1.298-4.945-4.341-5.096-4.542-.149-.2-1.227-1.635-1.227-3.119 0-1.484.773-2.215 1.046-2.516.273-.301.597-.377.796-.377.199 0 .399.002.574.01.187.008.438-.071.686.525.249.596.847 2.07.922 2.221.075.15.124.326.025.525-.099.201-.149.326-.298.502-.149.176-.314.394-.448.528-.149.149-.305.311-.131.61.174.299.773 1.275 1.657 2.062 1.137 1.012 2.096 1.326 2.395 1.476.299.15.474.125.649-.075.174-.201.747-.87.946-1.17.199-.301.399-.251.672-.15.273.101 1.742.822 2.041.972.299.15.498.225.573.351.075.126.075.728-.169 1.416z"/>
           </svg>
+          <span>WhatsApp</span>
         </a>
       </div>
 

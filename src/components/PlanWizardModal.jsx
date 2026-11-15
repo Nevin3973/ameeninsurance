@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { X, Check, ShieldCheck, ArrowRight, ArrowLeft, RefreshCw, MessageSquare, Award, Sparkles, User, Users, HeartHandshake, Baby } from 'lucide-react';
-import confetti from 'canvas-confetti';
 
 export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBookConsultation }) {
   const [currentStep, setCurrentStep] = useState(1);
@@ -23,11 +22,6 @@ export default function PlanWizardModal({ isOpen, onClose, onSelectProduct, onBo
       // Calculate Recommendations
       calculateRecommendations(updated);
       setCurrentStep(4); // Results step
-      try {
-        confetti({ particleCount: 60, spread: 70, origin: { y: 0.6 } });
-      } catch (err) {
-        // Fallback gracefully
-      }
     }
   };
 
