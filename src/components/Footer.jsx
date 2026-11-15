@@ -160,7 +160,6 @@ export default function Footer({ onNavigate, onOpenPrivacyModal }) {
           <div>
             <h4 style={{ color: '#ffffff', fontSize: '1rem', marginBottom: '1rem' }}>Contact & Support</h4>
             <p style={{ color: '#94a3b8', lineHeight: 1.8, marginBottom: '1rem' }}>
-              Developed and Maintained by <a href="https://helix24.in/" target="_blank" rel="noopener noreferrer" style={{ color: '#60a5fa', fontWeight: 700, textDecoration: 'none' }}>Helix 24 Solutions</a><br />
               Phone: <a href="tel:+917025984646" style={{ color: '#ffffff', textDecoration: 'none' }}>+91 70259 84646</a><br />
               Email: <a href="mailto:info@ameenhealthinsurance.com" style={{ color: '#60a5fa', textDecoration: 'none', fontWeight: 600 }}>info@ameenhealthinsurance.com</a><br />
               Address: Mannarkkad Road, Ariyambavu, Palakkad, Kerala 678583<br />
@@ -177,11 +176,28 @@ export default function Footer({ onNavigate, onOpenPrivacyModal }) {
         <div style={{
           borderTop: '1px solid rgba(255, 255, 255, 0.1)',
           paddingTop: '1.5rem',
-          textAlign: 'center',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '1rem',
           color: '#64748b',
           fontSize: '0.8rem'
         }}>
-          © 2026 Ameen Nellikkunnan Insurance Advisory. All rights reserved. • Licensed under IRDAI Reg. #129/153.
+          <div>
+            © 2026 Ameen Nellikkunnan Insurance Advisory. All rights reserved. • Licensed under IRDAI Reg. #129/153.
+          </div>
+          <div>
+            Developed and Maintained by{' '}
+            <a
+              href="https://helix24.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#60a5fa', textDecoration: 'none', fontWeight: 600 }}
+            >
+              Helix 24 Solutions
+            </a>
+          </div>
         </div>
       </div>
 
