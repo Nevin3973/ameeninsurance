@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, CheckCircle2, ShieldCheck, Award, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ShieldCheck, Award, ChevronLeft, ChevronRight, Users, Star } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { sendLeadEmail } from '../services/emailService';
+import AnimatedCounter from './AnimatedCounter';
 
 export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
   const { lang, t } = useLanguage();
@@ -352,8 +353,8 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
           <div className={leadSubmitted ? "" : "grid-2"} style={{ gap: '3rem', alignItems: 'flex-start' }}>
             {!leadSubmitted && (
               <div>
-                <span className="pill-badge" style={{ marginBottom: '1rem', background: 'var(--accent-sky-light)', border: 'none' }}>
-                  <ShieldCheck size={16} color="var(--primary-blue)" /> {lang === 'ml' ? 'നേരിട്ടുള്ള ഉപദേശം' : 'Direct Advisor Contact'}
+                <span className="pill-badge" style={{ marginBottom: '1rem', background: '#f0f9ff', border: '1px solid #bae6fd', color: '#0369a1' }}>
+                  <ShieldCheck size={16} color="#0284c7" /> {lang === 'ml' ? 'നേരിട്ടുള്ള ഉപദേശം' : 'Direct Advisor Contact'}
                 </span>
                 <h2 style={{ fontSize: '2rem', marginBottom: '1rem', lineHeight: 1.25 }}>
                   {t('leadFormTitle', 'Request a Personal Callback')}
@@ -617,9 +618,9 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
 
       {/* Premium Full-Width Edge-to-Edge Trust Metrics Bar */}
       <div style={{
-        background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
+        background: 'linear-gradient(135deg, #0a1324 0%, #0f172a 50%, #1e293b 100%)',
         width: '100%',
-        padding: '2.5rem 0',
+        padding: '2.8rem 0',
         color: '#ffffff',
         boxShadow: '0 12px 30px rgba(15, 23, 42, 0.15)',
         marginTop: '3.5rem',
@@ -628,21 +629,136 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
       }}>
         <div className="container">
           <div className="grid-4" style={{ width: '100%', alignItems: 'stretch', gap: '1.8rem' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0.5rem', width: '100%' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 800, color: '#60a5fa', marginBottom: '0.2rem' }}>₹150+ Cr</div>
-              <div style={{ fontSize: '0.88rem', color: '#94a3b8', fontWeight: 600, textAlign: 'center' }}>{t('statClaims', 'Claims Settlement Advocacy')}</div>
+            {/* Metric 1: Claims Settlement */}
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              padding: '1.2rem 1rem',
+              width: '100%',
+              background: 'rgba(255, 255, 255, 0.02)',
+              border: '1px solid rgba(255, 255, 255, 0.07)'
+            }}>
+              <div style={{
+                width: '48px',
+                height: '48px',
+                borderRadius: 0,
+                background: 'rgba(30, 64, 175, 0.25)',
+                border: '1px solid rgba(96, 165, 250, 0.3)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '0.75rem',
+                color: '#60a5fa'
+              }}>
+                <ShieldCheck size={26} strokeWidth={2.2} />
+              </div>
+              <div style={{ fontSize: '2.1rem', fontWeight: 800, color: '#60a5fa', marginBottom: '0.2rem', letterSpacing: '-0.02em', minHeight: '2.5rem', display: 'flex', alignItems: 'center' }}>
+                <AnimatedCounter end={150} prefix="₹" suffix="+ Cr" duration={1800} />
+              </div>
+              <div style={{ fontSize: '0.88rem', color: '#94a3b8', fontWeight: 600, textAlign: 'center' }}>
+                {t('statClaims', 'Claims Settlement Advocacy')}
+              </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0.5rem', width: '100%' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 800, color: '#60a5fa', marginBottom: '0.2rem' }}>5,000+</div>
-              <div style={{ fontSize: '0.88rem', color: '#94a3b8', fontWeight: 600, textAlign: 'center' }}>{t('statFamilies', 'Families Protected Across India')}</div>
+
+            {/* Metric 2: Families Protected */}
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              padding: '1.2rem 1rem',
+              width: '100%',
+              background: 'rgba(255, 255, 255, 0.02)',
+              border: '1px solid rgba(255, 255, 255, 0.07)'
+            }}>
+              <div style={{
+                width: '48px',
+                height: '48px',
+                borderRadius: 0,
+                background: 'rgba(30, 64, 175, 0.25)',
+                border: '1px solid rgba(96, 165, 250, 0.3)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '0.75rem',
+                color: '#60a5fa'
+              }}>
+                <Users size={26} strokeWidth={2.2} />
+              </div>
+              <div style={{ fontSize: '2.1rem', fontWeight: 800, color: '#60a5fa', marginBottom: '0.2rem', letterSpacing: '-0.02em', minHeight: '2.5rem', display: 'flex', alignItems: 'center' }}>
+                <AnimatedCounter end={5000} suffix="+" duration={2000} />
+              </div>
+              <div style={{ fontSize: '0.88rem', color: '#94a3b8', fontWeight: 600, textAlign: 'center' }}>
+                {t('statFamilies', 'Families Protected Across India')}
+              </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0.5rem', width: '100%' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 800, color: '#60a5fa', marginBottom: '0.2rem' }}>15+ Years</div>
-              <div style={{ fontSize: '0.88rem', color: '#94a3b8', fontWeight: 600, textAlign: 'center' }}>{t('statExperience', 'IRDAI Advisory Experience')}</div>
+
+            {/* Metric 3: IRDAI Experience */}
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              padding: '1.2rem 1rem',
+              width: '100%',
+              background: 'rgba(255, 255, 255, 0.02)',
+              border: '1px solid rgba(255, 255, 255, 0.07)'
+            }}>
+              <div style={{
+                width: '48px',
+                height: '48px',
+                borderRadius: 0,
+                background: 'rgba(30, 64, 175, 0.25)',
+                border: '1px solid rgba(96, 165, 250, 0.3)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '0.75rem',
+                color: '#60a5fa'
+              }}>
+                <Award size={26} strokeWidth={2.2} />
+              </div>
+              <div style={{ fontSize: '2.1rem', fontWeight: 800, color: '#60a5fa', marginBottom: '0.2rem', letterSpacing: '-0.02em', minHeight: '2.5rem', display: 'flex', alignItems: 'center' }}>
+                <AnimatedCounter end={15} suffix="+ Years" duration={1600} />
+              </div>
+              <div style={{ fontSize: '0.88rem', color: '#94a3b8', fontWeight: 600, textAlign: 'center' }}>
+                {t('statExperience', 'IRDAI Advisory Experience')}
+              </div>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0.5rem', width: '100%' }}>
-              <div style={{ fontSize: '2rem', fontWeight: 800, color: '#f59e0b', marginBottom: '0.2rem' }}>4.9 ★ / 5</div>
-              <div style={{ fontSize: '0.88rem', color: '#94a3b8', fontWeight: 600, textAlign: 'center' }}>{t('statRating', '450+ Verified Client Reviews')}</div>
+
+            {/* Metric 4: Verified Reviews */}
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              padding: '1.2rem 1rem',
+              width: '100%',
+              background: 'rgba(255, 255, 255, 0.02)',
+              border: '1px solid rgba(255, 255, 255, 0.07)'
+            }}>
+              <div style={{
+                width: '48px',
+                height: '48px',
+                borderRadius: 0,
+                background: 'rgba(217, 119, 6, 0.2)',
+                border: '1px solid rgba(245, 158, 11, 0.35)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '0.75rem',
+                color: '#f59e0b'
+              }}>
+                <Star size={26} fill="#f59e0b" strokeWidth={1} />
+              </div>
+              <div style={{ fontSize: '2.1rem', fontWeight: 800, color: '#f59e0b', marginBottom: '0.2rem', letterSpacing: '-0.02em', minHeight: '2.5rem', display: 'flex', alignItems: 'center' }}>
+                <AnimatedCounter end={4.9} decimals={1} suffix=" ★ / 5" duration={1700} />
+              </div>
+              <div style={{ fontSize: '0.88rem', color: '#94a3b8', fontWeight: 600, textAlign: 'center' }}>
+                {t('statRating', '450+ Verified Client Reviews')}
+              </div>
             </div>
           </div>
         </div>

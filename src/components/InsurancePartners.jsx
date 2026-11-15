@@ -64,8 +64,8 @@ export default function InsurancePartners({ onSelectPartner }) {
       <div className="container">
         {/* Section Header */}
         <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 3rem' }}>
-          <span className="pill-badge" style={{ marginBottom: '1rem', background: '#ffffff' }}>
-            <Award size={16} color="var(--primary-blue)" /> IRDAI Licensed Partner Insurers
+          <span className="pill-badge" style={{ marginBottom: '1rem', background: '#eff6ff', color: '#1d4ed8', border: '1px solid #bfdbfe', fontWeight: 700 }}>
+            <Award size={16} color="#1d4ed8" /> IRDAI Licensed Partner Insurers
           </span>
           <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)', marginBottom: '0.6rem', color: 'var(--text-dark)' }}>
             Our Trusted Insurance Partners

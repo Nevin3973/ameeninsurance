@@ -66,11 +66,11 @@ export default function AboutAmeen() {
             </p>
 
             <div style={{ display: 'flex', gap: '0.6rem', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
-              <span className="pill-badge" style={{ background: '#ffffff', border: 'none', fontSize: '0.78rem' }}>
-                <Award size={14} /> 15 Years Expertise
+              <span className="pill-badge" style={{ background: '#fefce8', border: '1px solid #fde68a', color: '#92400e', fontSize: '0.78rem', fontWeight: 700 }}>
+                <Award size={15} color="#d97706" /> 15 Years Expertise
               </span>
-              <span className="pill-badge" style={{ background: '#ffffff', border: 'none', fontSize: '0.78rem' }}>
-                <ShieldCheck size={14} /> IRDAI Authorized
+              <span className="pill-badge" style={{ background: '#eff6ff', border: '1px solid #bfdbfe', color: '#1e40af', fontSize: '0.78rem', fontWeight: 700 }}>
+                <ShieldCheck size={15} color="#2563eb" /> IRDAI Authorized
               </span>
             </div>
 

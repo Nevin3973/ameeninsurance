@@ -49,8 +49,8 @@ export default function AmeenExperience() {
             border: '1px solid #bae6fd',
             boxShadow: '0 10px 30px rgba(2, 132, 199, 0.08)'
           }}>
-            <span className="pill-badge" style={{ background: '#ffffff', color: 'var(--primary-blue)', marginBottom: '1.2rem', border: 'none' }}>
-              <Award size={16} /> Why Choose Ameen
+            <span className="pill-badge" style={{ background: '#eff6ff', color: '#1d4ed8', border: '1px solid #bfdbfe', marginBottom: '1.2rem', fontWeight: 700 }}>
+              <Award size={16} color="#1d4ed8" /> Why Choose Ameen
             </span>
 
             <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.6rem)', lineHeight: 1.2, marginBottom: '1rem', color: 'var(--text-dark)' }}>

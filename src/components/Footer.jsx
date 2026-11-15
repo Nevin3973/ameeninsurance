@@ -1,4 +1,5 @@
 import React from 'react';
+import { ShieldCheck } from 'lucide-react';
 
 export default function Footer({ onNavigate, onOpenPrivacyModal }) {
   const handleLinkClick = (tabId) => {
@@ -26,13 +27,29 @@ export default function Footer({ onNavigate, onOpenPrivacyModal }) {
         <div className="grid-3" style={{ gap: '3rem', marginBottom: '3rem' }}>
           <div>
             <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.6rem',
               fontFamily: 'var(--font-heading)',
               fontWeight: 800,
               fontSize: '1.3rem',
               color: '#ffffff',
               marginBottom: '0.8rem'
             }}>
-              Ameen <span style={{ color: '#60a5fa' }}>Insurance</span>
+              <div style={{
+                width: '28px',
+                height: '28px',
+                borderRadius: 0,
+                background: 'linear-gradient(135deg, #1d4ed8 0%, #0f172a 100%)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#60a5fa'
+              }}>
+                <ShieldCheck size={18} strokeWidth={2.2} />
+              </div>
+              <span>Ameen <span style={{ color: '#60a5fa' }}>Insurance</span></span>
             </div>
             <p style={{ color: '#94a3b8', lineHeight: 1.6, marginBottom: '1.5rem' }}>
               Independent IRDAI authorized health insurance advisory (Reg. #129/153), offering unbiased plan comparisons and 24/7 cashless hospital claim assistance.
