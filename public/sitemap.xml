@@ -4,76 +4,76 @@
 
   <!-- Homepage (English) -->
   <url>
-    <loc>https://ameeninsurance.com/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.ameenhealthinsurance.com/</loc>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ameeninsurance.com/" />
-    <xhtml:link rel="alternate" hreflang="ml" href="https://ameeninsurance.com/?lang=ml" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ameenhealthinsurance.com/" />
+    <xhtml:link rel="alternate" hreflang="ml" href="https://www.ameenhealthinsurance.com/?lang=ml" />
   </url>
 
   <!-- Homepage (Malayalam Version) -->
   <url>
-    <loc>https://ameeninsurance.com/?lang=ml</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.ameenhealthinsurance.com/?lang=ml</loc>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ameeninsurance.com/" />
-    <xhtml:link rel="alternate" hreflang="ml" href="https://ameeninsurance.com/?lang=ml" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.ameenhealthinsurance.com/" />
+    <xhtml:link rel="alternate" hreflang="ml" href="https://www.ameenhealthinsurance.com/?lang=ml" />
   </url>
 
   <!-- Health Insurance Plans Catalog -->
   <url>
-    <loc>https://ameeninsurance.com/#products</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.ameenhealthinsurance.com/#products</loc>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- GCC NRI Health Insurance Advisory -->
   <url>
-    <loc>https://ameeninsurance.com/#nri</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.ameenhealthinsurance.com/#nri</loc>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- 24/7 Cashless Hospital Claims Support -->
   <url>
-    <loc>https://ameeninsurance.com/#claims</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.ameenhealthinsurance.com/#claims</loc>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <!-- IRDAI Partner Insurers -->
   <url>
-    <loc>https://ameeninsurance.com/#partners</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.ameenhealthinsurance.com/#partners</loc>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- About Ameen Nellikkunnan -->
   <url>
-    <loc>https://ameeninsurance.com/#about</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.ameenhealthinsurance.com/#about</loc>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Frequently Asked Questions (FAQ) -->
   <url>
-    <loc>https://ameeninsurance.com/#faq</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.ameenhealthinsurance.com/#faq</loc>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
   <!-- Book 1-on-1 Consultation Slot -->
   <url>
-    <loc>https://ameeninsurance.com/#booking</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.ameenhealthinsurance.com/#booking</loc>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>

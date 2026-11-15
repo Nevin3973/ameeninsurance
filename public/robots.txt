@@ -4,4 +4,4 @@ Allow: /
 Disallow: /dist/
 
 # Sitemap Location for Search Engines (Google, Bing, Yahoo)
-Sitemap: https://ameeninsurance.com/sitemap.xml
+Sitemap: https://www.ameenhealthinsurance.com/sitemap.xml
