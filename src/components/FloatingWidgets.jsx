@@ -129,7 +129,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
   return (
     <>
       {/* Floating Action Buttons Container (Bottom Right) */}
-      <div style={{
+      <div className="floating-actions-container" style={{
         position: 'fixed',
         right: '20px',
         bottom: '24px',
@@ -417,6 +417,7 @@ export default function FloatingWidgets({ onBookConsultation }) {
       <style>{`
         @media (max-width: 768px) {
           .mobile-call-bar { display: block !important; }
+          .floating-actions-container { bottom: 70px !important; }
         }
       `}</style>
     </>

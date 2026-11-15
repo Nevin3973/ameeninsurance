@@ -16,7 +16,7 @@ export default function Footer({ onNavigate, onOpenPrivacyModal }) {
   };
 
   return (
-    <footer style={{
+    <footer className="site-footer" style={{
       background: '#0f172a',
       color: '#cbd5e1',
       padding: '4rem 0 2rem',
@@ -156,7 +156,7 @@ export default function Footer({ onNavigate, onOpenPrivacyModal }) {
           </div>
         </div>
 
-        <div style={{
+        <div className="footer-bottom-bar" style={{
           borderTop: '1px solid rgba(255, 255, 255, 0.1)',
           paddingTop: '1.5rem',
           display: 'flex',
@@ -189,6 +189,16 @@ export default function Footer({ onNavigate, onOpenPrivacyModal }) {
           background: #2563eb !important;
           transform: translateY(-3px);
           box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+        }
+        @media (max-width: 768px) {
+          .site-footer {
+            padding-bottom: 6rem !important; /* Clears fixed mobile call bar with safe clearance */
+          }
+          .footer-bottom-bar {
+            flex-direction: column !important;
+            text-align: center !important;
+            gap: 0.6rem !important;
+          }
         }
       `}</style>
     </footer>

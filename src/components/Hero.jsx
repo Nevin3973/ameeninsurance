@@ -198,14 +198,14 @@ export default function Hero({ onStartQuote, onOpenWizard, onNavigate }) {
   const activeSlideData = heroSlides[currentSlide];
 
   return (
-    <section id="hero" style={{ background: '#f8fafc', padding: '0 0 3.5rem', marginTop: '-90px' }}>
+    <section id="hero" style={{ background: '#f8fafc', padding: '0 0 3.5rem', marginTop: 0 }}>
       {/* FULL-WIDTH DYNAMIC AD BANNER CAROUSEL */}
       <div style={{
         position: 'relative',
         width: '100%',
         background: '#0f172a',
         overflow: 'hidden',
-        paddingTop: '90px'
+        paddingTop: 0
       }}>
         {/* Ad Banner Image Display Container */}
         <div className="hero-banner-container">
