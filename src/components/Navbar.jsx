@@ -125,14 +125,11 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
           padding: '0 2rem',
           transition: 'all 0.3s ease-in-out'
         }}>
-          {/* Brand Logo with Corporate Shield Emblem */}
+          {/* Brand Logo Text */}
           <div
             onClick={() => handleNavClick('hero')}
             className="brand-logo"
             style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.6rem',
               fontFamily: 'var(--font-heading)',
               fontWeight: 800,
               fontSize: '1.4rem',
@@ -144,21 +141,7 @@ export default function Navbar({ activeTab, setActiveTab, onOpenWizard }) {
               flexShrink: 0
             }}
           >
-            <div style={{
-              width: '32px',
-              height: '32px',
-              borderRadius: 0,
-              background: 'linear-gradient(135deg, #1d4ed8 0%, #0f172a 100%)',
-              border: '1px solid #1e40af',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#ffffff',
-              boxShadow: '0 2px 8px rgba(29, 78, 216, 0.25)'
-            }}>
-              <ShieldCheck size={20} strokeWidth={2.2} />
-            </div>
-            <span>Ameen <span style={{ color: 'var(--primary-blue)' }}>Insurance</span></span>
+            Ameen <span style={{ color: 'var(--primary-blue)' }}>Insurance</span>
           </div>
 
           {/* Navigation Links + Book Consultation CTA Group (Desktop) */}
